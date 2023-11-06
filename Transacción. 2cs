@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace Proyecto_inventario
+{
+    public partial class Transacción : Form
+    {
+        public Transacción()
+        {
+            InitializeComponent();
+        }
+
+        private void Transacción_Load(object sender, EventArgs e)
+        {
+
+            comboBox_switch.Items.Add("ENTRADA");
+            comboBox_switch.Items.Add("SALIDA");
+            comboBox_switch.Items.Add("BAJA");
+        }
+        private void comboBox_switch_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string selectedValue = comboBox_switch.SelectedItem.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            textBoxId.Text = string.Empty;
+            comboBox_switch.Text = string.Empty;
+            textBoxCod.Text = string.Empty;
+            comboBoxMot.Text = string.Empty;
+            dateTimePicker1.Text = string.Empty;
+            dateTimePicker2.Text = string.Empty;
+            textBoxProv.Text = string.Empty;
+            textBoxSerial.Text = string.Empty;
+            textBoxObser.Text = string.Empty;
+            textBoxRuta.Text = string.Empty;
+
+        }
+
+        private void btn_Registrrar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Guardando");
+
+        }
+
+        private void Transacción_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
