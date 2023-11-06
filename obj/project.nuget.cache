@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "s/y0G+jJVaLt48+En0nKkO6eQX5FdcyzarCuLqHSz1+ABpilw8VKU/PciZqMObXYbpO6KXmkuBt5fga4SGrGpg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Proyecto_inventario\\Proyecto_inventario.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}
