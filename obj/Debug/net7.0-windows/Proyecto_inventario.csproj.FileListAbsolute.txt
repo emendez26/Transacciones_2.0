@@ -53,3 +53,14 @@ C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\Pr
 C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\Proyecto_inventario.dll
 C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\refint\Proyecto_inventario.dll
 C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\Proyecto_inventario.pdb
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\Proyecto_inventario.exe
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\Proyecto_inventario.deps.json
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\Proyecto_inventario.runtimeconfig.json
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\Proyecto_inventario.dll
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\Proyecto_inventario.pdb
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\FontAwesome.Sharp.dll
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\bin\Debug\net7.0-windows\WinForms.DataVisualization.dll
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\Proyecto_inventario.csproj.CopyComplete
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\Proyecto_inventario.genruntimeconfig.cache
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\obj\Debug\net7.0-windows\ref\Proyecto_inventario.dll
