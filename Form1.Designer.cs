@@ -853,12 +853,12 @@
             pb_logo.BackColor = Color.Transparent;
             pb_logo.ErrorImage = (Image)resources.GetObject("pb_logo.ErrorImage");
             pb_logo.Image = (Image)resources.GetObject("pb_logo.Image");
-            pb_logo.Location = new Point(-16, -63);
+            pb_logo.Location = new Point(-8, -28);
             pb_logo.Margin = new Padding(2, 3, 2, 3);
             pb_logo.Name = "pb_logo";
             pb_logo.Size = new Size(380, 295);
             pb_logo.SizeMode = PictureBoxSizeMode.Zoom;
-            pb_logo.TabIndex = 1;
+            pb_logo.TabIndex = 2;
             pb_logo.TabStop = false;
             // 
             // Form1
