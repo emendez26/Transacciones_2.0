@@ -64,14 +64,14 @@
             btn_form_equipo = new Button();
             btn_equipo = new FontAwesome.Sharp.IconButton();
             margen = new Panel();
+            pb_logo = new PictureBox();
             panel5 = new Panel();
+            pictureBox2 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             btn_stock = new FontAwesome.Sharp.IconButton();
             btn_dashboard = new FontAwesome.Sharp.IconButton();
             btn_reporte = new FontAwesome.Sharp.IconButton();
             btn_empleado = new FontAwesome.Sharp.IconButton();
-            pictureBox2 = new PictureBox();
-            pb_logo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -84,10 +84,10 @@
             panelSubMenuCelulares.SuspendLayout();
             panelSubMenuDeEquipo.SuspendLayout();
             margen.SuspendLayout();
-            panel5.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_logo).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox3
@@ -700,6 +700,19 @@
             margen.Size = new Size(364, 238);
             margen.TabIndex = 0;
             // 
+            // pb_logo
+            // 
+            pb_logo.BackColor = Color.Transparent;
+            pb_logo.ErrorImage = (Image)resources.GetObject("pb_logo.ErrorImage");
+            pb_logo.Image = (Image)resources.GetObject("pb_logo.Image");
+            pb_logo.Location = new Point(-8, -28);
+            pb_logo.Margin = new Padding(2, 3, 2, 3);
+            pb_logo.Name = "pb_logo";
+            pb_logo.Size = new Size(380, 295);
+            pb_logo.SizeMode = PictureBoxSizeMode.Zoom;
+            pb_logo.TabIndex = 2;
+            pb_logo.TabStop = false;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.White;
@@ -711,6 +724,18 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1102, 925);
             panel5.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(198, 286);
+            pictureBox2.Margin = new Padding(2, 3, 2, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(707, 353);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -836,31 +861,6 @@
             btn_empleado.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_empleado.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(198, 286);
-            pictureBox2.Margin = new Padding(2, 3, 2, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(707, 353);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 4;
-            pictureBox2.TabStop = false;
-            // 
-            // pb_logo
-            // 
-            pb_logo.BackColor = Color.Transparent;
-            pb_logo.ErrorImage = (Image)resources.GetObject("pb_logo.ErrorImage");
-            pb_logo.Image = (Image)resources.GetObject("pb_logo.Image");
-            pb_logo.Location = new Point(-8, -28);
-            pb_logo.Margin = new Padding(2, 3, 2, 3);
-            pb_logo.Name = "pb_logo";
-            pb_logo.Size = new Size(380, 295);
-            pb_logo.SizeMode = PictureBoxSizeMode.Zoom;
-            pb_logo.TabIndex = 2;
-            pb_logo.TabStop = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -887,12 +887,12 @@
             panelSubMenuCelulares.ResumeLayout(false);
             panelSubMenuDeEquipo.ResumeLayout(false);
             margen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pb_logo).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pb_logo).EndInit();
             ResumeLayout(false);
         }
 
