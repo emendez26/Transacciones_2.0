@@ -46,9 +46,6 @@
             label6 = new Label();
             textBoxCaract = new TextBox();
             textBoxIdLic = new TextBox();
-            btn_eliminar = new Button();
-            btn_insertar = new Button();
-            btn_editar = new Button();
             dataGridView1 = new DataGridView();
             TIPO = new DataGridViewTextBoxColumn();
             CARACTERISTICA = new DataGridViewTextBoxColumn();
@@ -62,6 +59,9 @@
             textBox12 = new TextBox();
             label20 = new Label();
             label11 = new Label();
+            btn_eliminar = new Button();
+            btn_insertar = new Button();
+            btn_editar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(589, 284);
+            label1.Location = new Point(589, 261);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(128, 23);
@@ -82,7 +82,7 @@
             comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "SI", "NO" });
-            comboBox1.Location = new Point(721, 282);
+            comboBox1.Location = new Point(721, 259);
             comboBox1.Margin = new Padding(2, 3, 2, 3);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(299, 28);
@@ -91,7 +91,7 @@
             // textBox9
             // 
             textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox9.Location = new Point(179, 284);
+            textBox9.Location = new Point(179, 261);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(286, 27);
             textBox9.TabIndex = 257;
@@ -101,7 +101,7 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(73, 288);
+            label10.Location = new Point(73, 265);
             label10.Name = "label10";
             label10.Size = new Size(92, 23);
             label10.TabIndex = 256;
@@ -121,7 +121,7 @@
             // dateTimePickerFin
             // 
             dateTimePickerFin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dateTimePickerFin.Location = new Point(721, 339);
+            dateTimePickerFin.Location = new Point(721, 306);
             dateTimePickerFin.Margin = new Padding(2, 3, 2, 3);
             dateTimePickerFin.Name = "dateTimePickerFin";
             dateTimePickerFin.Size = new Size(299, 27);
@@ -130,7 +130,7 @@
             // dateTimePickerIni
             // 
             dateTimePickerIni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dateTimePickerIni.Location = new Point(179, 338);
+            dateTimePickerIni.Location = new Point(179, 305);
             dateTimePickerIni.Margin = new Padding(2, 3, 2, 3);
             dateTimePickerIni.Name = "dateTimePickerIni";
             dateTimePickerIni.Size = new Size(286, 27);
@@ -164,7 +164,7 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(56, 225);
+            label4.Location = new Point(56, 215);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(119, 23);
@@ -176,7 +176,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(618, 344);
+            label8.Location = new Point(618, 311);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(81, 23);
@@ -188,7 +188,7 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(65, 341);
+            label7.Location = new Point(65, 308);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(100, 23);
@@ -198,7 +198,7 @@
             // textBoxCost
             // 
             textBoxCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBoxCost.Location = new Point(721, 223);
+            textBoxCost.Location = new Point(721, 213);
             textBoxCost.Margin = new Padding(2, 3, 2, 3);
             textBoxCost.Name = "textBoxCost";
             textBoxCost.Size = new Size(299, 27);
@@ -209,7 +209,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(631, 227);
+            label6.Location = new Point(631, 217);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(54, 23);
@@ -219,7 +219,7 @@
             // textBoxCaract
             // 
             textBoxCaract.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxCaract.Location = new Point(179, 223);
+            textBoxCaract.Location = new Point(179, 213);
             textBoxCaract.Margin = new Padding(2, 3, 2, 3);
             textBoxCaract.Name = "textBoxCaract";
             textBoxCaract.Size = new Size(286, 27);
@@ -234,38 +234,6 @@
             textBoxIdLic.Size = new Size(286, 27);
             textBoxIdLic.TabIndex = 250;
             // 
-            // btn_eliminar
-            // 
-            btn_eliminar.Anchor = AnchorStyles.Left;
-            btn_eliminar.BackColor = Color.FromArgb(255, 128, 128);
-            btn_eliminar.Location = new Point(370, 701);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(119, 44);
-            btn_eliminar.TabIndex = 263;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.UseVisualStyleBackColor = false;
-            // 
-            // btn_insertar
-            // 
-            btn_insertar.Anchor = AnchorStyles.Left;
-            btn_insertar.BackColor = Color.FromArgb(128, 255, 128);
-            btn_insertar.Location = new Point(89, 701);
-            btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(119, 44);
-            btn_insertar.TabIndex = 260;
-            btn_insertar.Text = "Insertar";
-            btn_insertar.UseVisualStyleBackColor = false;
-            // 
-            // btn_editar
-            // 
-            btn_editar.Anchor = AnchorStyles.Left;
-            btn_editar.Location = new Point(227, 701);
-            btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(119, 44);
-            btn_editar.TabIndex = 261;
-            btn_editar.Text = "Editar";
-            btn_editar.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -273,14 +241,14 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TIPO, CARACTERISTICA, DESCRIPCION, Licencia, MODELO, COSTO, MARCA, ESTADO });
             dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(89, 446);
+            dataGridView1.Location = new Point(89, 398);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(931, 231);
+            dataGridView1.Size = new Size(931, 368);
             dataGridView1.TabIndex = 262;
             // 
             // TIPO
@@ -297,14 +265,14 @@
             CARACTERISTICA.HeaderText = "CARACTERISTICA";
             CARACTERISTICA.MinimumWidth = 8;
             CARACTERISTICA.Name = "CARACTERISTICA";
-            CARACTERISTICA.Width = 193;
+            CARACTERISTICA.Width = 250;
             // 
             // DESCRIPCION
             // 
             DESCRIPCION.HeaderText = "DESCRIPCION";
             DESCRIPCION.MinimumWidth = 6;
             DESCRIPCION.Name = "DESCRIPCION";
-            DESCRIPCION.Width = 125;
+            DESCRIPCION.Width = 250;
             // 
             // Licencia
             // 
@@ -349,7 +317,7 @@
             comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "ID", "ESTADO" });
-            comboBox2.Location = new Point(721, 390);
+            comboBox2.Location = new Point(721, 348);
             comboBox2.Margin = new Padding(3, 4, 3, 4);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(299, 28);
@@ -358,7 +326,7 @@
             // textBox12
             // 
             textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox12.Location = new Point(179, 391);
+            textBox12.Location = new Point(179, 349);
             textBox12.Margin = new Padding(2, 3, 2, 3);
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(538, 27);
@@ -369,7 +337,7 @@
             label20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(33, 395);
+            label20.Location = new Point(33, 353);
             label20.Name = "label20";
             label20.Size = new Size(132, 23);
             label20.TabIndex = 287;
@@ -388,19 +356,58 @@
             label11.Text = "LICENCIAS";
             label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btn_eliminar
+            // 
+            btn_eliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_eliminar.BackColor = Color.Brown;
+            btn_eliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_eliminar.ForeColor = Color.White;
+            btn_eliminar.Location = new Point(356, 798);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(110, 35);
+            btn_eliminar.TabIndex = 297;
+            btn_eliminar.Text = "Eliminar";
+            btn_eliminar.UseVisualStyleBackColor = false;
+            // 
+            // btn_insertar
+            // 
+            btn_insertar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_insertar.BackColor = Color.Green;
+            btn_insertar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_insertar.ForeColor = Color.White;
+            btn_insertar.Location = new Point(89, 798);
+            btn_insertar.Name = "btn_insertar";
+            btn_insertar.Size = new Size(110, 35);
+            btn_insertar.TabIndex = 295;
+            btn_insertar.Text = "Insertar";
+            btn_insertar.UseVisualStyleBackColor = false;
+            // 
+            // btn_editar
+            // 
+            btn_editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_editar.BackColor = Color.OrangeRed;
+            btn_editar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_editar.ForeColor = Color.White;
+            btn_editar.Location = new Point(222, 798);
+            btn_editar.Name = "btn_editar";
+            btn_editar.Size = new Size(110, 35);
+            btn_editar.TabIndex = 296;
+            btn_editar.Text = "Editar";
+            btn_editar.UseVisualStyleBackColor = false;
+            // 
             // Licencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 770);
+            ClientSize = new Size(1102, 859);
+            Controls.Add(btn_eliminar);
+            Controls.Add(btn_insertar);
+            Controls.Add(btn_editar);
             Controls.Add(label11);
             Controls.Add(comboBox2);
             Controls.Add(textBox12);
             Controls.Add(label20);
-            Controls.Add(btn_eliminar);
-            Controls.Add(btn_insertar);
-            Controls.Add(btn_editar);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(comboBox1);
@@ -447,10 +454,11 @@
         private Label label6;
         private TextBox textBoxCaract;
         private TextBox textBoxIdLic;
-        private Button btn_eliminar;
-        private Button btn_insertar;
-        private Button btn_editar;
         private DataGridView dataGridView1;
+        private ComboBox comboBox2;
+        private TextBox textBox12;
+        private Label label20;
+        private Label label11;
         private DataGridViewTextBoxColumn TIPO;
         private DataGridViewTextBoxColumn CARACTERISTICA;
         private DataGridViewTextBoxColumn DESCRIPCION;
@@ -459,9 +467,8 @@
         private DataGridViewTextBoxColumn COSTO;
         private DataGridViewTextBoxColumn MARCA;
         private DataGridViewTextBoxColumn ESTADO;
-        private ComboBox comboBox2;
-        private TextBox textBox12;
-        private Label label20;
-        private Label label11;
+        private Button btn_eliminar;
+        private Button btn_insertar;
+        private Button btn_editar;
     }
 }

@@ -35,23 +35,20 @@
             NOMBRE = new DataGridViewTextBoxColumn();
             APELLIDO = new DataGridViewTextBoxColumn();
             UBICACION = new DataGridViewTextBoxColumn();
-            SITIO = new DataGridViewTextBoxColumn();
             AREA = new DataGridViewTextBoxColumn();
             lbl_Empleado = new Label();
             txt_Area_Empleado = new TextBox();
             lbl_Area_Empleado = new Label();
-            txt_Sitio_Empleado = new TextBox();
-            lbl_Sitio_Empleado = new Label();
             lbl_Ubicacion_Empleado = new Label();
             lbl_Identificacion_Empleado = new Label();
             lbl_Apellido_Empleado = new Label();
             lbl_Nombre_Empleado = new Label();
             txt_Apellido_Empleado = new TextBox();
             txt_Identificacion_Empleado = new TextBox();
-            btn_Limpiar_Empleado = new Button();
-            btn_registrar_empleado = new Button();
             txt_Ubicacion_Empleado = new TextBox();
             txt_Nombre_Empleado = new TextBox();
+            btn_limpiar = new Button();
+            btn_registrar = new Button();
             ((System.ComponentModel.ISupportInitialize)dg_Empleados).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +57,7 @@
             dg_Empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dg_Empleados.BackgroundColor = SystemColors.ActiveBorder;
             dg_Empleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_Empleados.Columns.AddRange(new DataGridViewColumn[] { ID, NOMBRE, APELLIDO, UBICACION, SITIO, AREA });
+            dg_Empleados.Columns.AddRange(new DataGridViewColumn[] { ID, NOMBRE, APELLIDO, UBICACION, AREA });
             dg_Empleados.GridColor = SystemColors.ActiveBorder;
             dg_Empleados.Location = new Point(449, 144);
             dg_Empleados.Name = "dg_Empleados";
@@ -98,21 +95,14 @@
             UBICACION.HeaderText = "UBICACION";
             UBICACION.MinimumWidth = 6;
             UBICACION.Name = "UBICACION";
-            UBICACION.Width = 125;
-            // 
-            // SITIO
-            // 
-            SITIO.HeaderText = "SITIO";
-            SITIO.MinimumWidth = 6;
-            SITIO.Name = "SITIO";
-            SITIO.Width = 125;
+            UBICACION.Width = 200;
             // 
             // AREA
             // 
             AREA.HeaderText = "AREA";
             AREA.MinimumWidth = 6;
             AREA.Name = "AREA";
-            AREA.Width = 200;
+            AREA.Width = 250;
             // 
             // lbl_Empleado
             // 
@@ -130,7 +120,7 @@
             // txt_Area_Empleado
             // 
             txt_Area_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txt_Area_Empleado.Location = new Point(48, 611);
+            txt_Area_Empleado.Location = new Point(48, 559);
             txt_Area_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Area_Empleado.Name = "txt_Area_Empleado";
             txt_Area_Empleado.Size = new Size(311, 27);
@@ -141,38 +131,18 @@
             lbl_Area_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Area_Empleado.AutoSize = true;
             lbl_Area_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Area_Empleado.Location = new Point(48, 581);
+            lbl_Area_Empleado.Location = new Point(48, 529);
             lbl_Area_Empleado.Name = "lbl_Area_Empleado";
             lbl_Area_Empleado.Size = new Size(45, 23);
             lbl_Area_Empleado.TabIndex = 281;
             lbl_Area_Empleado.Text = "Area";
-            // 
-            // txt_Sitio_Empleado
-            // 
-            txt_Sitio_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txt_Sitio_Empleado.Location = new Point(48, 522);
-            txt_Sitio_Empleado.Margin = new Padding(2, 3, 2, 3);
-            txt_Sitio_Empleado.Name = "txt_Sitio_Empleado";
-            txt_Sitio_Empleado.Size = new Size(311, 27);
-            txt_Sitio_Empleado.TabIndex = 280;
-            // 
-            // lbl_Sitio_Empleado
-            // 
-            lbl_Sitio_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            lbl_Sitio_Empleado.AutoSize = true;
-            lbl_Sitio_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Sitio_Empleado.Location = new Point(48, 494);
-            lbl_Sitio_Empleado.Name = "lbl_Sitio_Empleado";
-            lbl_Sitio_Empleado.Size = new Size(43, 23);
-            lbl_Sitio_Empleado.TabIndex = 279;
-            lbl_Sitio_Empleado.Text = "Sitio";
             // 
             // lbl_Ubicacion_Empleado
             // 
             lbl_Ubicacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Ubicacion_Empleado.AutoSize = true;
             lbl_Ubicacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ubicacion_Empleado.Location = new Point(48, 412);
+            lbl_Ubicacion_Empleado.Location = new Point(48, 436);
             lbl_Ubicacion_Empleado.Name = "lbl_Ubicacion_Empleado";
             lbl_Ubicacion_Empleado.Size = new Size(85, 23);
             lbl_Ubicacion_Empleado.TabIndex = 278;
@@ -183,7 +153,7 @@
             lbl_Identificacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Identificacion_Empleado.AutoSize = true;
             lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Identificacion_Empleado.Location = new Point(48, 327);
+            lbl_Identificacion_Empleado.Location = new Point(48, 339);
             lbl_Identificacion_Empleado.Name = "lbl_Identificacion_Empleado";
             lbl_Identificacion_Empleado.Size = new Size(112, 23);
             lbl_Identificacion_Empleado.TabIndex = 277;
@@ -223,43 +193,16 @@
             // txt_Identificacion_Empleado
             // 
             txt_Identificacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txt_Identificacion_Empleado.Location = new Point(48, 355);
+            txt_Identificacion_Empleado.Location = new Point(48, 367);
             txt_Identificacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
             txt_Identificacion_Empleado.Size = new Size(311, 27);
             txt_Identificacion_Empleado.TabIndex = 273;
             // 
-            // btn_Limpiar_Empleado
-            // 
-            btn_Limpiar_Empleado.Anchor = AnchorStyles.Left;
-            btn_Limpiar_Empleado.BackColor = SystemColors.Info;
-            btn_Limpiar_Empleado.FlatStyle = FlatStyle.Flat;
-            btn_Limpiar_Empleado.Location = new Point(226, 696);
-            btn_Limpiar_Empleado.Margin = new Padding(2, 3, 2, 3);
-            btn_Limpiar_Empleado.Name = "btn_Limpiar_Empleado";
-            btn_Limpiar_Empleado.Size = new Size(90, 36);
-            btn_Limpiar_Empleado.TabIndex = 271;
-            btn_Limpiar_Empleado.Text = "Limpiar";
-            btn_Limpiar_Empleado.UseVisualStyleBackColor = false;
-            // 
-            // btn_registrar_empleado
-            // 
-            btn_registrar_empleado.Anchor = AnchorStyles.Left;
-            btn_registrar_empleado.BackColor = Color.FromArgb(192, 255, 192);
-            btn_registrar_empleado.FlatStyle = FlatStyle.Flat;
-            btn_registrar_empleado.Location = new Point(81, 696);
-            btn_registrar_empleado.Margin = new Padding(2, 3, 2, 3);
-            btn_registrar_empleado.Name = "btn_registrar_empleado";
-            btn_registrar_empleado.RightToLeft = RightToLeft.Yes;
-            btn_registrar_empleado.Size = new Size(79, 36);
-            btn_registrar_empleado.TabIndex = 270;
-            btn_registrar_empleado.Text = "Registrar";
-            btn_registrar_empleado.UseVisualStyleBackColor = false;
-            // 
             // txt_Ubicacion_Empleado
             // 
             txt_Ubicacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txt_Ubicacion_Empleado.Location = new Point(48, 440);
+            txt_Ubicacion_Empleado.Location = new Point(48, 464);
             txt_Ubicacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Ubicacion_Empleado.Name = "txt_Ubicacion_Empleado";
             txt_Ubicacion_Empleado.Size = new Size(311, 27);
@@ -274,24 +217,48 @@
             txt_Nombre_Empleado.Size = new Size(311, 27);
             txt_Nombre_Empleado.TabIndex = 272;
             // 
+            // btn_limpiar
+            // 
+            btn_limpiar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_limpiar.BackColor = Color.Brown;
+            btn_limpiar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_limpiar.ForeColor = Color.White;
+            btn_limpiar.Location = new Point(223, 642);
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.Size = new Size(110, 35);
+            btn_limpiar.TabIndex = 340;
+            btn_limpiar.Text = "Limpiar";
+            btn_limpiar.UseVisualStyleBackColor = false;
+            // 
+            // btn_registrar
+            // 
+            btn_registrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_registrar.BackColor = Color.Green;
+            btn_registrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_registrar.ForeColor = Color.White;
+            btn_registrar.Location = new Point(60, 642);
+            btn_registrar.Name = "btn_registrar";
+            btn_registrar.Size = new Size(110, 35);
+            btn_registrar.TabIndex = 338;
+            btn_registrar.Text = "Registrar";
+            btn_registrar.UseVisualStyleBackColor = false;
+            // 
             // Empleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1102, 770);
+            Controls.Add(btn_limpiar);
+            Controls.Add(btn_registrar);
             Controls.Add(txt_Area_Empleado);
             Controls.Add(lbl_Area_Empleado);
-            Controls.Add(txt_Sitio_Empleado);
-            Controls.Add(lbl_Sitio_Empleado);
             Controls.Add(lbl_Ubicacion_Empleado);
             Controls.Add(lbl_Identificacion_Empleado);
             Controls.Add(lbl_Apellido_Empleado);
             Controls.Add(lbl_Nombre_Empleado);
             Controls.Add(txt_Apellido_Empleado);
             Controls.Add(txt_Identificacion_Empleado);
-            Controls.Add(btn_Limpiar_Empleado);
-            Controls.Add(btn_registrar_empleado);
             Controls.Add(txt_Ubicacion_Empleado);
             Controls.Add(txt_Nombre_Empleado);
             Controls.Add(lbl_Empleado);
@@ -312,23 +279,20 @@
         private Label lbl_Empleado;
         private TextBox txt_Area_Empleado;
         private Label lbl_Area_Empleado;
-        private TextBox txt_Sitio_Empleado;
-        private Label lbl_Sitio_Empleado;
         private Label lbl_Ubicacion_Empleado;
         private Label lbl_Identificacion_Empleado;
         private Label lbl_Apellido_Empleado;
         private Label lbl_Nombre_Empleado;
         private TextBox txt_Apellido_Empleado;
         private TextBox txt_Identificacion_Empleado;
-        private Button btn_Limpiar_Empleado;
-        private Button btn_registrar_empleado;
         private TextBox txt_Ubicacion_Empleado;
         private TextBox txt_Nombre_Empleado;
+        private Button btn_limpiar;
+        private Button btn_registrar;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn APELLIDO;
         private DataGridViewTextBoxColumn UBICACION;
-        private DataGridViewTextBoxColumn SITIO;
         private DataGridViewTextBoxColumn AREA;
     }
 }

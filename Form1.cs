@@ -184,14 +184,9 @@ namespace Proyecto_inventario
             }
         }
 
-        private void btn_empleado_Click(object sender, EventArgs e)
+        private void btn_Dashboard_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Empleado>();
-        }
-
-        private void btn_stock_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<Stock>();
+            AbrirFormulario<Dashboard>();
         }
 
         private void btn_reporte_Click(object sender, EventArgs e)
@@ -199,9 +194,14 @@ namespace Proyecto_inventario
             AbrirFormulario<Reporte>();
         }
 
-        private void btn_dashboard_Click(object sender, EventArgs e)
+        private void btn_Stock_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Dashboard>();
+            AbrirFormulario<Stock>();
+        }
+
+        private void btn_empleado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Empleado>();
         }
     }
 }
