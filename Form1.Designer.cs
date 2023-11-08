@@ -71,8 +71,8 @@
             btn_dashboard = new FontAwesome.Sharp.IconButton();
             btn_empleado = new FontAwesome.Sharp.IconButton();
             btn_reporte = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btn_Dashboards = new FontAwesome.Sharp.IconButton();
+            btn_Stocks = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel2 = new TableLayoutPanel();
             panelFormulario = new Panel();
             pictureBox4 = new PictureBox();
@@ -851,57 +851,57 @@
             btn_reporte.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_reporte.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // btn_Dashboards
             // 
-            iconButton2.Anchor = AnchorStyles.None;
-            iconButton2.AutoSize = true;
-            iconButton2.BackColor = Color.Transparent;
-            iconButton2.Cursor = Cursors.Hand;
-            iconButton2.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            iconButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
-            iconButton2.IconColor = Color.LightGray;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 65;
-            iconButton2.Location = new Point(301, 25);
-            iconButton2.Margin = new Padding(2, 3, 2, 3);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(222, 71);
-            iconButton2.TabIndex = 26;
-            iconButton2.Text = "Dashboard";
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = false;
+            btn_Dashboards.Anchor = AnchorStyles.None;
+            btn_Dashboards.AutoSize = true;
+            btn_Dashboards.BackColor = Color.Transparent;
+            btn_Dashboards.Cursor = Cursors.Hand;
+            btn_Dashboards.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
+            btn_Dashboards.FlatAppearance.BorderSize = 0;
+            btn_Dashboards.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
+            btn_Dashboards.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
+            btn_Dashboards.FlatStyle = FlatStyle.Flat;
+            btn_Dashboards.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Dashboards.ForeColor = Color.White;
+            btn_Dashboards.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
+            btn_Dashboards.IconColor = Color.LightGray;
+            btn_Dashboards.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_Dashboards.IconSize = 65;
+            btn_Dashboards.Location = new Point(301, 25);
+            btn_Dashboards.Margin = new Padding(2, 3, 2, 3);
+            btn_Dashboards.Name = "btn_Dashboards";
+            btn_Dashboards.Size = new Size(222, 71);
+            btn_Dashboards.TabIndex = 26;
+            btn_Dashboards.Text = "Dashboard";
+            btn_Dashboards.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Dashboards.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // btn_Stocks
             // 
-            iconButton1.Anchor = AnchorStyles.None;
-            iconButton1.AutoSize = true;
-            iconButton1.BackColor = Color.Transparent;
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            iconButton1.IconColor = Color.LightGray;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 65;
-            iconButton1.Location = new Point(885, 25);
-            iconButton1.Margin = new Padding(2, 3, 2, 3);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(156, 71);
-            iconButton1.TabIndex = 25;
-            iconButton1.Text = "Stock";
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            btn_Stocks.Anchor = AnchorStyles.None;
+            btn_Stocks.AutoSize = true;
+            btn_Stocks.BackColor = Color.Transparent;
+            btn_Stocks.Cursor = Cursors.Hand;
+            btn_Stocks.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
+            btn_Stocks.FlatAppearance.BorderSize = 0;
+            btn_Stocks.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
+            btn_Stocks.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
+            btn_Stocks.FlatStyle = FlatStyle.Flat;
+            btn_Stocks.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Stocks.ForeColor = Color.White;
+            btn_Stocks.IconChar = FontAwesome.Sharp.IconChar.Inbox;
+            btn_Stocks.IconColor = Color.LightGray;
+            btn_Stocks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_Stocks.IconSize = 65;
+            btn_Stocks.Location = new Point(885, 25);
+            btn_Stocks.Margin = new Padding(2, 3, 2, 3);
+            btn_Stocks.Name = "btn_Stocks";
+            btn_Stocks.Size = new Size(156, 71);
+            btn_Stocks.TabIndex = 25;
+            btn_Stocks.Text = "Stock";
+            btn_Stocks.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Stocks.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -911,8 +911,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Controls.Add(iconButton1, 3, 0);
-            tableLayoutPanel2.Controls.Add(iconButton2, 1, 0);
+            tableLayoutPanel2.Controls.Add(btn_Stocks, 3, 0);
+            tableLayoutPanel2.Controls.Add(btn_Dashboards, 1, 0);
             tableLayoutPanel2.Controls.Add(btn_reporte, 2, 0);
             tableLayoutPanel2.Controls.Add(btn_empleado, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
@@ -1027,8 +1027,8 @@
         private FontAwesome.Sharp.IconButton btn_dashboard;
         private FontAwesome.Sharp.IconButton btn_empleado;
         private FontAwesome.Sharp.IconButton btn_reporte;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btn_Dashboards;
+        private FontAwesome.Sharp.IconButton btn_Stocks;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panelFormulario;
         private PictureBox pictureBox4;
