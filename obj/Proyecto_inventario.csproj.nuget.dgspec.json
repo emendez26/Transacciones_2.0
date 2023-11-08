@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj": {}
+    "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj": {
+    "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
+        "projectUniqueName": "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
         "projectName": "Proyecto_inventario",
-        "projectPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
-        "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\obj\\",
+        "projectPath": "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
+        "packagesPath": "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Elvia Mendez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aprendiz Sistemas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

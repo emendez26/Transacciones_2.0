@@ -92,10 +92,10 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox1.Location = new Point(448, 111);
-            textBox1.Margin = new Padding(2);
+            textBox1.Location = new Point(512, 148);
+            textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(266, 23);
+            textBox1.Size = new Size(303, 27);
             textBox1.TabIndex = 241;
             // 
             // label2
@@ -103,10 +103,10 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(342, 111);
+            label2.Location = new Point(391, 148);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(86, 19);
+            label2.Size = new Size(107, 23);
             label2.TabIndex = 240;
             label2.Text = "Id de equipo";
             // 
@@ -115,10 +115,10 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(973, 111);
+            label3.Location = new Point(1112, 148);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(50, 19);
+            label3.Size = new Size(61, 23);
             label3.TabIndex = 243;
             label3.Text = "Estado";
             // 
@@ -127,10 +127,10 @@
             comboBox_estado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             comboBox_estado.Enabled = false;
             comboBox_estado.FormattingEnabled = true;
-            comboBox_estado.Location = new Point(1047, 111);
-            comboBox_estado.Margin = new Padding(2);
+            comboBox_estado.Location = new Point(1197, 148);
+            comboBox_estado.Margin = new Padding(2, 3, 2, 3);
             comboBox_estado.Name = "comboBox_estado";
-            comboBox_estado.Size = new Size(266, 23);
+            comboBox_estado.Size = new Size(303, 28);
             comboBox_estado.TabIndex = 242;
             // 
             // comboBox2
@@ -138,10 +138,10 @@
             comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             comboBox2.Enabled = false;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(1047, 144);
-            comboBox2.Margin = new Padding(2);
+            comboBox2.Location = new Point(1197, 192);
+            comboBox2.Margin = new Padding(2, 3, 2, 3);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(266, 23);
+            comboBox2.Size = new Size(303, 28);
             comboBox2.TabIndex = 248;
             // 
             // label5
@@ -149,20 +149,20 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(980, 144);
+            label5.Location = new Point(1120, 192);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(38, 19);
+            label5.Size = new Size(47, 23);
             label5.TabIndex = 247;
             label5.Text = "Sede";
             // 
             // textBoxSitio
             // 
             textBoxSitio.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBoxSitio.Location = new Point(448, 144);
-            textBoxSitio.Margin = new Padding(2);
+            textBoxSitio.Location = new Point(512, 192);
+            textBoxSitio.Margin = new Padding(2, 3, 2, 3);
             textBoxSitio.Name = "textBoxSitio";
-            textBoxSitio.Size = new Size(266, 23);
+            textBoxSitio.Size = new Size(303, 27);
             textBoxSitio.TabIndex = 246;
             // 
             // label4
@@ -170,20 +170,20 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(364, 144);
+            label4.Location = new Point(416, 192);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(35, 19);
+            label4.Size = new Size(43, 23);
             label4.TabIndex = 245;
             label4.Text = "Sitio";
             // 
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox3.Location = new Point(1047, 179);
-            textBox3.Margin = new Padding(2);
+            textBox3.Location = new Point(1197, 239);
+            textBox3.Margin = new Padding(2, 3, 2, 3);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(266, 23);
+            textBox3.Size = new Size(303, 27);
             textBox3.TabIndex = 252;
             // 
             // label7
@@ -191,19 +191,19 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(980, 179);
+            label7.Location = new Point(1120, 239);
             label7.Name = "label7";
-            label7.Size = new Size(35, 19);
+            label7.Size = new Size(43, 23);
             label7.TabIndex = 251;
             label7.Text = "Tipo";
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox2.Location = new Point(448, 179);
-            textBox2.Margin = new Padding(2);
+            textBox2.Location = new Point(512, 239);
+            textBox2.Margin = new Padding(2, 3, 2, 3);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(266, 23);
+            textBox2.Size = new Size(303, 27);
             textBox2.TabIndex = 250;
             // 
             // label6
@@ -211,19 +211,19 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(341, 179);
+            label6.Location = new Point(390, 239);
             label6.Name = "label6";
-            label6.Size = new Size(79, 19);
+            label6.Size = new Size(98, 23);
             label6.TabIndex = 249;
             label6.Text = "Descripcion";
             // 
             // textBox4
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox4.Location = new Point(1047, 215);
-            textBox4.Margin = new Padding(2);
+            textBox4.Location = new Point(1197, 287);
+            textBox4.Margin = new Padding(2, 3, 2, 3);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(266, 23);
+            textBox4.Size = new Size(303, 27);
             textBox4.TabIndex = 257;
             // 
             // label8
@@ -231,19 +231,19 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(958, 215);
+            label8.Location = new Point(1095, 287);
             label8.Name = "label8";
-            label8.Size = new Size(64, 19);
+            label8.Size = new Size(79, 23);
             label8.TabIndex = 256;
             label8.Text = "Sub-Tipo";
             // 
             // textBox5
             // 
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox5.Location = new Point(448, 215);
-            textBox5.Margin = new Padding(2);
+            textBox5.Location = new Point(512, 287);
+            textBox5.Margin = new Padding(2, 3, 2, 3);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(266, 23);
+            textBox5.Size = new Size(303, 27);
             textBox5.TabIndex = 255;
             // 
             // label9
@@ -251,19 +251,19 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(341, 218);
+            label9.Location = new Point(390, 291);
             label9.Name = "label9";
-            label9.Size = new Size(72, 19);
+            label9.Size = new Size(88, 23);
             label9.TabIndex = 254;
             label9.Text = "Fabricante";
             // 
             // textBox6
             // 
             textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox6.Location = new Point(1047, 253);
-            textBox6.Margin = new Padding(2);
+            textBox6.Location = new Point(1197, 337);
+            textBox6.Margin = new Padding(2, 3, 2, 3);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(266, 23);
+            textBox6.Size = new Size(303, 27);
             textBox6.TabIndex = 262;
             // 
             // label10
@@ -271,19 +271,19 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(966, 256);
+            label10.Location = new Point(1104, 341);
             label10.Name = "label10";
-            label10.Size = new Size(56, 19);
+            label10.Size = new Size(68, 23);
             label10.TabIndex = 261;
             label10.Text = "Modelo";
             // 
             // textBox7
             // 
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox7.Location = new Point(448, 253);
-            textBox7.Margin = new Padding(2);
+            textBox7.Location = new Point(512, 337);
+            textBox7.Margin = new Padding(2, 3, 2, 3);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(266, 23);
+            textBox7.Size = new Size(303, 27);
             textBox7.TabIndex = 260;
             // 
             // label11
@@ -291,19 +291,19 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(342, 256);
+            label11.Location = new Point(391, 341);
             label11.Name = "label11";
-            label11.Size = new Size(59, 19);
+            label11.Size = new Size(73, 23);
             label11.TabIndex = 259;
             label11.Text = "No serie";
             // 
             // textBox8
             // 
             textBox8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox8.Location = new Point(1047, 293);
-            textBox8.Margin = new Padding(2);
+            textBox8.Location = new Point(1197, 391);
+            textBox8.Margin = new Padding(2, 3, 2, 3);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(266, 23);
+            textBox8.Size = new Size(303, 27);
             textBox8.TabIndex = 267;
             // 
             // label13
@@ -311,19 +311,19 @@
             label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(958, 293);
+            label13.Location = new Point(1095, 391);
             label13.Name = "label13";
-            label13.Size = new Size(68, 19);
+            label13.Size = new Size(85, 23);
             label13.TabIndex = 266;
             label13.Text = "Ubicacion";
             // 
             // textBox9
             // 
             textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox9.Location = new Point(448, 293);
-            textBox9.Margin = new Padding(2);
+            textBox9.Location = new Point(512, 391);
+            textBox9.Margin = new Padding(2, 3, 2, 3);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(266, 23);
+            textBox9.Size = new Size(303, 27);
             textBox9.TabIndex = 265;
             // 
             // label15
@@ -331,19 +331,19 @@
             label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(355, 295);
+            label15.Location = new Point(406, 393);
             label15.Name = "label15";
-            label15.Size = new Size(37, 19);
+            label15.Size = new Size(45, 23);
             label15.TabIndex = 264;
             label15.Text = "Area";
             // 
             // textBox12
             // 
             textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox12.Location = new Point(1047, 371);
-            textBox12.Margin = new Padding(2);
+            textBox12.Location = new Point(1197, 495);
+            textBox12.Margin = new Padding(2, 3, 2, 3);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(162, 23);
+            textBox12.Size = new Size(185, 27);
             textBox12.TabIndex = 282;
             // 
             // label20
@@ -351,19 +351,19 @@
             label20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(925, 375);
+            label20.Location = new Point(1057, 500);
             label20.Name = "label20";
-            label20.Size = new Size(101, 19);
+            label20.Size = new Size(125, 23);
             label20.TabIndex = 281;
             label20.Text = "Buscar Equipos";
             // 
             // textBox13
             // 
             textBox13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox13.Location = new Point(448, 371);
-            textBox13.Margin = new Padding(2);
+            textBox13.Location = new Point(512, 495);
+            textBox13.Margin = new Padding(2, 3, 2, 3);
             textBox13.Name = "textBox13";
-            textBox13.Size = new Size(266, 23);
+            textBox13.Size = new Size(303, 27);
             textBox13.TabIndex = 280;
             // 
             // label21
@@ -371,19 +371,19 @@
             label21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(336, 371);
+            label21.Location = new Point(384, 495);
             label21.Name = "label21";
-            label21.Size = new Size(85, 19);
+            label21.Size = new Size(105, 23);
             label21.TabIndex = 279;
             label21.Text = "Responsable";
             // 
             // textBox10
             // 
             textBox10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox10.Location = new Point(1047, 335);
-            textBox10.Margin = new Padding(2);
+            textBox10.Location = new Point(1197, 447);
+            textBox10.Margin = new Padding(2, 3, 2, 3);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(266, 23);
+            textBox10.Size = new Size(303, 27);
             textBox10.TabIndex = 277;
             // 
             // label17
@@ -391,19 +391,19 @@
             label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(894, 337);
+            label17.Location = new Point(1022, 449);
             label17.Name = "label17";
-            label17.Size = new Size(126, 19);
+            label17.Size = new Size(158, 23);
             label17.TabIndex = 276;
             label17.Text = "Tipo de adquisicion";
             // 
             // textBox11
             // 
             textBox11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox11.Location = new Point(448, 331);
-            textBox11.Margin = new Padding(2);
+            textBox11.Location = new Point(512, 441);
+            textBox11.Margin = new Padding(2, 3, 2, 3);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(266, 23);
+            textBox11.Size = new Size(303, 27);
             textBox11.TabIndex = 275;
             // 
             // label18
@@ -411,19 +411,19 @@
             label18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(355, 335);
+            label18.Location = new Point(406, 447);
             label18.Name = "label18";
-            label18.Size = new Size(45, 19);
+            label18.Size = new Size(54, 23);
             label18.TabIndex = 274;
             label18.Text = "Costo";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            dateTimePicker1.Location = new Point(448, 410);
-            dateTimePicker1.Margin = new Padding(2);
+            dateTimePicker1.Location = new Point(512, 547);
+            dateTimePicker1.Margin = new Padding(2, 3, 2, 3);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(865, 23);
+            dateTimePicker1.Size = new Size(988, 27);
             dateTimePicker1.TabIndex = 284;
             // 
             // label23
@@ -431,9 +431,9 @@
             label23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(314, 410);
+            label23.Location = new Point(359, 547);
             label23.Name = "label23";
-            label23.Size = new Size(112, 19);
+            label23.Size = new Size(139, 23);
             label23.TabIndex = 283;
             label23.Text = "Fecha de servicio";
             // 
@@ -442,19 +442,19 @@
             comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "ID", "ESTADO" });
-            comboBox1.Location = new Point(1214, 371);
+            comboBox1.Location = new Point(1387, 495);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(99, 23);
+            comboBox1.Size = new Size(113, 28);
             comboBox1.TabIndex = 286;
             // 
             // btn_eliminar
             // 
             btn_eliminar.Anchor = AnchorStyles.Bottom;
-            btn_eliminar.BackColor = Color.FromArgb(255, 128, 128);
-            btn_eliminar.Location = new Point(566, 753);
-            btn_eliminar.Margin = new Padding(3, 2, 3, 2);
+            btn_eliminar.BackColor = Color.Brown;
+            btn_eliminar.Location = new Point(647, 1004);
             btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(104, 33);
+            btn_eliminar.Size = new Size(119, 44);
             btn_eliminar.TabIndex = 290;
             btn_eliminar.Text = "Eliminar";
             btn_eliminar.UseVisualStyleBackColor = false;
@@ -462,11 +462,10 @@
             // btn_insertar
             // 
             btn_insertar.Anchor = AnchorStyles.Bottom;
-            btn_insertar.BackColor = Color.FromArgb(128, 255, 128);
-            btn_insertar.Location = new Point(314, 753);
-            btn_insertar.Margin = new Padding(3, 2, 3, 2);
+            btn_insertar.BackColor = Color.Green;
+            btn_insertar.Location = new Point(359, 1004);
             btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(104, 33);
+            btn_insertar.Size = new Size(119, 44);
             btn_insertar.TabIndex = 287;
             btn_insertar.Text = "Insertar";
             btn_insertar.UseVisualStyleBackColor = false;
@@ -474,10 +473,9 @@
             // btn_editar
             // 
             btn_editar.Anchor = AnchorStyles.Bottom;
-            btn_editar.Location = new Point(438, 753);
-            btn_editar.Margin = new Padding(3, 2, 3, 2);
+            btn_editar.Location = new Point(501, 1004);
             btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(104, 33);
+            btn_editar.Size = new Size(119, 44);
             btn_editar.TabIndex = 288;
             btn_editar.Text = "Editar";
             btn_editar.UseVisualStyleBackColor = true;
@@ -489,15 +487,14 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ID, UBICACION, FABRICANTE, MODELO, DESCRIPCION, COSTO, AREA, ESTADO, SERIE, SITIO, SEDE, TIPO, SUB, RESPONSABLE, FECHA, TIPOSS });
             dataGridView2.GridColor = SystemColors.ActiveBorder;
-            dataGridView2.Location = new Point(314, 470);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(359, 627);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(999, 267);
+            dataGridView2.Size = new Size(1142, 356);
             dataGridView2.TabIndex = 289;
             // 
             // ID
@@ -620,18 +617,18 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1645, 82);
+            label1.Size = new Size(1880, 109);
             label1.TabIndex = 291;
             label1.Text = "EQUIPOS";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Equipo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.White;
-            ClientSize = new Size(1645, 861);
+            ClientSize = new Size(1880, 1102);
             Controls.Add(label1);
             Controls.Add(btn_eliminar);
             Controls.Add(btn_insertar);
@@ -675,7 +672,7 @@
             FormBorderStyle = FormBorderStyle.None;
             HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "Equipo";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Equipo";
