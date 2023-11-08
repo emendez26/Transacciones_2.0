@@ -56,6 +56,7 @@
             // 
             dg_Empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dg_Empleados.BackgroundColor = SystemColors.ActiveBorder;
+            dg_Empleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dg_Empleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dg_Empleados.Columns.AddRange(new DataGridViewColumn[] { ID, NOMBRE, APELLIDO, UBICACION, AREA });
             dg_Empleados.GridColor = SystemColors.ActiveBorder;
@@ -119,7 +120,6 @@
             // 
             // txt_Area_Empleado
             // 
-            txt_Area_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_Area_Empleado.Location = new Point(48, 559);
             txt_Area_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Area_Empleado.Name = "txt_Area_Empleado";
@@ -128,7 +128,6 @@
             // 
             // lbl_Area_Empleado
             // 
-            lbl_Area_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Area_Empleado.AutoSize = true;
             lbl_Area_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Area_Empleado.Location = new Point(48, 529);
@@ -139,7 +138,6 @@
             // 
             // lbl_Ubicacion_Empleado
             // 
-            lbl_Ubicacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Ubicacion_Empleado.AutoSize = true;
             lbl_Ubicacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Ubicacion_Empleado.Location = new Point(48, 436);
@@ -150,7 +148,6 @@
             // 
             // lbl_Identificacion_Empleado
             // 
-            lbl_Identificacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Identificacion_Empleado.AutoSize = true;
             lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Identificacion_Empleado.Location = new Point(48, 339);
@@ -161,7 +158,6 @@
             // 
             // lbl_Apellido_Empleado
             // 
-            lbl_Apellido_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Apellido_Empleado.AutoSize = true;
             lbl_Apellido_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Apellido_Empleado.Location = new Point(48, 234);
@@ -172,7 +168,6 @@
             // 
             // lbl_Nombre_Empleado
             // 
-            lbl_Nombre_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lbl_Nombre_Empleado.AutoSize = true;
             lbl_Nombre_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Nombre_Empleado.Location = new Point(48, 144);
@@ -183,7 +178,6 @@
             // 
             // txt_Apellido_Empleado
             // 
-            txt_Apellido_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_Apellido_Empleado.Location = new Point(48, 263);
             txt_Apellido_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Apellido_Empleado.Name = "txt_Apellido_Empleado";
@@ -192,7 +186,6 @@
             // 
             // txt_Identificacion_Empleado
             // 
-            txt_Identificacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_Identificacion_Empleado.Location = new Point(48, 367);
             txt_Identificacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
@@ -201,7 +194,6 @@
             // 
             // txt_Ubicacion_Empleado
             // 
-            txt_Ubicacion_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_Ubicacion_Empleado.Location = new Point(48, 464);
             txt_Ubicacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Ubicacion_Empleado.Name = "txt_Ubicacion_Empleado";
@@ -210,7 +202,6 @@
             // 
             // txt_Nombre_Empleado
             // 
-            txt_Nombre_Empleado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_Nombre_Empleado.Location = new Point(48, 170);
             txt_Nombre_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Nombre_Empleado.Name = "txt_Nombre_Empleado";
@@ -267,7 +258,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Empleado";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Empleado";
             ((System.ComponentModel.ISupportInitialize)dg_Empleados).EndInit();
             ResumeLayout(false);
