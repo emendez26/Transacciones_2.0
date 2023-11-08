@@ -23,17 +23,8 @@ namespace Proyecto_inventario
             txt_Apellido_Empleado.Text = string.Empty;
             txt_Identificacion_Empleado.Text = string.Empty;
             txt_Ubicacion_Empleado.Text = string.Empty;
-            txt_Sitio_Empleado.Text = string.Empty;
             txt_Area_Empleado.Text = string.Empty;
         }
 
-        private void txt_Area_Empleado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Area_Empleado_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

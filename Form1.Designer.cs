@@ -67,12 +67,10 @@
             pb_logo = new PictureBox();
             pictureBox2 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            btn_stock = new FontAwesome.Sharp.IconButton();
-            btn_dashboard = new FontAwesome.Sharp.IconButton();
             btn_empleado = new FontAwesome.Sharp.IconButton();
             btn_reporte = new FontAwesome.Sharp.IconButton();
-            btn_Dashboards = new FontAwesome.Sharp.IconButton();
-            btn_Stocks = new FontAwesome.Sharp.IconButton();
+            btn_Dashboard = new FontAwesome.Sharp.IconButton();
+            btn_Stock = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel2 = new TableLayoutPanel();
             panelFormulario = new Panel();
             pictureBox4 = new PictureBox();
@@ -90,7 +88,6 @@
             margen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panelFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -739,65 +736,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Controls.Add(btn_stock, 3, 0);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(200, 100);
             tableLayoutPanel1.TabIndex = 0;
-            // 
-            // btn_stock
-            // 
-            btn_stock.Anchor = AnchorStyles.None;
-            btn_stock.AutoSize = true;
-            btn_stock.BackColor = Color.Transparent;
-            btn_stock.Cursor = Cursors.Hand;
-            btn_stock.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            btn_stock.FlatAppearance.BorderSize = 0;
-            btn_stock.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            btn_stock.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            btn_stock.FlatStyle = FlatStyle.Flat;
-            btn_stock.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_stock.ForeColor = Color.White;
-            btn_stock.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            btn_stock.IconColor = Color.LightGray;
-            btn_stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_stock.IconSize = 65;
-            btn_stock.Location = new Point(152, 14);
-            btn_stock.Margin = new Padding(2, 3, 2, 3);
-            btn_stock.Name = "btn_stock";
-            btn_stock.Size = new Size(46, 71);
-            btn_stock.TabIndex = 25;
-            btn_stock.Text = "Stock";
-            btn_stock.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_stock.UseVisualStyleBackColor = false;
-            // 
-            // btn_dashboard
-            // 
-            btn_dashboard.Anchor = AnchorStyles.None;
-            btn_dashboard.AutoSize = true;
-            btn_dashboard.BackColor = Color.Transparent;
-            btn_dashboard.Cursor = Cursors.Hand;
-            btn_dashboard.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            btn_dashboard.FlatAppearance.BorderSize = 0;
-            btn_dashboard.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            btn_dashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            btn_dashboard.FlatStyle = FlatStyle.Flat;
-            btn_dashboard.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_dashboard.ForeColor = Color.White;
-            btn_dashboard.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
-            btn_dashboard.IconColor = Color.LightGray;
-            btn_dashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_dashboard.IconSize = 65;
-            btn_dashboard.Location = new Point(52, 14);
-            btn_dashboard.Margin = new Padding(2, 3, 2, 3);
-            btn_dashboard.Name = "btn_dashboard";
-            btn_dashboard.Size = new Size(46, 71);
-            btn_dashboard.TabIndex = 26;
-            btn_dashboard.Text = "Dashboard";
-            btn_dashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_dashboard.UseVisualStyleBackColor = false;
             // 
             // btn_empleado
             // 
@@ -824,6 +768,7 @@
             btn_empleado.Text = "Empleado";
             btn_empleado.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_empleado.UseVisualStyleBackColor = false;
+            btn_empleado.Click += btn_empleado_Click;
             // 
             // btn_reporte
             // 
@@ -850,58 +795,61 @@
             btn_reporte.Text = "Reportes";
             btn_reporte.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_reporte.UseVisualStyleBackColor = false;
+            btn_reporte.Click += btn_reporte_Click;
             // 
-            // btn_Dashboards
+            // btn_Dashboard
             // 
-            btn_Dashboards.Anchor = AnchorStyles.None;
-            btn_Dashboards.AutoSize = true;
-            btn_Dashboards.BackColor = Color.Transparent;
-            btn_Dashboards.Cursor = Cursors.Hand;
-            btn_Dashboards.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            btn_Dashboards.FlatAppearance.BorderSize = 0;
-            btn_Dashboards.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            btn_Dashboards.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            btn_Dashboards.FlatStyle = FlatStyle.Flat;
-            btn_Dashboards.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Dashboards.ForeColor = Color.White;
-            btn_Dashboards.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
-            btn_Dashboards.IconColor = Color.LightGray;
-            btn_Dashboards.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_Dashboards.IconSize = 65;
-            btn_Dashboards.Location = new Point(301, 25);
-            btn_Dashboards.Margin = new Padding(2, 3, 2, 3);
-            btn_Dashboards.Name = "btn_Dashboards";
-            btn_Dashboards.Size = new Size(222, 71);
-            btn_Dashboards.TabIndex = 26;
-            btn_Dashboards.Text = "Dashboard";
-            btn_Dashboards.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Dashboards.UseVisualStyleBackColor = false;
+            btn_Dashboard.Anchor = AnchorStyles.None;
+            btn_Dashboard.AutoSize = true;
+            btn_Dashboard.BackColor = Color.Transparent;
+            btn_Dashboard.Cursor = Cursors.Hand;
+            btn_Dashboard.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
+            btn_Dashboard.FlatAppearance.BorderSize = 0;
+            btn_Dashboard.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
+            btn_Dashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
+            btn_Dashboard.FlatStyle = FlatStyle.Flat;
+            btn_Dashboard.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Dashboard.ForeColor = Color.White;
+            btn_Dashboard.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
+            btn_Dashboard.IconColor = Color.LightGray;
+            btn_Dashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_Dashboard.IconSize = 65;
+            btn_Dashboard.Location = new Point(301, 25);
+            btn_Dashboard.Margin = new Padding(2, 3, 2, 3);
+            btn_Dashboard.Name = "btn_Dashboard";
+            btn_Dashboard.Size = new Size(222, 71);
+            btn_Dashboard.TabIndex = 26;
+            btn_Dashboard.Text = "Dashboard";
+            btn_Dashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Dashboard.UseVisualStyleBackColor = false;
+            btn_Dashboard.Click += btn_Dashboard_Click;
             // 
-            // btn_Stocks
+            // btn_Stock
             // 
-            btn_Stocks.Anchor = AnchorStyles.None;
-            btn_Stocks.AutoSize = true;
-            btn_Stocks.BackColor = Color.Transparent;
-            btn_Stocks.Cursor = Cursors.Hand;
-            btn_Stocks.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
-            btn_Stocks.FlatAppearance.BorderSize = 0;
-            btn_Stocks.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            btn_Stocks.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            btn_Stocks.FlatStyle = FlatStyle.Flat;
-            btn_Stocks.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Stocks.ForeColor = Color.White;
-            btn_Stocks.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            btn_Stocks.IconColor = Color.LightGray;
-            btn_Stocks.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_Stocks.IconSize = 65;
-            btn_Stocks.Location = new Point(885, 25);
-            btn_Stocks.Margin = new Padding(2, 3, 2, 3);
-            btn_Stocks.Name = "btn_Stocks";
-            btn_Stocks.Size = new Size(156, 71);
-            btn_Stocks.TabIndex = 25;
-            btn_Stocks.Text = "Stock";
-            btn_Stocks.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Stocks.UseVisualStyleBackColor = false;
+            btn_Stock.Anchor = AnchorStyles.None;
+            btn_Stock.AutoSize = true;
+            btn_Stock.BackColor = Color.Transparent;
+            btn_Stock.Cursor = Cursors.Hand;
+            btn_Stock.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
+            btn_Stock.FlatAppearance.BorderSize = 0;
+            btn_Stock.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
+            btn_Stock.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
+            btn_Stock.FlatStyle = FlatStyle.Flat;
+            btn_Stock.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Stock.ForeColor = Color.White;
+            btn_Stock.IconChar = FontAwesome.Sharp.IconChar.Inbox;
+            btn_Stock.IconColor = Color.LightGray;
+            btn_Stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_Stock.IconSize = 65;
+            btn_Stock.Location = new Point(885, 25);
+            btn_Stock.Margin = new Padding(2, 3, 2, 3);
+            btn_Stock.Name = "btn_Stock";
+            btn_Stock.Size = new Size(156, 71);
+            btn_Stock.TabIndex = 25;
+            btn_Stock.Text = "Stock";
+            btn_Stock.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Stock.UseVisualStyleBackColor = false;
+            btn_Stock.Click += btn_Stock_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -911,8 +859,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.Controls.Add(btn_Stocks, 3, 0);
-            tableLayoutPanel2.Controls.Add(btn_Dashboards, 1, 0);
+            tableLayoutPanel2.Controls.Add(btn_Stock, 3, 0);
+            tableLayoutPanel2.Controls.Add(btn_Dashboard, 1, 0);
             tableLayoutPanel2.Controls.Add(btn_reporte, 2, 0);
             tableLayoutPanel2.Controls.Add(btn_empleado, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
@@ -955,7 +903,7 @@
             Controls.Add(panel_lateral);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            MinimumSize = new Size(1400, 1028);
+            MinimumSize = new Size(1450, 1028);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tecno Fuego ";
@@ -974,8 +922,6 @@
             margen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             panelFormulario.ResumeLayout(false);
@@ -1023,12 +969,10 @@
         private PictureBox pb_logo;
         private PictureBox pictureBox2;
         private TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconButton btn_stock;
-        private FontAwesome.Sharp.IconButton btn_dashboard;
         private FontAwesome.Sharp.IconButton btn_empleado;
         private FontAwesome.Sharp.IconButton btn_reporte;
-        private FontAwesome.Sharp.IconButton btn_Dashboards;
-        private FontAwesome.Sharp.IconButton btn_Stocks;
+        private FontAwesome.Sharp.IconButton btn_Dashboard;
+        private FontAwesome.Sharp.IconButton btn_Stock;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panelFormulario;
         private PictureBox pictureBox4;
