@@ -102,25 +102,34 @@ namespace Capa_Datos
             return exitoso;
         }
 
-        public void Editar(string nombre, string desc, string marca, double precio, int stock, int id)
+        public void Update(CO_Celular celular)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarProductos";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@descrip", desc);
-            comando.Parameters.AddWithValue("@Marca", marca);
-            comando.Parameters.AddWithValue("@precio", precio);
-            comando.Parameters.AddWithValue("@stock", stock);
-            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@fecha", celular.fecha);
+            comando.Parameters.AddWithValue("@usuario", celular.usuario);
+            comando.Parameters.AddWithValue("@activo_fijo", celular.activo_fijo);
+            comando.Parameters.AddWithValue("@serial", celular.serial);
+            comando.Parameters.AddWithValue("@imei1", celular.imei1);
+            comando.Parameters.AddWithValue("@imei2", celular.imei2);
+            comando.Parameters.AddWithValue("@marca", celular.marca);
+            comando.Parameters.AddWithValue("@modelo", celular.modelo);
+            comando.Parameters.AddWithValue("@descripcion", celular.descripcion);
+            comando.Parameters.AddWithValue("@fecha_compra", celular.fecha_compra);
+            comando.Parameters.AddWithValue("@proveedor", celular.proveedor);
+            comando.Parameters.AddWithValue("@costo", celular.costo);
+            comando.Parameters.AddWithValue("@garantia_anos", celular.garantia_anos);
+            comando.Parameters.AddWithValue("@observacion", celular.observacion);
+            comando.Parameters.AddWithValue("@responsable	", celular.responsable);
 
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();
         }
 
-        public void Eliminar(int id)
+        public void Delete(int id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EliminarProducto";

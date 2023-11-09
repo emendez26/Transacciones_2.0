@@ -59,7 +59,9 @@ namespace Proyecto_inventario
 
         private void btn_form_equipo_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Equipo>();
+            //AbrirFormulario<Equipo>();
+            Equipo equip = new Equipo();
+            equip.Show();
             hideSubMenu();
         }
 
@@ -171,11 +173,11 @@ namespace Proyecto_inventario
                 formulario = new MiForm();
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.Sizable;
-                formulario.Dock = DockStyle.Fill;
-                panelFormulario.Controls.Add(formulario);
-                panelFormulario.Tag = formulario;
+                //formulario.Dock = DockStyle.Fill;
+                //panelFormulario.Controls.Add(formulario);
+                //panelFormulario.Tag = formulario;
                 formulario.Show();
-                formulario.BringToFront();
+                //formulario.BringToFront();
             }
 
             else
