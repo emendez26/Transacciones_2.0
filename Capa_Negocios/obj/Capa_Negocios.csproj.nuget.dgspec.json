@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj": {}
+    "C:\\Users\\Aprendiz Sistemas\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj": {
+    "C:\\Users\\Aprendiz Sistemas\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
+        "projectUniqueName": "C:\\Users\\Aprendiz Sistemas\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
         "projectName": "Capa_Negocios",
-        "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
-        "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\obj\\",
+        "projectPath": "C:\\Users\\Aprendiz Sistemas\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
+        "packagesPath": "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aprendiz Sistemas\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Elvia Mendez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aprendiz Sistemas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
