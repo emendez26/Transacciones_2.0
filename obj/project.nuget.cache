@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LtsVzbHLwAw9cWe4Y+rpcGWwaPfWgjesNBMSPPgSnAFQRp55yJtOaswWt7G6dQa4ynpo52BeZC4XyOcI+4j4Zg==",
+  "dgSpecHash": "/Y4r8gk9IMpoZX/shASQd9A8PkIV+6BP0+R1Q9/s7+iEaciaDUcvjcw2Dxq5tob+pY3Ee0UZ+cIQ6ST8g2D+aw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aprendiz Sistemas\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
+  "projectFilePath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Proyecto_inventario.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
-    "C:\\Users\\Aprendiz Sistemas\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
+    "C:\\Users\\Elvia Mendez\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Elvia Mendez\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
   ],
   "logs": []
 }
