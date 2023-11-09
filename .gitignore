@@ -11,3 +11,6 @@
 /.vs
 /bin/Debug
 /obj
+/obj/Debug/net6.0-windows
+/obj/Debug/net7.0-windows
+/.vs/Proyecto_inventario/DesignTimeBuild/.dtbcache.v2
