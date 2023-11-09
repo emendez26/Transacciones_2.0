@@ -1,0 +1,11 @@
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\bin\Debug\net7.0\Capa_Objetos.deps.json
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\bin\Debug\net7.0\Capa_Objetos.dll
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\bin\Debug\net7.0\Capa_Objetos.pdb
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.AssemblyInfoInputs.cache
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.AssemblyInfo.cs
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.csproj.CoreCompileInputs.cache
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.dll
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\refint\Capa_Objetos.dll
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.pdb
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\ref\Capa_Objetos.dll
