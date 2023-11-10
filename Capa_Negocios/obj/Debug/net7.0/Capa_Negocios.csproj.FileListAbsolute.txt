@@ -1,0 +1,5 @@
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.AssemblyReference.cache
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfoInputs.cache
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfo.cs
+C:\Users\Elvia Mendez\Source\Repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.CoreCompileInputs.cache

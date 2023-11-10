@@ -12,29 +12,28 @@ namespace Capa_Negocios
 {
     public class CN_celulares
     {
-        private CD_Celulares objetoCD = new CD_Celulares();
+        private CD_Celulares CD_cell = new CD_Celulares();
 
         public List<Capa_Objetos.CO_Celular> MostrarCell()
         {
 
             List<Capa_Objetos.CO_Celular> tabla = new List<Capa_Objetos.CO_Celular>();
-            tabla = objetoCD.Read();
+            tabla = CD_cell.Read();
             return tabla;
         }
         public int InsertCell(CO_Celular celular)
         {
-            return objetoCD.Insert(celular);
+            return CD_cell.Insert(celular);
         }
 
-        public void UpdateCell(CO_Celular celular)
+        public int UpdateCell(int id, CO_Celular celular)
         {
-            objetoCD.Update(celular);
+            return CD_cell.Update(id, celular);
         }
 
-        public void DeleteCell(string id)
+        public int DeleteCell(int id)
         {
-
-            objetoCD.Delete(Convert.ToInt32(id));
+            return CD_cell.Delete(id);
         }
 
 

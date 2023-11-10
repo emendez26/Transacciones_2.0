@@ -10,6 +10,7 @@ using System.Collections;
 using System.Numerics;
 using System.Reflection;
 using System.Runtime.Intrinsics.X86;
+using System.Windows.Forms;
 
 
 namespace Capa_Datos
@@ -38,25 +39,26 @@ namespace Capa_Datos
                 comando.CommandText = "[sp_Read_Celulares]";
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
-
-                foreach (DataRow dr in leer)
+                DataTable table = new DataTable();
+                table.Load(leer);
+                foreach (DataRow dr in table.Rows)
                 {
-                    celular.id = dr.Table.Columns[0].ToString();
-                    celular.fecha = DateTime.Parse(dr.Table.Columns[1].ToString());
-                    celular.usuario = dr.Table.Columns[2].ToString();
-                    celular.activo_fijo = dr.Table.Columns[3].ToString();
-                    celular.serial = dr.Table.Columns[4].ToString();
-                    celular.imei1 = dr.Table.Columns[5].ToString();
-                    celular.imei2 = dr.Table.Columns[6].ToString();
-                    celular.marca = dr.Table.Columns[7].ToString();
-                    celular.modelo = dr.Table.Columns[8].ToString();
-                    celular.descripcion = dr.Table.Columns[9].ToString();
-                    celular.fecha_compra = DateTime.Parse(dr.Table.Columns[10].ToString());
-                    celular.proveedor = dr.Table.Columns[11].ToString();
-                    celular.costo = Double.Parse(dr.Table.Columns[12].ToString());
-                    celular.garantia_anos = Int32.Parse(dr.Table.Columns[13].ToString());
-                    celular.observacion = dr.Table.Columns[14].ToString();
-                    celular.responsable = dr.Table.Columns[15].ToString();
+                    celular.id = int.Parse(dr[0].ToString());
+                    celular.fecha = DateTime.Parse(dr[1].ToString());
+                    celular.usuario = dr[2].ToString();
+                    celular.activo_fijo = dr[3].ToString();
+                    celular.serial = dr[4].ToString();
+                    celular.imei1 = dr[5].ToString();
+                    celular.imei2 = dr[6].ToString();
+                    celular.marca = dr[7].ToString();
+                    celular.modelo = dr[8].ToString();
+                    celular.descripcion = dr[9].ToString();
+                    celular.fecha_compra = DateTime.Parse(dr[10].ToString());
+                    celular.proveedor = dr[11].ToString();
+                    celular.costo = Double.Parse(dr[12].ToString());
+                    celular.garantia_anos = Int32.Parse(dr[13].ToString());
+                    celular.observacion = dr[14].ToString();
+                    celular.responsable = dr[15].ToString();
 
                     celulares.Add(celular);
                     celular = new CO_Celular();
@@ -67,14 +69,12 @@ namespace Capa_Datos
             {
                 MessageBox.Show(ex.Message);
             }
-            
-                return celulares;
-
+            return celulares;
         }
 
         public int Insert(CO_Celular celular)
         {
-            int exitoso = 1;
+            int exitoso = 0;
             //PROCEDIMNIENTO
             try
             {
@@ -82,7 +82,7 @@ namespace Capa_Datos
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Celulares";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@fecha", celular.fecha);
+                comando.Parameters.AddWithValue("@fecha", DateTime.Now);
                 comando.Parameters.AddWithValue("@usuario", celular.usuario);
                 comando.Parameters.AddWithValue("@activo_fijo", celular.activo_fijo);
                 comando.Parameters.AddWithValue("@serial", celular.serial);
@@ -101,6 +101,7 @@ namespace Capa_Datos
                 exitoso = comando.ExecuteNonQuery();
 
                 comando.Parameters.Clear();
+                conexion.CerrarConexion();
             }
             catch (Exception ex)
             {
@@ -110,44 +111,66 @@ namespace Capa_Datos
             return exitoso;
         }
 
-        public void Update(CO_Celular celular)
+        public int Update(int id, CO_Celular celular)
         {
+            int exitoso = 0;
+            try
+            {
 
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarProductos";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@fecha", celular.fecha);
-            comando.Parameters.AddWithValue("@usuario", celular.usuario);
-            comando.Parameters.AddWithValue("@activo_fijo", celular.activo_fijo);
-            comando.Parameters.AddWithValue("@serial", celular.serial);
-            comando.Parameters.AddWithValue("@imei1", celular.imei1);
-            comando.Parameters.AddWithValue("@imei2", celular.imei2);
-            comando.Parameters.AddWithValue("@marca", celular.marca);
-            comando.Parameters.AddWithValue("@modelo", celular.modelo);
-            comando.Parameters.AddWithValue("@descripcion", celular.descripcion);
-            comando.Parameters.AddWithValue("@fecha_compra", celular.fecha_compra);
-            comando.Parameters.AddWithValue("@proveedor", celular.proveedor);
-            comando.Parameters.AddWithValue("@costo", celular.costo);
-            comando.Parameters.AddWithValue("@garantia_anos", celular.garantia_anos);
-            comando.Parameters.AddWithValue("@observacion", celular.observacion);
-            comando.Parameters.AddWithValue("@responsable	", celular.responsable);
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "[sp_Update_Celulares]";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@activo_fijo", celular.activo_fijo);
+                comando.Parameters.AddWithValue("@serial", celular.serial);
+                comando.Parameters.AddWithValue("@imei1", celular.imei1);
+                comando.Parameters.AddWithValue("@imei2", celular.imei2);
+                comando.Parameters.AddWithValue("@marca", celular.marca);
+                comando.Parameters.AddWithValue("@modelo", celular.modelo);
+                comando.Parameters.AddWithValue("@descripcion", celular.descripcion);
+                comando.Parameters.AddWithValue("@fecha_compra", celular.fecha_compra);
+                comando.Parameters.AddWithValue("@proveedor", celular.proveedor);
+                comando.Parameters.AddWithValue("@costo", celular.costo);
+                comando.Parameters.AddWithValue("@garantia_anos", celular.garantia_anos);
+                comando.Parameters.AddWithValue("@observacion", celular.observacion);
+                comando.Parameters.AddWithValue("@responsable", celular.responsable);
 
-            comando.ExecuteNonQuery();
+                exitoso = comando.ExecuteNonQuery();
 
-            comando.Parameters.Clear();
+                comando.Parameters.Clear();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Message error : " + ex, "Error al guardar");
+            }
+
+            return exitoso;
         }
 
-        public void Delete(int id)
+        public int Delete(int id)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarProducto";
-            comando.CommandType = CommandType.StoredProcedure;
+            int result = 0;
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "sp_delete_celulares";
+                comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@idpro", id);
+                comando.Parameters.AddWithValue("@id_celulares", id);
 
-            comando.ExecuteNonQuery();
+                result = comando.ExecuteNonQuery();
 
-            comando.Parameters.Clear();
+                comando.Parameters.Clear();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Message error : " + ex, "Error al Editar");
+            }
+
+
+            return result;
         }
 
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SfP9EY2SQ/dbRekkYEEsJ72PNH+vclDH70TFRRStowMUTIqsvKTKF111h0QhocIn/pDC5JatjaDICBwzr+DkOQ==",
+  "dgSpecHash": "+dFOMvIFVGCPg/Y2mQmfttnXs72oKyGU+0kYU5O30DdcHysIiDy6YLmEnsA3uKXArMCZWqLM0QiTMQQw7oYb+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
+  "projectFilePath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elvia Mendez\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Elvia Mendez\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -12,7 +12,7 @@
     "C:\\Users\\Elvia Mendez\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Elvia Mendez\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\Elvia Mendez\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Elvia Mendez\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\Elvia Mendez\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

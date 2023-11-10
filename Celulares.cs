@@ -17,36 +17,18 @@ namespace Proyecto_inventario
 {
     public partial class Celulares : Form
     {
+        List<Capa_Objetos.CO_Celular> lista_celulares = new List<Capa_Objetos.CO_Celular>();
         CO_Celular celular = new CO_Celular();
         CN_celulares CN_cell = new CN_celulares();
+
+        private int id = 0;
+        private bool Editar = false;
+
+
         public Celulares()
         {
             InitializeComponent();
             celular = new CO_Celular();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_limpiar_Click(object sender, EventArgs e)
-        {
-            textBoxTel.Text = string.Empty;
-            txt_imei1.Text = string.Empty;
-            txt_imei2.Text = string.Empty;
-            textBoxNum1.Text = string.Empty;
-            textBoxNum2.Text = string.Empty;
-            textBoxCaract.Text = string.Empty;
-            txt_costo.Text = string.Empty;
-            txt_fCompra.Text = string.Empty;
-            txt_obser.Text = string.Empty;
-            txt_descrip.Text = string.Empty;
-        }
-
-        private void btn_Registrar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Guardando");
         }
 
         private void Celulares_Load(object sender, EventArgs e)
@@ -54,27 +36,12 @@ namespace Proyecto_inventario
             cargarGrid();
         }
 
-        private void btn_insertar_Click(object sender, EventArgs e)
-        {
-            string mensaje = "";
-            if (CN_cell.InsertCell(GetData()) == 1)
-            {
-                mensaje="Registro Insertado Correctamente";
-                cargarGrid();
-            }
-            else
-            {
-                mensaje="Error al guardar";
-            }
-            MessageBox.Show(mensaje);
-        }
 
         public CO_Celular GetData()
         {
 
             celular = new CO_Celular();
 
-            celular.fecha = DateTime.Now;
             celular.usuario = "Admin";
             celular.activo_fijo = txt_activoFijo.Text;
             celular.serial = txt_serial.Text;
@@ -93,20 +60,172 @@ namespace Proyecto_inventario
             return celular;
         }
 
-        private void btn_editar_Click(object sender, EventArgs e)
+        public void SetData()
         {
-            CN_cell.UpdateCell(GetData());
+            txt_activoFijo.Text = celular.activo_fijo;
+            txt_serial.Text = celular.serial;
+            txt_imei1.Text = celular.imei1;
+            txt_imei2.Text = celular.imei2;
+            txt_marca.Text = celular.marca;
+            txt_modelo.Text = celular.modelo;
+            txt_descrip.Text = celular.descripcion;
+            dtp_fcompra.Value = celular.fecha_compra;
+            txt_proveedor.Text = celular.proveedor;
+            txt_costo.Text = celular.costo.ToString();
+            txt_garantia.Text = celular.garantia_anos.ToString();
+            txt_observ.Text = celular.observacion;
+            txt_responsable.Text = celular.responsable;
         }
 
-        private void btn_eliminar_Click(object sender, EventArgs e)
+        public void mostrarDatos()
         {
-            CN_cell.DeleteCell(celular.id);
+            // lista_celulares.Select => (e => { e.id = id}
+            id = int.Parse(dtg_celulares.CurrentRow.Cells["Id"].Value.ToString());
+            celular = new CO_Celular();
+            celular = lista_celulares.Where(e => e.id.Equals(id)).FirstOrDefault();
+            SetData();
         }
 
         private void cargarGrid()
         {
             dtg_celulares.DataSource = null;
-            dtg_celulares.DataSource = CN_cell.MostrarCell();
+            dtg_celulares.Rows.Clear();
+            lista_celulares = new List<Capa_Objetos.CO_Celular>();
+            lista_celulares.AddRange(CN_cell.MostrarCell());
+            dtg_celulares.DataSource = lista_celulares;
+        }
+
+        private void limpiar()
+        {
+            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                celular = new CO_Celular();
+                txt_activoFijo.Text = string.Empty;
+                txt_imei1.Text = string.Empty;
+                txt_imei2.Text = string.Empty;
+                txt_descrip.Text = string.Empty;
+                txt_serial.Text = string.Empty;
+                txt_marca.Text = string.Empty;
+                txt_modelo.Text = string.Empty;
+                txt_proveedor.Text = string.Empty;
+                txt_garantia.Text = string.Empty;
+                txt_costo.Text = string.Empty;
+                dtp_fcompra.Text = string.Empty;
+                txt_observ.Text = string.Empty;
+                txt_responsable.Text = string.Empty;
+
+                //habilitar botones
+                ibtn_delete.Enabled = true;
+                ibtn_update.Enabled = true;
+
+                txt_activoFijo.Enabled = true;
+            }
+        }
+
+        public void guardar()
+        {
+            //INSERTAR
+            if (Editar == false)
+            {
+                try
+                {
+                    string mensaje = "";
+                    if (CN_cell.InsertCell(GetData()) != 0)
+                    {
+                        mensaje = "Registro Insertado Correctamente";
+                        cargarGrid();
+                        //impiar();
+                    }
+                    else
+                    {
+                        mensaje = "Error al guardar";
+                    }
+                    MessageBox.Show(mensaje);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                }
+            }
+            //EDITAR
+            if (Editar == true)
+            {
+                try
+                {
+                    string mensaje = "";
+                    if (CN_cell.UpdateCell(id, GetData()) != 0)
+                    {
+                        mensaje = "Registro Insertado Correctamente";
+                        cargarGrid();
+                        limpiar();
+                        Editar = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo editar los datos por: " + ex);
+                }
+            }
+
+
+
+        }
+
+        public void editar()
+        {
+
+            if (dtg_celulares.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                txt_activoFijo.Enabled = false;
+                ibtn_delete.Enabled = false;
+                ibtn_update.Enabled = false;
+                mostrarDatos();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+
+        }
+
+        public void eliminar()
+        {
+            if (dtg_celulares.SelectedRows.Count > 0)
+            {
+                id = int.Parse(dtg_celulares.CurrentRow.Cells["Id"].Value.ToString());
+                if (CN_cell.DeleteCell(id) != 0)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                    cargarGrid();
+                }
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+        }
+
+
+        private void ibtn_limpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void ibtn_save_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void ibtn_update_Click(object sender, EventArgs e)
+        {
+            editar();
+        }
+
+        private void ibtn_delete_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        private void dtg_celulares_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatos();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Capa_Objetos
 {
     public class CO_Celular
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public DateTime fecha { get; set; }
         public string usuario { get; set; }
         public string responsable { get; set; }

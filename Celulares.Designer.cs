@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Celulares));
             label11 = new Label();
-            btn_eliminar = new Button();
-            btn_insertar = new Button();
-            btn_editar = new Button();
             dtg_celulares = new DataGridView();
             lbl_Telefono = new Label();
             txt_activoFijo = new TextBox();
@@ -60,13 +58,19 @@
             txt_fCompra = new Label();
             txt_modelo = new TextBox();
             panel1 = new Panel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_update = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
             txt_marca = new TextBox();
             txt_responsable = new TextBox();
             txt_observ = new TextBox();
             dtp_fcompra = new DateTimePicker();
             label14 = new Label();
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            bindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dtg_celulares).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label11
@@ -78,72 +82,32 @@
             label11.Location = new Point(0, 0);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(1378, 73);
+            label11.Size = new Size(1382, 73);
             label11.TabIndex = 211;
             label11.Text = "CELULARES";
             label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn_eliminar
-            // 
-            btn_eliminar.Anchor = AnchorStyles.None;
-            btn_eliminar.BackColor = Color.Brown;
-            btn_eliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_eliminar.ForeColor = Color.White;
-            btn_eliminar.Location = new Point(788, 15);
-            btn_eliminar.Margin = new Padding(4);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(138, 44);
-            btn_eliminar.TabIndex = 294;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.UseVisualStyleBackColor = false;
-            btn_eliminar.Click += btn_eliminar_Click;
-            // 
-            // btn_insertar
-            // 
-            btn_insertar.Anchor = AnchorStyles.None;
-            btn_insertar.BackColor = Color.Green;
-            btn_insertar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_insertar.ForeColor = Color.White;
-            btn_insertar.Location = new Point(454, 15);
-            btn_insertar.Margin = new Padding(4);
-            btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(138, 44);
-            btn_insertar.TabIndex = 291;
-            btn_insertar.Text = "Insertar";
-            btn_insertar.UseVisualStyleBackColor = false;
-            btn_insertar.Click += btn_insertar_Click;
-            // 
-            // btn_editar
-            // 
-            btn_editar.Anchor = AnchorStyles.None;
-            btn_editar.BackColor = Color.OrangeRed;
-            btn_editar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_editar.ForeColor = Color.White;
-            btn_editar.Location = new Point(620, 15);
-            btn_editar.Margin = new Padding(4);
-            btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(138, 44);
-            btn_editar.TabIndex = 292;
-            btn_editar.Text = "Editar";
-            btn_editar.UseVisualStyleBackColor = false;
-            btn_editar.Click += btn_editar_Click;
-            // 
             // dtg_celulares
             // 
-            dtg_celulares.Anchor = AnchorStyles.None;
+            dtg_celulares.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtg_celulares.BackgroundColor = SystemColors.ActiveBorder;
             dtg_celulares.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_celulares.GridColor = SystemColors.ActiveBorder;
             dtg_celulares.Location = new Point(868, 134);
             dtg_celulares.Margin = new Padding(4);
+            dtg_celulares.MultiSelect = false;
             dtg_celulares.Name = "dtg_celulares";
+            dtg_celulares.ReadOnly = true;
             dtg_celulares.RowHeadersVisible = false;
             dtg_celulares.RowHeadersWidth = 51;
+            dtg_celulares.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             dtg_celulares.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dtg_celulares.RowTemplate.Height = 29;
-            dtg_celulares.Size = new Size(470, 431);
+            dtg_celulares.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_celulares.Size = new Size(474, 591);
             dtg_celulares.TabIndex = 293;
+            dtg_celulares.CellDoubleClick += dtg_celulares_CellDoubleClick;
             // 
             // lbl_Telefono
             // 
@@ -178,7 +142,6 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(434, 283);
@@ -190,7 +153,6 @@
             // 
             // txt_imei2
             // 
-            txt_imei2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txt_imei2.Location = new Point(544, 283);
             txt_imei2.Margin = new Padding(2, 4, 2, 4);
             txt_imei2.Name = "txt_imei2";
@@ -208,7 +170,6 @@
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(434, 387);
@@ -220,7 +181,6 @@
             // 
             // txt_costo
             // 
-            txt_costo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txt_costo.Location = new Point(544, 387);
             txt_costo.Margin = new Padding(2, 4, 2, 4);
             txt_costo.Name = "txt_costo";
@@ -229,7 +189,6 @@
             // 
             // label18
             // 
-            label18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(0, 433);
@@ -272,7 +231,6 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(0, 336);
@@ -284,7 +242,6 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(434, 337);
@@ -296,7 +253,6 @@
             // 
             // txt_proveedor
             // 
-            txt_proveedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txt_proveedor.Location = new Point(544, 336);
             txt_proveedor.Margin = new Padding(2, 4, 2, 4);
             txt_proveedor.Name = "txt_proveedor";
@@ -326,7 +282,6 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(66, 179);
@@ -338,7 +293,6 @@
             // 
             // txt_serial
             // 
-            txt_serial.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txt_serial.Location = new Point(134, 179);
             txt_serial.Margin = new Padding(2, 4, 2, 4);
             txt_serial.Name = "txt_serial";
@@ -359,7 +313,7 @@
             // 
             // label20
             // 
-            label20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label20.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(855, 88);
@@ -371,7 +325,6 @@
             // 
             // txt_buscar
             // 
-            txt_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txt_buscar.Location = new Point(1025, 88);
             txt_buscar.Margin = new Padding(2, 4, 2, 4);
             txt_buscar.Name = "txt_buscar";
@@ -401,14 +354,70 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_editar);
-            panel1.Controls.Add(btn_insertar);
-            panel1.Controls.Add(btn_eliminar);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 595);
+            panel1.Controls.Add(ibtn_delete);
+            panel1.Controls.Add(ibtn_update);
+            panel1.Controls.Add(ibtn_save);
+            panel1.Location = new Point(0, 621);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1378, 81);
+            panel1.Size = new Size(808, 104);
             panel1.TabIndex = 300;
+            // 
+            // ibtn_delete
+            // 
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_delete.Location = new Point(497, 23);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(116, 46);
+            ibtn_delete.TabIndex = 0;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            ibtn_delete.Click += ibtn_delete_Click;
+            // 
+            // ibtn_update
+            // 
+            ibtn_update.BackColor = Color.Transparent;
+            ibtn_update.Cursor = Cursors.Hand;
+            ibtn_update.FlatAppearance.BorderSize = 0;
+            ibtn_update.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_update.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_update.FlatStyle = FlatStyle.Flat;
+            ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            ibtn_update.IconColor = Color.Black;
+            ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_update.Location = new Point(346, 23);
+            ibtn_update.Name = "ibtn_update";
+            ibtn_update.Size = new Size(116, 46);
+            ibtn_update.TabIndex = 0;
+            ibtn_update.Tag = "EDITAR";
+            ibtn_update.UseVisualStyleBackColor = false;
+            ibtn_update.Click += ibtn_update_Click;
+            // 
+            // ibtn_save
+            // 
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(193, 23);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(116, 46);
+            ibtn_save.TabIndex = 0;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            ibtn_save.Click += ibtn_save_Click;
             // 
             // txt_marca
             // 
@@ -426,10 +435,10 @@
             // 
             // txt_observ
             // 
-            txt_observ.Location = new Point(134, 433);
+            txt_observ.Location = new Point(12, 466);
             txt_observ.Multiline = true;
             txt_observ.Name = "txt_observ";
-            txt_observ.Size = new Size(674, 132);
+            txt_observ.Size = new Size(796, 123);
             txt_observ.TabIndex = 13;
             // 
             // dtp_fcompra
@@ -453,13 +462,36 @@
             label14.TabIndex = 299;
             label14.Text = "Modelo";
             // 
+            // ibtn_limpiar
+            // 
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(440, 84);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(66, 43);
+            ibtn_limpiar.TabIndex = 302;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.Click += ibtn_limpiar_Click;
+            // 
             // Celulares
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1378, 676);
+            ClientSize = new Size(1382, 752);
+            Controls.Add(ibtn_limpiar);
             Controls.Add(dtp_fcompra);
             Controls.Add(txt_observ);
             Controls.Add(txt_responsable);
@@ -502,6 +534,7 @@
             Load += Celulares_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_celulares).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -510,9 +543,6 @@
         private TextBox textBoxTel;
         private Label txt_fCompra;
         private Label label11;
-        private Button btn_eliminar;
-        private Button btn_insertar;
-        private Button btn_editar;
         private DataGridView dtg_celulares;
         private Label lbl_Telefono;
         private TextBox txt_activoFijo;
@@ -551,5 +581,10 @@
         private TextBox txt_observ;
         private DateTimePicker dtp_fcompra;
         private Label label14;
+        private FontAwesome.Sharp.IconButton ibtn_limpiar;
+        private BindingSource bindingSource1;
+        private FontAwesome.Sharp.IconButton ibtn_delete;
+        private FontAwesome.Sharp.IconButton ibtn_update;
+        private FontAwesome.Sharp.IconButton ibtn_save;
     }
 }

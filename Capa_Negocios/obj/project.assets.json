@@ -124,10 +124,10 @@
           }
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {
+      "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
             "related": ".xml"
           }
         },
@@ -152,7 +152,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Capa_Objetos": "1.0.0",
-          "System.Data.SqlClient": "4.8.5"
+          "System.Data.SqlClient": "4.8.5",
+          "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Capa_Datos.dll": {}
@@ -433,13 +434,14 @@
         "version.txt"
       ]
     },
-    "System.Security.Principal.Windows/4.7.0": {
-      "sha512": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+    "System.Security.Principal.Windows/5.0.0": {
+      "sha512": "t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "type": "package",
-      "path": "system.security.principal.windows/4.7.0",
+      "path": "system.security.principal.windows/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.Principal.Windows.dll",
@@ -481,7 +483,7 @@
         "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.principal.windows.4.7.0.nupkg.sha512",
+        "system.security.principal.windows.5.0.0.nupkg.sha512",
         "system.security.principal.windows.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -509,9 +511,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
+      "projectUniqueName": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
       "projectName": "Capa_Negocios",
-      "projectPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
+      "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
       "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Negocios\\obj\\",
       "projectStyle": "PackageReference",
@@ -530,8 +532,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Datos\\Capa_Datos.csproj": {
-              "projectPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Datos\\Capa_Datos.csproj"
+            "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Datos\\Capa_Datos.csproj": {
+              "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Datos\\Capa_Datos.csproj"
             }
           }
         }
