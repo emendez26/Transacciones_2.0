@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj": {}
+    "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj": {
+    "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj",
+        "projectUniqueName": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj",
         "projectName": "Capa_Objetos",
-        "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj",
+        "projectPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Objetos\\Capa_Objetos.csproj",
         "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Objetos\\obj\\",
         "projectStyle": "PackageReference",

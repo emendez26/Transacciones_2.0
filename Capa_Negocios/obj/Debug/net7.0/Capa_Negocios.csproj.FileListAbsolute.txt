@@ -1,10 +1,16 @@
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Negocios.deps.json
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Negocios.dll
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Negocios.pdb
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Datos.dll
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Objetos.dll
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Datos.pdb
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\bin\Debug\net7.0\Capa_Objetos.pdb
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.AssemblyReference.cache
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfoInputs.cache
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfo.cs
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.CopyComplete
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.dll
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\refint\Capa_Negocios.dll
 C:\Users\Elvia Mendez\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.pdb
