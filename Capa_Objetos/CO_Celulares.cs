@@ -20,7 +20,7 @@ namespace Capa_Objetos
         public string marca { get; set; }
         public string modelo { get; set; }
         public string descripcion { get; set; }
-        public DateOnly fecha_compra { get; set; }
+        public DateTime fecha_compra { get; set; }
         public string proveedor { get; set; }
         public double costo { get; set; }
         public int garantia_anos { get; set; }

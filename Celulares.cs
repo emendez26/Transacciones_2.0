@@ -51,16 +51,27 @@ namespace Proyecto_inventario
 
         private void Celulares_Load(object sender, EventArgs e)
         {
-            dtg_celulares.DataSource = CN_cell.MostrarCell();
+            cargarGrid();
         }
 
         private void btn_insertar_Click(object sender, EventArgs e)
         {
-            CN_cell.InsertCell(GetData());
+            string mensaje = "";
+            if (CN_cell.InsertCell(GetData()) == 1)
+            {
+                mensaje="Registro Insertado Correctamente";
+                cargarGrid();
+            }
+            else
+            {
+                mensaje="Error al guardar";
+            }
+            MessageBox.Show(mensaje);
         }
 
         public CO_Celular GetData()
         {
+
             celular = new CO_Celular();
 
             celular.fecha = DateTime.Now;
@@ -72,7 +83,7 @@ namespace Proyecto_inventario
             celular.marca = txt_marca.Text;
             celular.modelo = txt_modelo.Text;
             celular.descripcion = txt_descrip.Text;
-            celular.fecha_compra = DateOnly.Parse(txt_fCompra.Text);
+            celular.fecha_compra = DateTime.Parse(dtp_fcompra.Value.ToShortDateString());
             celular.proveedor = txt_proveedor.Text;
             celular.costo = double.Parse(txt_costo.Text);
             celular.garantia_anos = int.Parse(txt_garantia.Text);
@@ -90,6 +101,12 @@ namespace Proyecto_inventario
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             CN_cell.DeleteCell(celular.id);
+        }
+
+        private void cargarGrid()
+        {
+            dtg_celulares.DataSource = null;
+            dtg_celulares.DataSource = CN_cell.MostrarCell();
         }
     }
 }

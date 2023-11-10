@@ -31,36 +31,44 @@ namespace Capa_Datos
 
         public List<CO_Celular> Read()
         {
-            conexion.iniciarBD(DB_TecnoFuego);
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "sp_Read_celulares";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-
-            foreach (DataRow dr in leer)
+            try
             {
-                celular.id = dr.Table.Columns[0].ToString();
-                celular.fecha = DateTime.Parse(dr.Table.Columns[1].ToString());
-                celular.usuario = dr.Table.Columns[2].ToString();
-                celular.activo_fijo = dr.Table.Columns[3].ToString();
-                celular.serial = dr.Table.Columns[4].ToString();
-                celular.imei1 = dr.Table.Columns[5].ToString();
-                celular.imei2 = dr.Table.Columns[6].ToString();
-                celular.marca = dr.Table.Columns[7].ToString();
-                celular.modelo = dr.Table.Columns[8].ToString();
-                celular.descripcion = dr.Table.Columns[9].ToString();
-                celular.fecha_compra = DateOnly.Parse(dr.Table.Columns[10].ToString());
-                celular.proveedor = dr.Table.Columns[11].ToString();
-                celular.costo = Double.Parse(dr.Table.Columns[12].ToString());
-                celular.garantia_anos = Int32.Parse(dr.Table.Columns[13].ToString());
-                celular.observacion = dr.Table.Columns[14].ToString();
-                celular.responsable = dr.Table.Columns[15].ToString();
+                conexion.iniciarBD(DB_TecnoFuego);
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "[sp_Read_Celulares]";
+                comando.CommandType = CommandType.StoredProcedure;
+                leer = comando.ExecuteReader();
 
-                celulares.Add(celular);
-                celular = new CO_Celular();
+                foreach (DataRow dr in leer)
+                {
+                    celular.id = dr.Table.Columns[0].ToString();
+                    celular.fecha = DateTime.Parse(dr.Table.Columns[1].ToString());
+                    celular.usuario = dr.Table.Columns[2].ToString();
+                    celular.activo_fijo = dr.Table.Columns[3].ToString();
+                    celular.serial = dr.Table.Columns[4].ToString();
+                    celular.imei1 = dr.Table.Columns[5].ToString();
+                    celular.imei2 = dr.Table.Columns[6].ToString();
+                    celular.marca = dr.Table.Columns[7].ToString();
+                    celular.modelo = dr.Table.Columns[8].ToString();
+                    celular.descripcion = dr.Table.Columns[9].ToString();
+                    celular.fecha_compra = DateTime.Parse(dr.Table.Columns[10].ToString());
+                    celular.proveedor = dr.Table.Columns[11].ToString();
+                    celular.costo = Double.Parse(dr.Table.Columns[12].ToString());
+                    celular.garantia_anos = Int32.Parse(dr.Table.Columns[13].ToString());
+                    celular.observacion = dr.Table.Columns[14].ToString();
+                    celular.responsable = dr.Table.Columns[15].ToString();
+
+                    celulares.Add(celular);
+                    celular = new CO_Celular();
+                }
+                conexion.CerrarConexion();
             }
-            conexion.CerrarConexion();
-            return celulares;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+                return celulares;
 
         }
 
@@ -88,7 +96,7 @@ namespace Capa_Datos
                 comando.Parameters.AddWithValue("@costo", celular.costo);
                 comando.Parameters.AddWithValue("@garantia_anos", celular.garantia_anos);
                 comando.Parameters.AddWithValue("@observacion", celular.observacion);
-                comando.Parameters.AddWithValue("@responsable	", celular.responsable);
+                comando.Parameters.AddWithValue("@responsable", celular.responsable);
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -96,7 +104,7 @@ namespace Capa_Datos
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Message error : " + ex, "Error al guardar");
             }
 
             return exitoso;

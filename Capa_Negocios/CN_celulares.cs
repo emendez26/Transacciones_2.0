@@ -21,10 +21,9 @@ namespace Capa_Negocios
             tabla = objetoCD.Read();
             return tabla;
         }
-        public void InsertCell(CO_Celular celular)
+        public int InsertCell(CO_Celular celular)
         {
-
-            objetoCD.Insert(celular);
+            return objetoCD.Insert(celular);
         }
 
         public void UpdateCell(CO_Celular celular)

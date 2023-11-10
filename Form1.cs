@@ -84,7 +84,9 @@ namespace Proyecto_inventario
 
         private void btn_form_Celulares_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Celulares>();
+            //AbrirFormulario<Celulares>();
+            Celulares cell = new Celulares();
+            cell.Show();
             hideSubMenu();
         }
 

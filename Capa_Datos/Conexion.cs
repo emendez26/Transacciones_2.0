@@ -25,9 +25,8 @@ namespace Capa_Datos
             {
                 BaseDatos = "DB_TECNOFUEGO";
             }
-
             string con = "Server=10.25.5.15;DataBase=" + BaseDatos + "; user=sa; password=TecFire8901%; Integrated Security=false";
-            SqlConnection conexion = new SqlConnection(con);
+            conexion = new SqlConnection(con);
         }
 
         public SqlConnection AbrirConexion()
