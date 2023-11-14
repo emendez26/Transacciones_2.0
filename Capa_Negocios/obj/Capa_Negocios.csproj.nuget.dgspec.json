@@ -11,7 +11,7 @@
         "projectName": "Capa_Datos",
         "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Datos\\Capa_Datos.csproj",
         "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Datos\\obj\\",
+        "outputPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvia Mendez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -80,7 +80,7 @@
         "projectName": "Capa_Negocios",
         "projectPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\Capa_Negocios.csproj",
         "packagesPath": "C:\\Users\\Elvia Mendez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvia Mendez\\Source\\Repos\\Transacciones_4.0\\Capa_Negocios\\obj\\",
+        "outputPath": "C:\\Users\\Elvia Mendez\\source\\repos\\Transacciones_4.0\\Capa_Negocios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvia Mendez\\AppData\\Roaming\\NuGet\\NuGet.Config",
