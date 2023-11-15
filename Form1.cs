@@ -109,7 +109,9 @@ namespace Proyecto_inventario
 
         private void btn_form_Repuestos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Repuestos>();
+            //AbrirFormulario<Repuestos>();
+            Repuestos repu = new Repuestos();
+            repu.Show();
             hideSubMenu();
         }
 

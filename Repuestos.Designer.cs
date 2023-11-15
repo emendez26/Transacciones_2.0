@@ -29,400 +29,369 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Repuestos));
-            textBox9 = new TextBox();
-            label10 = new Label();
-            textBox8 = new TextBox();
-            label9 = new Label();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            dataGridView1 = new DataGridView();
-            comboBox2 = new ComboBox();
+            txt_buscar = new TextBox();
+            lbl_buscar = new Label();
+            txt_costo = new TextBox();
+            lbl_costo = new Label();
+            txt_modelo = new TextBox();
+            txt_estado = new TextBox();
+            txt_caracteristica = new TextBox();
+            txt_marca = new TextBox();
+            txt_Trepuesto = new TextBox();
+            lbl_estado = new Label();
+            lbl_Trepuesto = new Label();
+            lbl_caracteristica = new Label();
+            lbl_modelo = new Label();
+            lbl_marca = new Label();
             label11 = new Label();
-            btn_eliminar = new Button();
-            btn_insertar = new Button();
-            btn_editar = new Button();
-            TIPO = new DataGridViewTextBoxColumn();
-            DESCRIPCION = new DataGridViewTextBoxColumn();
-            MARCA = new DataGridViewTextBoxColumn();
-            ESTADO = new DataGridViewTextBoxColumn();
-            COSTO = new DataGridViewTextBoxColumn();
-            OBSEVACIONES = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dg_repuestos = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_update = new FontAwesome.Sharp.IconButton();
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)dg_repuestos).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox9
+            // txt_buscar
             // 
-            textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox9.Location = new Point(178, 300);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(559, 27);
-            textBox9.TabIndex = 42;
+            txt_buscar.Location = new Point(755, 107);
+            txt_buscar.Name = "txt_buscar";
+            txt_buscar.Size = new Size(304, 27);
+            txt_buscar.TabIndex = 42;
             // 
-            // label10
+            // lbl_buscar
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(29, 301);
-            label10.Name = "label10";
-            label10.Size = new Size(132, 23);
-            label10.TabIndex = 41;
-            label10.Text = "Buscar repuesto";
+            lbl_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lbl_buscar.AutoSize = true;
+            lbl_buscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_buscar.Location = new Point(605, 107);
+            lbl_buscar.Name = "lbl_buscar";
+            lbl_buscar.Size = new Size(132, 23);
+            lbl_buscar.TabIndex = 41;
+            lbl_buscar.Text = "Buscar repuesto";
             // 
-            // textBox8
+            // txt_costo
             // 
-            textBox8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox8.Location = new Point(743, 168);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(306, 27);
-            textBox8.TabIndex = 40;
+            txt_costo.Location = new Point(214, 347);
+            txt_costo.Name = "txt_costo";
+            txt_costo.Size = new Size(193, 27);
+            txt_costo.TabIndex = 40;
+            txt_costo.KeyPress += txt_costo_KeyPress;
             // 
-            // label9
+            // lbl_costo
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(655, 168);
-            label9.Name = "label9";
-            label9.Size = new Size(54, 23);
-            label9.TabIndex = 39;
-            label9.Text = "Costo";
+            lbl_costo.AutoSize = true;
+            lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_costo.Location = new Point(126, 347);
+            lbl_costo.Name = "lbl_costo";
+            lbl_costo.Size = new Size(54, 23);
+            lbl_costo.TabIndex = 39;
+            lbl_costo.Text = "Costo";
             // 
-            // textBox7
+            // txt_modelo
             // 
-            textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox7.Location = new Point(743, 267);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(306, 27);
-            textBox7.TabIndex = 37;
+            txt_modelo.Location = new Point(214, 411);
+            txt_modelo.Name = "txt_modelo";
+            txt_modelo.Size = new Size(193, 27);
+            txt_modelo.TabIndex = 36;
             // 
-            // textBox6
+            // txt_estado
             // 
-            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox6.Location = new Point(743, 201);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(306, 27);
-            textBox6.TabIndex = 36;
+            txt_estado.Location = new Point(214, 229);
+            txt_estado.Name = "txt_estado";
+            txt_estado.Size = new Size(193, 27);
+            txt_estado.TabIndex = 34;
             // 
-            // textBox5
+            // txt_caracteristica
             // 
-            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox5.Location = new Point(743, 234);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(306, 27);
-            textBox5.TabIndex = 35;
+            txt_caracteristica.Location = new Point(214, 287);
+            txt_caracteristica.Name = "txt_caracteristica";
+            txt_caracteristica.Size = new Size(193, 27);
+            txt_caracteristica.TabIndex = 33;
             // 
-            // textBox4
+            // txt_marca
             // 
-            textBox4.Location = new Point(178, 267);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(306, 27);
-            textBox4.TabIndex = 34;
+            txt_marca.Location = new Point(214, 168);
+            txt_marca.Name = "txt_marca";
+            txt_marca.Size = new Size(193, 27);
+            txt_marca.TabIndex = 32;
             // 
-            // textBox3
+            // txt_Trepuesto
             // 
-            textBox3.Location = new Point(178, 234);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(306, 27);
-            textBox3.TabIndex = 33;
+            txt_Trepuesto.Location = new Point(214, 107);
+            txt_Trepuesto.Name = "txt_Trepuesto";
+            txt_Trepuesto.Size = new Size(193, 27);
+            txt_Trepuesto.TabIndex = 31;
+            txt_Trepuesto.KeyPress += txt_Trepuesto_KeyPress;
             // 
-            // textBox2
+            // lbl_estado
             // 
-            textBox2.Location = new Point(178, 201);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(306, 27);
-            textBox2.TabIndex = 32;
+            lbl_estado.AutoSize = true;
+            lbl_estado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_estado.Location = new Point(135, 234);
+            lbl_estado.Name = "lbl_estado";
+            lbl_estado.Size = new Size(61, 23);
+            lbl_estado.TabIndex = 28;
+            lbl_estado.Text = "Estado";
             // 
-            // textBox1
+            // lbl_Trepuesto
             // 
-            textBox1.Location = new Point(178, 168);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(306, 27);
-            textBox1.TabIndex = 31;
+            lbl_Trepuesto.AutoSize = true;
+            lbl_Trepuesto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Trepuesto.Location = new Point(53, 107);
+            lbl_Trepuesto.Name = "lbl_Trepuesto";
+            lbl_Trepuesto.Size = new Size(143, 23);
+            lbl_Trepuesto.TabIndex = 27;
+            lbl_Trepuesto.Text = "Tipo de Repuesto";
             // 
-            // label8
+            // lbl_caracteristica
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(606, 269);
-            label8.Name = "label8";
-            label8.Size = new Size(120, 23);
-            label8.TabIndex = 30;
-            label8.Text = "Observaciones";
+            lbl_caracteristica.AutoSize = true;
+            lbl_caracteristica.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_caracteristica.Location = new Point(61, 294);
+            lbl_caracteristica.Name = "lbl_caracteristica";
+            lbl_caracteristica.Size = new Size(119, 23);
+            lbl_caracteristica.TabIndex = 26;
+            lbl_caracteristica.Text = "Caracteristicas";
             // 
-            // label7
+            // lbl_modelo
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(628, 235);
-            label7.Name = "label7";
-            label7.Size = new Size(98, 23);
-            label7.TabIndex = 29;
-            label7.Text = "Descripcion";
+            lbl_modelo.AutoSize = true;
+            lbl_modelo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_modelo.Location = new Point(112, 406);
+            lbl_modelo.Name = "lbl_modelo";
+            lbl_modelo.Size = new Size(68, 23);
+            lbl_modelo.TabIndex = 25;
+            lbl_modelo.Text = "Modelo";
             // 
-            // label6
+            // lbl_marca
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(66, 272);
-            label6.Name = "label6";
-            label6.Size = new Size(61, 23);
-            label6.TabIndex = 28;
-            label6.Text = "Estado";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(28, 168);
-            label5.Name = "label5";
-            label5.Size = new Size(143, 23);
-            label5.TabIndex = 27;
-            label5.Text = "Tipo de Repuesto";
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(618, 201);
-            label4.Name = "label4";
-            label4.Size = new Size(119, 23);
-            label4.TabIndex = 26;
-            label4.Text = "Caracteristicas";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(66, 238);
-            label3.Name = "label3";
-            label3.Size = new Size(68, 23);
-            label3.TabIndex = 25;
-            label3.Text = "Modelo";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(66, 202);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 23);
-            label2.TabIndex = 24;
-            label2.Text = "Marca";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = SystemColors.ActiveBorder;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TIPO, DESCRIPCION, MARCA, ESTADO, COSTO, OBSEVACIONES });
-            dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(66, 347);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(983, 402);
-            dataGridView1.TabIndex = 45;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "TIPO DE REPUESTO", "MARCA" });
-            comboBox2.Location = new Point(743, 299);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(306, 28);
-            comboBox2.TabIndex = 330;
+            lbl_marca.AutoSize = true;
+            lbl_marca.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_marca.Location = new Point(139, 169);
+            lbl_marca.Name = "lbl_marca";
+            lbl_marca.Size = new Size(57, 23);
+            lbl_marca.TabIndex = 24;
+            lbl_marca.Text = "Marca";
             // 
             // label11
             // 
             label11.BackColor = Color.Firebrick;
             label11.Dock = DockStyle.Top;
-            label11.Font = new Font("Segoe UI", 30.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Font = new Font("Segoe UI", 25F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
             label11.Location = new Point(0, 0);
             label11.Name = "label11";
-            label11.Size = new Size(1102, 109);
+            label11.Size = new Size(1102, 67);
             label11.TabIndex = 334;
             label11.Text = "REPUESTOS";
             label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn_eliminar
+            // dg_repuestos
             // 
-            btn_eliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_eliminar.BackColor = Color.Brown;
-            btn_eliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_eliminar.ForeColor = Color.White;
-            btn_eliminar.Location = new Point(333, 775);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(110, 35);
-            btn_eliminar.TabIndex = 337;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.UseVisualStyleBackColor = false;
+            dg_repuestos.AllowUserToOrderColumns = true;
+            dg_repuestos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_repuestos.BackgroundColor = Color.White;
+            dg_repuestos.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_repuestos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_repuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_repuestos.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_repuestos.DefaultCellStyle = dataGridViewCellStyle2;
+            dg_repuestos.EnableHeadersVisualStyles = false;
+            dg_repuestos.GridColor = Color.Gainsboro;
+            dg_repuestos.Location = new Point(605, 161);
+            dg_repuestos.Name = "dg_repuestos";
+            dg_repuestos.RowHeadersVisible = false;
+            dg_repuestos.RowHeadersWidth = 51;
+            dg_repuestos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dg_repuestos.RowTemplate.Height = 29;
+            dg_repuestos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_repuestos.Size = new Size(454, 443);
+            dg_repuestos.TabIndex = 335;
+            dg_repuestos.CellContentDoubleClick += dg_repuestos_CellContentDoubleClick;
             // 
-            // btn_insertar
+            // tableLayoutPanel1
             // 
-            btn_insertar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_insertar.BackColor = Color.Green;
-            btn_insertar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_insertar.ForeColor = Color.White;
-            btn_insertar.Location = new Point(66, 775);
-            btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(110, 35);
-            btn_insertar.TabIndex = 335;
-            btn_insertar.Text = "Insertar";
-            btn_insertar.UseVisualStyleBackColor = false;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
+            tableLayoutPanel1.Location = new Point(22, 489);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(565, 115);
+            tableLayoutPanel1.TabIndex = 336;
             // 
-            // btn_editar
+            // ibtn_delete
             // 
-            btn_editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_editar.BackColor = Color.OrangeRed;
-            btn_editar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_editar.ForeColor = Color.White;
-            btn_editar.Location = new Point(199, 775);
-            btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(110, 35);
-            btn_editar.TabIndex = 336;
-            btn_editar.Text = "Editar";
-            btn_editar.UseVisualStyleBackColor = false;
+            ibtn_delete.Anchor = AnchorStyles.None;
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_delete.Location = new Point(424, 29);
+            ibtn_delete.Margin = new Padding(2);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(93, 57);
+            ibtn_delete.TabIndex = 304;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            ibtn_delete.Click += ibtn_delete_Click;
             // 
-            // TIPO
+            // ibtn_save
             // 
-            TIPO.FillWeight = 116.127258F;
-            TIPO.HeaderText = "TIPO";
-            TIPO.MinimumWidth = 6;
-            TIPO.Name = "TIPO";
-            TIPO.Width = 192;
+            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(47, 31);
+            ibtn_save.Margin = new Padding(2);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(93, 53);
+            ibtn_save.TabIndex = 306;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            ibtn_save.Click += ibtn_save_Click;
             // 
-            // DESCRIPCION
+            // ibtn_update
             // 
-            DESCRIPCION.FillWeight = 116.127258F;
-            DESCRIPCION.HeaderText = "DESCRIPCION";
-            DESCRIPCION.MinimumWidth = 8;
-            DESCRIPCION.Name = "DESCRIPCION";
-            DESCRIPCION.Width = 300;
+            ibtn_update.Anchor = AnchorStyles.None;
+            ibtn_update.BackColor = Color.Transparent;
+            ibtn_update.Cursor = Cursors.Hand;
+            ibtn_update.FlatAppearance.BorderSize = 0;
+            ibtn_update.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_update.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_update.FlatStyle = FlatStyle.Flat;
+            ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            ibtn_update.IconColor = Color.Black;
+            ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_update.Location = new Point(235, 28);
+            ibtn_update.Margin = new Padding(2);
+            ibtn_update.Name = "ibtn_update";
+            ibtn_update.Size = new Size(93, 58);
+            ibtn_update.TabIndex = 305;
+            ibtn_update.Tag = "EDITAR";
+            ibtn_update.UseVisualStyleBackColor = false;
+            ibtn_update.Click += ibtn_update_Click;
             // 
-            // MARCA
+            // ibtn_limpiar
             // 
-            MARCA.HeaderText = "MARCA";
-            MARCA.MinimumWidth = 6;
-            MARCA.Name = "MARCA";
-            MARCA.Width = 125;
-            // 
-            // ESTADO
-            // 
-            ESTADO.FillWeight = 116.127258F;
-            ESTADO.HeaderText = "ESTADO";
-            ESTADO.MinimumWidth = 6;
-            ESTADO.Name = "ESTADO";
-            ESTADO.Width = 192;
-            // 
-            // COSTO
-            // 
-            COSTO.FillWeight = 61.69412F;
-            COSTO.HeaderText = "COSTO";
-            COSTO.MinimumWidth = 6;
-            COSTO.Name = "COSTO";
-            COSTO.Width = 102;
-            // 
-            // OBSEVACIONES
-            // 
-            OBSEVACIONES.FillWeight = 116.127258F;
-            OBSEVACIONES.HeaderText = "OBSEVACIONES";
-            OBSEVACIONES.MinimumWidth = 6;
-            OBSEVACIONES.Name = "OBSEVACIONES";
-            OBSEVACIONES.Width = 600;
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(412, 101);
+            ibtn_limpiar.Margin = new Padding(2);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(53, 36);
+            ibtn_limpiar.TabIndex = 337;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.Click += ibtn_limpiar_Click;
             // 
             // Repuestos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 859);
-            Controls.Add(btn_eliminar);
-            Controls.Add(btn_insertar);
-            Controls.Add(btn_editar);
+            ClientSize = new Size(1102, 624);
+            Controls.Add(ibtn_limpiar);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dg_repuestos);
             Controls.Add(label11);
-            Controls.Add(comboBox2);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox9);
-            Controls.Add(label10);
-            Controls.Add(textBox8);
-            Controls.Add(label9);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(txt_buscar);
+            Controls.Add(lbl_buscar);
+            Controls.Add(txt_costo);
+            Controls.Add(lbl_costo);
+            Controls.Add(txt_modelo);
+            Controls.Add(txt_estado);
+            Controls.Add(txt_caracteristica);
+            Controls.Add(txt_marca);
+            Controls.Add(txt_Trepuesto);
+            Controls.Add(lbl_estado);
+            Controls.Add(lbl_Trepuesto);
+            Controls.Add(lbl_caracteristica);
+            Controls.Add(lbl_modelo);
+            Controls.Add(lbl_marca);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(1120, 671);
             Name = "Repuestos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Repuestos";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Repuestos_Load;
+            ((System.ComponentModel.ISupportInitialize)dg_repuestos).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBox9;
-        private Label label10;
-        private TextBox textBox8;
-        private Label label9;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private DataGridView dataGridView1;
-        private ComboBox comboBox2;
+        private TextBox txt_buscar;
+        private Label lbl_buscar;
+        private TextBox txt_costo;
+        private Label lbl_costo;
+        private TextBox txt_modelo;
+        private TextBox txt_estado;
+        private TextBox txt_caracteristica;
+        private TextBox txt_marca;
+        private TextBox txt_Trepuesto;
+        private Label lbl_estado;
+        private Label lbl_Trepuesto;
+        private Label lbl_caracteristica;
+        private Label lbl_modelo;
+        private Label lbl_marca;
         private Label label11;
-        private Button btn_eliminar;
-        private Button btn_insertar;
-        private Button btn_editar;
-        private DataGridViewTextBoxColumn TIPO;
-        private DataGridViewTextBoxColumn DESCRIPCION;
-        private DataGridViewTextBoxColumn MARCA;
-        private DataGridViewTextBoxColumn ESTADO;
-        private DataGridViewTextBoxColumn COSTO;
-        private DataGridViewTextBoxColumn OBSEVACIONES;
+        private DataGridView dg_repuestos;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton ibtn_delete;
+        private FontAwesome.Sharp.IconButton ibtn_save;
+        private FontAwesome.Sharp.IconButton ibtn_update;
+        private FontAwesome.Sharp.IconButton ibtn_limpiar;
     }
 }

@@ -172,7 +172,7 @@
             txt_marca.Margin = new Padding(2, 3, 2, 3);
             txt_marca.Name = "txt_marca";
             txt_marca.Size = new Size(193, 27);
-            txt_marca.TabIndex = 16;
+            txt_marca.TabIndex = 3;
             // 
             // lbl_marca
             // 
@@ -192,7 +192,7 @@
             txt_modelo.Margin = new Padding(2, 3, 2, 3);
             txt_modelo.Name = "txt_modelo";
             txt_modelo.Size = new Size(193, 27);
-            txt_modelo.TabIndex = 12;
+            txt_modelo.TabIndex = 4;
             // 
             // lbl_modelo
             // 
@@ -212,7 +212,7 @@
             txt_serial.Margin = new Padding(2, 3, 2, 3);
             txt_serial.Name = "txt_serial";
             txt_serial.Size = new Size(193, 27);
-            txt_serial.TabIndex = 7;
+            txt_serial.TabIndex = 6;
             // 
             // lbl_serial
             // 
@@ -232,7 +232,7 @@
             txt_ubicacion.Margin = new Padding(2, 3, 2, 3);
             txt_ubicacion.Name = "txt_ubicacion";
             txt_ubicacion.Size = new Size(193, 27);
-            txt_ubicacion.TabIndex = 14;
+            txt_ubicacion.TabIndex = 7;
             // 
             // lbl_ubicacion
             // 
@@ -252,7 +252,7 @@
             txt_area.Margin = new Padding(2, 3, 2, 3);
             txt_area.Name = "txt_area";
             txt_area.Size = new Size(193, 27);
-            txt_area.TabIndex = 6;
+            txt_area.TabIndex = 12;
             // 
             // lbl_area
             // 
@@ -437,7 +437,7 @@
             dg_equipos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_equipos.RowTemplate.Height = 29;
             dg_equipos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_equipos.Size = new Size(400, 693);
+            dg_equipos.Size = new Size(400, 339);
             dg_equipos.TabIndex = 306;
             dg_equipos.CellDoubleClick += dg_equipos_CellDoubleClick;
             // 
@@ -449,7 +449,7 @@
             txt_estado.Margin = new Padding(2, 3, 2, 3);
             txt_estado.Name = "txt_estado";
             txt_estado.Size = new Size(193, 27);
-            txt_estado.TabIndex = 307;
+            txt_estado.TabIndex = 14;
             // 
             // cb_inactivo
             // 
@@ -458,7 +458,7 @@
             cb_inactivo.Location = new Point(450, 448);
             cb_inactivo.Name = "cb_inactivo";
             cb_inactivo.Size = new Size(92, 27);
-            cb_inactivo.TabIndex = 17;
+            cb_inactivo.TabIndex = 16;
             cb_inactivo.Text = "Inactivo";
             cb_inactivo.UseVisualStyleBackColor = true;
             // 
@@ -489,7 +489,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 840);
+            ClientSize = new Size(1102, 514);
             Controls.Add(txt_depart);
             Controls.Add(lbl_depart);
             Controls.Add(cb_inactivo);
@@ -529,7 +529,7 @@
             HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            MinimumSize = new Size(1120, 887);
+            MinimumSize = new Size(1120, 561);
             Name = "Equipo";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Equipo";
