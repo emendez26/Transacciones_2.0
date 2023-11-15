@@ -71,7 +71,7 @@
             lbl_Dashboard.ForeColor = Color.White;
             lbl_Dashboard.Location = new Point(0, 0);
             lbl_Dashboard.Name = "lbl_Dashboard";
-            lbl_Dashboard.Size = new Size(1102, 116);
+            lbl_Dashboard.Size = new Size(1102, 67);
             lbl_Dashboard.TabIndex = 317;
             lbl_Dashboard.Text = "DASHBOARD";
             lbl_Dashboard.TextAlign = ContentAlignment.MiddleCenter;
@@ -81,7 +81,7 @@
             btn_Fecha_P.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_P.AutoSize = true;
             btn_Fecha_P.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_P.Location = new Point(502, 148);
+            btn_Fecha_P.Location = new Point(498, 85);
             btn_Fecha_P.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_P.Name = "btn_Fecha_P";
             btn_Fecha_P.Size = new Size(193, 35);
@@ -94,7 +94,7 @@
             btn_Hoy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Hoy.AutoSize = true;
             btn_Hoy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Hoy.Location = new Point(698, 148);
+            btn_Hoy.Location = new Point(694, 85);
             btn_Hoy.Margin = new Padding(3, 4, 3, 4);
             btn_Hoy.Name = "btn_Hoy";
             btn_Hoy.Size = new Size(95, 35);
@@ -107,7 +107,7 @@
             btn_Fecha_7Dia.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_7Dia.AutoSize = true;
             btn_Fecha_7Dia.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_7Dia.Location = new Point(795, 148);
+            btn_Fecha_7Dia.Location = new Point(791, 85);
             btn_Fecha_7Dia.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_7Dia.Name = "btn_Fecha_7Dia";
             btn_Fecha_7Dia.Size = new Size(142, 35);
@@ -120,7 +120,7 @@
             btn_Fecha_30Dias.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_30Dias.AutoSize = true;
             btn_Fecha_30Dias.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_30Dias.Location = new Point(938, 148);
+            btn_Fecha_30Dias.Location = new Point(934, 85);
             btn_Fecha_30Dias.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_30Dias.Name = "btn_Fecha_30Dias";
             btn_Fecha_30Dias.Size = new Size(152, 35);
@@ -132,7 +132,7 @@
             // 
             dtp_Fecha_Final.CustomFormat = "MMMM, dd, yyyy";
             dtp_Fecha_Final.Format = DateTimePickerFormat.Custom;
-            dtp_Fecha_Final.Location = new Point(228, 152);
+            dtp_Fecha_Final.Location = new Point(224, 89);
             dtp_Fecha_Final.Margin = new Padding(3, 4, 3, 4);
             dtp_Fecha_Final.Name = "dtp_Fecha_Final";
             dtp_Fecha_Final.Size = new Size(184, 27);
@@ -142,7 +142,7 @@
             // 
             btn_Ok.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Ok.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Ok.Location = new Point(456, 148);
+            btn_Ok.Location = new Point(452, 85);
             btn_Ok.Margin = new Padding(3, 4, 3, 4);
             btn_Ok.Name = "btn_Ok";
             btn_Ok.Size = new Size(47, 34);
@@ -154,7 +154,7 @@
             // 
             dtp_Fecha_Inicio.CustomFormat = "MMMM, dd, yyyy";
             dtp_Fecha_Inicio.Format = DateTimePickerFormat.Custom;
-            dtp_Fecha_Inicio.Location = new Point(26, 152);
+            dtp_Fecha_Inicio.Location = new Point(22, 89);
             dtp_Fecha_Inicio.Margin = new Padding(3, 4, 3, 4);
             dtp_Fecha_Inicio.Name = "dtp_Fecha_Inicio";
             dtp_Fecha_Inicio.Size = new Size(189, 27);
@@ -175,7 +175,7 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.Controls.Add(lbl_Beneficios);
             panel3.Controls.Add(lbl_Beneficios_Total);
-            panel3.Location = new Point(640, 206);
+            panel3.Location = new Point(636, 143);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(446, 73);
@@ -206,7 +206,7 @@
             // 
             panel2.Controls.Add(lbl_Ingresos);
             panel2.Controls.Add(lbl_Ingresos_Totales);
-            panel2.Location = new Point(295, 206);
+            panel2.Location = new Point(291, 143);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(319, 73);
@@ -237,7 +237,7 @@
             // 
             panel1.Controls.Add(lbl_Numero_Orden);
             panel1.Controls.Add(lbl_Numeros);
-            panel1.Location = new Point(23, 206);
+            panel1.Location = new Point(19, 143);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(258, 73);
@@ -261,7 +261,7 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Name = "Legend1";
             ch_Top_Productos.Legends.Add(legend1);
-            ch_Top_Productos.Location = new Point(640, 287);
+            ch_Top_Productos.Location = new Point(636, 224);
             ch_Top_Productos.Margin = new Padding(3, 4, 3, 4);
             ch_Top_Productos.Name = "ch_Top_Productos";
             series1.ChartArea = "ChartArea1";
@@ -290,7 +290,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend2.Name = "Legend1";
             ch_Ingresos.Legends.Add(legend2);
-            ch_Ingresos.Location = new Point(23, 287);
+            ch_Ingresos.Location = new Point(19, 224);
             ch_Ingresos.Margin = new Padding(3, 4, 3, 4);
             ch_Ingresos.Name = "ch_Ingresos";
             series2.ChartArea = "ChartArea1";

@@ -205,7 +205,9 @@ namespace Proyecto_inventario
 
         private void btn_empleado_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Empleado>();
+            //AbrirFormulario<Empleado>();
+            Empleado emp = new Empleado();
+            emp.Show();
         }
     }
 }

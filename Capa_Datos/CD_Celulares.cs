@@ -10,8 +10,6 @@ using System.Collections;
 using System.Numerics;
 using System.Reflection;
 using System.Runtime.Intrinsics.X86;
-using System.Windows.Forms;
-
 
 namespace Capa_Datos
 {

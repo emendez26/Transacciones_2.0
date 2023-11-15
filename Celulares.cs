@@ -14,7 +14,10 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Proyecto_inventario
+
+
 {
+
     public partial class Celulares : Form
     {
         List<Capa_Objetos.CO_Celular> lista_celulares = new List<Capa_Objetos.CO_Celular>();
@@ -28,6 +31,10 @@ namespace Proyecto_inventario
         public Celulares()
         {
             InitializeComponent();
+            this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
+            this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
+            this.ttmensaje.SetToolTip(this.ibtn_save, "Guardar");
+            this.ttmensaje.SetToolTip(this.ibtn_update, "Editar");
             celular = new CO_Celular();
         }
 
@@ -208,6 +215,19 @@ namespace Proyecto_inventario
             limpiar();
         }
 
+        private void dtg_celulares_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatos();
+        }
+
+        private void txt_activoFijo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void ibtn_save_Click(object sender, EventArgs e)
         {
             guardar();
@@ -223,9 +243,17 @@ namespace Proyecto_inventario
             eliminar();
         }
 
-        private void dtg_celulares_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void txt_costo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            mostrarDatos();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtg_celulares_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

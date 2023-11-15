@@ -39,6 +39,10 @@
             textBox12 = new TextBox();
             label15 = new Label();
             dataGridView2 = new DataGridView();
+            LINEA = new DataGridViewTextBoxColumn();
+            PLAN = new DataGridViewTextBoxColumn();
+            PROVEEDOR = new DataGridViewTextBoxColumn();
+            CARACTERISTICAS = new DataGridViewTextBoxColumn();
             textBox1 = new TextBox();
             label6 = new Label();
             label7 = new Label();
@@ -49,10 +53,6 @@
             label11 = new Label();
             textBox3 = new TextBox();
             label12 = new Label();
-            LINEA = new DataGridViewTextBoxColumn();
-            PLAN = new DataGridViewTextBoxColumn();
-            PROVEEDOR = new DataGridViewTextBoxColumn();
-            CARACTERISTICAS = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -184,6 +184,34 @@
             dataGridView2.Size = new Size(919, 499);
             dataGridView2.TabIndex = 267;
             // 
+            // LINEA
+            // 
+            LINEA.HeaderText = "LINEA";
+            LINEA.MinimumWidth = 6;
+            LINEA.Name = "LINEA";
+            LINEA.Width = 250;
+            // 
+            // PLAN
+            // 
+            PLAN.HeaderText = "PLAN";
+            PLAN.MinimumWidth = 6;
+            PLAN.Name = "PLAN";
+            PLAN.Width = 250;
+            // 
+            // PROVEEDOR
+            // 
+            PROVEEDOR.HeaderText = "PROVEEDOR";
+            PROVEEDOR.MinimumWidth = 6;
+            PROVEEDOR.Name = "PROVEEDOR";
+            PROVEEDOR.Width = 250;
+            // 
+            // CARACTERISTICAS
+            // 
+            CARACTERISTICAS.HeaderText = "CARACTERISTICAS";
+            CARACTERISTICAS.MinimumWidth = 6;
+            CARACTERISTICAS.Name = "CARACTERISTICAS";
+            CARACTERISTICAS.Width = 600;
+            // 
             // textBox1
             // 
             textBox1.Location = new Point(225, 179);
@@ -287,41 +315,12 @@
             label12.TabIndex = 254;
             label12.Text = "Linea Telefonica";
             // 
-            // LINEA
-            // 
-            LINEA.HeaderText = "LINEA";
-            LINEA.MinimumWidth = 6;
-            LINEA.Name = "LINEA";
-            LINEA.Width = 250;
-            // 
-            // PLAN
-            // 
-            PLAN.HeaderText = "PLAN";
-            PLAN.MinimumWidth = 6;
-            PLAN.Name = "PLAN";
-            PLAN.Width = 250;
-            // 
-            // PROVEEDOR
-            // 
-            PROVEEDOR.HeaderText = "PROVEEDOR";
-            PROVEEDOR.MinimumWidth = 6;
-            PROVEEDOR.Name = "PROVEEDOR";
-            PROVEEDOR.Width = 250;
-            // 
-            // CARACTERISTICAS
-            // 
-            CARACTERISTICAS.HeaderText = "CARACTERISTICAS";
-            CARACTERISTICAS.MinimumWidth = 6;
-            CARACTERISTICAS.Name = "CARACTERISTICAS";
-            CARACTERISTICAS.Width = 600;
-            // 
             // Lineas_Telefonicas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1102, 859);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Lineas_Telefonicas";
