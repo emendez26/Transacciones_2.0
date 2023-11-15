@@ -67,7 +67,7 @@ namespace Capa_Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@marca", repuesto.marca);
                 comando.Parameters.AddWithValue("@modelo", repuesto.modelo);
-                comando.Parameters.AddWithValue("@caracteristica", repuesto.caracteristica);
+                comando.Parameters.AddWithValue("@caracteristicas", repuesto.caracteristica);
                 comando.Parameters.AddWithValue("@costo", repuesto.costo);
                 comando.Parameters.AddWithValue("@estado", repuesto.estado);
                 comando.Parameters.AddWithValue("@tipo_repuesto", repuesto.tipo_repuesto);
@@ -91,12 +91,12 @@ namespace Capa_Datos
             {
 
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "[sp_Update_Repuestos]";
+                comando.CommandText = "sp_Update_Repuesto";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@marca", repuesto.marca);
                 comando.Parameters.AddWithValue("@modelo", repuesto.modelo);
-                comando.Parameters.AddWithValue("@caracteristica", repuesto.caracteristica);
+                comando.Parameters.AddWithValue("@caracteristicas", repuesto.caracteristica);
                 comando.Parameters.AddWithValue("@costo", repuesto.costo);
                 comando.Parameters.AddWithValue("@estado", repuesto.estado);
                 comando.Parameters.AddWithValue("@tipo_repuesto", repuesto.tipo_repuesto);

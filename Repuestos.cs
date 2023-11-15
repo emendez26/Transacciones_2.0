@@ -24,6 +24,10 @@ namespace Proyecto_inventario
         public Repuestos()
         {
             InitializeComponent();
+            this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
+            this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
+            this.ttmensaje.SetToolTip(this.ibtn_save, "Guardar");
+            this.ttmensaje.SetToolTip(this.ibtn_update, "Editar");
             repuesto = new CO_Repuestos();
         }
 
@@ -37,23 +41,24 @@ namespace Proyecto_inventario
 
             repuesto = new CO_Repuestos();
 
-            repuesto.marca = txt_marca.Text;
+            repuesto.marca = cmb_marca.Text;
             repuesto.modelo = txt_modelo.Text;
             repuesto.caracteristica = txt_caracteristica.Text;
             repuesto.costo = double.Parse(txt_costo.Text);
-            repuesto.estado = txt_estado.Text;
-            repuesto.tipo_repuesto = txt_Trepuesto.Text;
+            repuesto.estado = cmb_estado.Text;
+            repuesto.tipo_repuesto = cmb_Trepuesto.Text;
 
             return repuesto;
         }
         public void SetData()
         {
-            txt_marca.Text = repuesto.marca;
+            txt_id.Text = repuesto.id.ToString();
+            cmb_marca.Text = repuesto.marca;
             txt_modelo.Text = repuesto.modelo;
             txt_caracteristica.Text = repuesto.caracteristica;
             txt_costo.Text = repuesto.costo.ToString();
-            txt_estado.Text = repuesto.estado;
-            txt_Trepuesto.Text = repuesto.tipo_repuesto;
+            cmb_estado.Text = repuesto.estado;
+            cmb_Trepuesto.Text = repuesto.tipo_repuesto;
         }
 
         public void mostrarDatos()
@@ -78,18 +83,18 @@ namespace Proyecto_inventario
             if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 repuesto = new CO_Repuestos();
-                txt_marca.Text = string.Empty;
+                cmb_marca.Text = string.Empty;
                 txt_modelo.Text = string.Empty;
                 txt_caracteristica.Text = string.Empty;
                 txt_costo.Text = string.Empty;
-                txt_estado.Text = string.Empty;
-                txt_Trepuesto.Text = string.Empty;
+                cmb_estado.Text = string.Empty;
+                cmb_Trepuesto.Text = string.Empty;
 
                 //habilitar botones
                 ibtn_delete.Enabled = true;
                 ibtn_update.Enabled = true;
 
-                txt_Trepuesto.Enabled = true;
+                txt_id.Enabled = true;
             }
         }
         public void guardar()
@@ -143,7 +148,7 @@ namespace Proyecto_inventario
             if (dg_repuestos.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txt_Trepuesto.Enabled = false;
+                txt_id.Enabled = false;
                 ibtn_delete.Enabled = false;
                 ibtn_update.Enabled = false;
                 mostrarDatos();
@@ -177,13 +182,6 @@ namespace Proyecto_inventario
             mostrarDatos();
         }
 
-        private void txt_Trepuesto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void ibtn_save_Click(object sender, EventArgs e)
         {
@@ -206,6 +204,11 @@ namespace Proyecto_inventario
             {
                 e.Handled = true;
             }
+        }
+
+        private void cmb_estado_DropDown(object sender, EventArgs e)
+        {
+            cmb_estado.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

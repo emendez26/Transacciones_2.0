@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Repuestos));
             txt_buscar = new TextBox();
             lbl_buscar = new Label();
             txt_costo = new TextBox();
             lbl_costo = new Label();
             txt_modelo = new TextBox();
-            txt_estado = new TextBox();
             txt_caracteristica = new TextBox();
-            txt_marca = new TextBox();
-            txt_Trepuesto = new TextBox();
             lbl_estado = new Label();
             lbl_Trepuesto = new Label();
             lbl_caracteristica = new Label();
@@ -53,12 +51,19 @@
             ibtn_save = new FontAwesome.Sharp.IconButton();
             ibtn_update = new FontAwesome.Sharp.IconButton();
             ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            txt_id = new TextBox();
+            lbl_Id = new Label();
+            cmb_marca = new ComboBox();
+            cmb_estado = new ComboBox();
+            cmb_Trepuesto = new ComboBox();
+            ttmensaje = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dg_repuestos).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // txt_buscar
             // 
+            txt_buscar.CharacterCasing = CharacterCasing.Upper;
             txt_buscar.Location = new Point(755, 107);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(304, 27);
@@ -77,17 +82,18 @@
             // 
             // txt_costo
             // 
-            txt_costo.Location = new Point(214, 347);
+            txt_costo.CharacterCasing = CharacterCasing.Upper;
+            txt_costo.Location = new Point(219, 403);
             txt_costo.Name = "txt_costo";
             txt_costo.Size = new Size(193, 27);
-            txt_costo.TabIndex = 40;
+            txt_costo.TabIndex = 6;
             txt_costo.KeyPress += txt_costo_KeyPress;
             // 
             // lbl_costo
             // 
             lbl_costo.AutoSize = true;
             lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_costo.Location = new Point(126, 347);
+            lbl_costo.Location = new Point(147, 407);
             lbl_costo.Name = "lbl_costo";
             lbl_costo.Size = new Size(54, 23);
             lbl_costo.TabIndex = 39;
@@ -95,45 +101,25 @@
             // 
             // txt_modelo
             // 
-            txt_modelo.Location = new Point(214, 411);
+            txt_modelo.CharacterCasing = CharacterCasing.Upper;
+            txt_modelo.Location = new Point(219, 465);
             txt_modelo.Name = "txt_modelo";
             txt_modelo.Size = new Size(193, 27);
-            txt_modelo.TabIndex = 36;
-            // 
-            // txt_estado
-            // 
-            txt_estado.Location = new Point(214, 229);
-            txt_estado.Name = "txt_estado";
-            txt_estado.Size = new Size(193, 27);
-            txt_estado.TabIndex = 34;
+            txt_modelo.TabIndex = 7;
             // 
             // txt_caracteristica
             // 
-            txt_caracteristica.Location = new Point(214, 287);
+            txt_caracteristica.CharacterCasing = CharacterCasing.Upper;
+            txt_caracteristica.Location = new Point(219, 350);
             txt_caracteristica.Name = "txt_caracteristica";
             txt_caracteristica.Size = new Size(193, 27);
-            txt_caracteristica.TabIndex = 33;
-            // 
-            // txt_marca
-            // 
-            txt_marca.Location = new Point(214, 168);
-            txt_marca.Name = "txt_marca";
-            txt_marca.Size = new Size(193, 27);
-            txt_marca.TabIndex = 32;
-            // 
-            // txt_Trepuesto
-            // 
-            txt_Trepuesto.Location = new Point(214, 107);
-            txt_Trepuesto.Name = "txt_Trepuesto";
-            txt_Trepuesto.Size = new Size(193, 27);
-            txt_Trepuesto.TabIndex = 31;
-            txt_Trepuesto.KeyPress += txt_Trepuesto_KeyPress;
+            txt_caracteristica.TabIndex = 5;
             // 
             // lbl_estado
             // 
             lbl_estado.AutoSize = true;
             lbl_estado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_estado.Location = new Point(135, 234);
+            lbl_estado.Location = new Point(140, 294);
             lbl_estado.Name = "lbl_estado";
             lbl_estado.Size = new Size(61, 23);
             lbl_estado.TabIndex = 28;
@@ -143,7 +129,7 @@
             // 
             lbl_Trepuesto.AutoSize = true;
             lbl_Trepuesto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Trepuesto.Location = new Point(53, 107);
+            lbl_Trepuesto.Location = new Point(58, 167);
             lbl_Trepuesto.Name = "lbl_Trepuesto";
             lbl_Trepuesto.Size = new Size(143, 23);
             lbl_Trepuesto.TabIndex = 27;
@@ -153,7 +139,7 @@
             // 
             lbl_caracteristica.AutoSize = true;
             lbl_caracteristica.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_caracteristica.Location = new Point(61, 294);
+            lbl_caracteristica.Location = new Point(82, 354);
             lbl_caracteristica.Name = "lbl_caracteristica";
             lbl_caracteristica.Size = new Size(119, 23);
             lbl_caracteristica.TabIndex = 26;
@@ -163,7 +149,7 @@
             // 
             lbl_modelo.AutoSize = true;
             lbl_modelo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_modelo.Location = new Point(112, 406);
+            lbl_modelo.Location = new Point(133, 466);
             lbl_modelo.Name = "lbl_modelo";
             lbl_modelo.Size = new Size(68, 23);
             lbl_modelo.TabIndex = 25;
@@ -173,7 +159,7 @@
             // 
             lbl_marca.AutoSize = true;
             lbl_marca.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_marca.Location = new Point(139, 169);
+            lbl_marca.Location = new Point(144, 229);
             lbl_marca.Name = "lbl_marca";
             lbl_marca.Size = new Size(57, 23);
             lbl_marca.TabIndex = 24;
@@ -199,23 +185,23 @@
             dg_repuestos.BackgroundColor = Color.White;
             dg_repuestos.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_repuestos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Firebrick;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
-            dg_repuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.Firebrick;
+            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle4.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
+            dg_repuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dg_repuestos.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dg_repuestos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dg_repuestos.DefaultCellStyle = dataGridViewCellStyle5;
             dg_repuestos.EnableHeadersVisualStyles = false;
             dg_repuestos.GridColor = Color.Gainsboro;
             dg_repuestos.Location = new Point(605, 161);
@@ -223,12 +209,12 @@
             dg_repuestos.RowHeadersVisible = false;
             dg_repuestos.RowHeadersWidth = 51;
             dg_repuestos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dg_repuestos.RowTemplate.Height = 29;
             dg_repuestos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_repuestos.Size = new Size(454, 443);
+            dg_repuestos.Size = new Size(454, 507);
             dg_repuestos.TabIndex = 335;
             dg_repuestos.CellContentDoubleClick += dg_repuestos_CellContentDoubleClick;
             // 
@@ -241,7 +227,7 @@
             tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
             tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
-            tableLayoutPanel1.Location = new Point(22, 489);
+            tableLayoutPanel1.Location = new Point(21, 553);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -324,7 +310,7 @@
             ibtn_limpiar.IconColor = Color.Black;
             ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ibtn_limpiar.IconSize = 40;
-            ibtn_limpiar.Location = new Point(412, 101);
+            ibtn_limpiar.Location = new Point(417, 102);
             ibtn_limpiar.Margin = new Padding(2);
             ibtn_limpiar.Name = "ibtn_limpiar";
             ibtn_limpiar.Size = new Size(53, 36);
@@ -334,12 +320,70 @@
             ibtn_limpiar.UseVisualStyleBackColor = false;
             ibtn_limpiar.Click += ibtn_limpiar_Click;
             // 
+            // txt_id
+            // 
+            txt_id.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_id.ForeColor = Color.Red;
+            txt_id.Location = new Point(219, 104);
+            txt_id.Name = "txt_id";
+            txt_id.Size = new Size(193, 30);
+            txt_id.TabIndex = 1;
+            // 
+            // lbl_Id
+            // 
+            lbl_Id.AutoSize = true;
+            lbl_Id.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Id.Location = new Point(163, 103);
+            lbl_Id.Name = "lbl_Id";
+            lbl_Id.Size = new Size(38, 31);
+            lbl_Id.TabIndex = 338;
+            lbl_Id.Text = "ID";
+            lbl_Id.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // cmb_marca
+            // 
+            cmb_marca.FormattingEnabled = true;
+            cmb_marca.Location = new Point(219, 224);
+            cmb_marca.Name = "cmb_marca";
+            cmb_marca.Size = new Size(193, 28);
+            cmb_marca.TabIndex = 3;
+            // 
+            // cmb_estado
+            // 
+            cmb_estado.FormattingEnabled = true;
+            cmb_estado.Items.AddRange(new object[] { "NUEVO", "USADO" });
+            cmb_estado.Location = new Point(219, 289);
+            cmb_estado.Name = "cmb_estado";
+            cmb_estado.Size = new Size(193, 28);
+            cmb_estado.TabIndex = 4;
+            cmb_estado.DropDown += cmb_estado_DropDown;
+            // 
+            // cmb_Trepuesto
+            // 
+            cmb_Trepuesto.FormattingEnabled = true;
+            cmb_Trepuesto.Location = new Point(219, 161);
+            cmb_Trepuesto.Name = "cmb_Trepuesto";
+            cmb_Trepuesto.Size = new Size(193, 28);
+            cmb_Trepuesto.TabIndex = 2;
+            // 
+            // ttmensaje
+            // 
+            ttmensaje.AutoPopDelay = 5000;
+            ttmensaje.BackColor = Color.Transparent;
+            ttmensaje.InitialDelay = 300;
+            ttmensaje.ReshowDelay = 100;
+            // 
             // Repuestos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 624);
+            ClientSize = new Size(1102, 688);
+            Controls.Add(cmb_Trepuesto);
+            Controls.Add(cmb_estado);
+            Controls.Add(cmb_marca);
+            Controls.Add(txt_id);
+            Controls.Add(lbl_Id);
             Controls.Add(ibtn_limpiar);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dg_repuestos);
@@ -349,10 +393,7 @@
             Controls.Add(txt_costo);
             Controls.Add(lbl_costo);
             Controls.Add(txt_modelo);
-            Controls.Add(txt_estado);
             Controls.Add(txt_caracteristica);
-            Controls.Add(txt_marca);
-            Controls.Add(txt_Trepuesto);
             Controls.Add(lbl_estado);
             Controls.Add(lbl_Trepuesto);
             Controls.Add(lbl_caracteristica);
@@ -377,10 +418,7 @@
         private TextBox txt_costo;
         private Label lbl_costo;
         private TextBox txt_modelo;
-        private TextBox txt_estado;
         private TextBox txt_caracteristica;
-        private TextBox txt_marca;
-        private TextBox txt_Trepuesto;
         private Label lbl_estado;
         private Label lbl_Trepuesto;
         private Label lbl_caracteristica;
@@ -393,5 +431,11 @@
         private FontAwesome.Sharp.IconButton ibtn_save;
         private FontAwesome.Sharp.IconButton ibtn_update;
         private FontAwesome.Sharp.IconButton ibtn_limpiar;
+        private TextBox txt_id;
+        private Label lbl_Id;
+        private ComboBox cmb_marca;
+        private ComboBox cmb_estado;
+        private ComboBox cmb_Trepuesto;
+        private ToolTip ttmensaje;
     }
 }

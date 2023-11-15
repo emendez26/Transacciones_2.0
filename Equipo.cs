@@ -24,6 +24,7 @@ namespace Proyecto_inventario
         public Equipo()
         {
             InitializeComponent();
+            this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
             equipo = new CO_Equipos();
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -68,11 +69,13 @@
             cb_inactivo = new CheckBox();
             txt_depart = new TextBox();
             lbl_depart = new Label();
+            ttmensaje = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dg_equipos).BeginInit();
             SuspendLayout();
             // 
             // txt_activo_fijo
             // 
+            txt_activo_fijo.CharacterCasing = CharacterCasing.Upper;
             txt_activo_fijo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txt_activo_fijo.ForeColor = Color.Red;
             txt_activo_fijo.Location = new Point(157, 89);
@@ -483,6 +486,13 @@
             lbl_depart.TabIndex = 310;
             lbl_depart.Text = "Departamento";
             // 
+            // ttmensaje
+            // 
+            ttmensaje.AutoPopDelay = 5000;
+            ttmensaje.BackColor = Color.Transparent;
+            ttmensaje.InitialDelay = 300;
+            ttmensaje.ReshowDelay = 100;
+            // 
             // Equipo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -576,5 +586,6 @@
         private CheckBox cb_inactivo;
         private TextBox txt_depart;
         private Label lbl_depart;
+        private ToolTip ttmensaje;
     }
 }
