@@ -57,14 +57,14 @@ namespace Proyecto_inventario
             txt_depart.Text = equipo.departamento;
             txt_area.Text = equipo.area;
             cb_inactivo.Checked = equipo.inactive;
-            dt_Fcompra.Value = equipo.fecha_compra;
+            dt_Fcompra.Value = equipo.fecha_compra == null ? DateTime.Now : (DateTime) equipo.fecha_compra;
             txt_costo.Text = equipo.costo.ToString();
             txt_tipo_adquisicion.Text = equipo.tipo_adquisicion.ToString();
         }
 
         public void mostrarDatos()
         {
-            activo_fijo = (dg_equipos.CurrentRow.Cells["EquipID"].Value.ToString());
+            activo_fijo = (dg_equipos.CurrentRow.Cells["activo_fijo"].Value.ToString());
             equipo = new CO_Equipos();
             equipo = lista_Equipos.Where(e => e.activo_fijo.Equals(activo_fijo)).FirstOrDefault();
             SetData();

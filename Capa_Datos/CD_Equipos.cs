@@ -32,30 +32,29 @@ namespace Capa_Datos
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "[sp_read_Equipos";
+                comando.CommandText = "[sp_Read_Equipo]";
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 DataTable table = new DataTable();
                 table.Load(leer);
                 foreach (DataRow dr in table.Rows)
                 {
-                    equipo.id = int.Parse(dr[0].ToString());
-                    equipo.activo_fijo = dr[1].ToString();
-                    equipo.estado = dr[2].ToString();
-                    equipo.tipo = dr[3].ToString();
-                    equipo.sub_tipo = dr[4].ToString();
-                    equipo.marca = dr[5].ToString();
-                    equipo.modelo = dr[6].ToString();
-                    equipo.descripcion = dr[7].ToString();
-                    equipo.serial = dr[8].ToString();
-                    equipo.responsable = dr[9].ToString();
-                    equipo.ubicacion = dr[10].ToString();
-                    equipo.departamento = dr[11].ToString();
-                    equipo.area = dr[12].ToString();
-                    equipo.inactive = bool.Parse(dr[13].ToString());
-                    equipo.fecha_compra = DateTime.Parse(dr[14].ToString());
-                    equipo.costo = Double.Parse(dr[15].ToString());
-                    equipo.tipo_adquisicion = dr[16].ToString();
+                    equipo.activo_fijo = dr[0].ToString();
+                    equipo.estado = dr[1].ToString();
+                    equipo.tipo = dr[2].ToString();
+                    equipo.sub_tipo = dr[3].ToString();
+                    equipo.marca = dr[4].ToString();
+                    equipo.modelo = dr[5].ToString();
+                    equipo.descripcion = dr[6].ToString();
+                    equipo.serial = dr[7].ToString();
+                    equipo.responsable = dr[8].ToString();
+                    equipo.ubicacion = dr[9].ToString();
+                    equipo.departamento = dr[10].ToString();
+                    equipo.area = dr[11].ToString();
+                    equipo.inactive = bool.Parse(dr[12].ToString());
+                    equipo.fecha_compra = (dr[13].ToString()) == null ? (DateTime?) null  : DateTime.Parse(dr[13].ToString());
+                    equipo.costo = Double.Parse(dr[14].ToString());
+                    equipo.tipo_adquisicion = dr[15].ToString();
                     
 
                     equipos.Add(equipo);

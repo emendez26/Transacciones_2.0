@@ -255,5 +255,15 @@ namespace Proyecto_inventario
         {
 
         }
+
+        private void txt_descrip_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_activoFijo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
