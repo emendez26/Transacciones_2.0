@@ -6,11 +6,7 @@
 //     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
 //     se vuelve a generar el código.
 // </auto-generated>
-//------------------------------------------------------------------------------
-
-using System;
-using System.Reflection;
-
+//-------------------------------------------------------------------------
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

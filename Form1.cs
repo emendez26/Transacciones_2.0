@@ -157,7 +157,9 @@ namespace Proyecto_inventario
 
         private void btn_form_Licencias_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Licencias>();
+            //AbrirFormulario<Licencias>();
+            Licencias licen = new Licencias();
+            licen.Show();
             hideSubMenu();
         }
 

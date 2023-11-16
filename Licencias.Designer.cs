@@ -28,320 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licencias));
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            textBox9 = new TextBox();
-            label10 = new Label();
-            label9 = new Label();
-            dateTimePickerFin = new DateTimePicker();
-            dateTimePickerIni = new DateTimePicker();
-            comboBoxAct = new ComboBox();
-            label3 = new Label();
-            label4 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            textBoxCost = new TextBox();
-            label6 = new Label();
-            textBoxCaract = new TextBox();
-            textBoxIdLic = new TextBox();
-            dataGridView1 = new DataGridView();
-            TIPO = new DataGridViewTextBoxColumn();
-            CARACTERISTICA = new DataGridViewTextBoxColumn();
-            DESCRIPCION = new DataGridViewTextBoxColumn();
-            Licencia = new DataGridViewTextBoxColumn();
-            MODELO = new DataGridViewTextBoxColumn();
-            COSTO = new DataGridViewTextBoxColumn();
-            MARCA = new DataGridViewTextBoxColumn();
-            ESTADO = new DataGridViewTextBoxColumn();
-            comboBox2 = new ComboBox();
-            textBox12 = new TextBox();
-            label20 = new Label();
+            lbl_Alicencia = new Label();
+            lbl_id = new Label();
+            dtp_Ffin = new DateTimePicker();
+            dtp_Finicio = new DateTimePicker();
+            lbl_caract = new Label();
+            lbl_Ffin = new Label();
+            lbl_Finicio = new Label();
+            txt_costo = new TextBox();
+            lbl_costo = new Label();
+            txt_caract = new TextBox();
+            txt_Id = new TextBox();
+            txt_buscar = new TextBox();
+            lbl_buscar = new Label();
             label11 = new Label();
-            btn_eliminar = new Button();
-            btn_insertar = new Button();
-            btn_editar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dg_licencia = new DataGridView();
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_update = new FontAwesome.Sharp.IconButton();
+            ttmensaje = new ToolTip(components);
+            cmb_acti = new ComboBox();
+            txt_Alicencia = new TextBox();
+            lbl_acti = new Label();
+            ((System.ComponentModel.ISupportInitialize)dg_licencia).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // lbl_Alicencia
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(589, 261);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(128, 23);
-            label1.TabIndex = 259;
-            label1.Text = "Tipo de licencia";
+            lbl_Alicencia.AutoSize = true;
+            lbl_Alicencia.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Alicencia.Location = new Point(11, 322);
+            lbl_Alicencia.Margin = new Padding(2, 0, 2, 0);
+            lbl_Alicencia.Name = "lbl_Alicencia";
+            lbl_Alicencia.Size = new Size(144, 23);
+            lbl_Alicencia.TabIndex = 259;
+            lbl_Alicencia.Text = "Años de Licencias";
             // 
-            // comboBox1
+            // lbl_id
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "SI", "NO" });
-            comboBox1.Location = new Point(721, 259);
-            comboBox1.Margin = new Padding(2, 3, 2, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(299, 28);
-            comboBox1.TabIndex = 258;
+            lbl_id.AutoSize = true;
+            lbl_id.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_id.Location = new Point(117, 113);
+            lbl_id.Name = "lbl_id";
+            lbl_id.Size = new Size(38, 31);
+            lbl_id.TabIndex = 255;
+            lbl_id.Text = "ID";
             // 
-            // textBox9
+            // dtp_Ffin
             // 
-            textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox9.Location = new Point(179, 261);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(286, 27);
-            textBox9.TabIndex = 257;
+            dtp_Ffin.CustomFormat = "dd/MM/yy";
+            dtp_Ffin.Format = DateTimePickerFormat.Custom;
+            dtp_Ffin.Location = new Point(456, 266);
+            dtp_Ffin.Margin = new Padding(2, 3, 2, 3);
+            dtp_Ffin.Name = "dtp_Ffin";
+            dtp_Ffin.Size = new Size(193, 27);
+            dtp_Ffin.TabIndex = 6;
             // 
-            // label10
+            // dtp_Finicio
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(73, 265);
-            label10.Name = "label10";
-            label10.Size = new Size(92, 23);
-            label10.TabIndex = 256;
-            label10.Text = "Descipcion";
+            dtp_Finicio.CustomFormat = "dd/MM/yy";
+            dtp_Finicio.Format = DateTimePickerFormat.Custom;
+            dtp_Finicio.Location = new Point(155, 269);
+            dtp_Finicio.Margin = new Padding(2, 3, 2, 3);
+            dtp_Finicio.Name = "dtp_Finicio";
+            dtp_Finicio.Size = new Size(193, 27);
+            dtp_Finicio.TabIndex = 5;
             // 
-            // label9
+            // lbl_caract
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(100, 168);
-            label9.Name = "label9";
-            label9.Size = new Size(25, 23);
-            label9.TabIndex = 255;
-            label9.Text = "Id";
+            lbl_caract.AutoSize = true;
+            lbl_caract.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_caract.Location = new Point(36, 168);
+            lbl_caract.Margin = new Padding(2, 0, 2, 0);
+            lbl_caract.Name = "lbl_caract";
+            lbl_caract.Size = new Size(119, 23);
+            lbl_caract.TabIndex = 249;
+            lbl_caract.Text = "Caracteristicas";
             // 
-            // dateTimePickerFin
+            // lbl_Ffin
             // 
-            dateTimePickerFin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dateTimePickerFin.Location = new Point(721, 306);
-            dateTimePickerFin.Margin = new Padding(2, 3, 2, 3);
-            dateTimePickerFin.Name = "dateTimePickerFin";
-            dateTimePickerFin.Size = new Size(299, 27);
-            dateTimePickerFin.TabIndex = 254;
+            lbl_Ffin.AutoSize = true;
+            lbl_Ffin.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Ffin.Location = new Point(371, 271);
+            lbl_Ffin.Margin = new Padding(2, 0, 2, 0);
+            lbl_Ffin.Name = "lbl_Ffin";
+            lbl_Ffin.Size = new Size(81, 23);
+            lbl_Ffin.TabIndex = 248;
+            lbl_Ffin.Text = "Fecha Fin";
             // 
-            // dateTimePickerIni
+            // lbl_Finicio
             // 
-            dateTimePickerIni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dateTimePickerIni.Location = new Point(179, 305);
-            dateTimePickerIni.Margin = new Padding(2, 3, 2, 3);
-            dateTimePickerIni.Name = "dateTimePickerIni";
-            dateTimePickerIni.Size = new Size(286, 27);
-            dateTimePickerIni.TabIndex = 253;
+            lbl_Finicio.AutoSize = true;
+            lbl_Finicio.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Finicio.Location = new Point(55, 270);
+            lbl_Finicio.Margin = new Padding(2, 0, 2, 0);
+            lbl_Finicio.Name = "lbl_Finicio";
+            lbl_Finicio.Size = new Size(100, 23);
+            lbl_Finicio.TabIndex = 247;
+            lbl_Finicio.Text = "Fecha Inicio";
             // 
-            // comboBoxAct
+            // txt_costo
             // 
-            comboBoxAct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            comboBoxAct.FormattingEnabled = true;
-            comboBoxAct.Items.AddRange(new object[] { "SI", "NO" });
-            comboBoxAct.Location = new Point(721, 166);
-            comboBoxAct.Margin = new Padding(2, 3, 2, 3);
-            comboBoxAct.Name = "comboBoxAct";
-            comboBoxAct.Size = new Size(299, 28);
-            comboBoxAct.TabIndex = 252;
+            txt_costo.CharacterCasing = CharacterCasing.Upper;
+            txt_costo.Location = new Point(155, 213);
+            txt_costo.Margin = new Padding(2, 3, 2, 3);
+            txt_costo.Name = "txt_costo";
+            txt_costo.Size = new Size(193, 27);
+            txt_costo.TabIndex = 3;
+            txt_costo.TextChanged += txt_costo_TextChanged;
+            txt_costo.KeyPress += txt_costo_KeyPress;
             // 
-            // label3
+            // lbl_costo
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(618, 167);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 23);
-            label3.TabIndex = 251;
-            label3.Text = "Activación";
+            lbl_costo.AutoSize = true;
+            lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_costo.Location = new Point(97, 217);
+            lbl_costo.Margin = new Padding(2, 0, 2, 0);
+            lbl_costo.Name = "lbl_costo";
+            lbl_costo.Size = new Size(54, 23);
+            lbl_costo.TabIndex = 245;
+            lbl_costo.Text = "Costo";
             // 
-            // label4
+            // txt_caract
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(56, 215);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(119, 23);
-            label4.TabIndex = 249;
-            label4.Text = "Caracteristicas";
+            txt_caract.CharacterCasing = CharacterCasing.Upper;
+            txt_caract.Location = new Point(155, 168);
+            txt_caract.Margin = new Padding(2, 3, 2, 3);
+            txt_caract.Name = "txt_caract";
+            txt_caract.Size = new Size(494, 27);
+            txt_caract.TabIndex = 2;
             // 
-            // label8
+            // txt_Id
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(618, 311);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(81, 23);
-            label8.TabIndex = 248;
-            label8.Text = "Fecha Fin";
+            txt_Id.CharacterCasing = CharacterCasing.Upper;
+            txt_Id.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_Id.ForeColor = Color.Red;
+            txt_Id.Location = new Point(155, 117);
+            txt_Id.Margin = new Padding(2, 3, 2, 3);
+            txt_Id.Name = "txt_Id";
+            txt_Id.Size = new Size(193, 30);
+            txt_Id.TabIndex = 1;
+            txt_Id.KeyPress += txt_Id_KeyPress;
             // 
-            // label7
+            // txt_buscar
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(65, 308);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(100, 23);
-            label7.TabIndex = 247;
-            label7.Text = "Fecha Inicio";
+            txt_buscar.Location = new Point(815, 113);
+            txt_buscar.Margin = new Padding(2, 3, 2, 3);
+            txt_buscar.Name = "txt_buscar";
+            txt_buscar.Size = new Size(265, 27);
+            txt_buscar.TabIndex = 288;
             // 
-            // textBoxCost
+            // lbl_buscar
             // 
-            textBoxCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBoxCost.Location = new Point(721, 213);
-            textBoxCost.Margin = new Padding(2, 3, 2, 3);
-            textBoxCost.Name = "textBoxCost";
-            textBoxCost.Size = new Size(299, 27);
-            textBoxCost.TabIndex = 246;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(631, 217);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(54, 23);
-            label6.TabIndex = 245;
-            label6.Text = "Costo";
-            // 
-            // textBoxCaract
-            // 
-            textBoxCaract.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxCaract.Location = new Point(179, 213);
-            textBoxCaract.Margin = new Padding(2, 3, 2, 3);
-            textBoxCaract.Name = "textBoxCaract";
-            textBoxCaract.Size = new Size(286, 27);
-            textBoxCaract.TabIndex = 244;
-            // 
-            // textBoxIdLic
-            // 
-            textBoxIdLic.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxIdLic.Location = new Point(179, 167);
-            textBoxIdLic.Margin = new Padding(2, 3, 2, 3);
-            textBoxIdLic.Name = "textBoxIdLic";
-            textBoxIdLic.Size = new Size(286, 27);
-            textBoxIdLic.TabIndex = 250;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = SystemColors.ActiveBorder;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TIPO, CARACTERISTICA, DESCRIPCION, Licencia, MODELO, COSTO, MARCA, ESTADO });
-            dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(89, 398);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(931, 368);
-            dataGridView1.TabIndex = 262;
-            // 
-            // TIPO
-            // 
-            TIPO.FillWeight = 116.127258F;
-            TIPO.HeaderText = "TIPO";
-            TIPO.MinimumWidth = 6;
-            TIPO.Name = "TIPO";
-            TIPO.Width = 192;
-            // 
-            // CARACTERISTICA
-            // 
-            CARACTERISTICA.FillWeight = 116.127258F;
-            CARACTERISTICA.HeaderText = "CARACTERISTICA";
-            CARACTERISTICA.MinimumWidth = 8;
-            CARACTERISTICA.Name = "CARACTERISTICA";
-            CARACTERISTICA.Width = 250;
-            // 
-            // DESCRIPCION
-            // 
-            DESCRIPCION.HeaderText = "DESCRIPCION";
-            DESCRIPCION.MinimumWidth = 6;
-            DESCRIPCION.Name = "DESCRIPCION";
-            DESCRIPCION.Width = 250;
-            // 
-            // Licencia
-            // 
-            Licencia.HeaderText = "TIPO DE LICENCIA";
-            Licencia.MinimumWidth = 6;
-            Licencia.Name = "Licencia";
-            Licencia.Width = 125;
-            // 
-            // MODELO
-            // 
-            MODELO.FillWeight = 116.127258F;
-            MODELO.HeaderText = "MODELO";
-            MODELO.MinimumWidth = 6;
-            MODELO.Name = "MODELO";
-            MODELO.Width = 192;
-            // 
-            // COSTO
-            // 
-            COSTO.FillWeight = 61.69412F;
-            COSTO.HeaderText = "COSTO";
-            COSTO.MinimumWidth = 6;
-            COSTO.Name = "COSTO";
-            COSTO.Width = 102;
-            // 
-            // MARCA
-            // 
-            MARCA.HeaderText = "FECHA INICIO";
-            MARCA.MinimumWidth = 6;
-            MARCA.Name = "MARCA";
-            MARCA.Width = 125;
-            // 
-            // ESTADO
-            // 
-            ESTADO.FillWeight = 116.127258F;
-            ESTADO.HeaderText = "FECHA FIN";
-            ESTADO.MinimumWidth = 6;
-            ESTADO.Name = "ESTADO";
-            ESTADO.Width = 192;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "ID", "ESTADO" });
-            comboBox2.Location = new Point(721, 348);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(299, 28);
-            comboBox2.TabIndex = 289;
-            // 
-            // textBox12
-            // 
-            textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox12.Location = new Point(179, 349);
-            textBox12.Margin = new Padding(2, 3, 2, 3);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(538, 27);
-            textBox12.TabIndex = 288;
-            // 
-            // label20
-            // 
-            label20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(33, 353);
-            label20.Name = "label20";
-            label20.Size = new Size(132, 23);
-            label20.TabIndex = 287;
-            label20.Text = "Buscar Licencias";
+            lbl_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lbl_buscar.AutoSize = true;
+            lbl_buscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_buscar.Location = new Point(678, 114);
+            lbl_buscar.Name = "lbl_buscar";
+            lbl_buscar.Size = new Size(132, 23);
+            lbl_buscar.TabIndex = 287;
+            lbl_buscar.Text = "Buscar Licencias";
             // 
             // label11
             // 
@@ -351,124 +205,250 @@
             label11.ForeColor = Color.White;
             label11.Location = new Point(0, 0);
             label11.Name = "label11";
-            label11.Size = new Size(1102, 109);
+            label11.Size = new Size(1102, 67);
             label11.TabIndex = 290;
             label11.Text = "LICENCIAS";
             label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn_eliminar
+            // dg_licencia
             // 
-            btn_eliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_eliminar.BackColor = Color.Brown;
-            btn_eliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_eliminar.ForeColor = Color.White;
-            btn_eliminar.Location = new Point(356, 798);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(110, 35);
-            btn_eliminar.TabIndex = 297;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.UseVisualStyleBackColor = false;
+            dg_licencia.AllowUserToOrderColumns = true;
+            dg_licencia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_licencia.BackgroundColor = Color.White;
+            dg_licencia.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_licencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_licencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_licencia.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_licencia.DefaultCellStyle = dataGridViewCellStyle2;
+            dg_licencia.EnableHeadersVisualStyles = false;
+            dg_licencia.GridColor = Color.Gainsboro;
+            dg_licencia.Location = new Point(678, 150);
+            dg_licencia.Name = "dg_licencia";
+            dg_licencia.RowHeadersVisible = false;
+            dg_licencia.RowHeadersWidth = 51;
+            dg_licencia.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_licencia.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dg_licencia.RowTemplate.Height = 29;
+            dg_licencia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_licencia.Size = new Size(402, 369);
+            dg_licencia.TabIndex = 294;
+            dg_licencia.CellMouseDoubleClick += dg_licencia_CellMouseDoubleClick;
             // 
-            // btn_insertar
+            // ibtn_limpiar
             // 
-            btn_insertar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_insertar.BackColor = Color.Green;
-            btn_insertar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_insertar.ForeColor = Color.White;
-            btn_insertar.Location = new Point(89, 798);
-            btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(110, 35);
-            btn_insertar.TabIndex = 295;
-            btn_insertar.Text = "Insertar";
-            btn_insertar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(352, 114);
+            ibtn_limpiar.Margin = new Padding(2);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(53, 36);
+            ibtn_limpiar.TabIndex = 303;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.Click += ibtn_limpiar_Click;
             // 
-            // btn_editar
+            // tableLayoutPanel1
             // 
-            btn_editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_editar.BackColor = Color.OrangeRed;
-            btn_editar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_editar.ForeColor = Color.White;
-            btn_editar.Location = new Point(222, 798);
-            btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(110, 35);
-            btn_editar.TabIndex = 296;
-            btn_editar.Text = "Editar";
-            btn_editar.UseVisualStyleBackColor = false;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
+            tableLayoutPanel1.Location = new Point(16, 394);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(637, 125);
+            tableLayoutPanel1.TabIndex = 304;
+            // 
+            // ibtn_delete
+            // 
+            ibtn_delete.Anchor = AnchorStyles.None;
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_delete.Location = new Point(484, 34);
+            ibtn_delete.Margin = new Padding(2);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(93, 57);
+            ibtn_delete.TabIndex = 304;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            ibtn_delete.Click += ibtn_delete_Click;
+            // 
+            // ibtn_save
+            // 
+            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(59, 36);
+            ibtn_save.Margin = new Padding(2);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(93, 53);
+            ibtn_save.TabIndex = 306;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            ibtn_save.Click += ibtn_save_Click;
+            // 
+            // ibtn_update
+            // 
+            ibtn_update.Anchor = AnchorStyles.None;
+            ibtn_update.BackColor = Color.Transparent;
+            ibtn_update.Cursor = Cursors.Hand;
+            ibtn_update.FlatAppearance.BorderSize = 0;
+            ibtn_update.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_update.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_update.FlatStyle = FlatStyle.Flat;
+            ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            ibtn_update.IconColor = Color.Black;
+            ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_update.Location = new Point(271, 33);
+            ibtn_update.Margin = new Padding(2);
+            ibtn_update.Name = "ibtn_update";
+            ibtn_update.Size = new Size(93, 58);
+            ibtn_update.TabIndex = 305;
+            ibtn_update.Tag = "EDITAR";
+            ibtn_update.UseVisualStyleBackColor = false;
+            ibtn_update.Click += ibtn_update_Click;
+            // 
+            // ttmensaje
+            // 
+            ttmensaje.AutoPopDelay = 5000;
+            ttmensaje.InitialDelay = 300;
+            ttmensaje.ReshowDelay = 100;
+            // 
+            // cmb_acti
+            // 
+            cmb_acti.FormattingEnabled = true;
+            cmb_acti.Items.AddRange(new object[] { "ACTIVO", "INACTIVO" });
+            cmb_acti.Location = new Point(456, 212);
+            cmb_acti.Name = "cmb_acti";
+            cmb_acti.Size = new Size(193, 28);
+            cmb_acti.TabIndex = 4;
+            // 
+            // txt_Alicencia
+            // 
+            txt_Alicencia.Location = new Point(155, 322);
+            txt_Alicencia.Name = "txt_Alicencia";
+            txt_Alicencia.Size = new Size(193, 27);
+            txt_Alicencia.TabIndex = 7;
+            // 
+            // lbl_acti
+            // 
+            lbl_acti.AutoSize = true;
+            lbl_acti.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_acti.Location = new Point(364, 217);
+            lbl_acti.Margin = new Padding(2, 0, 2, 0);
+            lbl_acti.Name = "lbl_acti";
+            lbl_acti.Size = new Size(88, 23);
+            lbl_acti.TabIndex = 307;
+            lbl_acti.Text = "Activacion";
             // 
             // Licencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 859);
-            Controls.Add(btn_eliminar);
-            Controls.Add(btn_insertar);
-            Controls.Add(btn_editar);
+            ClientSize = new Size(1102, 553);
+            Controls.Add(lbl_acti);
+            Controls.Add(cmb_acti);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(ibtn_limpiar);
+            Controls.Add(txt_Alicencia);
+            Controls.Add(dg_licencia);
             Controls.Add(label11);
-            Controls.Add(comboBox2);
-            Controls.Add(textBox12);
-            Controls.Add(label20);
-            Controls.Add(dataGridView1);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox9);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(dateTimePickerFin);
-            Controls.Add(dateTimePickerIni);
-            Controls.Add(comboBoxAct);
-            Controls.Add(label3);
-            Controls.Add(label4);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(textBoxCost);
-            Controls.Add(label6);
-            Controls.Add(textBoxCaract);
-            Controls.Add(textBoxIdLic);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(txt_buscar);
+            Controls.Add(lbl_buscar);
+            Controls.Add(lbl_Alicencia);
+            Controls.Add(lbl_id);
+            Controls.Add(dtp_Ffin);
+            Controls.Add(dtp_Finicio);
+            Controls.Add(lbl_caract);
+            Controls.Add(lbl_Ffin);
+            Controls.Add(lbl_Finicio);
+            Controls.Add(txt_costo);
+            Controls.Add(lbl_costo);
+            Controls.Add(txt_caract);
+            Controls.Add(txt_Id);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(1120, 600);
             Name = "Licencias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Licencias";
             Load += Licencias_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dg_licencia).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
-        private ComboBox comboBox1;
-        private TextBox textBox9;
-        private Label label10;
-        private Label label9;
-        private DateTimePicker dateTimePickerFin;
-        private DateTimePicker dateTimePickerIni;
-        private ComboBox comboBoxAct;
-        private Label label3;
-        private Label label4;
-        private Label label8;
-        private Label label7;
-        private TextBox textBoxCost;
-        private Label label6;
-        private TextBox textBoxCaract;
-        private TextBox textBoxIdLic;
-        private DataGridView dataGridView1;
-        private ComboBox comboBox2;
-        private TextBox textBox12;
-        private Label label20;
+        private Label lbl_Alicencia;
+        private Label lbl_id;
+        private DateTimePicker dtp_Ffin;
+        private DateTimePicker dtp_Finicio;
+        private Label lbl_caract;
+        private Label lbl_Ffin;
+        private Label lbl_Finicio;
+        private TextBox txt_costo;
+        private Label lbl_costo;
+        private TextBox txt_caract;
+        private TextBox txt_Id;
+        private TextBox txt_buscar;
+        private Label lbl_buscar;
         private Label label11;
-        private DataGridViewTextBoxColumn TIPO;
-        private DataGridViewTextBoxColumn CARACTERISTICA;
-        private DataGridViewTextBoxColumn DESCRIPCION;
-        private DataGridViewTextBoxColumn Licencia;
-        private DataGridViewTextBoxColumn MODELO;
-        private DataGridViewTextBoxColumn COSTO;
-        private DataGridViewTextBoxColumn MARCA;
-        private DataGridViewTextBoxColumn ESTADO;
-        private Button btn_eliminar;
-        private Button btn_insertar;
-        private Button btn_editar;
+        private DataGridView dg_licencia;
+        private FontAwesome.Sharp.IconButton ibtn_limpiar;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton ibtn_delete;
+        private FontAwesome.Sharp.IconButton ibtn_save;
+        private FontAwesome.Sharp.IconButton ibtn_update;
+        private ToolTip ttmensaje;
+        private Label label2;
+        private ComboBox cmb_acti;
+        private TextBox txt_Alicencia;
+        private Label lbl_acti;
     }
 }
