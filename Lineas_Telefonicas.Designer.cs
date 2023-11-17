@@ -28,75 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lineas_Telefonicas));
-            panel1 = new Panel();
-            btn_eliminar = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ttmensaje = new ToolTip(components);
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_update = new FontAwesome.Sharp.IconButton();
+            txt_caract = new TextBox();
+            dtg_linea = new DataGridView();
             label1 = new Label();
-            btn_insertar = new Button();
-            comboBox2 = new ComboBox();
-            btn_editar = new Button();
-            textBox12 = new TextBox();
+            cmb_plan = new ComboBox();
+            txt_proveedor = new TextBox();
             label15 = new Label();
-            dataGridView2 = new DataGridView();
-            LINEA = new DataGridViewTextBoxColumn();
-            PLAN = new DataGridViewTextBoxColumn();
-            PROVEEDOR = new DataGridViewTextBoxColumn();
-            CARACTERISTICAS = new DataGridViewTextBoxColumn();
-            textBox1 = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            label8 = new Label();
-            textBox2 = new TextBox();
-            label9 = new Label();
-            comboBox1 = new ComboBox();
+            txt_buscar = new TextBox();
             label11 = new Label();
-            textBox3 = new TextBox();
+            txt_linea = new TextBox();
             label12 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtg_linea).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // tableLayoutPanel1
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(btn_eliminar);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(btn_insertar);
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(btn_editar);
-            panel1.Controls.Add(textBox12);
-            panel1.Controls.Add(label15);
-            panel1.Controls.Add(dataGridView2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label12);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 3, 2, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1102, 859);
-            panel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(200, 100);
+            tableLayoutPanel1.TabIndex = 0;
             // 
-            // btn_eliminar
+            // ttmensaje
             // 
-            btn_eliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_eliminar.BackColor = Color.Brown;
-            btn_eliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_eliminar.ForeColor = Color.White;
-            btn_eliminar.Location = new Point(359, 781);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(110, 35);
-            btn_eliminar.TabIndex = 303;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.UseVisualStyleBackColor = false;
+            ttmensaje.AutoPopDelay = 5000;
+            ttmensaje.InitialDelay = 300;
+            ttmensaje.ReshowDelay = 100;
+            // 
+            // ibtn_limpiar
+            // 
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(428, 132);
+            ibtn_limpiar.Margin = new Padding(2);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(53, 36);
+            ibtn_limpiar.TabIndex = 348;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.Click += ibtn_limpiar_Click;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.Controls.Add(ibtn_delete, 2, 0);
+            tableLayoutPanel2.Controls.Add(ibtn_save, 0, 0);
+            tableLayoutPanel2.Controls.Add(ibtn_update, 1, 0);
+            tableLayoutPanel2.Location = new Point(34, 463);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(521, 125);
+            tableLayoutPanel2.TabIndex = 347;
+            // 
+            // ibtn_delete
+            // 
+            ibtn_delete.Anchor = AnchorStyles.None;
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_delete.Location = new Point(387, 34);
+            ibtn_delete.Margin = new Padding(2);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(93, 57);
+            ibtn_delete.TabIndex = 304;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            ibtn_delete.Click += ibtn_delete_Click;
+            // 
+            // ibtn_save
+            // 
+            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(40, 36);
+            ibtn_save.Margin = new Padding(2);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(93, 53);
+            ibtn_save.TabIndex = 306;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            ibtn_save.Click += ibtn_save_Click;
+            // 
+            // ibtn_update
+            // 
+            ibtn_update.Anchor = AnchorStyles.None;
+            ibtn_update.BackColor = Color.Transparent;
+            ibtn_update.Cursor = Cursors.Hand;
+            ibtn_update.FlatAppearance.BorderSize = 0;
+            ibtn_update.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_update.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_update.FlatStyle = FlatStyle.Flat;
+            ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            ibtn_update.IconColor = Color.Black;
+            ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_update.Location = new Point(213, 33);
+            ibtn_update.Margin = new Padding(2);
+            ibtn_update.Name = "ibtn_update";
+            ibtn_update.Size = new Size(93, 58);
+            ibtn_update.TabIndex = 305;
+            ibtn_update.Tag = "EDITAR";
+            ibtn_update.UseVisualStyleBackColor = false;
+            ibtn_update.Click += ibtn_update_Click;
+            // 
+            // txt_caract
+            // 
+            txt_caract.CharacterCasing = CharacterCasing.Upper;
+            txt_caract.Location = new Point(34, 335);
+            txt_caract.Margin = new Padding(2);
+            txt_caract.Multiline = true;
+            txt_caract.Name = "txt_caract";
+            txt_caract.Size = new Size(521, 99);
+            txt_caract.TabIndex = 346;
+            // 
+            // dtg_linea
+            // 
+            dtg_linea.AllowUserToOrderColumns = true;
+            dtg_linea.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_linea.BackgroundColor = Color.White;
+            dtg_linea.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dtg_linea.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dtg_linea.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtg_linea.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_linea.DefaultCellStyle = dataGridViewCellStyle2;
+            dtg_linea.EnableHeadersVisualStyles = false;
+            dtg_linea.GridColor = Color.Gainsboro;
+            dtg_linea.Location = new Point(605, 135);
+            dtg_linea.Name = "dtg_linea";
+            dtg_linea.RowHeadersVisible = false;
+            dtg_linea.RowHeadersWidth = 51;
+            dtg_linea.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtg_linea.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dtg_linea.RowTemplate.Height = 29;
+            dtg_linea.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_linea.Size = new Size(465, 453);
+            dtg_linea.TabIndex = 345;
+            dtg_linea.CellDoubleClick += dtg_linea_CellDoubleClick;
             // 
             // label1
             // 
@@ -106,258 +235,158 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1102, 109);
-            label1.TabIndex = 330;
+            label1.Size = new Size(1102, 67);
+            label1.TabIndex = 344;
             label1.Text = "LINEAS TELEFONICAS";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn_insertar
+            // cmb_plan
             // 
-            btn_insertar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_insertar.BackColor = Color.Green;
-            btn_insertar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_insertar.ForeColor = Color.White;
-            btn_insertar.Location = new Point(92, 781);
-            btn_insertar.Name = "btn_insertar";
-            btn_insertar.Size = new Size(110, 35);
-            btn_insertar.TabIndex = 301;
-            btn_insertar.Text = "Insertar";
-            btn_insertar.UseVisualStyleBackColor = false;
+            cmb_plan.FormattingEnabled = true;
+            cmb_plan.Items.AddRange(new object[] { "SI", "NO" });
+            cmb_plan.Location = new Point(191, 248);
+            cmb_plan.Margin = new Padding(3, 4, 3, 4);
+            cmb_plan.Name = "cmb_plan";
+            cmb_plan.Size = new Size(364, 28);
+            cmb_plan.TabIndex = 343;
             // 
-            // comboBox2
+            // txt_proveedor
             // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "LINEA TELEFONICA", "PLAN" });
-            comboBox2.Location = new Point(727, 211);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(284, 28);
-            comboBox2.TabIndex = 329;
-            // 
-            // btn_editar
-            // 
-            btn_editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_editar.BackColor = Color.OrangeRed;
-            btn_editar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_editar.ForeColor = Color.White;
-            btn_editar.Location = new Point(225, 781);
-            btn_editar.Name = "btn_editar";
-            btn_editar.Size = new Size(110, 35);
-            btn_editar.TabIndex = 302;
-            btn_editar.Text = "Editar";
-            btn_editar.UseVisualStyleBackColor = false;
-            // 
-            // textBox12
-            // 
-            textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox12.Location = new Point(225, 212);
-            textBox12.Margin = new Padding(2, 3, 2, 3);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(497, 27);
-            textBox12.TabIndex = 328;
+            txt_proveedor.CharacterCasing = CharacterCasing.Upper;
+            txt_proveedor.Location = new Point(191, 194);
+            txt_proveedor.Margin = new Padding(2, 3, 2, 3);
+            txt_proveedor.Name = "txt_proveedor";
+            txt_proveedor.Size = new Size(364, 27);
+            txt_proveedor.TabIndex = 342;
             // 
             // label15
             // 
+            label15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(34, 212);
+            label15.Location = new Point(598, 90);
             label15.Name = "label15";
             label15.Size = new Size(185, 23);
-            label15.TabIndex = 327;
+            label15.TabIndex = 341;
             label15.Text = "Buscar Linea Telefonica";
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.BackgroundColor = SystemColors.ActiveBorder;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { LINEA, PLAN, PROVEEDOR, CARACTERISTICAS });
-            dataGridView2.GridColor = SystemColors.ActiveBorder;
-            dataGridView2.Location = new Point(92, 256);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(919, 499);
-            dataGridView2.TabIndex = 267;
-            // 
-            // LINEA
-            // 
-            LINEA.HeaderText = "LINEA";
-            LINEA.MinimumWidth = 6;
-            LINEA.Name = "LINEA";
-            LINEA.Width = 250;
-            // 
-            // PLAN
-            // 
-            PLAN.HeaderText = "PLAN";
-            PLAN.MinimumWidth = 6;
-            PLAN.Name = "PLAN";
-            PLAN.Width = 250;
-            // 
-            // PROVEEDOR
-            // 
-            PROVEEDOR.HeaderText = "PROVEEDOR";
-            PROVEEDOR.MinimumWidth = 6;
-            PROVEEDOR.Name = "PROVEEDOR";
-            PROVEEDOR.Width = 250;
-            // 
-            // CARACTERISTICAS
-            // 
-            CARACTERISTICAS.HeaderText = "CARACTERISTICAS";
-            CARACTERISTICAS.MinimumWidth = 6;
-            CARACTERISTICAS.Name = "CARACTERISTICAS";
-            CARACTERISTICAS.Width = 600;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(225, 179);
-            textBox1.Margin = new Padding(2, 3, 2, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 27);
-            textBox1.TabIndex = 264;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(90, 179);
+            label6.Location = new Point(99, 195);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(79, 23);
-            label6.TabIndex = 263;
-            label6.Text = "Provedor";
+            label6.Size = new Size(88, 23);
+            label6.TabIndex = 340;
+            label6.Text = "Proveedor";
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(604, 179);
+            label7.Location = new Point(34, 310);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(119, 23);
-            label7.TabIndex = 262;
+            label7.TabIndex = 339;
             label7.Text = "Caracteristicas";
             // 
-            // label8
+            // txt_buscar
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label8.AutoSize = true;
-            label8.Location = new Point(581, 660);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(0, 20);
-            label8.TabIndex = 261;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox2.Location = new Point(727, 179);
-            textBox2.Margin = new Padding(2, 3, 2, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(284, 27);
-            textBox2.TabIndex = 260;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label9.AutoSize = true;
-            label9.Location = new Point(453, 660);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(0, 20);
-            label9.TabIndex = 259;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "SI", "NO" });
-            comboBox1.Location = new Point(727, 145);
-            comboBox1.Margin = new Padding(2, 3, 2, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(284, 28);
-            comboBox1.TabIndex = 257;
+            txt_buscar.CharacterCasing = CharacterCasing.Upper;
+            txt_buscar.Location = new Point(786, 90);
+            txt_buscar.Margin = new Padding(2, 3, 2, 3);
+            txt_buscar.Name = "txt_buscar";
+            txt_buscar.Size = new Size(284, 27);
+            txt_buscar.TabIndex = 338;
             // 
             // label11
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(660, 150);
+            label11.Location = new Point(144, 248);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(43, 23);
-            label11.TabIndex = 256;
+            label11.TabIndex = 337;
             label11.Text = "Plan";
             // 
-            // textBox3
+            // txt_linea
             // 
-            textBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(225, 143);
-            textBox3.Margin = new Padding(2, 3, 2, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(284, 30);
-            textBox3.TabIndex = 255;
+            txt_linea.CharacterCasing = CharacterCasing.Upper;
+            txt_linea.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_linea.Location = new Point(191, 135);
+            txt_linea.Margin = new Padding(2, 3, 2, 3);
+            txt_linea.Name = "txt_linea";
+            txt_linea.Size = new Size(233, 30);
+            txt_linea.TabIndex = 336;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(63, 150);
+            label12.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(34, 135);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(130, 23);
-            label12.TabIndex = 254;
+            label12.Size = new Size(153, 25);
+            label12.TabIndex = 335;
             label12.Text = "Linea Telefonica";
             // 
             // Lineas_Telefonicas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1102, 859);
-            Controls.Add(panel1);
+            BackColor = Color.White;
+            ClientSize = new Size(1102, 632);
+            Controls.Add(ibtn_limpiar);
+            Controls.Add(tableLayoutPanel2);
+            Controls.Add(txt_caract);
+            Controls.Add(dtg_linea);
+            Controls.Add(label1);
+            Controls.Add(cmb_plan);
+            Controls.Add(txt_proveedor);
+            Controls.Add(label15);
+            Controls.Add(label6);
+            Controls.Add(label7);
+            Controls.Add(txt_buscar);
+            Controls.Add(label11);
+            Controls.Add(txt_linea);
+            Controls.Add(label12);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Lineas_Telefonicas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lineas_Telefonicas";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            Load += Lineas_Telefonicas_Load;
+            tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtg_linea).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private TextBox textBoxModel;
         private TextBox textBoxTipRepuest;
-        private ComboBox comboBox1;
         private TextBox textBoxTipoPlan;
-        private Panel panel1;
-        private TextBox textBox1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private ToolTip ttmensaje;
+        private FontAwesome.Sharp.IconButton ibtn_limpiar;
+        private TableLayoutPanel tableLayoutPanel2;
+        private FontAwesome.Sharp.IconButton ibtn_delete;
+        private FontAwesome.Sharp.IconButton ibtn_save;
+        private FontAwesome.Sharp.IconButton ibtn_update;
+        private TextBox txt_caract;
+        private DataGridView dtg_linea;
+        private Label label1;
+        private ComboBox cmb_plan;
+        private TextBox txt_proveedor;
+        private Label label15;
         private Label label6;
         private Label label7;
-        private Label label8;
-        private TextBox textBox2;
-        private Label label9;
+        private TextBox txt_buscar;
         private Label label11;
-        private TextBox textBox3;
+        private TextBox txt_linea;
         private Label label12;
-        private DataGridView dataGridView2;
-        private ComboBox comboBox2;
-        private TextBox textBox12;
-        private Label label15;
-        private Label label1;
-        private Button btn_eliminar;
-        private Button btn_insertar;
-        private Button btn_editar;
-        private DataGridViewTextBoxColumn LINEA;
-        private DataGridViewTextBoxColumn PLAN;
-        private DataGridViewTextBoxColumn PROVEEDOR;
-        private DataGridViewTextBoxColumn CARACTERISTICAS;
     }
 }

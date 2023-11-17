@@ -134,7 +134,9 @@ namespace Proyecto_inventario
 
         private void btn_form_Lineas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Lineas_Telefonicas>();
+            //AbrirFormulario<Lineas_Telefonicas>();
+            Lineas_Telefonicas linea = new Lineas_Telefonicas();
+            linea.Show();
             hideSubMenu();
         }
 

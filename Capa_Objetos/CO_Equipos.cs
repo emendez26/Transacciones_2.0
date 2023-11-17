@@ -8,7 +8,7 @@ namespace Capa_Objetos
 {
         public class CO_Equipos
         {
-            public int id { get; set; }
+            
             public string activo_fijo { get; set; }
             public string estado { get; set; }
             public string tipo { get; set; }
@@ -22,7 +22,7 @@ namespace Capa_Objetos
             public string departamento { get; set; }
             public string area { get; set; }
             public bool inactive { get; set; }
-            public DateTime fecha_compra{ get; set; }
+            public DateTime? fecha_compra{ get; set; }
             public double costo { get; set; }
             public string tipo_adquisicion { get; set; }
 

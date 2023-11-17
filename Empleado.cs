@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capa_Objetos;
+using Capa_Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,13 @@ namespace Proyecto_inventario
 {
     public partial class Empleado : Form
     {
+
+         List<Capa_Objetos.CO_Celular> lista_celulares = new List<Capa_Objetos.CO_Celular>();
+        CO_Celular celular = new CO_Celular();
+        CN_celulares CN_cell = new CN_celulares();
+
+        private int id = 0;
+        private bool Editar = false;
 
         public Empleado()
         {
