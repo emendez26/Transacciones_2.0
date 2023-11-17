@@ -40,7 +40,7 @@ namespace Capa_Datos
                     empleado.identifiacion = dr[2].ToString();
                     empleado.departamento = dr[3].ToString();
                     empleado.area = dr[4].ToString();
-                    empleado.inactivo = dr[5].ToString();
+                    empleado.inactivo = bool.Parse(dr[5].ToString());
                   
 
                     empleados.Add(empleado);

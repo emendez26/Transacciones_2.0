@@ -25,15 +25,7 @@ namespace Capa_Negocios
                 return CD_emp.Insert(empleado);
             }
 
-            public int UpdateEmp(int id, CO_Empleados empleado)
-            {
-                return CD_emp.Update(id, empleado);
-            }
-
-            public int DeleteEmp(int id)
-            {
-                return CD_emp.Delete(id);
-            }
+          
 
 
     }

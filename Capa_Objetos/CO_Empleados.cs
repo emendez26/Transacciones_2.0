@@ -12,6 +12,6 @@ namespace Capa_Objetos
         public string identifiacion { get; set; }
         public string departamento { get; set; }
         public string area { get; set; }
-        public string inactivo { get; set; }
+        public bool inactivo { get; set; }
     }
 }

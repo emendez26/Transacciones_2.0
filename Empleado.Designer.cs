@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleado));
             lbl_Empleado = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            lbl_inactivo = new Label();
             lbl_Nombre_Empleado = new Label();
             txt_Nombre_Empleado = new TextBox();
             lbl_Apellido_Empleado = new Label();
@@ -45,6 +46,7 @@
             txt_Apellido_Empleado = new TextBox();
             txt_Identificacion_Empleado = new TextBox();
             txt_Ubicacion_Empleado = new TextBox();
+            chb_inactivo = new CheckBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             ibtn_Registrar = new FontAwesome.Sharp.IconButton();
             ibtn_limpiar = new FontAwesome.Sharp.IconButton();
@@ -72,7 +74,8 @@
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.5084743F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.49152F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.49153F));
+            tableLayoutPanel1.Controls.Add(lbl_inactivo, 0, 5);
             tableLayoutPanel1.Controls.Add(lbl_Nombre_Empleado, 0, 0);
             tableLayoutPanel1.Controls.Add(txt_Nombre_Empleado, 1, 0);
             tableLayoutPanel1.Controls.Add(lbl_Apellido_Empleado, 0, 1);
@@ -83,24 +86,36 @@
             tableLayoutPanel1.Controls.Add(txt_Apellido_Empleado, 1, 1);
             tableLayoutPanel1.Controls.Add(txt_Identificacion_Empleado, 1, 2);
             tableLayoutPanel1.Controls.Add(txt_Ubicacion_Empleado, 1, 3);
+            tableLayoutPanel1.Controls.Add(chb_inactivo, 1, 5);
             tableLayoutPanel1.Location = new Point(21, 85);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(413, 497);
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.Size = new Size(413, 528);
             tableLayoutPanel1.TabIndex = 269;
+            // 
+            // lbl_inactivo
+            // 
+            lbl_inactivo.Anchor = AnchorStyles.Right;
+            lbl_inactivo.AutoSize = true;
+            lbl_inactivo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_inactivo.Location = new Point(52, 472);
+            lbl_inactivo.Name = "lbl_inactivo";
+            lbl_inactivo.Size = new Size(70, 23);
+            lbl_inactivo.TabIndex = 364;
+            lbl_inactivo.Text = "Inactivo";
             // 
             // lbl_Nombre_Empleado
             // 
             lbl_Nombre_Empleado.Anchor = AnchorStyles.Right;
             lbl_Nombre_Empleado.AutoSize = true;
             lbl_Nombre_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Nombre_Empleado.Location = new Point(50, 38);
+            lbl_Nombre_Empleado.Location = new Point(49, 32);
             lbl_Nombre_Empleado.Name = "lbl_Nombre_Empleado";
             lbl_Nombre_Empleado.Size = new Size(73, 23);
             lbl_Nombre_Empleado.TabIndex = 363;
@@ -110,7 +125,7 @@
             // 
             txt_Nombre_Empleado.Anchor = AnchorStyles.Left;
             txt_Nombre_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Nombre_Empleado.Location = new Point(128, 36);
+            txt_Nombre_Empleado.Location = new Point(127, 30);
             txt_Nombre_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Nombre_Empleado.Name = "txt_Nombre_Empleado";
             txt_Nombre_Empleado.Size = new Size(283, 27);
@@ -121,7 +136,7 @@
             lbl_Apellido_Empleado.Anchor = AnchorStyles.Right;
             lbl_Apellido_Empleado.AutoSize = true;
             lbl_Apellido_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Apellido_Empleado.Location = new Point(51, 137);
+            lbl_Apellido_Empleado.Location = new Point(50, 120);
             lbl_Apellido_Empleado.Name = "lbl_Apellido_Empleado";
             lbl_Apellido_Empleado.Size = new Size(72, 23);
             lbl_Apellido_Empleado.TabIndex = 358;
@@ -132,7 +147,7 @@
             lbl_Identificacion_Empleado.Anchor = AnchorStyles.Right;
             lbl_Identificacion_Empleado.AutoSize = true;
             lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Identificacion_Empleado.Location = new Point(11, 236);
+            lbl_Identificacion_Empleado.Location = new Point(10, 208);
             lbl_Identificacion_Empleado.Name = "lbl_Identificacion_Empleado";
             lbl_Identificacion_Empleado.Size = new Size(112, 23);
             lbl_Identificacion_Empleado.TabIndex = 359;
@@ -143,7 +158,7 @@
             lbl_Ubicacion_Empleado.Anchor = AnchorStyles.Right;
             lbl_Ubicacion_Empleado.AutoSize = true;
             lbl_Ubicacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ubicacion_Empleado.Location = new Point(38, 335);
+            lbl_Ubicacion_Empleado.Location = new Point(37, 296);
             lbl_Ubicacion_Empleado.Name = "lbl_Ubicacion_Empleado";
             lbl_Ubicacion_Empleado.Size = new Size(85, 23);
             lbl_Ubicacion_Empleado.TabIndex = 360;
@@ -153,7 +168,7 @@
             // 
             txt_Area_Empleado.Anchor = AnchorStyles.Left;
             txt_Area_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Area_Empleado.Location = new Point(128, 433);
+            txt_Area_Empleado.Location = new Point(127, 382);
             txt_Area_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Area_Empleado.Name = "txt_Area_Empleado";
             txt_Area_Empleado.Size = new Size(283, 27);
@@ -164,7 +179,7 @@
             lbl_Area_Empleado.Anchor = AnchorStyles.Right;
             lbl_Area_Empleado.AutoSize = true;
             lbl_Area_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Area_Empleado.Location = new Point(78, 435);
+            lbl_Area_Empleado.Location = new Point(77, 384);
             lbl_Area_Empleado.Name = "lbl_Area_Empleado";
             lbl_Area_Empleado.Size = new Size(45, 23);
             lbl_Area_Empleado.TabIndex = 361;
@@ -174,7 +189,7 @@
             // 
             txt_Apellido_Empleado.Anchor = AnchorStyles.Left;
             txt_Apellido_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Apellido_Empleado.Location = new Point(128, 135);
+            txt_Apellido_Empleado.Location = new Point(127, 118);
             txt_Apellido_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Apellido_Empleado.Name = "txt_Apellido_Empleado";
             txt_Apellido_Empleado.Size = new Size(283, 27);
@@ -184,7 +199,7 @@
             // 
             txt_Identificacion_Empleado.Anchor = AnchorStyles.Left;
             txt_Identificacion_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Identificacion_Empleado.Location = new Point(128, 234);
+            txt_Identificacion_Empleado.Location = new Point(127, 206);
             txt_Identificacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
             txt_Identificacion_Empleado.Size = new Size(283, 27);
@@ -194,11 +209,21 @@
             // 
             txt_Ubicacion_Empleado.Anchor = AnchorStyles.Left;
             txt_Ubicacion_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Ubicacion_Empleado.Location = new Point(128, 333);
+            txt_Ubicacion_Empleado.Location = new Point(127, 294);
             txt_Ubicacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Ubicacion_Empleado.Name = "txt_Ubicacion_Empleado";
             txt_Ubicacion_Empleado.Size = new Size(283, 27);
             txt_Ubicacion_Empleado.TabIndex = 4;
+            // 
+            // chb_inactivo
+            // 
+            chb_inactivo.Anchor = AnchorStyles.None;
+            chb_inactivo.AutoSize = true;
+            chb_inactivo.Location = new Point(260, 475);
+            chb_inactivo.Name = "chb_inactivo";
+            chb_inactivo.Size = new Size(18, 17);
+            chb_inactivo.TabIndex = 365;
+            chb_inactivo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -207,7 +232,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(ibtn_Registrar, 0, 0);
             tableLayoutPanel2.Controls.Add(ibtn_limpiar, 1, 0);
-            tableLayoutPanel2.Location = new Point(21, 601);
+            tableLayoutPanel2.Location = new Point(21, 639);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -236,6 +261,7 @@
             ibtn_Registrar.Tag = "REGISTRAR";
             ibtn_Registrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtn_Registrar.UseVisualStyleBackColor = false;
+            ibtn_Registrar.Click += ibtn_Registrar_Click;
             // 
             // ibtn_limpiar
             // 
@@ -258,6 +284,7 @@
             ibtn_limpiar.Tag = "LIMPIAR";
             ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtn_limpiar.UseVisualStyleBackColor = false;
+            ibtn_limpiar.Click += ibtn_limpiar_Click;
             // 
             // ttmensaje
             // 
@@ -310,6 +337,7 @@
             dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_empleados.Size = new Size(593, 647);
             dg_empleados.TabIndex = 307;
+            dg_empleados.CellContentDoubleClick += dg_empleados_CellContentDoubleClick;
             // 
             // Empleado
             // 
@@ -327,6 +355,7 @@
             Name = "Empleado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleado";
+            Load += Empleado_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -352,5 +381,7 @@
         private FontAwesome.Sharp.IconButton ibtn_Registrar;
         private ToolTip ttmensaje;
         private DataGridView dg_empleados;
+        private Label lbl_inactivo;
+        private CheckBox chb_inactivo;
     }
 }
