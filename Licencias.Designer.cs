@@ -212,8 +212,13 @@
             // 
             // dg_licencia
             // 
-            dg_licencia.AllowUserToOrderColumns = true;
+            dg_licencia.AllowUserToAddRows = false;
+            dg_licencia.AllowUserToDeleteRows = false;
+            dg_licencia.AllowUserToResizeColumns = false;
+            dg_licencia.AllowUserToResizeRows = false;
             dg_licencia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_licencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_licencia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dg_licencia.BackgroundColor = Color.White;
             dg_licencia.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_licencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -238,6 +243,7 @@
             dg_licencia.GridColor = Color.Gainsboro;
             dg_licencia.Location = new Point(678, 150);
             dg_licencia.Name = "dg_licencia";
+            dg_licencia.ReadOnly = true;
             dg_licencia.RowHeadersVisible = false;
             dg_licencia.RowHeadersWidth = 51;
             dg_licencia.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;

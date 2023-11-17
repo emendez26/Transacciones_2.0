@@ -189,8 +189,13 @@
             // 
             // dtg_linea
             // 
-            dtg_linea.AllowUserToOrderColumns = true;
+            dtg_linea.AllowUserToAddRows = false;
+            dtg_linea.AllowUserToDeleteRows = false;
+            dtg_linea.AllowUserToResizeColumns = false;
+            dtg_linea.AllowUserToResizeRows = false;
             dtg_linea.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_linea.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_linea.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtg_linea.BackgroundColor = Color.White;
             dtg_linea.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dtg_linea.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -215,6 +220,7 @@
             dtg_linea.GridColor = Color.Gainsboro;
             dtg_linea.Location = new Point(605, 135);
             dtg_linea.Name = "dtg_linea";
+            dtg_linea.ReadOnly = true;
             dtg_linea.RowHeadersVisible = false;
             dtg_linea.RowHeadersWidth = 51;
             dtg_linea.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;

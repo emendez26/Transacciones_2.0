@@ -31,6 +31,20 @@ namespace Proyecto_inventario
             repuesto = new CO_Repuestos();
         }
 
+        //public delegate void ActualizarDelegate(object sender, ActualizarEventArgs args);
+        //public event ActualizarDelegate ActualizarEventHandler;
+
+        //public class ActualizarEventArgs : EventArgs
+        //{ 
+        // public string Data { get; set; }
+        //}
+
+        //protected void Agregar()
+        //{
+        //    ActualizarEventArgs args = new ActualizarEventArgs();
+        //    ActualizarEventHandler.Invoke(this, args);
+        //}
+
         private void Repuestos_Load(object sender, EventArgs e)
         {
             cargarGrid();
@@ -109,7 +123,8 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        //impiar();
+                        //Agregar();
+                        //limpiar();
                     }
                     else
                     {
@@ -182,9 +197,15 @@ namespace Proyecto_inventario
             mostrarDatos();
         }
 
+        //private void AgreActualizarEventHandler(object sender, Repuestos.ActualizarEventArgs args)
+        //{
+        //mostrarDatos();
+        //}
+
 
         private void ibtn_save_Click(object sender, EventArgs e)
         {
+            
             guardar();
         }
 
@@ -204,11 +225,6 @@ namespace Proyecto_inventario
             {
                 e.Handled = true;
             }
-        }
-
-        private void cmb_estado_DropDown(object sender, EventArgs e)
-        {
-            cmb_estado.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

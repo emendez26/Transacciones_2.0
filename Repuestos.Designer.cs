@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Repuestos));
             txt_buscar = new TextBox();
             lbl_buscar = new Label();
@@ -180,38 +180,44 @@
             // 
             // dg_repuestos
             // 
-            dg_repuestos.AllowUserToOrderColumns = true;
+            dg_repuestos.AllowUserToAddRows = false;
+            dg_repuestos.AllowUserToDeleteRows = false;
+            dg_repuestos.AllowUserToResizeColumns = false;
+            dg_repuestos.AllowUserToResizeRows = false;
             dg_repuestos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_repuestos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_repuestos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dg_repuestos.BackgroundColor = Color.White;
             dg_repuestos.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_repuestos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.Firebrick;
-            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle4.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
-            dg_repuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dg_repuestos.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dg_repuestos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_repuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_repuestos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_repuestos.DefaultCellStyle = dataGridViewCellStyle2;
             dg_repuestos.EnableHeadersVisualStyles = false;
             dg_repuestos.GridColor = Color.Gainsboro;
             dg_repuestos.Location = new Point(605, 161);
             dg_repuestos.Name = "dg_repuestos";
+            dg_repuestos.ReadOnly = true;
             dg_repuestos.RowHeadersVisible = false;
             dg_repuestos.RowHeadersWidth = 51;
             dg_repuestos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_repuestos.RowTemplate.Height = 29;
             dg_repuestos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_repuestos.Size = new Size(454, 507);
@@ -356,7 +362,6 @@
             cmb_estado.Name = "cmb_estado";
             cmb_estado.Size = new Size(193, 28);
             cmb_estado.TabIndex = 4;
-            cmb_estado.DropDown += cmb_estado_DropDown;
             // 
             // cmb_Trepuesto
             // 

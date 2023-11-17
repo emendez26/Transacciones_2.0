@@ -15,9 +15,9 @@ namespace Proyecto_inventario
     public partial class Empleado : Form
     {
 
-         List<Capa_Objetos.CO_Celular> lista_celulares = new List<Capa_Objetos.CO_Celular>();
-        CO_Celular celular = new CO_Celular();
-        CN_celulares CN_cell = new CN_celulares();
+         List<Capa_Objetos.CO_Empleados> lista_celulares = new List<Capa_Objetos.CO_Empleados>();
+        CO_Empleados empleado = new CO_Empleados();
+        CN_Empleados CN_emp = new CN_Empleados();
 
         private int id = 0;
         private bool Editar = false;

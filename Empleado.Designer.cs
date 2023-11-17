@@ -268,8 +268,13 @@
             // 
             // dg_empleados
             // 
-            dg_empleados.AllowUserToOrderColumns = true;
+            dg_empleados.AllowUserToAddRows = false;
+            dg_empleados.AllowUserToDeleteRows = false;
+            dg_empleados.AllowUserToResizeColumns = false;
+            dg_empleados.AllowUserToResizeRows = false;
             dg_empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dg_empleados.BackgroundColor = Color.White;
             dg_empleados.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_empleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -294,6 +299,7 @@
             dg_empleados.GridColor = Color.Gainsboro;
             dg_empleados.Location = new Point(483, 85);
             dg_empleados.Name = "dg_empleados";
+            dg_empleados.ReadOnly = true;
             dg_empleados.RowHeadersVisible = false;
             dg_empleados.RowHeadersWidth = 51;
             dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;

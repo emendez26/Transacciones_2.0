@@ -206,7 +206,9 @@ namespace Proyecto_inventario
 
         private void btn_Stock_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Stock>();
+            Stock stock = new Stock();
+            stock.Show();
+            //AbrirFormulario<Stock>();
         }
 
         private void btn_empleado_Click(object sender, EventArgs e)
