@@ -38,12 +38,14 @@ namespace Capa_Datos
                 foreach (DataRow dr in table.Rows)
                 {
                     licencia.id = int.Parse(dr[0].ToString());
-                    licencia.activacion = dr[1].ToString();
+                    licencia.activacion = bool.Parse(dr[1].ToString());
                     licencia.Caracteristicas = dr[2].ToString();
                     licencia.costo = Double.Parse(dr[3].ToString());
                     licencia.fecha_Inicio = DateTime.Parse(dr[4].ToString());
                     licencia.fecha_Fin = DateTime.Parse(dr[5].ToString());
-                    licencia.anos_Licencia = dr[6].ToString();
+                    licencia.anos_Licencia = int.Parse(dr[6].ToString());
+                    licencia.proveedor = dr[7].ToString();
+
 
                     licencias.Add(licencia);
                     licencia = new CO_Licencias();
@@ -65,14 +67,15 @@ namespace Capa_Datos
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Insert_Licencia";
+                comando.CommandText = "[sp_Insert_Licencia]";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@activacion", licencia.activacion);
-                comando.Parameters.AddWithValue("@caracteristicas", licencia.Caracteristicas);
+                comando.Parameters.AddWithValue("@activacion ", licencia.activacion);
+                comando.Parameters.AddWithValue("@Caracteristicas ", licencia.Caracteristicas);
                 comando.Parameters.AddWithValue("@costo", licencia.costo);
                 comando.Parameters.AddWithValue("@fecha_Inicio", licencia.fecha_Inicio);
-                comando.Parameters.AddWithValue("@fecha_Fin", licencia.fecha_Fin);
-                comando.Parameters.AddWithValue("@anos_Licencia", licencia.anos_Licencia);
+                comando.Parameters.AddWithValue("@fecha_Fin ", licencia.fecha_Fin);
+                comando.Parameters.AddWithValue("@anos_Licencia ", licencia.anos_Licencia);
+                comando.Parameters.AddWithValue("@proveedor", licencia.proveedor);
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -97,12 +100,14 @@ namespace Capa_Datos
                 comando.CommandText = "sp_Update_Licencia";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
-                comando.Parameters.AddWithValue("@activacion", licencia.activacion);
-                comando.Parameters.AddWithValue("@caracteristicas", licencia.Caracteristicas);
+                comando.Parameters.AddWithValue("@activacion ", licencia.activacion);
+                comando.Parameters.AddWithValue("@Caracteristicas ", licencia.Caracteristicas);
                 comando.Parameters.AddWithValue("@costo", licencia.costo);
                 comando.Parameters.AddWithValue("@fecha_Inicio", licencia.fecha_Inicio);
-                comando.Parameters.AddWithValue("@fecha_Fin", licencia.fecha_Fin);
-                comando.Parameters.AddWithValue("@anos_Licencia", licencia.anos_Licencia);
+                comando.Parameters.AddWithValue("@fecha_Fin ", licencia.fecha_Fin);
+                comando.Parameters.AddWithValue("@anos_Licencia ", licencia.anos_Licencia);
+                comando.Parameters.AddWithValue("@proveedor", licencia.proveedor);
+
 
                 exitoso = comando.ExecuteNonQuery();
 

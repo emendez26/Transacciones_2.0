@@ -708,7 +708,7 @@
             pb_logo.BackColor = Color.Transparent;
             pb_logo.ErrorImage = (Image)resources.GetObject("pb_logo.ErrorImage");
             pb_logo.Image = (Image)resources.GetObject("pb_logo.Image");
-            pb_logo.Location = new Point(-8, -28);
+            pb_logo.Location = new Point(-16, -77);
             pb_logo.Margin = new Padding(2, 3, 2, 3);
             pb_logo.Name = "pb_logo";
             pb_logo.Size = new Size(380, 295);
@@ -906,7 +906,7 @@
             MinimumSize = new Size(1450, 1028);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tecno Fuego ";
+            Text = "Tecno Fuego";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);

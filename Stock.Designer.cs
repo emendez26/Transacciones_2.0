@@ -85,7 +85,7 @@
             // 
             lbl_Cantidad.AutoSize = true;
             lbl_Cantidad.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Cantidad.Location = new Point(21, 245);
+            lbl_Cantidad.Location = new Point(21, 285);
             lbl_Cantidad.Margin = new Padding(2, 0, 2, 0);
             lbl_Cantidad.Name = "lbl_Cantidad";
             lbl_Cantidad.Size = new Size(79, 23);
@@ -96,7 +96,7 @@
             // 
             lbl_Articulo.AutoSize = true;
             lbl_Articulo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Articulo.Location = new Point(31, 194);
+            lbl_Articulo.Location = new Point(31, 234);
             lbl_Articulo.Margin = new Padding(2, 0, 2, 0);
             lbl_Articulo.Name = "lbl_Articulo";
             lbl_Articulo.Size = new Size(69, 23);
@@ -106,7 +106,7 @@
             // txt_Ubicacion
             // 
             txt_Ubicacion.CharacterCasing = CharacterCasing.Upper;
-            txt_Ubicacion.Location = new Point(502, 286);
+            txt_Ubicacion.Location = new Point(502, 326);
             txt_Ubicacion.Margin = new Padding(2, 3, 2, 3);
             txt_Ubicacion.Name = "txt_Ubicacion";
             txt_Ubicacion.Size = new Size(193, 27);
@@ -116,7 +116,7 @@
             // 
             lbl_Ubicacion.AutoSize = true;
             lbl_Ubicacion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ubicacion.Location = new Point(412, 287);
+            lbl_Ubicacion.Location = new Point(412, 327);
             lbl_Ubicacion.Margin = new Padding(2, 0, 2, 0);
             lbl_Ubicacion.Name = "lbl_Ubicacion";
             lbl_Ubicacion.Size = new Size(85, 23);
@@ -126,7 +126,7 @@
             // txt_Estado
             // 
             txt_Estado.CharacterCasing = CharacterCasing.Upper;
-            txt_Estado.Location = new Point(502, 237);
+            txt_Estado.Location = new Point(502, 277);
             txt_Estado.Margin = new Padding(2, 3, 2, 3);
             txt_Estado.Name = "txt_Estado";
             txt_Estado.Size = new Size(193, 27);
@@ -136,7 +136,7 @@
             // 
             lbl_Estado.AutoSize = true;
             lbl_Estado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Estado.Location = new Point(436, 238);
+            lbl_Estado.Location = new Point(436, 278);
             lbl_Estado.Margin = new Padding(2, 0, 2, 0);
             lbl_Estado.Name = "lbl_Estado";
             lbl_Estado.Size = new Size(61, 23);
@@ -147,17 +147,17 @@
             // 
             lbl_costo.AutoSize = true;
             lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_costo.Location = new Point(443, 191);
+            lbl_costo.Location = new Point(429, 238);
             lbl_costo.Margin = new Padding(2, 0, 2, 0);
             lbl_costo.Name = "lbl_costo";
-            lbl_costo.Size = new Size(54, 23);
+            lbl_costo.Size = new Size(68, 23);
             lbl_costo.TabIndex = 307;
-            lbl_costo.Text = "Costo";
+            lbl_costo.Text = "Costo $";
             // 
             // txt_Cantidad
             // 
             txt_Cantidad.CharacterCasing = CharacterCasing.Upper;
-            txt_Cantidad.Location = new Point(110, 240);
+            txt_Cantidad.Location = new Point(110, 280);
             txt_Cantidad.Margin = new Padding(2, 3, 2, 3);
             txt_Cantidad.Name = "txt_Cantidad";
             txt_Cantidad.Size = new Size(193, 27);
@@ -166,7 +166,7 @@
             // textBoxNum2
             // 
             textBoxNum2.CharacterCasing = CharacterCasing.Upper;
-            textBoxNum2.Location = new Point(110, 337);
+            textBoxNum2.Location = new Point(110, 377);
             textBoxNum2.Margin = new Padding(2, 3, 2, 3);
             textBoxNum2.Name = "textBoxNum2";
             textBoxNum2.Size = new Size(193, 27);
@@ -176,7 +176,7 @@
             // 
             lbl_Proveedor.AutoSize = true;
             lbl_Proveedor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Proveedor.Location = new Point(18, 340);
+            lbl_Proveedor.Location = new Point(18, 380);
             lbl_Proveedor.Margin = new Padding(2, 0, 2, 0);
             lbl_Proveedor.Name = "lbl_Proveedor";
             lbl_Proveedor.Size = new Size(88, 23);
@@ -188,15 +188,16 @@
             txt_Descripcion.CharacterCasing = CharacterCasing.Upper;
             txt_Descripcion.Location = new Point(110, 145);
             txt_Descripcion.Margin = new Padding(2, 3, 2, 3);
+            txt_Descripcion.Multiline = true;
             txt_Descripcion.Name = "txt_Descripcion";
-            txt_Descripcion.Size = new Size(585, 27);
+            txt_Descripcion.Size = new Size(585, 67);
             txt_Descripcion.TabIndex = 2;
             // 
             // lbl_Descripcion
             // 
             lbl_Descripcion.AutoSize = true;
             lbl_Descripcion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Descripcion.Location = new Point(8, 145);
+            lbl_Descripcion.Location = new Point(8, 163);
             lbl_Descripcion.Margin = new Padding(2, 0, 2, 0);
             lbl_Descripcion.Name = "lbl_Descripcion";
             lbl_Descripcion.Size = new Size(98, 23);
@@ -207,7 +208,7 @@
             // 
             lbl_Fecha_Adq.AutoSize = true;
             lbl_Fecha_Adq.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Fecha_Adq.Location = new Point(326, 393);
+            lbl_Fecha_Adq.Location = new Point(326, 433);
             lbl_Fecha_Adq.Margin = new Padding(2, 0, 2, 0);
             lbl_Fecha_Adq.Name = "lbl_Fecha_Adq";
             lbl_Fecha_Adq.Size = new Size(171, 23);
@@ -217,7 +218,7 @@
             // txt_Articulo
             // 
             txt_Articulo.CharacterCasing = CharacterCasing.Upper;
-            txt_Articulo.Location = new Point(110, 191);
+            txt_Articulo.Location = new Point(110, 231);
             txt_Articulo.Margin = new Padding(2, 3, 2, 3);
             txt_Articulo.Name = "txt_Articulo";
             txt_Articulo.Size = new Size(193, 27);
@@ -260,7 +261,7 @@
             // txt_Garantia
             // 
             txt_Garantia.CharacterCasing = CharacterCasing.Upper;
-            txt_Garantia.Location = new Point(502, 336);
+            txt_Garantia.Location = new Point(502, 376);
             txt_Garantia.Margin = new Padding(2, 3, 2, 3);
             txt_Garantia.Name = "txt_Garantia";
             txt_Garantia.Size = new Size(193, 27);
@@ -270,7 +271,7 @@
             // 
             labl_Garantia.AutoSize = true;
             labl_Garantia.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labl_Garantia.Location = new Point(422, 336);
+            labl_Garantia.Location = new Point(422, 376);
             labl_Garantia.Margin = new Padding(2, 0, 2, 0);
             labl_Garantia.Name = "labl_Garantia";
             labl_Garantia.Size = new Size(75, 23);
@@ -280,7 +281,7 @@
             // txt_Serial
             // 
             txt_Serial.CharacterCasing = CharacterCasing.Upper;
-            txt_Serial.Location = new Point(110, 392);
+            txt_Serial.Location = new Point(110, 432);
             txt_Serial.Margin = new Padding(2, 3, 2, 3);
             txt_Serial.Name = "txt_Serial";
             txt_Serial.Size = new Size(193, 27);
@@ -290,7 +291,7 @@
             // 
             lbl_Serial.AutoSize = true;
             lbl_Serial.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Serial.Location = new Point(42, 396);
+            lbl_Serial.Location = new Point(42, 436);
             lbl_Serial.Margin = new Padding(2, 0, 2, 0);
             lbl_Serial.Name = "lbl_Serial";
             lbl_Serial.Size = new Size(51, 23);
@@ -300,7 +301,7 @@
             // txt_Fabricante
             // 
             txt_Fabricante.CharacterCasing = CharacterCasing.Upper;
-            txt_Fabricante.Location = new Point(110, 288);
+            txt_Fabricante.Location = new Point(110, 328);
             txt_Fabricante.Margin = new Padding(2, 3, 2, 3);
             txt_Fabricante.Name = "txt_Fabricante";
             txt_Fabricante.Size = new Size(193, 27);
@@ -310,7 +311,7 @@
             // 
             lbl_Fabricante.AutoSize = true;
             lbl_Fabricante.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Fabricante.Location = new Point(12, 290);
+            lbl_Fabricante.Location = new Point(12, 330);
             lbl_Fabricante.Margin = new Padding(2, 0, 2, 0);
             lbl_Fabricante.Name = "lbl_Fabricante";
             lbl_Fabricante.Size = new Size(88, 23);
@@ -320,7 +321,7 @@
             // txt_costo
             // 
             txt_costo.CharacterCasing = CharacterCasing.Upper;
-            txt_costo.Location = new Point(502, 194);
+            txt_costo.Location = new Point(502, 234);
             txt_costo.Margin = new Padding(3, 4, 3, 4);
             txt_costo.Name = "txt_costo";
             txt_costo.Size = new Size(193, 27);
@@ -329,15 +330,17 @@
             // txt_Buscar_Articulo
             // 
             txt_Buscar_Articulo.CharacterCasing = CharacterCasing.Upper;
-            txt_Buscar_Articulo.Location = new Point(851, 91);
+            txt_Buscar_Articulo.Location = new Point(839, 91);
             txt_Buscar_Articulo.Margin = new Padding(3, 4, 3, 4);
             txt_Buscar_Articulo.Name = "txt_Buscar_Articulo";
-            txt_Buscar_Articulo.Size = new Size(217, 27);
+            txt_Buscar_Articulo.Size = new Size(229, 27);
             txt_Buscar_Articulo.TabIndex = 13;
             // 
             // dtpi_Fecha_Adq
             // 
-            dtpi_Fecha_Adq.Location = new Point(502, 390);
+            dtpi_Fecha_Adq.CustomFormat = "dd/MM/yyyy";
+            dtpi_Fecha_Adq.Format = DateTimePickerFormat.Custom;
+            dtpi_Fecha_Adq.Location = new Point(502, 430);
             dtpi_Fecha_Adq.Margin = new Padding(2, 3, 2, 3);
             dtpi_Fecha_Adq.Name = "dtpi_Fecha_Adq";
             dtpi_Fecha_Adq.Size = new Size(193, 27);
@@ -385,7 +388,7 @@
             dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_empleados.RowTemplate.Height = 29;
             dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_empleados.Size = new Size(358, 443);
+            dg_empleados.Size = new Size(358, 483);
             dg_empleados.TabIndex = 345;
             // 
             // tableLayoutPanel1
@@ -397,7 +400,7 @@
             tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
             tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
-            tableLayoutPanel1.Location = new Point(42, 463);
+            tableLayoutPanel1.Location = new Point(42, 503);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));

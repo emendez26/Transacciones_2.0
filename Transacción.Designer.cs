@@ -29,24 +29,14 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transacción));
-            comboBox2 = new ComboBox();
-            SERIAL = new DataGridViewTextBoxColumn();
             textBox12 = new TextBox();
-            OBSERVACIONES = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            PROVEEDOR = new DataGridViewTextBoxColumn();
-            ID = new DataGridViewTextBoxColumn();
-            RESPONSABLE = new DataGridViewTextBoxColumn();
             label24 = new Label();
-            TIPO = new DataGridViewTextBoxColumn();
             label15 = new Label();
-            CODIGO = new DataGridViewTextBoxColumn();
             textBox8 = new TextBox();
-            dataGridView2 = new DataGridView();
-            MOTIVO = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             label23 = new Label();
             label19 = new Label();
             label13 = new Label();
@@ -68,30 +58,16 @@
             textBox5 = new TextBox();
             label3 = new Label();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            dg_empleados = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_update = new FontAwesome.Sharp.IconButton();
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dg_empleados).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "ID", "RESPONSABLE" });
-            comboBox2.Location = new Point(974, 335);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(78, 28);
-            comboBox2.TabIndex = 326;
-            // 
-            // SERIAL
-            // 
-            SERIAL.HeaderText = "SERIAL";
-            SERIAL.MinimumWidth = 6;
-            SERIAL.Name = "SERIAL";
-            SERIAL.Width = 125;
             // 
             // textBox12
             // 
@@ -99,15 +75,8 @@
             textBox12.Location = new Point(805, 336);
             textBox12.Margin = new Padding(2, 3, 2, 3);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(164, 27);
+            textBox12.Size = new Size(247, 27);
             textBox12.TabIndex = 325;
-            // 
-            // OBSERVACIONES
-            // 
-            OBSERVACIONES.HeaderText = "OBESERVACIONES";
-            OBSERVACIONES.MinimumWidth = 6;
-            OBSERVACIONES.Name = "OBSERVACIONES";
-            OBSERVACIONES.Width = 300;
             // 
             // label1
             // 
@@ -122,27 +91,6 @@
             label1.Text = "TRANSACCION DE ENTRADA";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // PROVEEDOR
-            // 
-            PROVEEDOR.HeaderText = "PROVEEDOR";
-            PROVEEDOR.MinimumWidth = 6;
-            PROVEEDOR.Name = "PROVEEDOR";
-            PROVEEDOR.Width = 125;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
-            ID.Width = 125;
-            // 
-            // RESPONSABLE
-            // 
-            RESPONSABLE.HeaderText = "RESPONSABLE";
-            RESPONSABLE.MinimumWidth = 6;
-            RESPONSABLE.Name = "RESPONSABLE";
-            RESPONSABLE.Width = 125;
-            // 
             // label24
             // 
             label24.AutoSize = true;
@@ -153,13 +101,6 @@
             label24.Size = new Size(117, 23);
             label24.TabIndex = 305;
             label24.Text = "Id transacción";
-            // 
-            // TIPO
-            // 
-            TIPO.HeaderText = "TIPO DE TRANSACCION";
-            TIPO.MinimumWidth = 6;
-            TIPO.Name = "TIPO";
-            TIPO.Width = 125;
             // 
             // label15
             // 
@@ -172,13 +113,6 @@
             label15.TabIndex = 324;
             label15.Text = "Buscar Transaccion";
             // 
-            // CODIGO
-            // 
-            CODIGO.HeaderText = "CODIGO";
-            CODIGO.MinimumWidth = 6;
-            CODIGO.Name = "CODIGO";
-            CODIGO.Width = 125;
-            // 
             // textBox8
             // 
             textBox8.Location = new Point(250, 167);
@@ -186,44 +120,6 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(247, 27);
             textBox8.TabIndex = 308;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.BackgroundColor = SystemColors.ActiveBorder;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ID, TIPO, CODIGO, MOTIVO, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, PROVEEDOR, SERIAL, OBSERVACIONES, RESPONSABLE });
-            dataGridView2.GridColor = SystemColors.ActiveBorder;
-            dataGridView2.Location = new Point(59, 404);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(993, 371);
-            dataGridView2.TabIndex = 320;
-            // 
-            // MOTIVO
-            // 
-            MOTIVO.HeaderText = "MOTIVO";
-            MOTIVO.MinimumWidth = 6;
-            MOTIVO.Name = "MOTIVO";
-            MOTIVO.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "FECHA DE TRANSACCION";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "FECHA DE MOVIMIENTO";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 125;
             // 
             // label23
             // 
@@ -436,17 +332,15 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(ibtn_limpiar);
+            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Controls.Add(dg_empleados);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(comboBox2);
             panel1.Controls.Add(textBox12);
             panel1.Controls.Add(label24);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(textBox8);
             panel1.Controls.Add(label19);
-            panel1.Controls.Add(dataGridView2);
             panel1.Controls.Add(label23);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(dateTimePicker6);
@@ -473,44 +367,149 @@
             panel1.Size = new Size(1102, 859);
             panel1.TabIndex = 1;
             // 
-            // button1
+            // dg_empleados
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.BackColor = Color.Brown;
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(326, 792);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 35);
-            button1.TabIndex = 357;
-            button1.Text = "Eliminar";
-            button1.UseVisualStyleBackColor = false;
+            dg_empleados.AllowUserToAddRows = false;
+            dg_empleados.AllowUserToDeleteRows = false;
+            dg_empleados.AllowUserToResizeColumns = false;
+            dg_empleados.AllowUserToResizeRows = false;
+            dg_empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg_empleados.BackgroundColor = Color.White;
+            dg_empleados.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_empleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_empleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_empleados.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_empleados.DefaultCellStyle = dataGridViewCellStyle2;
+            dg_empleados.EnableHeadersVisualStyles = false;
+            dg_empleados.GridColor = Color.Gainsboro;
+            dg_empleados.Location = new Point(59, 406);
+            dg_empleados.Name = "dg_empleados";
+            dg_empleados.ReadOnly = true;
+            dg_empleados.RowHeadersVisible = false;
+            dg_empleados.RowHeadersWidth = 51;
+            dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dg_empleados.RowTemplate.Height = 29;
+            dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_empleados.Size = new Size(993, 315);
+            dg_empleados.TabIndex = 358;
             // 
-            // button2
+            // tableLayoutPanel1
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button2.BackColor = Color.Green;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(59, 792);
-            button2.Name = "button2";
-            button2.Size = new Size(110, 35);
-            button2.TabIndex = 355;
-            button2.Text = "Insertar";
-            button2.UseVisualStyleBackColor = false;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
+            tableLayoutPanel1.Location = new Point(212, 742);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(653, 92);
+            tableLayoutPanel1.TabIndex = 347;
             // 
-            // button3
+            // ibtn_delete
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button3.BackColor = Color.OrangeRed;
-            button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(192, 792);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 35);
-            button3.TabIndex = 356;
-            button3.Text = "Editar";
-            button3.UseVisualStyleBackColor = false;
+            ibtn_delete.Anchor = AnchorStyles.None;
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_delete.Location = new Point(497, 17);
+            ibtn_delete.Margin = new Padding(2);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(93, 57);
+            ibtn_delete.TabIndex = 304;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            // 
+            // ibtn_save
+            // 
+            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(62, 19);
+            ibtn_save.Margin = new Padding(2);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(93, 53);
+            ibtn_save.TabIndex = 306;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            // 
+            // ibtn_update
+            // 
+            ibtn_update.Anchor = AnchorStyles.None;
+            ibtn_update.BackColor = Color.Transparent;
+            ibtn_update.Cursor = Cursors.Hand;
+            ibtn_update.FlatAppearance.BorderSize = 0;
+            ibtn_update.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_update.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_update.FlatStyle = FlatStyle.Flat;
+            ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            ibtn_update.IconColor = Color.Black;
+            ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_update.Location = new Point(279, 17);
+            ibtn_update.Margin = new Padding(2);
+            ibtn_update.Name = "ibtn_update";
+            ibtn_update.Size = new Size(93, 58);
+            ibtn_update.TabIndex = 305;
+            ibtn_update.Tag = "EDITAR";
+            ibtn_update.UseVisualStyleBackColor = false;
+            // 
+            // ibtn_limpiar
+            // 
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(501, 162);
+            ibtn_limpiar.Margin = new Padding(2);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(53, 36);
+            ibtn_limpiar.TabIndex = 359;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
             // 
             // Transacción
             // 
@@ -524,31 +523,19 @@
             Name = "Transacción";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Transacción De Entrada";
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dg_empleados).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ComboBox comboBox2;
-        private DataGridViewTextBoxColumn SERIAL;
         private TextBox textBox12;
-        private DataGridViewTextBoxColumn OBSERVACIONES;
         private Label label1;
-        private DataGridViewTextBoxColumn PROVEEDOR;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn RESPONSABLE;
         private Label label24;
-        private DataGridViewTextBoxColumn TIPO;
         private Label label15;
-        private DataGridViewTextBoxColumn CODIGO;
         private TextBox textBox8;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn MOTIVO;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private Label label23;
         private Label label19;
         private Label label13;
@@ -570,8 +557,11 @@
         private TextBox textBox5;
         private Label label3;
         private Panel panel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private DataGridView dg_empleados;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton ibtn_delete;
+        private FontAwesome.Sharp.IconButton ibtn_save;
+        private FontAwesome.Sharp.IconButton ibtn_update;
+        private FontAwesome.Sharp.IconButton ibtn_limpiar;
     }
 }

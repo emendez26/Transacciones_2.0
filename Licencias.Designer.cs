@@ -54,9 +54,10 @@
             ibtn_save = new FontAwesome.Sharp.IconButton();
             ibtn_update = new FontAwesome.Sharp.IconButton();
             ttmensaje = new ToolTip(components);
-            cmb_acti = new ComboBox();
             txt_Alicencia = new TextBox();
-            lbl_acti = new Label();
+            lbl_proveedor = new Label();
+            txt_proveedor = new TextBox();
+            chb_activo = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dg_licencia).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             lbl_Alicencia.AutoSize = true;
             lbl_Alicencia.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Alicencia.Location = new Point(11, 322);
+            lbl_Alicencia.Location = new Point(11, 367);
             lbl_Alicencia.Margin = new Padding(2, 0, 2, 0);
             lbl_Alicencia.Name = "lbl_Alicencia";
             lbl_Alicencia.Size = new Size(144, 23);
@@ -86,7 +87,7 @@
             // 
             dtp_Ffin.CustomFormat = "dd/MM/yy";
             dtp_Ffin.Format = DateTimePickerFormat.Custom;
-            dtp_Ffin.Location = new Point(456, 266);
+            dtp_Ffin.Location = new Point(456, 311);
             dtp_Ffin.Margin = new Padding(2, 3, 2, 3);
             dtp_Ffin.Name = "dtp_Ffin";
             dtp_Ffin.Size = new Size(193, 27);
@@ -96,7 +97,7 @@
             // 
             dtp_Finicio.CustomFormat = "dd/MM/yy";
             dtp_Finicio.Format = DateTimePickerFormat.Custom;
-            dtp_Finicio.Location = new Point(155, 269);
+            dtp_Finicio.Location = new Point(155, 314);
             dtp_Finicio.Margin = new Padding(2, 3, 2, 3);
             dtp_Finicio.Name = "dtp_Finicio";
             dtp_Finicio.Size = new Size(193, 27);
@@ -106,7 +107,7 @@
             // 
             lbl_caract.AutoSize = true;
             lbl_caract.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_caract.Location = new Point(36, 168);
+            lbl_caract.Location = new Point(32, 190);
             lbl_caract.Margin = new Padding(2, 0, 2, 0);
             lbl_caract.Name = "lbl_caract";
             lbl_caract.Size = new Size(119, 23);
@@ -117,7 +118,7 @@
             // 
             lbl_Ffin.AutoSize = true;
             lbl_Ffin.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ffin.Location = new Point(371, 271);
+            lbl_Ffin.Location = new Point(371, 316);
             lbl_Ffin.Margin = new Padding(2, 0, 2, 0);
             lbl_Ffin.Name = "lbl_Ffin";
             lbl_Ffin.Size = new Size(81, 23);
@@ -128,7 +129,7 @@
             // 
             lbl_Finicio.AutoSize = true;
             lbl_Finicio.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Finicio.Location = new Point(55, 270);
+            lbl_Finicio.Location = new Point(55, 315);
             lbl_Finicio.Margin = new Padding(2, 0, 2, 0);
             lbl_Finicio.Name = "lbl_Finicio";
             lbl_Finicio.Size = new Size(100, 23);
@@ -138,7 +139,7 @@
             // txt_costo
             // 
             txt_costo.CharacterCasing = CharacterCasing.Upper;
-            txt_costo.Location = new Point(155, 213);
+            txt_costo.Location = new Point(155, 258);
             txt_costo.Margin = new Padding(2, 3, 2, 3);
             txt_costo.Name = "txt_costo";
             txt_costo.Size = new Size(193, 27);
@@ -150,20 +151,21 @@
             // 
             lbl_costo.AutoSize = true;
             lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_costo.Location = new Point(97, 217);
+            lbl_costo.Location = new Point(83, 262);
             lbl_costo.Margin = new Padding(2, 0, 2, 0);
             lbl_costo.Name = "lbl_costo";
-            lbl_costo.Size = new Size(54, 23);
+            lbl_costo.Size = new Size(68, 23);
             lbl_costo.TabIndex = 245;
-            lbl_costo.Text = "Costo";
+            lbl_costo.Text = "Costo $";
             // 
             // txt_caract
             // 
             txt_caract.CharacterCasing = CharacterCasing.Upper;
             txt_caract.Location = new Point(155, 168);
             txt_caract.Margin = new Padding(2, 3, 2, 3);
+            txt_caract.Multiline = true;
             txt_caract.Name = "txt_caract";
-            txt_caract.Size = new Size(494, 27);
+            txt_caract.Size = new Size(494, 65);
             txt_caract.TabIndex = 2;
             // 
             // txt_Id
@@ -252,7 +254,7 @@
             dg_licencia.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_licencia.RowTemplate.Height = 29;
             dg_licencia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_licencia.Size = new Size(402, 369);
+            dg_licencia.Size = new Size(402, 394);
             dg_licencia.TabIndex = 294;
             dg_licencia.CellMouseDoubleClick += dg_licencia_CellMouseDoubleClick;
             // 
@@ -288,7 +290,7 @@
             tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
             tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
-            tableLayoutPanel1.Location = new Point(16, 394);
+            tableLayoutPanel1.Location = new Point(12, 419);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -364,41 +366,51 @@
             ttmensaje.InitialDelay = 300;
             ttmensaje.ReshowDelay = 100;
             // 
-            // cmb_acti
-            // 
-            cmb_acti.FormattingEnabled = true;
-            cmb_acti.Items.AddRange(new object[] { "ACTIVO", "INACTIVO" });
-            cmb_acti.Location = new Point(456, 212);
-            cmb_acti.Name = "cmb_acti";
-            cmb_acti.Size = new Size(193, 28);
-            cmb_acti.TabIndex = 4;
-            // 
             // txt_Alicencia
             // 
-            txt_Alicencia.Location = new Point(155, 322);
+            txt_Alicencia.Location = new Point(155, 367);
             txt_Alicencia.Name = "txt_Alicencia";
             txt_Alicencia.Size = new Size(193, 27);
             txt_Alicencia.TabIndex = 7;
+            txt_Alicencia.KeyPress += txt_Alicencia_KeyPress;
             // 
-            // lbl_acti
+            // lbl_proveedor
             // 
-            lbl_acti.AutoSize = true;
-            lbl_acti.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_acti.Location = new Point(364, 217);
-            lbl_acti.Margin = new Padding(2, 0, 2, 0);
-            lbl_acti.Name = "lbl_acti";
-            lbl_acti.Size = new Size(88, 23);
-            lbl_acti.TabIndex = 307;
-            lbl_acti.Text = "Activacion";
+            lbl_proveedor.AutoSize = true;
+            lbl_proveedor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_proveedor.Location = new Point(363, 259);
+            lbl_proveedor.Margin = new Padding(2, 0, 2, 0);
+            lbl_proveedor.Name = "lbl_proveedor";
+            lbl_proveedor.Size = new Size(88, 23);
+            lbl_proveedor.TabIndex = 309;
+            lbl_proveedor.Text = "Proveedor";
+            // 
+            // txt_proveedor
+            // 
+            txt_proveedor.Location = new Point(456, 258);
+            txt_proveedor.Name = "txt_proveedor";
+            txt_proveedor.Size = new Size(193, 27);
+            txt_proveedor.TabIndex = 310;
+            // 
+            // chb_activo
+            // 
+            chb_activo.AutoSize = true;
+            chb_activo.Location = new Point(456, 367);
+            chb_activo.Name = "chb_activo";
+            chb_activo.Size = new Size(73, 24);
+            chb_activo.TabIndex = 311;
+            chb_activo.Text = "Activo";
+            chb_activo.UseVisualStyleBackColor = true;
             // 
             // Licencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 553);
-            Controls.Add(lbl_acti);
-            Controls.Add(cmb_acti);
+            ClientSize = new Size(1102, 579);
+            Controls.Add(chb_activo);
+            Controls.Add(txt_proveedor);
+            Controls.Add(lbl_proveedor);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(ibtn_limpiar);
             Controls.Add(txt_Alicencia);
@@ -419,10 +431,10 @@
             Controls.Add(txt_Id);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            MinimumSize = new Size(1120, 600);
+            MinimumSize = new Size(1120, 626);
             Name = "Licencias";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Licencias";
+            Text = " ";
             Load += Licencias_Load;
             ((System.ComponentModel.ISupportInitialize)dg_licencia).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
@@ -453,8 +465,9 @@
         private FontAwesome.Sharp.IconButton ibtn_update;
         private ToolTip ttmensaje;
         private Label label2;
-        private ComboBox cmb_acti;
         private TextBox txt_Alicencia;
-        private Label lbl_acti;
+        private Label lbl_proveedor;
+        private TextBox txt_proveedor;
+        private CheckBox chb_activo;
     }
 }

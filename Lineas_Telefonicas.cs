@@ -79,12 +79,13 @@ namespace Proyecto_inventario
             dtg_linea.Rows.Clear();
             lista_Lineas = new List<Capa_Objetos.CO_Lineas_Telefonicas>();
             lista_Lineas.AddRange(CN_lineas.Mostrarlineas());
-            dtg_linea.DataSource = lista_Lineas;
+            CN_Lineas_Telefonicas lineas = new CN_Lineas_Telefonicas();
+            dtg_linea.DataSource = lineas.Mostrarlineas();
         }
 
-        private void limpiar()
+        private void limpiar(bool isEdit)
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 linea = new CO_Lineas_Telefonicas();
                 txt_linea.Text = string.Empty;
@@ -97,7 +98,7 @@ namespace Proyecto_inventario
                 ibtn_delete.Enabled = true;
                 ibtn_update.Enabled = true;
 
-                txt_linea.Enabled = true;
+                txt_linea.Enabled = !isEdit;
             }
         }
 
@@ -135,7 +136,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        limpiar();
+                        limpiar(true);
                         Editar = false;
                     }
                 }
@@ -194,7 +195,7 @@ namespace Proyecto_inventario
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiar(false);
         }
 
         private void dtg_linea_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

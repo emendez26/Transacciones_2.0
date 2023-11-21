@@ -34,7 +34,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Celulares));
             label11 = new Label();
-            dtg_celulares = new DataGridView();
             lbl_Telefono = new Label();
             txt_activoFijo = new TextBox();
             txt_imei1 = new TextBox();
@@ -71,9 +70,10 @@
             ibtn_save = new FontAwesome.Sharp.IconButton();
             ibtn_update = new FontAwesome.Sharp.IconButton();
             ttmensaje = new ToolTip(components);
-            ((System.ComponentModel.ISupportInitialize)dtg_celulares).BeginInit();
+            dtg_celulares = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtg_celulares).BeginInit();
             SuspendLayout();
             // 
             // label11
@@ -88,53 +88,6 @@
             label11.TabIndex = 211;
             label11.Text = "CELULARES";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dtg_celulares
-            // 
-            dtg_celulares.AllowUserToAddRows = false;
-            dtg_celulares.AllowUserToDeleteRows = false;
-            dtg_celulares.AllowUserToResizeColumns = false;
-            dtg_celulares.AllowUserToResizeRows = false;
-            dtg_celulares.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtg_celulares.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtg_celulares.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dtg_celulares.BackgroundColor = Color.White;
-            dtg_celulares.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dtg_celulares.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Firebrick;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
-            dtg_celulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dtg_celulares.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtg_celulares.DefaultCellStyle = dataGridViewCellStyle2;
-            dtg_celulares.EnableHeadersVisualStyles = false;
-            dtg_celulares.GridColor = Color.Gainsboro;
-            dtg_celulares.Location = new Point(694, 125);
-            dtg_celulares.Name = "dtg_celulares";
-            dtg_celulares.ReadOnly = true;
-            dtg_celulares.RowHeadersVisible = false;
-            dtg_celulares.RowHeadersWidth = 51;
-            dtg_celulares.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dtg_celulares.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dtg_celulares.RowTemplate.Height = 29;
-            dtg_celulares.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_celulares.Size = new Size(383, 693);
-            dtg_celulares.TabIndex = 293;
-            dtg_celulares.CellContentClick += dtg_celulares_CellContentClick;
-            dtg_celulares.CellDoubleClick += dtg_celulares_CellDoubleClick;
             // 
             // lbl_Telefono
             // 
@@ -209,9 +162,9 @@
             label12.Location = new Point(362, 394);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(54, 23);
+            label12.Size = new Size(68, 23);
             label12.TabIndex = 192;
-            label12.Text = "Costo";
+            label12.Text = "Costo $";
             // 
             // txt_costo
             // 
@@ -221,6 +174,7 @@
             txt_costo.Name = "txt_costo";
             txt_costo.Size = new Size(212, 27);
             txt_costo.TabIndex = 12;
+            txt_costo.TextChanged += txt_costo_TextChanged;
             txt_costo.KeyPress += txt_costo_KeyPress;
             // 
             // label18
@@ -552,6 +506,53 @@
             ttmensaje.InitialDelay = 300;
             ttmensaje.ReshowDelay = 100;
             // 
+            // dtg_celulares
+            // 
+            dtg_celulares.AllowUserToAddRows = false;
+            dtg_celulares.AllowUserToDeleteRows = false;
+            dtg_celulares.AllowUserToResizeColumns = false;
+            dtg_celulares.AllowUserToResizeRows = false;
+            dtg_celulares.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_celulares.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_celulares.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtg_celulares.BackgroundColor = Color.White;
+            dtg_celulares.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dtg_celulares.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dtg_celulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtg_celulares.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_celulares.DefaultCellStyle = dataGridViewCellStyle2;
+            dtg_celulares.EnableHeadersVisualStyles = false;
+            dtg_celulares.GridColor = Color.Gainsboro;
+            dtg_celulares.Location = new Point(694, 125);
+            dtg_celulares.Name = "dtg_celulares";
+            dtg_celulares.ReadOnly = true;
+            dtg_celulares.RowHeadersVisible = false;
+            dtg_celulares.RowHeadersWidth = 51;
+            dtg_celulares.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dtg_celulares.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dtg_celulares.RowTemplate.Height = 29;
+            dtg_celulares.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_celulares.Size = new Size(383, 693);
+            dtg_celulares.TabIndex = 293;
+            dtg_celulares.CellContentClick += dtg_celulares_CellContentClick;
+            dtg_celulares.CellDoubleClick += dtg_celulares_CellDoubleClick;
+            // 
             // Celulares
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -598,11 +599,11 @@
             MinimumSize = new Size(1119, 824);
             Name = "Celulares";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "                      ";
+            Text = "Celulares";
             Load += Celulares_Load;
-            ((System.ComponentModel.ISupportInitialize)dtg_celulares).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtg_celulares).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -611,7 +612,6 @@
         private TextBox textBoxTel;
         private Label txt_fCompra;
         private Label label11;
-        private DataGridView dtg_celulares;
         private Label lbl_Telefono;
         private TextBox txt_activoFijo;
         private TextBox txt_imei1;
@@ -655,5 +655,6 @@
         private FontAwesome.Sharp.IconButton ibtn_save;
         private FontAwesome.Sharp.IconButton ibtn_update;
         private ToolTip ttmensaje;
+        private DataGridView dtg_celulares;
     }
 }

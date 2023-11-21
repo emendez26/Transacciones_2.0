@@ -24,6 +24,7 @@ namespace Proyecto_inventario
         public Equipo()
         {
             InitializeComponent();
+            dg_equipos.CellFormatting += dg_equipos_CellFormatting;
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
             equipo = new CO_Equipos();
         }
@@ -35,7 +36,8 @@ namespace Proyecto_inventario
             dg_equipos.Rows.Clear();
             lista_Equipos = new List<Capa_Objetos.CO_Equipos>();
             lista_Equipos.AddRange(CN_Equip.MostrarEquip());
-            dg_equipos.DataSource = lista_Equipos;
+            CN_Equipos Equip = new CN_Equipos();
+            dg_equipos.DataSource = Equip.MostrarEquip();
         }
 
         private void Equipo_Load(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace Proyecto_inventario
             txt_depart.Text = equipo.departamento;
             txt_area.Text = equipo.area;
             cb_inactivo.Checked = equipo.inactive;
-            dt_Fcompra.Value = equipo.fecha_compra == null ? DateTime.Now : (DateTime) equipo.fecha_compra;
+            dt_Fcompra.Value = equipo.fecha_compra == null ? DateTime.Now : (DateTime)equipo.fecha_compra;
             txt_costo.Text = equipo.costo.ToString();
             txt_tipo_adquisicion.Text = equipo.tipo_adquisicion.ToString();
         }
@@ -86,7 +88,7 @@ namespace Proyecto_inventario
 
         private void limpiar()
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Confirmar accion", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 equipo = new CO_Equipos();
                 txt_activo_fijo.Text = string.Empty;
@@ -113,6 +115,31 @@ namespace Proyecto_inventario
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void dg_equipos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 14)
+            {
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
+                {
+                    e.Value = valorNumerico.ToString("C");
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void txt_costo_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txt_costo.Text, out decimal costo))
+            {
+                formato_moneda(costo);
+                txt_costo.SelectionStart = txt_costo.Text.Length;
+            }
+        }
+        private void formato_moneda(decimal numero)
+        {
+            txt_costo.Text = numero.ToString("N0");
         }
     }
 }

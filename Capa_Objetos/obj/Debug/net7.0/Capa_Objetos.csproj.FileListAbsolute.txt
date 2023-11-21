@@ -16,6 +16,7 @@ C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.AssemblyInfoInputs.cache
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.AssemblyInfo.cs
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.csproj.CoreCompileInputs.cache
+C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.sourcelink.json
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.dll
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\refint\Capa_Objetos.dll
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Objetos\obj\Debug\net7.0\Capa_Objetos.pdb

@@ -28,30 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte));
             lbl_Reportes = new Label();
-            dg_Stock = new DataGridView();
-            TIPO = new DataGridViewTextBoxColumn();
-            ARTICULO = new DataGridViewTextBoxColumn();
-            DESCRIPCION = new DataGridViewTextBoxColumn();
-            CANTIDAD = new DataGridViewTextBoxColumn();
-            FECHA = new DataGridViewTextBoxColumn();
-            FABRICANTE = new DataGridViewTextBoxColumn();
-            COSTO = new DataGridViewTextBoxColumn();
-            UBICACION = new DataGridViewTextBoxColumn();
-            PROVEEDOR = new DataGridViewTextBoxColumn();
-            ESTADO = new DataGridViewTextBoxColumn();
-            GARANTIA = new DataGridViewTextBoxColumn();
-            SERIAL = new DataGridViewTextBoxColumn();
             txt_Buscar_Articulo = new TextBox();
             lbl_Buscar_Reportes = new Label();
             lbl_Tipo_Reporte = new Label();
             cb_Tipo_Reporte = new ComboBox();
-            btn_Imprimir = new Button();
-            btn_Buscar = new Button();
-            btn_Exportar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dg_Stock).BeginInit();
+            dg_reporte = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ibtn_imprimir = new FontAwesome.Sharp.IconButton();
+            ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_excel = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)dg_reporte).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_Reportes
@@ -62,125 +54,24 @@
             lbl_Reportes.ForeColor = Color.White;
             lbl_Reportes.Location = new Point(0, 0);
             lbl_Reportes.Name = "lbl_Reportes";
-            lbl_Reportes.Size = new Size(1102, 109);
+            lbl_Reportes.Size = new Size(1142, 67);
             lbl_Reportes.TabIndex = 335;
             lbl_Reportes.Text = "REPORTES";
             lbl_Reportes.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dg_Stock
-            // 
-            dg_Stock.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dg_Stock.BackgroundColor = SystemColors.ActiveBorder;
-            dg_Stock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_Stock.Columns.AddRange(new DataGridViewColumn[] { TIPO, ARTICULO, DESCRIPCION, CANTIDAD, FECHA, FABRICANTE, COSTO, UBICACION, PROVEEDOR, ESTADO, GARANTIA, SERIAL });
-            dg_Stock.GridColor = SystemColors.ActiveBorder;
-            dg_Stock.Location = new Point(59, 308);
-            dg_Stock.Name = "dg_Stock";
-            dg_Stock.RowHeadersVisible = false;
-            dg_Stock.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_Stock.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dg_Stock.RowTemplate.Height = 29;
-            dg_Stock.Size = new Size(977, 525);
-            dg_Stock.TabIndex = 336;
-            // 
-            // TIPO
-            // 
-            TIPO.HeaderText = "TIPO DE REPORTE";
-            TIPO.MinimumWidth = 6;
-            TIPO.Name = "TIPO";
-            TIPO.Width = 125;
-            // 
-            // ARTICULO
-            // 
-            ARTICULO.HeaderText = "ARTICULO";
-            ARTICULO.MinimumWidth = 6;
-            ARTICULO.Name = "ARTICULO";
-            ARTICULO.Width = 125;
-            // 
-            // DESCRIPCION
-            // 
-            DESCRIPCION.HeaderText = "DESCRIPCION";
-            DESCRIPCION.MinimumWidth = 6;
-            DESCRIPCION.Name = "DESCRIPCION";
-            DESCRIPCION.Width = 125;
-            // 
-            // CANTIDAD
-            // 
-            CANTIDAD.HeaderText = "CANTIDAD";
-            CANTIDAD.MinimumWidth = 6;
-            CANTIDAD.Name = "CANTIDAD";
-            CANTIDAD.Width = 125;
-            // 
-            // FECHA
-            // 
-            FECHA.HeaderText = "FECHA DE ADQUISICION";
-            FECHA.MinimumWidth = 6;
-            FECHA.Name = "FECHA";
-            FECHA.Width = 125;
-            // 
-            // FABRICANTE
-            // 
-            FABRICANTE.HeaderText = "FABRICANTE";
-            FABRICANTE.MinimumWidth = 6;
-            FABRICANTE.Name = "FABRICANTE";
-            FABRICANTE.Width = 125;
-            // 
-            // COSTO
-            // 
-            COSTO.HeaderText = "COSTO";
-            COSTO.MinimumWidth = 6;
-            COSTO.Name = "COSTO";
-            COSTO.Width = 125;
-            // 
-            // UBICACION
-            // 
-            UBICACION.HeaderText = "UBICACION";
-            UBICACION.MinimumWidth = 6;
-            UBICACION.Name = "UBICACION";
-            UBICACION.Width = 125;
-            // 
-            // PROVEEDOR
-            // 
-            PROVEEDOR.HeaderText = "PROVEEDOR";
-            PROVEEDOR.MinimumWidth = 6;
-            PROVEEDOR.Name = "PROVEEDOR";
-            PROVEEDOR.Width = 125;
-            // 
-            // ESTADO
-            // 
-            ESTADO.HeaderText = "ESTADO";
-            ESTADO.MinimumWidth = 6;
-            ESTADO.Name = "ESTADO";
-            ESTADO.Width = 125;
-            // 
-            // GARANTIA
-            // 
-            GARANTIA.HeaderText = "GARANTIA";
-            GARANTIA.MinimumWidth = 6;
-            GARANTIA.Name = "GARANTIA";
-            GARANTIA.Width = 125;
-            // 
-            // SERIAL
-            // 
-            SERIAL.HeaderText = "SERIAL";
-            SERIAL.MinimumWidth = 6;
-            SERIAL.Name = "SERIAL";
-            SERIAL.Width = 125;
-            // 
             // txt_Buscar_Articulo
             // 
-            txt_Buscar_Articulo.Location = new Point(203, 250);
+            txt_Buscar_Articulo.Location = new Point(839, 106);
             txt_Buscar_Articulo.Margin = new Padding(3, 4, 3, 4);
             txt_Buscar_Articulo.Name = "txt_Buscar_Articulo";
-            txt_Buscar_Articulo.Size = new Size(342, 27);
+            txt_Buscar_Articulo.Size = new Size(256, 27);
             txt_Buscar_Articulo.TabIndex = 369;
             // 
             // lbl_Buscar_Reportes
             // 
             lbl_Buscar_Reportes.AutoSize = true;
             lbl_Buscar_Reportes.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Buscar_Reportes.Location = new Point(59, 255);
+            lbl_Buscar_Reportes.Location = new Point(695, 111);
             lbl_Buscar_Reportes.Margin = new Padding(2, 0, 2, 0);
             lbl_Buscar_Reportes.Name = "lbl_Buscar_Reportes";
             lbl_Buscar_Reportes.Size = new Size(132, 23);
@@ -191,7 +82,7 @@
             // 
             lbl_Tipo_Reporte.AutoSize = true;
             lbl_Tipo_Reporte.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Tipo_Reporte.Location = new Point(59, 183);
+            lbl_Tipo_Reporte.Location = new Point(56, 111);
             lbl_Tipo_Reporte.Margin = new Padding(2, 0, 2, 0);
             lbl_Tipo_Reporte.Name = "lbl_Tipo_Reporte";
             lbl_Tipo_Reporte.Size = new Size(132, 23);
@@ -201,72 +92,152 @@
             // cb_Tipo_Reporte
             // 
             cb_Tipo_Reporte.FormattingEnabled = true;
-            cb_Tipo_Reporte.Location = new Point(203, 183);
+            cb_Tipo_Reporte.Location = new Point(206, 111);
             cb_Tipo_Reporte.Margin = new Padding(3, 4, 3, 4);
             cb_Tipo_Reporte.Name = "cb_Tipo_Reporte";
-            cb_Tipo_Reporte.Size = new Size(342, 28);
+            cb_Tipo_Reporte.Size = new Size(193, 28);
             cb_Tipo_Reporte.TabIndex = 376;
             // 
-            // btn_Imprimir
+            // dg_reporte
             // 
-            btn_Imprimir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Imprimir.BackColor = Color.Brown;
-            btn_Imprimir.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Imprimir.ForeColor = Color.White;
-            btn_Imprimir.Location = new Point(926, 250);
-            btn_Imprimir.Name = "btn_Imprimir";
-            btn_Imprimir.Size = new Size(110, 35);
-            btn_Imprimir.TabIndex = 379;
-            btn_Imprimir.Text = "Imprimir";
-            btn_Imprimir.UseVisualStyleBackColor = false;
+            dg_reporte.AllowUserToAddRows = false;
+            dg_reporte.AllowUserToDeleteRows = false;
+            dg_reporte.AllowUserToResizeColumns = false;
+            dg_reporte.AllowUserToResizeRows = false;
+            dg_reporte.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_reporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_reporte.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg_reporte.BackgroundColor = Color.White;
+            dg_reporte.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_reporte.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.Firebrick;
+            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle4.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
+            dg_reporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dg_reporte.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dg_reporte.DefaultCellStyle = dataGridViewCellStyle5;
+            dg_reporte.EnableHeadersVisualStyles = false;
+            dg_reporte.GridColor = Color.Gainsboro;
+            dg_reporte.Location = new Point(695, 151);
+            dg_reporte.Name = "dg_reporte";
+            dg_reporte.ReadOnly = true;
+            dg_reporte.RowHeadersVisible = false;
+            dg_reporte.RowHeadersWidth = 51;
+            dg_reporte.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_reporte.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dg_reporte.RowTemplate.Height = 29;
+            dg_reporte.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_reporte.Size = new Size(400, 412);
+            dg_reporte.TabIndex = 377;
             // 
-            // btn_Buscar
+            // tableLayoutPanel1
             // 
-            btn_Buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Buscar.BackColor = Color.Green;
-            btn_Buscar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Buscar.ForeColor = Color.White;
-            btn_Buscar.Location = new Point(636, 250);
-            btn_Buscar.Name = "btn_Buscar";
-            btn_Buscar.Size = new Size(110, 35);
-            btn_Buscar.TabIndex = 377;
-            btn_Buscar.Text = "Buscar";
-            btn_Buscar.UseVisualStyleBackColor = false;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(ibtn_imprimir, 2, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_excel, 1, 0);
+            tableLayoutPanel1.Location = new Point(12, 438);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(637, 125);
+            tableLayoutPanel1.TabIndex = 378;
             // 
-            // btn_Exportar
+            // ibtn_imprimir
             // 
-            btn_Exportar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Exportar.BackColor = Color.OrangeRed;
-            btn_Exportar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Exportar.ForeColor = Color.White;
-            btn_Exportar.Location = new Point(772, 250);
-            btn_Exportar.Name = "btn_Exportar";
-            btn_Exportar.Size = new Size(131, 35);
-            btn_Exportar.TabIndex = 378;
-            btn_Exportar.Text = "Exportar a Excel";
-            btn_Exportar.UseVisualStyleBackColor = false;
+            ibtn_imprimir.Anchor = AnchorStyles.None;
+            ibtn_imprimir.BackColor = Color.Transparent;
+            ibtn_imprimir.Cursor = Cursors.Hand;
+            ibtn_imprimir.FlatAppearance.BorderSize = 0;
+            ibtn_imprimir.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_imprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_imprimir.FlatStyle = FlatStyle.Flat;
+            ibtn_imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            ibtn_imprimir.IconColor = Color.Black;
+            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_imprimir.Location = new Point(484, 34);
+            ibtn_imprimir.Margin = new Padding(2);
+            ibtn_imprimir.Name = "ibtn_imprimir";
+            ibtn_imprimir.Size = new Size(93, 57);
+            ibtn_imprimir.TabIndex = 304;
+            ibtn_imprimir.Tag = "ELIMINAR";
+            ibtn_imprimir.UseVisualStyleBackColor = false;
+            // 
+            // ibtn_save
+            // 
+            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.BackColor = Color.Transparent;
+            ibtn_save.Cursor = Cursors.Hand;
+            ibtn_save.FlatAppearance.BorderSize = 0;
+            ibtn_save.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_save.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_save.FlatStyle = FlatStyle.Flat;
+            ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
+            ibtn_save.IconColor = Color.Black;
+            ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_save.Location = new Point(59, 36);
+            ibtn_save.Margin = new Padding(2);
+            ibtn_save.Name = "ibtn_save";
+            ibtn_save.Size = new Size(93, 53);
+            ibtn_save.TabIndex = 306;
+            ibtn_save.Tag = "GUARDAR";
+            ibtn_save.UseVisualStyleBackColor = false;
+            // 
+            // ibtn_excel
+            // 
+            ibtn_excel.Anchor = AnchorStyles.None;
+            ibtn_excel.BackColor = Color.Transparent;
+            ibtn_excel.Cursor = Cursors.Hand;
+            ibtn_excel.FlatAppearance.BorderSize = 0;
+            ibtn_excel.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_excel.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_excel.FlatStyle = FlatStyle.Flat;
+            ibtn_excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            ibtn_excel.IconColor = Color.Black;
+            ibtn_excel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_excel.Location = new Point(271, 33);
+            ibtn_excel.Margin = new Padding(2);
+            ibtn_excel.Name = "ibtn_excel";
+            ibtn_excel.Size = new Size(93, 58);
+            ibtn_excel.TabIndex = 305;
+            ibtn_excel.Tag = "EDITAR";
+            ibtn_excel.UseVisualStyleBackColor = false;
             // 
             // Reporte
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 859);
-            Controls.Add(btn_Imprimir);
-            Controls.Add(btn_Buscar);
-            Controls.Add(btn_Exportar);
+            ClientSize = new Size(1142, 628);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dg_reporte);
             Controls.Add(cb_Tipo_Reporte);
             Controls.Add(txt_Buscar_Articulo);
             Controls.Add(lbl_Buscar_Reportes);
             Controls.Add(lbl_Tipo_Reporte);
-            Controls.Add(dg_Stock);
             Controls.Add(lbl_Reportes);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Reporte";
             Text = "Reporte";
-            ((System.ComponentModel.ISupportInitialize)dg_Stock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dg_reporte).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,7 +245,6 @@
         #endregion
 
         private Label lbl_Reportes;
-        private DataGridView dg_Stock;
         private TextBox txt_id_stock;
         private TextBox txt_Buscar_Articulo;
         private TextBox txt_costo;
@@ -302,20 +272,10 @@
         private TextBox txt_Articulo;
         private Label lbl_Tipo_Reporte;
         private ComboBox cb_Tipo_Reporte;
-        private DataGridViewTextBoxColumn TIPO;
-        private DataGridViewTextBoxColumn ARTICULO;
-        private DataGridViewTextBoxColumn DESCRIPCION;
-        private DataGridViewTextBoxColumn CANTIDAD;
-        private DataGridViewTextBoxColumn FECHA;
-        private DataGridViewTextBoxColumn FABRICANTE;
-        private DataGridViewTextBoxColumn COSTO;
-        private DataGridViewTextBoxColumn UBICACION;
-        private DataGridViewTextBoxColumn PROVEEDOR;
-        private DataGridViewTextBoxColumn ESTADO;
-        private DataGridViewTextBoxColumn GARANTIA;
-        private DataGridViewTextBoxColumn SERIAL;
-        private Button btn_Imprimir;
-        private Button btn_Buscar;
-        private Button btn_Exportar;
+        private DataGridView dg_reporte;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton ibtn_imprimir;
+        private FontAwesome.Sharp.IconButton ibtn_save;
+        private FontAwesome.Sharp.IconButton ibtn_excel;
     }
 }

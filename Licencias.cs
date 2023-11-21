@@ -25,6 +25,7 @@ namespace Proyecto_inventario
         public Licencias()
         {
             InitializeComponent();
+            dg_licencia.CellFormatting += dg_licencia_CellFormatting;
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
             this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
             this.ttmensaje.SetToolTip(this.ibtn_save, "Guardar");
@@ -42,12 +43,13 @@ namespace Proyecto_inventario
 
             licencia = new CO_Licencias();
 
-            licencia.activacion = cmb_acti.Text;
+            licencia.activacion = bool.Parse(chb_activo.Checked.ToString());
             licencia.Caracteristicas = txt_caract.Text;
             licencia.costo = double.Parse(txt_costo.Text);
             licencia.fecha_Inicio = DateTime.Parse(dtp_Finicio.Value.ToShortDateString());
             licencia.fecha_Fin = DateTime.Parse(dtp_Ffin.Value.ToShortDateString());
-            licencia.anos_Licencia = txt_Alicencia.Text;
+            licencia.anos_Licencia = int.Parse(txt_Alicencia.Text);
+            licencia.proveedor = txt_proveedor.Text;
 
 
             return licencia;
@@ -56,17 +58,18 @@ namespace Proyecto_inventario
         public void SetData()
         {
             txt_Id.Text = licencia.id.ToString();
-            cmb_acti.Text = licencia.activacion;
+            chb_activo.Checked = licencia.activacion;
             txt_caract.Text = licencia.Caracteristicas;
             txt_costo.Text = licencia.costo.ToString();
             dtp_Finicio.Value = licencia.fecha_Inicio;
             dtp_Ffin.Value = licencia.fecha_Fin;
-            txt_Alicencia.Text = licencia.anos_Licencia;
-
+            txt_Alicencia.Text = licencia.anos_Licencia.ToString();
+            txt_proveedor.Text = licencia.proveedor;
         }
 
-        public void mostrarDatos()
+        private void mostrarDatos()
         {
+            
             id = int.Parse(dg_licencia.CurrentRow.Cells["Id"].Value.ToString());
             licencia = new CO_Licencias();
             licencia = lista_licencia.Where(e => e.id.Equals(id)).FirstOrDefault();
@@ -79,27 +82,29 @@ namespace Proyecto_inventario
             dg_licencia.Rows.Clear();
             lista_licencia = new List<Capa_Objetos.CO_Licencias>();
             lista_licencia.AddRange(CN_Lic.MostrarLic());
-            dg_licencia.DataSource = lista_licencia;
+            CN_Licencias Lic = new CN_Licencias();
+            dg_licencia.DataSource = Lic.MostrarLic();
         }
 
-        private void limpiar()
+        private void limpiar(bool isEdit)
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 licencia = new CO_Licencias();
                 txt_Id.Text = string.Empty;
-                cmb_acti.Text = string.Empty;
+                chb_activo.Checked = false;
                 txt_caract.Text = string.Empty;
                 txt_costo.Text = string.Empty;
                 dtp_Finicio.Text = string.Empty;
                 dtp_Ffin.Text = string.Empty;
                 txt_Alicencia.Text = string.Empty;
+                txt_proveedor.Text = string.Empty;
 
-                //habilitar botones
+                // Habilitar botones
                 ibtn_delete.Enabled = true;
                 ibtn_update.Enabled = true;
 
-                txt_Id.Enabled = true;
+                txt_Id.Enabled = !isEdit;
             }
         }
 
@@ -137,7 +142,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        limpiar();
+                        limpiar(true);
                         Editar = false;
                     }
                 }
@@ -180,7 +185,7 @@ namespace Proyecto_inventario
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiar(false);
         }
 
         private void ibtn_save_Click(object sender, EventArgs e)
@@ -224,13 +229,33 @@ namespace Proyecto_inventario
             if (decimal.TryParse(txt_costo.Text, out decimal costo))
             {
                 formato_moneda(costo);
-                txt_costo.SelectionStart = txt_costo.Text.Length; 
+                txt_costo.SelectionStart = txt_costo.Text.Length;
             }
         }
 
         private void formato_moneda(decimal numero)
         {
             txt_costo.Text = numero.ToString("n0");
+        }
+
+        private void dg_licencia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
+                {
+                    e.Value = valorNumerico.ToString("C");
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void txt_Alicencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

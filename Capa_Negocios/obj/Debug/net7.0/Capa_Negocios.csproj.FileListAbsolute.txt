@@ -8,3 +8,4 @@ C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debu
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfoInputs.cache
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.AssemblyInfo.cs
 C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Aprendiz Sistemas\source\repos\Transacciones_4.0\Capa_Negocios\obj\Debug\net7.0\Capa_Negocios.sourcelink.json

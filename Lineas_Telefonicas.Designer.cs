@@ -185,7 +185,7 @@
             txt_caract.Multiline = true;
             txt_caract.Name = "txt_caract";
             txt_caract.Size = new Size(521, 99);
-            txt_caract.TabIndex = 346;
+            txt_caract.TabIndex = 4;
             // 
             // dtg_linea
             // 
@@ -254,7 +254,7 @@
             cmb_plan.Margin = new Padding(3, 4, 3, 4);
             cmb_plan.Name = "cmb_plan";
             cmb_plan.Size = new Size(364, 28);
-            cmb_plan.TabIndex = 343;
+            cmb_plan.TabIndex = 3;
             // 
             // txt_proveedor
             // 
@@ -263,7 +263,7 @@
             txt_proveedor.Margin = new Padding(2, 3, 2, 3);
             txt_proveedor.Name = "txt_proveedor";
             txt_proveedor.Size = new Size(364, 27);
-            txt_proveedor.TabIndex = 342;
+            txt_proveedor.TabIndex = 2;
             // 
             // label15
             // 
@@ -326,7 +326,7 @@
             txt_linea.Margin = new Padding(2, 3, 2, 3);
             txt_linea.Name = "txt_linea";
             txt_linea.Size = new Size(233, 30);
-            txt_linea.TabIndex = 336;
+            txt_linea.TabIndex = 1;
             // 
             // label12
             // 
@@ -363,7 +363,7 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "Lineas_Telefonicas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Lineas_Telefonicas";
+            Text = "Lineas Telefonicas";
             Load += Lineas_Telefonicas_Load;
             tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtg_linea).EndInit();

@@ -181,11 +181,8 @@ namespace Proyecto_inventario
                 formulario = new MiForm();
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.Sizable;
-                //formulario.Dock = DockStyle.Fill;
-                //panelFormulario.Controls.Add(formulario);
-                //panelFormulario.Tag = formulario;
                 formulario.Show();
-                //formulario.BringToFront();
+              
             }
 
             else
@@ -201,7 +198,9 @@ namespace Proyecto_inventario
 
         private void btn_reporte_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Reporte>();
+            //AbrirFormulario<Reporte>();
+            Reporte reporte = new Reporte();
+            reporte.Show();
         }
 
         private void btn_Stock_Click(object sender, EventArgs e)

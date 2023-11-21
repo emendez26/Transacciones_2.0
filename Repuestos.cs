@@ -24,6 +24,7 @@ namespace Proyecto_inventario
         public Repuestos()
         {
             InitializeComponent();
+            dg_repuestos.CellFormatting += dg_repuestos_CellFormatting;
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
             this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
             this.ttmensaje.SetToolTip(this.ibtn_save, "Guardar");
@@ -31,24 +32,11 @@ namespace Proyecto_inventario
             repuesto = new CO_Repuestos();
         }
 
-        //public delegate void ActualizarDelegate(object sender, ActualizarEventArgs args);
-        //public event ActualizarDelegate ActualizarEventHandler;
-
-        //public class ActualizarEventArgs : EventArgs
-        //{ 
-        // public string Data { get; set; }
-        //}
-
-        //protected void Agregar()
-        //{
-        //    ActualizarEventArgs args = new ActualizarEventArgs();
-        //    ActualizarEventHandler.Invoke(this, args);
-        //}
-
         private void Repuestos_Load(object sender, EventArgs e)
         {
             cargarGrid();
         }
+
 
         public CO_Repuestos GetData()
         {
@@ -89,14 +77,16 @@ namespace Proyecto_inventario
             dg_repuestos.Rows.Clear();
             lista_repuestos = new List<Capa_Objetos.CO_Repuestos>();
             lista_repuestos.AddRange(CN_Repu.MostrarRepu());
-            dg_repuestos.DataSource = lista_repuestos;
+            CN_Repuestos Repu = new CN_Repuestos();
+            dg_repuestos.DataSource = Repu.MostrarRepu();
         }
 
-        private void limpiar()
+        private void limpiar(bool isEdit)
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 repuesto = new CO_Repuestos();
+                txt_id.Text = repuesto.id.ToString();
                 cmb_marca.Text = string.Empty;
                 txt_modelo.Text = string.Empty;
                 txt_caracteristica.Text = string.Empty;
@@ -108,7 +98,6 @@ namespace Proyecto_inventario
                 ibtn_delete.Enabled = true;
                 ibtn_update.Enabled = true;
 
-                txt_id.Enabled = true;
             }
         }
         public void guardar()
@@ -123,8 +112,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        //Agregar();
-                        //limpiar();
+                        //impiar();
                     }
                     else
                     {
@@ -147,7 +135,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        limpiar();
+                        limpiar(true);
                         Editar = false;
                     }
                 }
@@ -163,7 +151,6 @@ namespace Proyecto_inventario
             if (dg_repuestos.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txt_id.Enabled = false;
                 ibtn_delete.Enabled = false;
                 ibtn_update.Enabled = false;
                 mostrarDatos();
@@ -189,7 +176,7 @@ namespace Proyecto_inventario
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiar(false);
         }
 
         private void dg_repuestos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -197,15 +184,10 @@ namespace Proyecto_inventario
             mostrarDatos();
         }
 
-        //private void AgreActualizarEventHandler(object sender, Repuestos.ActualizarEventArgs args)
-        //{
-        //mostrarDatos();
-        //}
-
 
         private void ibtn_save_Click(object sender, EventArgs e)
         {
-            
+
             guardar();
         }
 
@@ -226,5 +208,32 @@ namespace Proyecto_inventario
                 e.Handled = true;
             }
         }
+
+        private void txt_costo_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txt_costo.Text, out decimal costo))
+            {
+                formato_moneda(costo);
+                txt_costo.SelectionStart = txt_costo.Text.Length; 
+            }
+        }
+
+        private void formato_moneda(decimal numero)
+        {
+            txt_costo.Text = numero.ToString("N0");
+        }
+
+        private void dg_repuestos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4) 
+            { 
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
+                {
+                    e.Value = valorNumerico.ToString("C");
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
     }
 }

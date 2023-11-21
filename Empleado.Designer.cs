@@ -204,6 +204,7 @@
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
             txt_Identificacion_Empleado.Size = new Size(283, 27);
             txt_Identificacion_Empleado.TabIndex = 3;
+            txt_Identificacion_Empleado.KeyPress += txt_Identificacion_Empleado_KeyPress;
             // 
             // txt_Ubicacion_Empleado
             // 
@@ -217,12 +218,12 @@
             // 
             // chb_inactivo
             // 
-            chb_inactivo.Anchor = AnchorStyles.None;
+            chb_inactivo.Anchor = AnchorStyles.Left;
             chb_inactivo.AutoSize = true;
-            chb_inactivo.Location = new Point(260, 475);
+            chb_inactivo.Location = new Point(128, 475);
             chb_inactivo.Name = "chb_inactivo";
             chb_inactivo.Size = new Size(18, 17);
-            chb_inactivo.TabIndex = 365;
+            chb_inactivo.TabIndex = 6;
             chb_inactivo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2

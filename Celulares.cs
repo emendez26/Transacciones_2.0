@@ -31,6 +31,7 @@ namespace Proyecto_inventario
         public Celulares()
         {
             InitializeComponent();
+            //dtg_celulares.CellFormatting += dtg_celulares_CellFormatting;
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
             this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
             this.ttmensaje.SetToolTip(this.ibtn_save, "Guardar");
@@ -100,6 +101,8 @@ namespace Proyecto_inventario
             lista_celulares = new List<Capa_Objetos.CO_Celular>();
             lista_celulares.AddRange(CN_cell.MostrarCell());
             dtg_celulares.DataSource = lista_celulares;
+            //CN_celulares cell = new CN_celulares();
+            //dtg_celulares.DataSource = cell.MostrarCell();
         }
 
         private void limpiar()
@@ -265,5 +268,32 @@ namespace Proyecto_inventario
         {
 
         }
+
+        private void txt_costo_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txt_costo.Text, out decimal costo))
+            {
+                formato_moneda(costo);
+                txt_costo.SelectionStart = txt_costo.Text.Length;
+            }
+        }
+
+        private void formato_moneda(decimal numero)
+        {
+            txt_costo.Text = numero.ToString("N0");
+        }
+
+        //private void dtg_celulares_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        //{
+        //    if (e.ColumnIndex == 13)
+        //    {
+        //        if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
+        //        {
+        //            e.Value = valorNumerico.ToString("C");
+        //            e.FormattingApplied = true;
+        //        }
+        //    }
+        //}
     }
+    
 }

@@ -27,6 +27,7 @@ namespace Proyecto_inventario
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.ibtn_Registrar, "Registrar");
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
+            empleado = new CO_Empleados();
         }
 
         private void cargarGrid()
@@ -35,7 +36,8 @@ namespace Proyecto_inventario
             dg_empleados.Rows.Clear();
             lista_empleados = new List<Capa_Objetos.CO_Empleados>();
             lista_empleados.AddRange(CN_emp.MostrarEmp());
-            dg_empleados.DataSource = lista_empleados;
+            CN_Empleados emp = new CN_Empleados();
+            dg_empleados.DataSource = emp.MostrarEmp();
         }
 
         private void Empleado_Load(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace Proyecto_inventario
 
         private void limpiar()
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Mood Test", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Confirmar accion", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 empleado = new CO_Empleados();
                 txt_Identificacion_Empleado.Text = string.Empty;
@@ -126,6 +128,14 @@ namespace Proyecto_inventario
         private void dg_empleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             mostrarDatos();
+        }
+
+        private void txt_Identificacion_Empleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

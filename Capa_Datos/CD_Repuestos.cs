@@ -76,6 +76,7 @@ namespace Capa_Datos
 
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
+                
             }
             catch (Exception ex)
             {
