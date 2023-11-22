@@ -25,6 +25,7 @@ namespace Proyecto_inventario
             panelSubMenuLicencias.Visible = false;
             panelSubMenuLineas.Visible = false;
             panelSubMenuRepuestos.Visible = false;
+            panelSubMenuToner.Visible = false;
         }
 
         private void hideSubMenu()
@@ -39,6 +40,8 @@ namespace Proyecto_inventario
                 panelSubMenuLineas.Visible = false;
             if (panelSubMenuRepuestos.Visible == true)
                 panelSubMenuRepuestos.Visible = false;
+            if (panelSubMenuToner.Visible == true)
+                panelSubMenuToner.Visible = false;
         }
 
         private void showSubMenu(Panel SubMenu)
@@ -67,13 +70,15 @@ namespace Proyecto_inventario
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
             hideSubMenu();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<transaccion_salida>();
+            transaccion_salida tsalida = new transaccion_salida();
+            tsalida.Show();
             hideSubMenu();
         }
 
@@ -92,13 +97,15 @@ namespace Proyecto_inventario
 
         private void button8_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
             hideSubMenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<transaccion_salida>();
+            transaccion_salida tsalida = new transaccion_salida();
+            tsalida.Show();
             hideSubMenu();
         }
 
@@ -117,13 +124,15 @@ namespace Proyecto_inventario
 
         private void button11_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
             hideSubMenu();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<transaccion_salida>();
+            transaccion_salida tsalida = new transaccion_salida();
+            tsalida.Show();
             hideSubMenu();
         }
 
@@ -142,13 +151,17 @@ namespace Proyecto_inventario
 
         private void button14_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Transacción>();
+            //AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
             hideSubMenu();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<transaccion_salida>();
+            //AbrirFormulario<transaccion_salida>();
+            transaccion_salida tsalida = new transaccion_salida();
+            tsalida.Show();
             hideSubMenu();
         }
 
@@ -167,7 +180,8 @@ namespace Proyecto_inventario
 
         private void button17_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
             hideSubMenu();
         }
 
@@ -182,7 +196,7 @@ namespace Proyecto_inventario
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.Sizable;
                 formulario.Show();
-              
+
             }
 
             else
@@ -215,6 +229,30 @@ namespace Proyecto_inventario
             //AbrirFormulario<Empleado>();
             Empleado emp = new Empleado();
             emp.Show();
+        }
+
+        private void btn_Toner_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubMenuToner);
+        }
+
+        private void btn_form_toner_Click(object sender, EventArgs e)
+        {
+            Toner ton = new Toner();
+            ton.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //AbrirFormulario<Transacción>();
+            Transacción trans = new Transacción();
+            trans.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            transaccion_salida tsalida = new transaccion_salida();
+            tsalida.Show();
         }
     }
 }

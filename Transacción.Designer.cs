@@ -36,7 +36,7 @@
             label1 = new Label();
             label24 = new Label();
             label15 = new Label();
-            textBox8 = new TextBox();
+            txt_id = new TextBox();
             label23 = new Label();
             label19 = new Label();
             label13 = new Label();
@@ -58,20 +58,21 @@
             textBox5 = new TextBox();
             label3 = new Label();
             panel1 = new Panel();
-            dg_empleados = new DataGridView();
+            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             ibtn_delete = new FontAwesome.Sharp.IconButton();
             ibtn_save = new FontAwesome.Sharp.IconButton();
             ibtn_update = new FontAwesome.Sharp.IconButton();
-            ibtn_limpiar = new FontAwesome.Sharp.IconButton();
+            dg_empleados = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_empleados).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dg_empleados).BeginInit();
             SuspendLayout();
             // 
             // textBox12
             // 
             textBox12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            textBox12.CharacterCasing = CharacterCasing.Upper;
             textBox12.Location = new Point(805, 336);
             textBox12.Margin = new Padding(2, 3, 2, 3);
             textBox12.Name = "textBox12";
@@ -113,13 +114,15 @@
             label15.TabIndex = 324;
             label15.Text = "Buscar Transaccion";
             // 
-            // textBox8
+            // txt_id
             // 
-            textBox8.Location = new Point(250, 167);
-            textBox8.Margin = new Padding(2, 3, 2, 3);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(247, 27);
-            textBox8.TabIndex = 308;
+            txt_id.CharacterCasing = CharacterCasing.Upper;
+            txt_id.Location = new Point(250, 167);
+            txt_id.Margin = new Padding(2, 3, 2, 3);
+            txt_id.Name = "txt_id";
+            txt_id.Size = new Size(247, 27);
+            txt_id.TabIndex = 308;
+            txt_id.KeyPress += txt_id_KeyPress;
             // 
             // label23
             // 
@@ -158,7 +161,7 @@
             // 
             // dateTimePicker6
             // 
-            dateTimePicker6.CustomFormat = "MMMM, dd yyyy";
+            dateTimePicker6.CustomFormat = "dd/MM/yy";
             dateTimePicker6.Format = DateTimePickerFormat.Custom;
             dateTimePicker6.Location = new Point(250, 201);
             dateTimePicker6.Margin = new Padding(2, 3, 2, 3);
@@ -168,6 +171,7 @@
             // 
             // textBox6
             // 
+            textBox6.CharacterCasing = CharacterCasing.Upper;
             textBox6.Location = new Point(250, 333);
             textBox6.Margin = new Padding(2, 3, 2, 3);
             textBox6.Name = "textBox6";
@@ -177,6 +181,7 @@
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBox3.CharacterCasing = CharacterCasing.Upper;
             textBox3.Location = new Point(805, 236);
             textBox3.Margin = new Padding(2, 3, 2, 3);
             textBox3.Name = "textBox3";
@@ -197,6 +202,7 @@
             // textBox7
             // 
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBox7.CharacterCasing = CharacterCasing.Upper;
             textBox7.Location = new Point(805, 170);
             textBox7.Margin = new Padding(2, 3, 2, 3);
             textBox7.Name = "textBox7";
@@ -229,6 +235,7 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBox1.CharacterCasing = CharacterCasing.Upper;
             textBox1.Location = new Point(805, 303);
             textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Name = "textBox1";
@@ -260,7 +267,7 @@
             // dateTimePicker5
             // 
             dateTimePicker5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            dateTimePicker5.CustomFormat = "MMMM, dd, yyyy";
+            dateTimePicker5.CustomFormat = "dd/MM/yy";
             dateTimePicker5.Format = DateTimePickerFormat.Custom;
             dateTimePicker5.Location = new Point(805, 203);
             dateTimePicker5.Margin = new Padding(2, 3, 2, 3);
@@ -270,6 +277,7 @@
             // 
             // textBox2
             // 
+            textBox2.CharacterCasing = CharacterCasing.Upper;
             textBox2.Location = new Point(250, 300);
             textBox2.Margin = new Padding(2, 3, 2, 3);
             textBox2.Name = "textBox2";
@@ -312,6 +320,7 @@
             // 
             // textBox5
             // 
+            textBox5.CharacterCasing = CharacterCasing.Upper;
             textBox5.Location = new Point(250, 266);
             textBox5.Margin = new Padding(2, 3, 2, 3);
             textBox5.Name = "textBox5";
@@ -339,7 +348,7 @@
             panel1.Controls.Add(textBox12);
             panel1.Controls.Add(label24);
             panel1.Controls.Add(label15);
-            panel1.Controls.Add(textBox8);
+            panel1.Controls.Add(txt_id);
             panel1.Controls.Add(label19);
             panel1.Controls.Add(label23);
             panel1.Controls.Add(label13);
@@ -367,53 +376,31 @@
             panel1.Size = new Size(1102, 859);
             panel1.TabIndex = 1;
             // 
-            // dg_empleados
+            // ibtn_limpiar
             // 
-            dg_empleados.AllowUserToAddRows = false;
-            dg_empleados.AllowUserToDeleteRows = false;
-            dg_empleados.AllowUserToResizeColumns = false;
-            dg_empleados.AllowUserToResizeRows = false;
-            dg_empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dg_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dg_empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dg_empleados.BackgroundColor = Color.White;
-            dg_empleados.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dg_empleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Firebrick;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
-            dg_empleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dg_empleados.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dg_empleados.DefaultCellStyle = dataGridViewCellStyle2;
-            dg_empleados.EnableHeadersVisualStyles = false;
-            dg_empleados.GridColor = Color.Gainsboro;
-            dg_empleados.Location = new Point(59, 406);
-            dg_empleados.Name = "dg_empleados";
-            dg_empleados.ReadOnly = true;
-            dg_empleados.RowHeadersVisible = false;
-            dg_empleados.RowHeadersWidth = 51;
-            dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dg_empleados.RowTemplate.Height = 29;
-            dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_empleados.Size = new Size(993, 315);
-            dg_empleados.TabIndex = 358;
+            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
+            ibtn_limpiar.BackColor = Color.Transparent;
+            ibtn_limpiar.Cursor = Cursors.Hand;
+            ibtn_limpiar.FlatAppearance.BorderSize = 0;
+            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
+            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            ibtn_limpiar.IconColor = Color.Black;
+            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_limpiar.IconSize = 40;
+            ibtn_limpiar.Location = new Point(501, 162);
+            ibtn_limpiar.Margin = new Padding(2);
+            ibtn_limpiar.Name = "ibtn_limpiar";
+            ibtn_limpiar.Size = new Size(53, 36);
+            ibtn_limpiar.TabIndex = 359;
+            ibtn_limpiar.Tag = "LIMPIAR";
+            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ibtn_limpiar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Bottom;
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
@@ -489,27 +476,50 @@
             ibtn_update.Tag = "EDITAR";
             ibtn_update.UseVisualStyleBackColor = false;
             // 
-            // ibtn_limpiar
+            // dg_empleados
             // 
-            ibtn_limpiar.AccessibleDescription = "LIMPIAR";
-            ibtn_limpiar.BackColor = Color.Transparent;
-            ibtn_limpiar.Cursor = Cursors.Hand;
-            ibtn_limpiar.FlatAppearance.BorderSize = 0;
-            ibtn_limpiar.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            ibtn_limpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            ibtn_limpiar.FlatStyle = FlatStyle.Flat;
-            ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            ibtn_limpiar.IconColor = Color.Black;
-            ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_limpiar.IconSize = 40;
-            ibtn_limpiar.Location = new Point(501, 162);
-            ibtn_limpiar.Margin = new Padding(2);
-            ibtn_limpiar.Name = "ibtn_limpiar";
-            ibtn_limpiar.Size = new Size(53, 36);
-            ibtn_limpiar.TabIndex = 359;
-            ibtn_limpiar.Tag = "LIMPIAR";
-            ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            ibtn_limpiar.UseVisualStyleBackColor = false;
+            dg_empleados.AllowUserToAddRows = false;
+            dg_empleados.AllowUserToDeleteRows = false;
+            dg_empleados.AllowUserToResizeColumns = false;
+            dg_empleados.AllowUserToResizeRows = false;
+            dg_empleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg_empleados.BackgroundColor = Color.White;
+            dg_empleados.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_empleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_empleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_empleados.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_empleados.DefaultCellStyle = dataGridViewCellStyle2;
+            dg_empleados.EnableHeadersVisualStyles = false;
+            dg_empleados.GridColor = Color.Gainsboro;
+            dg_empleados.Location = new Point(59, 406);
+            dg_empleados.Name = "dg_empleados";
+            dg_empleados.ReadOnly = true;
+            dg_empleados.RowHeadersVisible = false;
+            dg_empleados.RowHeadersWidth = 51;
+            dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dg_empleados.RowTemplate.Height = 29;
+            dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_empleados.Size = new Size(993, 315);
+            dg_empleados.TabIndex = 358;
             // 
             // Transacción
             // 
@@ -517,16 +527,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1102, 859);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(1120, 906);
             Name = "Transacción";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Transacción De Entrada";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_empleados).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dg_empleados).EndInit();
             ResumeLayout(false);
         }
 
@@ -535,7 +545,7 @@
         private Label label1;
         private Label label24;
         private Label label15;
-        private TextBox textBox8;
+        private TextBox txt_id;
         private Label label23;
         private Label label19;
         private Label label13;

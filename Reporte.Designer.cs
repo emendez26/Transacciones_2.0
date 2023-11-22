@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte));
             lbl_Reportes = new Label();
             txt_Buscar_Articulo = new TextBox();
@@ -110,23 +110,23 @@
             dg_reporte.BackgroundColor = Color.White;
             dg_reporte.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_reporte.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.Firebrick;
-            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle4.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
-            dg_reporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_reporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_reporte.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dg_reporte.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_reporte.DefaultCellStyle = dataGridViewCellStyle2;
             dg_reporte.EnableHeadersVisualStyles = false;
             dg_reporte.GridColor = Color.Gainsboro;
             dg_reporte.Location = new Point(695, 151);
@@ -135,9 +135,9 @@
             dg_reporte.RowHeadersVisible = false;
             dg_reporte.RowHeadersWidth = 51;
             dg_reporte.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_reporte.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_reporte.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_reporte.RowTemplate.Height = 29;
             dg_reporte.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_reporte.Size = new Size(400, 412);
@@ -170,7 +170,7 @@
             ibtn_imprimir.FlatStyle = FlatStyle.Flat;
             ibtn_imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
             ibtn_imprimir.IconColor = Color.Black;
-            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
             ibtn_imprimir.Location = new Point(484, 34);
             ibtn_imprimir.Margin = new Padding(2);
             ibtn_imprimir.Name = "ibtn_imprimir";
@@ -210,7 +210,7 @@
             ibtn_excel.FlatStyle = FlatStyle.Flat;
             ibtn_excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
             ibtn_excel.IconColor = Color.Black;
-            ibtn_excel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ibtn_excel.IconFont = FontAwesome.Sharp.IconFont.Solid;
             ibtn_excel.Location = new Point(271, 33);
             ibtn_excel.Margin = new Padding(2);
             ibtn_excel.Name = "ibtn_excel";
