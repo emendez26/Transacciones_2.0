@@ -28,6 +28,8 @@ namespace Proyecto_inventario
         private int id = 0;
         private bool Editar = false;
 
+
+
         public Transacción()
         {
             InitializeComponent();
@@ -44,6 +46,8 @@ namespace Proyecto_inventario
         }
 
 
+
+
         private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -58,10 +62,7 @@ namespace Proyecto_inventario
             transaccion = new CO_Transacciones();
 
             transaccion.fecha_transaccion = DateTime.Parse(dtp_Ftransaccion.Value.ToShortDateString());
-            transaccion.fecha_movimiento = DateTime.Parse(dtp_Fmovimiento.Value.ToShortDateString());
             transaccion.tipo_transaccion = cmb_Tipo.Text;
-            transaccion.observaciones = txt_observacion.Text;
-            transaccion.ruta_soporte = txt_ruta_soporte.Text;
             transaccion.responsable = txt_responsable.Text;
             transaccion.motivo = cmb_motivo.Text;
             transaccion.formulario = formulario;
@@ -71,12 +72,8 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
-            txt_id.Text = transaccion.id.ToString();
             dtp_Ftransaccion.Value = transaccion.fecha_transaccion;
-            dtp_Fmovimiento.Value = transaccion.fecha_movimiento;
             cmb_Tipo.Text = transaccion.tipo_transaccion;
-            txt_observacion.Text = transaccion.observaciones;
-            txt_ruta_soporte.Text = transaccion.ruta_soporte;
             txt_responsable.Text = transaccion.responsable;
             cmb_motivo.Text = transaccion.motivo;
 
@@ -107,12 +104,8 @@ namespace Proyecto_inventario
             if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 transaccion = new CO_Transacciones();
-                txt_id.Text = transaccion.id.ToString();
                 dtp_Ftransaccion.Text = string.Empty;
-                dtp_Fmovimiento.Text = string.Empty;
                 cmb_Tipo.Text = string.Empty;
-                txt_observacion.Text = string.Empty;
-                txt_ruta_soporte.Text = string.Empty;
                 txt_responsable.Text = string.Empty;
                 cmb_motivo.Text = string.Empty;
             }
@@ -165,6 +158,7 @@ namespace Proyecto_inventario
             cargarGrid();
         }
 
+
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Tipo.Text == "ENTRADA")
@@ -197,6 +191,39 @@ namespace Proyecto_inventario
                 }
             }
         }
-    }
 
+        //private void dg_transaccion_VisibleChanged(object sender, EventArgs e)
+        //{
+        //    dg_transaccion.CurrentCell = null;
+
+        //    foreach (DataGridViewRow r in dg_transaccion.Rows)
+        //    {
+        //        r.Visible = false;
+        //    }
+
+        //    foreach (DataGridViewRow r in dg_transaccion.Rows)
+        //    {
+        //        string tipoFormulario = r.Cells["formulario"].Value.ToString();
+        //        if (tipoFormulario.ToUpper() == "CELULARES")
+        //        {
+        //            foreach (DataGridViewCell c in r.Cells)
+        //            {
+        //                // Asegúrate de que el texto de búsqueda esté presente en alguna celda
+        //                if (c.Value != null && (c.Value.ToString().ToUpper()).Contains(txt_buscar.Text.ToUpper()))
+        //                {
+        //                    r.Visible = true;
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }
+
+    

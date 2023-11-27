@@ -42,6 +42,7 @@ namespace Proyecto_inventario
         private void Celulares_Load(object sender, EventArgs e)
         {
             cargarGrid();
+
         }
 
 

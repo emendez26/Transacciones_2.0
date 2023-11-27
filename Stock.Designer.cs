@@ -119,6 +119,7 @@
             dg_stock.Size = new Size(1034, 483);
             dg_stock.TabIndex = 345;
             dg_stock.CellDoubleClick += dg_stock_CellDoubleClick;
+            dg_stock.VisibleChanged += dg_stock_VisibleChanged;
             // 
             // Stock
             // 

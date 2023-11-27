@@ -35,6 +35,15 @@
     <Compile Update="Toner.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Transaccion_Equipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transaccion_Lineas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Transaccion_Repuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Transacción.cs">
       <SubType>Form</SubType>
     </Compile>

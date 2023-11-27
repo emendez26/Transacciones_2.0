@@ -70,7 +70,7 @@ namespace Proyecto_inventario
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Transacción trans = new Transacción("EQUIPOS");
+            Transacción trans = new Transacción("EQUIPO");
             trans.Show();
             hideSubMenu();
         }
@@ -82,6 +82,8 @@ namespace Proyecto_inventario
 
         private void btn_form_Celulares_Click(object sender, EventArgs e)
         {
+           
+            
             Celulares cell = new Celulares();
             cell.Show();
             hideSubMenu();
@@ -92,6 +94,9 @@ namespace Proyecto_inventario
             Transacción trans = new Transacción("CELULARES");
             trans.Show();
             hideSubMenu();
+
+
+
         }
 
         private void btn_Repuestos_Click(object sender, EventArgs e)
