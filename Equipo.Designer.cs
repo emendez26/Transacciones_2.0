@@ -275,6 +275,7 @@
             txt_buscar_equipos.Name = "txt_buscar_equipos";
             txt_buscar_equipos.Size = new Size(270, 27);
             txt_buscar_equipos.TabIndex = 282;
+            txt_buscar_equipos.TextChanged += txt_buscar_equipos_TextChanged;
             // 
             // lbl_buscar_equipos
             // 

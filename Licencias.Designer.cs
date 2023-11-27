@@ -187,6 +187,7 @@
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(265, 27);
             txt_buscar.TabIndex = 288;
+            txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // lbl_buscar
             // 

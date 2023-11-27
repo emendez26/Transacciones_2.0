@@ -1,9 +1,11 @@
-﻿using Capa_Negocios;
+﻿using Capa_Datos;
+using Capa_Negocios;
 using Capa_Objetos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,7 @@ namespace Proyecto_inventario
         List<Capa_Objetos.CO_Equipos> lista_Equipos = new List<Capa_Objetos.CO_Equipos>();
         CO_Equipos equipo = new CO_Equipos();
         CN_Equipos CN_Equip = new CN_Equipos();
+
 
         private string activo_fijo = "";
         private bool Editar = false;
@@ -141,30 +144,25 @@ namespace Proyecto_inventario
         {
             txt_costo.Text = numero.ToString("N0");
         }
+
+        private void txt_buscar_equipos_TextChanged(object sender, EventArgs e)
+        {
+            dg_equipos.CurrentCell = null;
+            foreach (DataGridViewRow r in dg_equipos.Rows)
+            {
+                r.Visible = false;
+            }
+            foreach (DataGridViewRow r in dg_equipos.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells)
+                {
+                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar_equipos.Text.ToUpper()) == 0)
+                    {
+                        r.Visible = true;
+                    }
+                }
+            }
+        }
     }
 }
 
-//public CO_Equipos GetData()
-//{
-
-//equipo = new CO_Equipos();
-//equipo.usuario = "Admin";
-//equipo.activo_fijo = txt_activo_fijo.Text;
-//equipo.sitio = txt_sitio.Text;
-//equipo.sede = txt_sede.Text;
-//equipo.descripcion = txt_descrip.Text;
-//equipo.modelo = txt_modelo.Text;
-//equipo.fabricante = txt_fabricante.Text;
-//equipo.sub_tipo = txt_sub_tipo.Text;
-//equipo.tipo = txt_tipo.Text;
-//equipo.area = txt_area.Text;
-//equipo.fecha_servicio = DateTime.Parse(dt_Fservicio.Value.ToLongDateString());
-//equipo.ubicacion = txt_ubicacion.Text;
-//equipo.costo = double.Parse(txt_costo.Text);
-//equipo.tipo_adquisicion = txt_tipo_adquisicion.Text;
-//equipo.id_empleado = txt_responsable;
-//equipo.estado = txt_estado;
-//equipo.serial = txt_serial.Text;
-
-//return equipo;
-//}

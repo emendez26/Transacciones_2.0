@@ -69,7 +69,7 @@ namespace Proyecto_inventario
 
         private void mostrarDatos()
         {
-            
+
             id = int.Parse(dg_licencia.CurrentRow.Cells["Id"].Value.ToString());
             licencia = new CO_Licencias();
             licencia = lista_licencia.Where(e => e.id.Equals(id)).FirstOrDefault();
@@ -255,6 +255,25 @@ namespace Proyecto_inventario
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dg_licencia.CurrentCell = null;
+            foreach (DataGridViewRow r in dg_licencia.Rows)
+            {
+                r.Visible = false;
+            }
+            foreach (DataGridViewRow r in dg_licencia.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells)
+                {
+                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
+                    {
+                        r.Visible = true;
+                    }
+                }
             }
         }
     }

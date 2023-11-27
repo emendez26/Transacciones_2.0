@@ -66,6 +66,7 @@
             txt_Buscar_Articulo.Name = "txt_Buscar_Articulo";
             txt_Buscar_Articulo.Size = new Size(256, 27);
             txt_Buscar_Articulo.TabIndex = 369;
+            txt_Buscar_Articulo.TextChanged += txt_Buscar_Articulo_TextChanged;
             // 
             // lbl_Buscar_Reportes
             // 

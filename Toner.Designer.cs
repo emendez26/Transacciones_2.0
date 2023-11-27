@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Toner));
-            dtg_celulares = new DataGridView();
+            dg_toner = new DataGridView();
             tableLayoutPanel1 = new TableLayoutPanel();
             ibtn_delete = new FontAwesome.Sharp.IconButton();
             ibtn_save = new FontAwesome.Sharp.IconButton();
@@ -65,54 +65,54 @@
             txt_cantidad = new TextBox();
             dtp_Fadquisicion = new DateTimePicker();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dtg_celulares).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dg_toner).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dtg_celulares
+            // dg_toner
             // 
-            dtg_celulares.AllowUserToAddRows = false;
-            dtg_celulares.AllowUserToDeleteRows = false;
-            dtg_celulares.AllowUserToResizeColumns = false;
-            dtg_celulares.AllowUserToResizeRows = false;
-            dtg_celulares.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtg_celulares.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtg_celulares.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dtg_celulares.BackgroundColor = Color.White;
-            dtg_celulares.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dtg_celulares.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.Firebrick;
-            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle4.Padding = new Padding(20, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkRed;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
-            dtg_celulares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dtg_celulares.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dtg_celulares.DefaultCellStyle = dataGridViewCellStyle5;
-            dtg_celulares.EnableHeadersVisualStyles = false;
-            dtg_celulares.GridColor = Color.Gainsboro;
-            dtg_celulares.Location = new Point(748, 131);
-            dtg_celulares.Name = "dtg_celulares";
-            dtg_celulares.ReadOnly = true;
-            dtg_celulares.RowHeadersVisible = false;
-            dtg_celulares.RowHeadersWidth = 51;
-            dtg_celulares.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dtg_celulares.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            dtg_celulares.RowTemplate.Height = 29;
-            dtg_celulares.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_celulares.Size = new Size(344, 592);
-            dtg_celulares.TabIndex = 294;
+            dg_toner.AllowUserToAddRows = false;
+            dg_toner.AllowUserToDeleteRows = false;
+            dg_toner.AllowUserToResizeColumns = false;
+            dg_toner.AllowUserToResizeRows = false;
+            dg_toner.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dg_toner.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_toner.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg_toner.BackgroundColor = Color.White;
+            dg_toner.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dg_toner.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.Padding = new Padding(20, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dg_toner.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dg_toner.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_toner.DefaultCellStyle = dataGridViewCellStyle2;
+            dg_toner.EnableHeadersVisualStyles = false;
+            dg_toner.GridColor = Color.Gainsboro;
+            dg_toner.Location = new Point(748, 131);
+            dg_toner.Name = "dg_toner";
+            dg_toner.ReadOnly = true;
+            dg_toner.RowHeadersVisible = false;
+            dg_toner.RowHeadersWidth = 51;
+            dg_toner.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_toner.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dg_toner.RowTemplate.Height = 29;
+            dg_toner.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg_toner.Size = new Size(344, 592);
+            dg_toner.TabIndex = 294;
             // 
             // tableLayoutPanel1
             // 
@@ -199,6 +199,7 @@
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(228, 27);
             txt_buscar.TabIndex = 306;
+            txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // label20
             // 
@@ -538,11 +539,11 @@
             Controls.Add(txt_buscar);
             Controls.Add(label20);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(dtg_celulares);
+            Controls.Add(dg_toner);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Toner";
             Text = "Toner";
-            ((System.ComponentModel.ISupportInitialize)dtg_celulares).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dg_toner).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -550,7 +551,7 @@
 
         #endregion
 
-        private DataGridView dtg_celulares;
+        private DataGridView dg_toner;
         private TableLayoutPanel tableLayoutPanel1;
         private FontAwesome.Sharp.IconButton ibtn_delete;
         private FontAwesome.Sharp.IconButton ibtn_save;

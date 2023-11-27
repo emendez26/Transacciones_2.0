@@ -202,5 +202,24 @@ namespace Proyecto_inventario
         {
             mostrarDatos();
         }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dtg_linea.CurrentCell = null;
+            foreach (DataGridViewRow r in dtg_linea.Rows)
+            {
+                r.Visible = false;
+            }
+            foreach (DataGridViewRow r in dtg_linea.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells)
+                {
+                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
+                    {
+                        r.Visible = true;
+                    }
+                }
+            }
+        }
     }
 }

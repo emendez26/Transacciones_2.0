@@ -214,7 +214,7 @@ namespace Proyecto_inventario
             if (decimal.TryParse(txt_costo.Text, out decimal costo))
             {
                 formato_moneda(costo);
-                txt_costo.SelectionStart = txt_costo.Text.Length; 
+                txt_costo.SelectionStart = txt_costo.Text.Length;
             }
         }
 
@@ -225,8 +225,8 @@ namespace Proyecto_inventario
 
         private void dg_repuestos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 4) 
-            { 
+            if (e.ColumnIndex == 4)
+            {
                 if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
                 {
                     e.Value = valorNumerico.ToString("C");
@@ -235,5 +235,23 @@ namespace Proyecto_inventario
             }
         }
 
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dg_repuestos.CurrentCell = null;
+            foreach (DataGridViewRow r in dg_repuestos.Rows)
+            {
+                r.Visible = false;
+            }
+            foreach (DataGridViewRow r in dg_repuestos.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells)
+                {
+                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
+                    {
+                        r.Visible = true;
+                    }
+                }
+            }
+        }
     }
 }

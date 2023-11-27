@@ -137,5 +137,24 @@ namespace Proyecto_inventario
                 e.Handled = true;
             }
         }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dg_empleados.CurrentCell = null;
+            foreach (DataGridViewRow r in dg_empleados.Rows)
+            {
+                r.Visible = false;
+            }
+            foreach (DataGridViewRow r in dg_empleados.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells)
+                {
+                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
+                    {
+                        r.Visible = true;
+                    }
+                }
+            }
+        }
     }
 }

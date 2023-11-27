@@ -326,7 +326,6 @@
             Controls.Add(btn_Ok);
             Controls.Add(dtp_Fecha_Inicio);
             Controls.Add(lbl_Dashboard);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";

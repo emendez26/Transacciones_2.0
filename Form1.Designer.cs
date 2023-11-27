@@ -40,7 +40,6 @@
             button3 = new Button();
             panel_lateral = new Panel();
             panelSubMenuToner = new Panel();
-            button1 = new Button();
             button9 = new Button();
             btn_form_toner = new Button();
             btn_Toner = new FontAwesome.Sharp.IconButton();
@@ -49,22 +48,18 @@
             btn_form_Licencias = new Button();
             btn_licencias = new FontAwesome.Sharp.IconButton();
             panelSubMenuLineas = new Panel();
-            button13 = new Button();
             button14 = new Button();
             btn_form_Lineas = new Button();
             btn_Lineas = new FontAwesome.Sharp.IconButton();
             panelSubMenuRepuestos = new Panel();
-            button10 = new Button();
             button11 = new Button();
             btn_form_Repuestos = new Button();
             btn_Repuestos = new FontAwesome.Sharp.IconButton();
             panelSubMenuCelulares = new Panel();
-            button7 = new Button();
             button8 = new Button();
             btn_form_Celulares = new Button();
             btn_Celulares = new FontAwesome.Sharp.IconButton();
             panelSubMenuDeEquipo = new Panel();
-            button6 = new Button();
             button5 = new Button();
             btn_form_equipo = new Button();
             btn_equipo = new FontAwesome.Sharp.IconButton();
@@ -219,35 +214,14 @@
             // panelSubMenuToner
             // 
             panelSubMenuToner.BackColor = Color.Transparent;
-            panelSubMenuToner.Controls.Add(button1);
             panelSubMenuToner.Controls.Add(button9);
             panelSubMenuToner.Controls.Add(btn_form_toner);
             panelSubMenuToner.Dock = DockStyle.Top;
-            panelSubMenuToner.Location = new Point(0, 1726);
+            panelSubMenuToner.Location = new Point(0, 1451);
             panelSubMenuToner.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuToner.Name = "panelSubMenuToner";
-            panelSubMenuToner.Size = new Size(364, 191);
+            panelSubMenuToner.Size = new Size(364, 125);
             panelSubMenuToner.TabIndex = 33;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Black;
-            button1.Cursor = Cursors.Hand;
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(0, 126);
-            button1.Margin = new Padding(2, 3, 2, 3);
-            button1.Name = "button1";
-            button1.Padding = new Padding(34, 7, 0, 7);
-            button1.Size = new Size(364, 63);
-            button1.TabIndex = 2;
-            button1.Text = "Transaccion de Salida";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button9
             // 
@@ -265,7 +239,7 @@
             button9.Padding = new Padding(34, 7, 0, 7);
             button9.Size = new Size(364, 63);
             button9.TabIndex = 1;
-            button9.Text = "Transaccion de Entrada";
+            button9.Text = "Transaccion de Toners";
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
@@ -305,7 +279,7 @@
             btn_Toner.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Toner.IconSize = 65;
             btn_Toner.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Toner.Location = new Point(0, 1635);
+            btn_Toner.Location = new Point(0, 1360);
             btn_Toner.Margin = new Padding(2, 3, 2, 3);
             btn_Toner.Name = "btn_Toner";
             btn_Toner.Padding = new Padding(0, 13, 0, 13);
@@ -323,10 +297,10 @@
             panelSubMenuLicencias.Controls.Add(button17);
             panelSubMenuLicencias.Controls.Add(btn_form_Licencias);
             panelSubMenuLicencias.Dock = DockStyle.Top;
-            panelSubMenuLicencias.Location = new Point(0, 1502);
+            panelSubMenuLicencias.Location = new Point(0, 1233);
             panelSubMenuLicencias.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuLicencias.Name = "panelSubMenuLicencias";
-            panelSubMenuLicencias.Size = new Size(364, 133);
+            panelSubMenuLicencias.Size = new Size(364, 127);
             panelSubMenuLicencias.TabIndex = 31;
             // 
             // button17
@@ -345,7 +319,7 @@
             button17.Padding = new Padding(34, 7, 0, 7);
             button17.Size = new Size(364, 63);
             button17.TabIndex = 1;
-            button17.Text = "Transaccion de Entrada";
+            button17.Text = "Transaccion de Licencias";
             button17.UseVisualStyleBackColor = false;
             button17.Click += button17_Click;
             // 
@@ -385,7 +359,7 @@
             btn_licencias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_licencias.IconSize = 65;
             btn_licencias.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_licencias.Location = new Point(0, 1411);
+            btn_licencias.Location = new Point(0, 1142);
             btn_licencias.Margin = new Padding(2, 3, 2, 3);
             btn_licencias.Name = "btn_licencias";
             btn_licencias.Padding = new Padding(0, 13, 0, 13);
@@ -400,35 +374,14 @@
             // panelSubMenuLineas
             // 
             panelSubMenuLineas.BackColor = Color.Transparent;
-            panelSubMenuLineas.Controls.Add(button13);
             panelSubMenuLineas.Controls.Add(button14);
             panelSubMenuLineas.Controls.Add(btn_form_Lineas);
             panelSubMenuLineas.Dock = DockStyle.Top;
-            panelSubMenuLineas.Location = new Point(0, 1220);
+            panelSubMenuLineas.Location = new Point(0, 1019);
             panelSubMenuLineas.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuLineas.Name = "panelSubMenuLineas";
-            panelSubMenuLineas.Size = new Size(364, 191);
+            panelSubMenuLineas.Size = new Size(364, 123);
             panelSubMenuLineas.TabIndex = 29;
-            // 
-            // button13
-            // 
-            button13.BackColor = Color.Black;
-            button13.Cursor = Cursors.Hand;
-            button13.Dock = DockStyle.Top;
-            button13.FlatAppearance.BorderSize = 0;
-            button13.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.ForeColor = Color.White;
-            button13.Location = new Point(0, 126);
-            button13.Margin = new Padding(2, 3, 2, 3);
-            button13.Name = "button13";
-            button13.Padding = new Padding(34, 7, 0, 7);
-            button13.Size = new Size(364, 63);
-            button13.TabIndex = 2;
-            button13.Text = "Transaccion de Salida";
-            button13.UseVisualStyleBackColor = false;
-            button13.Click += button13_Click;
             // 
             // button14
             // 
@@ -446,7 +399,7 @@
             button14.Padding = new Padding(34, 7, 0, 7);
             button14.Size = new Size(364, 63);
             button14.TabIndex = 1;
-            button14.Text = "Transaccion de Entrada";
+            button14.Text = "Transaccion de Lineas";
             button14.UseVisualStyleBackColor = false;
             button14.Click += button14_Click;
             // 
@@ -486,7 +439,7 @@
             btn_Lineas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Lineas.IconSize = 65;
             btn_Lineas.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Lineas.Location = new Point(0, 1129);
+            btn_Lineas.Location = new Point(0, 928);
             btn_Lineas.Margin = new Padding(2, 3, 2, 3);
             btn_Lineas.Name = "btn_Lineas";
             btn_Lineas.Padding = new Padding(0, 13, 0, 13);
@@ -501,35 +454,14 @@
             // panelSubMenuRepuestos
             // 
             panelSubMenuRepuestos.BackColor = Color.Transparent;
-            panelSubMenuRepuestos.Controls.Add(button10);
             panelSubMenuRepuestos.Controls.Add(button11);
             panelSubMenuRepuestos.Controls.Add(btn_form_Repuestos);
             panelSubMenuRepuestos.Dock = DockStyle.Top;
-            panelSubMenuRepuestos.Location = new Point(0, 938);
+            panelSubMenuRepuestos.Location = new Point(0, 806);
             panelSubMenuRepuestos.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuRepuestos.Name = "panelSubMenuRepuestos";
-            panelSubMenuRepuestos.Size = new Size(364, 191);
+            panelSubMenuRepuestos.Size = new Size(364, 122);
             panelSubMenuRepuestos.TabIndex = 27;
-            // 
-            // button10
-            // 
-            button10.BackColor = Color.Black;
-            button10.Cursor = Cursors.Hand;
-            button10.Dock = DockStyle.Top;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.ForeColor = Color.White;
-            button10.Location = new Point(0, 126);
-            button10.Margin = new Padding(2, 3, 2, 3);
-            button10.Name = "button10";
-            button10.Padding = new Padding(34, 7, 0, 7);
-            button10.Size = new Size(364, 63);
-            button10.TabIndex = 2;
-            button10.Text = "Transaccion de Salida";
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += button10_Click;
             // 
             // button11
             // 
@@ -547,7 +479,7 @@
             button11.Padding = new Padding(34, 7, 0, 7);
             button11.Size = new Size(364, 63);
             button11.TabIndex = 1;
-            button11.Text = "Transaccion de Entrada";
+            button11.Text = "Transaccion de Repuestos";
             button11.UseVisualStyleBackColor = false;
             button11.Click += button11_Click;
             // 
@@ -587,7 +519,7 @@
             btn_Repuestos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Repuestos.IconSize = 65;
             btn_Repuestos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Repuestos.Location = new Point(0, 847);
+            btn_Repuestos.Location = new Point(0, 715);
             btn_Repuestos.Margin = new Padding(2, 3, 2, 3);
             btn_Repuestos.Name = "btn_Repuestos";
             btn_Repuestos.Padding = new Padding(0, 13, 0, 13);
@@ -602,35 +534,14 @@
             // panelSubMenuCelulares
             // 
             panelSubMenuCelulares.BackColor = Color.Transparent;
-            panelSubMenuCelulares.Controls.Add(button7);
             panelSubMenuCelulares.Controls.Add(button8);
             panelSubMenuCelulares.Controls.Add(btn_form_Celulares);
             panelSubMenuCelulares.Dock = DockStyle.Top;
-            panelSubMenuCelulares.Location = new Point(0, 656);
+            panelSubMenuCelulares.Location = new Point(0, 592);
             panelSubMenuCelulares.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuCelulares.Name = "panelSubMenuCelulares";
-            panelSubMenuCelulares.Size = new Size(364, 191);
+            panelSubMenuCelulares.Size = new Size(364, 123);
             panelSubMenuCelulares.TabIndex = 25;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.Black;
-            button7.Cursor = Cursors.Hand;
-            button7.Dock = DockStyle.Top;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(0, 126);
-            button7.Margin = new Padding(2, 3, 2, 3);
-            button7.Name = "button7";
-            button7.Padding = new Padding(34, 7, 0, 7);
-            button7.Size = new Size(364, 63);
-            button7.TabIndex = 2;
-            button7.Text = "Transaccion de Salida";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -648,7 +559,7 @@
             button8.Padding = new Padding(34, 7, 0, 7);
             button8.Size = new Size(364, 63);
             button8.TabIndex = 1;
-            button8.Text = "Transaccion de Entrada";
+            button8.Text = "Transaccion de Celulares";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
@@ -688,7 +599,7 @@
             btn_Celulares.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Celulares.IconSize = 65;
             btn_Celulares.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Celulares.Location = new Point(0, 565);
+            btn_Celulares.Location = new Point(0, 501);
             btn_Celulares.Margin = new Padding(2, 3, 2, 3);
             btn_Celulares.Name = "btn_Celulares";
             btn_Celulares.Padding = new Padding(0, 13, 0, 13);
@@ -703,35 +614,14 @@
             // panelSubMenuDeEquipo
             // 
             panelSubMenuDeEquipo.BackColor = Color.Transparent;
-            panelSubMenuDeEquipo.Controls.Add(button6);
             panelSubMenuDeEquipo.Controls.Add(button5);
             panelSubMenuDeEquipo.Controls.Add(btn_form_equipo);
             panelSubMenuDeEquipo.Dock = DockStyle.Top;
             panelSubMenuDeEquipo.Location = new Point(0, 374);
             panelSubMenuDeEquipo.Margin = new Padding(2, 3, 2, 3);
             panelSubMenuDeEquipo.Name = "panelSubMenuDeEquipo";
-            panelSubMenuDeEquipo.Size = new Size(364, 191);
+            panelSubMenuDeEquipo.Size = new Size(364, 127);
             panelSubMenuDeEquipo.TabIndex = 23;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.Black;
-            button6.Cursor = Cursors.Hand;
-            button6.Dock = DockStyle.Top;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(0, 126);
-            button6.Margin = new Padding(2, 3, 2, 3);
-            button6.Name = "button6";
-            button6.Padding = new Padding(34, 7, 0, 7);
-            button6.Size = new Size(364, 63);
-            button6.TabIndex = 2;
-            button6.Text = "Transaccion de Salida";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -749,7 +639,7 @@
             button5.Padding = new Padding(34, 7, 0, 7);
             button5.Size = new Size(364, 63);
             button5.TabIndex = 1;
-            button5.Text = "Transaccion de Entrada";
+            button5.Text = "Transaccion de Equipos";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -1052,22 +942,18 @@
         private Button button3;
         private Panel panel_lateral;
         private Panel panelSubMenuDeEquipo;
-        private Button button6;
         private Button button5;
         private Button btn_form_equipo;
         private FontAwesome.Sharp.IconButton btn_equipo;
         private Panel panelSubMenuLineas;
-        private Button button13;
         private Button button14;
         private Button btn_form_Lineas;
         private FontAwesome.Sharp.IconButton btn_Lineas;
         private Panel panelSubMenuRepuestos;
-        private Button button10;
         private Button button11;
         private Button btn_form_Repuestos;
         private FontAwesome.Sharp.IconButton btn_Repuestos;
         private Panel panelSubMenuCelulares;
-        private Button button7;
         private Button button8;
         private Button btn_form_Celulares;
         private FontAwesome.Sharp.IconButton btn_Celulares;
@@ -1087,7 +973,6 @@
         private Panel panelFormulario;
         private PictureBox pictureBox4;
         private Panel panelSubMenuToner;
-        private Button button1;
         private Button button9;
         private Button btn_form_toner;
         private FontAwesome.Sharp.IconButton btn_Toner;

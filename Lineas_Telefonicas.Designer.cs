@@ -306,6 +306,7 @@
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(284, 27);
             txt_buscar.TabIndex = 338;
+            txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // label11
             // 
