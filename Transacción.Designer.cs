@@ -191,7 +191,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(956, 805);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // ibtn_save
             // 

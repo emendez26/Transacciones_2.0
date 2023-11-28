@@ -76,9 +76,6 @@ namespace Proyecto_inventario
             cmb_Tipo.Text = transaccion.tipo_transaccion;
             txt_responsable.Text = transaccion.responsable;
             cmb_motivo.Text = transaccion.motivo;
-
-            dg_transaccion.Columns[0].HeaderText = "CODIGO ART";
-
         }
 
         public void mostrarDatos()
@@ -190,38 +187,6 @@ namespace Proyecto_inventario
                     }
                 }
             }
-        }
-
-        //private void dg_transaccion_VisibleChanged(object sender, EventArgs e)
-        //{
-        //    dg_transaccion.CurrentCell = null;
-
-        //    foreach (DataGridViewRow r in dg_transaccion.Rows)
-        //    {
-        //        r.Visible = false;
-        //    }
-
-        //    foreach (DataGridViewRow r in dg_transaccion.Rows)
-        //    {
-        //        string tipoFormulario = r.Cells["formulario"].Value.ToString();
-        //        if (tipoFormulario.ToUpper() == "CELULARES")
-        //        {
-        //            foreach (DataGridViewCell c in r.Cells)
-        //            {
-        //                // Asegúrate de que el texto de búsqueda esté presente en alguna celda
-        //                if (c.Value != null && (c.Value.ToString().ToUpper()).Contains(txt_buscar.Text.ToUpper()))
-        //                {
-        //                    r.Visible = true;
-        //                    break;
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
