@@ -61,7 +61,7 @@ namespace Proyecto_inventario
 
             transaccion = new CO_Transacciones();
 
-            transaccion.fecha_transaccion = DateTime.Parse(dtp_Ftransaccion.Value.ToShortDateString());
+            transaccion.fecha_movimiento = DateTime.Parse(dtp_Fmovimiento.Value.ToShortDateString());
             transaccion.tipo_transaccion = cmb_Tipo.Text;
             transaccion.responsable = txt_responsable.Text;
             transaccion.motivo = cmb_motivo.Text;
@@ -72,7 +72,7 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
-            dtp_Ftransaccion.Value = transaccion.fecha_transaccion;
+            dtp_Fmovimiento.Value = transaccion.fecha_movimiento;
             cmb_Tipo.Text = transaccion.tipo_transaccion;
             txt_responsable.Text = transaccion.responsable;
             cmb_motivo.Text = transaccion.motivo;
@@ -80,7 +80,7 @@ namespace Proyecto_inventario
 
         public void mostrarDatos()
         {
-            id = int.Parse(dg_transaccion.CurrentRow.Cells["Id"].Value.ToString());
+            id = int.Parse(dg_transaccion1.CurrentRow.Cells["Id"].Value.ToString());
             transaccion = new CO_Transacciones();
             transaccion = lista_transacciones.Where(e => e.id.Equals(id)).FirstOrDefault();
             SetData();
@@ -88,12 +88,12 @@ namespace Proyecto_inventario
 
         private void cargarGrid()
         {
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
+            dg_transaccion1.DataSource = null;
+            dg_transaccion1.Rows.Clear();
             lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
             lista_transacciones.AddRange(CN_trans.MostrarTrans());
             CN_Transacciones trans = new CN_Transacciones();
-            dg_transaccion.DataSource = trans.MostrarTrans();
+            dg_transaccion1.DataSource = trans.MostrarTrans();
         }
 
         private void limpiar(bool isEdit)
@@ -101,7 +101,7 @@ namespace Proyecto_inventario
             if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 transaccion = new CO_Transacciones();
-                dtp_Ftransaccion.Text = string.Empty;
+                dtp_Fmovimiento.Text = string.Empty;
                 cmb_Tipo.Text = string.Empty;
                 txt_responsable.Text = string.Empty;
                 cmb_motivo.Text = string.Empty;
@@ -140,16 +140,6 @@ namespace Proyecto_inventario
             limpiar(false);
         }
 
-        private void dg_transaccion_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            mostrarDatos();
-        }
-
-        private void ibtn_save_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
         private void Transacción_Load(object sender, EventArgs e)
         {
             cargarGrid();
@@ -170,14 +160,24 @@ namespace Proyecto_inventario
             }
         }
 
+        private void ibtn_save_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void dg_transaccion1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatos();
+        }
+
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-            dg_transaccion.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_transaccion.Rows)
+            dg_transaccion1.CurrentCell = null;
+            foreach (DataGridViewRow r in dg_transaccion1.Rows)
             {
                 r.Visible = false;
             }
-            foreach (DataGridViewRow r in dg_transaccion.Rows)
+            foreach (DataGridViewRow r in dg_transaccion1.Rows)
             {
                 foreach (DataGridViewCell c in r.Cells)
                 {

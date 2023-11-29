@@ -12,8 +12,6 @@ namespace Capa_Objetos
         public DateTime fecha_transaccion { get; set; }
         public DateTime fecha_movimiento { get; set; }
         public string tipo_transaccion { get; set; }
-        public string observaciones { get; set; }
-        public string ruta_soporte { get; set; }
         public string responsable { get; set; }
         public string motivo { get; set; }
         public string formulario { get; set; }

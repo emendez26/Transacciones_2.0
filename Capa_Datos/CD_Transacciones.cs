@@ -40,8 +40,6 @@ namespace Capa_Datos
                     transaccion.fecha_transaccion = DateTime.Parse(dr[1].ToString());
                     transaccion.fecha_movimiento = DateTime.Parse(dr[2].ToString());
                     transaccion.tipo_transaccion = dr[3].ToString();
-                    transaccion.observaciones = dr[4].ToString();
-                    transaccion.ruta_soporte = dr[5].ToString();
                     transaccion.responsable = dr[6].ToString();
                     transaccion.motivo = dr[7].ToString();
                     transaccion.formulario = dr[8].ToString();
@@ -68,11 +66,9 @@ namespace Capa_Datos
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Transacciones";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@fecha_transaccion", transaccion.fecha_transaccion);
+                comando.Parameters.AddWithValue("@fecha_transaccion", DateTime.Now);
                 comando.Parameters.AddWithValue("@fecha_movimiento", transaccion.fecha_movimiento);
                 comando.Parameters.AddWithValue("@tipo_transaccion", transaccion.tipo_transaccion);
-                comando.Parameters.AddWithValue("@observaciones", transaccion.observaciones);
-                comando.Parameters.AddWithValue("@ruta_soporte", transaccion.ruta_soporte);
                 comando.Parameters.AddWithValue("@responsable", transaccion.responsable);
                 comando.Parameters.AddWithValue("@motivo", transaccion.motivo);
                 comando.Parameters.AddWithValue("@formulario", transaccion.formulario);
