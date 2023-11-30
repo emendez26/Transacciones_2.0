@@ -40,9 +40,16 @@ namespace Capa_Datos
                     transaccion.fecha_transaccion = DateTime.Parse(dr[1].ToString());
                     transaccion.fecha_movimiento = DateTime.Parse(dr[2].ToString());
                     transaccion.tipo_transaccion = dr[3].ToString();
-                    transaccion.responsable = dr[6].ToString();
-                    transaccion.motivo = dr[7].ToString();
-                    transaccion.formulario = dr[8].ToString();
+                    transaccion.observaciones = dr[4].ToString();
+                    transaccion.responsable = dr[5].ToString();
+                    transaccion.motivo = dr[6].ToString();
+                    transaccion.formularios = dr[7].ToString();
+                    transaccion.usuario = dr[8].ToString();
+                    transaccion.numero_transaccion = int.Parse(dr[9].ToString());
+                    transaccion.activo_fijo = int.Parse(dr[10].ToString());
+                    transaccion.descripcion = dr[11].ToString();
+                    transaccion.costo = Double.Parse(dr[12].ToString());
+
 
                     transacciones.Add(transaccion);
                     transaccion = new CO_Transacciones();
@@ -69,9 +76,16 @@ namespace Capa_Datos
                 comando.Parameters.AddWithValue("@fecha_transaccion", DateTime.Now);
                 comando.Parameters.AddWithValue("@fecha_movimiento", transaccion.fecha_movimiento);
                 comando.Parameters.AddWithValue("@tipo_transaccion", transaccion.tipo_transaccion);
+                comando.Parameters.AddWithValue("@observaciones", transaccion.observaciones);
                 comando.Parameters.AddWithValue("@responsable", transaccion.responsable);
                 comando.Parameters.AddWithValue("@motivo", transaccion.motivo);
-                comando.Parameters.AddWithValue("@formulario", transaccion.formulario);
+                comando.Parameters.AddWithValue("@formularios", transaccion.formularios);
+                comando.Parameters.AddWithValue("@usuario", transaccion.usuario);
+                comando.Parameters.AddWithValue("@numero_transaccion", transaccion.numero_transaccion);
+                comando.Parameters.AddWithValue("@activo_fijo", transaccion.activo_fijo);
+                comando.Parameters.AddWithValue("@descripcion", transaccion.descripcion);
+                comando.Parameters.AddWithValue("@costo", transaccion.costo);
+
 
                 exitoso = comando.ExecuteNonQuery();
 
