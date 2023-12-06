@@ -90,6 +90,7 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
+            ibtn_imprimir = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -231,19 +232,21 @@
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.Controls.Add(ibtn_save, 0, 0);
-            tableLayoutPanel4.Location = new Point(1572, 958);
+            tableLayoutPanel4.Controls.Add(ibtn_imprimir, 1, 0);
+            tableLayoutPanel4.Location = new Point(1503, 958);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(72, 70);
+            tableLayoutPanel4.Size = new Size(141, 70);
             tableLayoutPanel4.TabIndex = 377;
             // 
             // ibtn_save
             // 
-            ibtn_save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ibtn_save.Anchor = AnchorStyles.None;
             ibtn_save.BackColor = Color.Transparent;
             ibtn_save.Cursor = Cursors.Hand;
             ibtn_save.FlatAppearance.BorderSize = 0;
@@ -253,10 +256,10 @@
             ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
             ibtn_save.IconColor = Color.Black;
             ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_save.Location = new Point(3, 14);
+            ibtn_save.Location = new Point(2, 8);
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
-            ibtn_save.Size = new Size(67, 54);
+            ibtn_save.Size = new Size(66, 54);
             ibtn_save.TabIndex = 371;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
@@ -539,7 +542,6 @@
             dg_transaccion1.AllowUserToResizeRows = false;
             dg_transaccion1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dg_transaccion1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dg_transaccion1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dg_transaccion1.BackgroundColor = Color.White;
             dg_transaccion1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_transaccion1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -890,6 +892,26 @@
             iconButton4.Tag = "GUARDAR";
             iconButton4.UseVisualStyleBackColor = false;
             // 
+            // ibtn_imprimir
+            // 
+            ibtn_imprimir.Anchor = AnchorStyles.None;
+            ibtn_imprimir.BackColor = Color.Transparent;
+            ibtn_imprimir.Cursor = Cursors.Hand;
+            ibtn_imprimir.FlatAppearance.BorderSize = 0;
+            ibtn_imprimir.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_imprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_imprimir.FlatStyle = FlatStyle.Flat;
+            ibtn_imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            ibtn_imprimir.IconColor = Color.Black;
+            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            ibtn_imprimir.Location = new Point(72, 6);
+            ibtn_imprimir.Margin = new Padding(2);
+            ibtn_imprimir.Name = "ibtn_imprimir";
+            ibtn_imprimir.Size = new Size(67, 57);
+            ibtn_imprimir.TabIndex = 377;
+            ibtn_imprimir.Tag = "ELIMINAR";
+            ibtn_imprimir.UseVisualStyleBackColor = false;
+            // 
             // Transacción
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -978,5 +1000,6 @@
         private DataGridViewTextBoxColumn numero_transaccion;
         private DataGridViewTextBoxColumn activo_fijos;
         private DataGridViewTextBoxColumn descrip;
+        private FontAwesome.Sharp.IconButton ibtn_imprimir;
     }
 }

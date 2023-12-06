@@ -70,6 +70,7 @@
             txt_depart = new TextBox();
             lbl_depart = new Label();
             ttmensaje = new ToolTip(components);
+            lbl_count = new Label();
             ((System.ComponentModel.ISupportInitialize)dg_equipos).BeginInit();
             SuspendLayout();
             // 
@@ -448,8 +449,9 @@
             dg_equipos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_equipos.RowTemplate.Height = 29;
             dg_equipos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_equipos.Size = new Size(400, 354);
+            dg_equipos.Size = new Size(400, 315);
             dg_equipos.TabIndex = 306;
+            dg_equipos.DataSourceChanged += dg_equipos_DataSourceChanged;
             dg_equipos.CellDoubleClick += dg_equipos_CellDoubleClick;
             // 
             // txt_estado
@@ -502,6 +504,17 @@
             ttmensaje.InitialDelay = 300;
             ttmensaje.ReshowDelay = 100;
             // 
+            // lbl_count
+            // 
+            lbl_count.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lbl_count.ForeColor = Color.Red;
+            lbl_count.Location = new Point(906, 466);
+            lbl_count.Name = "lbl_count";
+            lbl_count.Size = new Size(174, 29);
+            lbl_count.TabIndex = 311;
+            lbl_count.Text = "Contar";
+            lbl_count.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // Equipo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -509,6 +522,7 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.White;
             ClientSize = new Size(1102, 496);
+            Controls.Add(lbl_count);
             Controls.Add(txt_depart);
             Controls.Add(lbl_depart);
             Controls.Add(cb_inactivo);
@@ -596,5 +610,6 @@
         private TextBox txt_depart;
         private Label lbl_depart;
         private ToolTip ttmensaje;
+        private Label lbl_count;
     }
 }

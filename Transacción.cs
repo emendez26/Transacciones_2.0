@@ -18,12 +18,16 @@ namespace Proyecto_inventario
         List<string> motivosEntrada = new List<string>() { "COMPRA", "DEVOLUCION", "OBSEQUIO" };
         List<string> motivosSalida = new List<string>() { "DEVOLUCION", "ASIGNACIÓN", "PRESTAMO", "MANTENIMIENTO", "HURTO", "OBSOLETO", "PERDIDA" };
 
+        List<Capa_Objetos.CO_Equipos> lista_Equipos = new List<Capa_Objetos.CO_Equipos>();
         List<Capa_Objetos.CO_Transacciones> lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
         CO_Transacciones transaccion = new CO_Transacciones();
         CN_Transacciones CN_trans = new CN_Transacciones();
+        CO_Equipos equipo = new CO_Equipos();
+        CN_Equipos CN_Equip = new CN_Equipos();
 
         private static int contador = 1;
 
+        private string activo_fijo = "";
         string formulario = "";
 
         private int id = 0;
@@ -73,23 +77,30 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
-            dtp_Fmovimiento.Value = transaccion.fecha_movimiento;
+            txt_activo_fijo.Text = equipo.activo_fijo;
+            txt_descrip.Text = equipo.descripcion;
+            txt_responsable.Text = equipo.responsable;
+            txt_area.Text = equipo.area;
+            txt_costo.Text = equipo.costo.ToString();
+            txt_departamento.Text = equipo.departamento;
+            dtp_Fmovimiento2.Value = equipo.fecha_compra == null ? DateTime.Now : (DateTime)equipo.fecha_compra;
+            dtp_Fmovimiento.Value = DateTime.Today;
             cmb_Tipo.Text = transaccion.tipo_transaccion;
             txt_observ.Text = transaccion.observaciones;
-            txt_responsable.Text = transaccion.responsable;
             cmb_motivo.Text = transaccion.motivo;
             txt_usuario.Text = transaccion.usuario;
             txt_Ntransaccion.Text = transaccion.numero_transaccion.ToString();
-            txt_activo_fijo.Text = transaccion.activo_fijo.ToString();
-            txt_descrip.Text = transaccion.descripcion;
-            txt_costo.Text = transaccion.costo.ToString();
+            //txt_responsable.Text = transaccion.responsable;
+            //txt_activo_fijo.Text = transaccion.activo_fijo.ToString();
+            //txt_descrip.Text = transaccion.descripcion;
+            //txt_costo.Text = transaccion.costo.ToString();
         }
 
         public void mostrarDatos()
         {
-            id = int.Parse(dg_transaccion1.CurrentRow.Cells["id"].Value.ToString());
-            transaccion = new CO_Transacciones();
-            transaccion = lista_transacciones.Where(e => e.id.Equals(id)).FirstOrDefault();
+            activo_fijo = (dg_transaccion1.CurrentRow.Cells["activo_fijo"].Value.ToString());
+            equipo = new CO_Equipos();
+            equipo = lista_Equipos.Where(e => e.activo_fijo.Equals(activo_fijo)).FirstOrDefault();
             SetData();
         }
 
@@ -97,10 +108,10 @@ namespace Proyecto_inventario
         {
             dg_transaccion1.DataSource = null;
             dg_transaccion1.Rows.Clear();
-            lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
-            lista_transacciones.AddRange(CN_trans.MostrarTrans());
-            CN_Transacciones trans = new CN_Transacciones();
-            dg_transaccion1.DataSource = trans.MostrarTrans();
+            lista_Equipos = new List<Capa_Objetos.CO_Equipos>();
+            lista_Equipos.AddRange(CN_Equip.MostrarEquip());
+            CN_Equipos Equip = new CN_Equipos();
+            dg_transaccion1.DataSource = Equip.MostrarEquip();
         }
 
         private void limpiar(bool isEdit)
@@ -204,21 +215,9 @@ namespace Proyecto_inventario
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-            dg_transaccion1.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_transaccion1.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dg_transaccion1.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            string coincidencia = txt_buscar.Text;
+            var results = lista_Equipos.Where(X => X.descripcion.Contains(coincidencia) || X.activo_fijo.Contains(coincidencia)).Select(X => X).ToList();
+            dg_transaccion1.DataSource = results;
         }
 
 
@@ -325,13 +324,14 @@ namespace Proyecto_inventario
                 {
                     e.Value = valorNumerico.ToString("C");
                     e.FormattingApplied = true;
+           
                 }
             }
         }
 
         private void dg_transaccion1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 14)
             {
                 if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
                 {
@@ -342,5 +342,3 @@ namespace Proyecto_inventario
         }
     }
 }
-
-    

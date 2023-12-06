@@ -147,21 +147,22 @@ namespace Proyecto_inventario
 
         private void txt_buscar_equipos_TextChanged(object sender, EventArgs e)
         {
-            dg_equipos.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_equipos.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dg_equipos.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar_equipos.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            string coincidencia = txt_buscar_equipos.Text;
+            var results = lista_Equipos.Where(X => X.descripcion.Contains(coincidencia) || X.activo_fijo.Contains(coincidencia)).Select(X => X).ToList();
+            dg_equipos.DataSource = results;
+
+        }
+
+
+        public void countar()
+        {
+            int total = dg_equipos.RowCount;
+            lbl_count.Text = "Total Registro: " + total;
+        }
+
+        private void dg_equipos_DataSourceChanged(object sender, EventArgs e)
+        {
+            countar();
         }
     }
 }
