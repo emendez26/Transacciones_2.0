@@ -53,10 +53,18 @@
             ibtn_limpiar = new FontAwesome.Sharp.IconButton();
             txt_id = new TextBox();
             lbl_Id = new Label();
-            cmb_marca = new ComboBox();
             cmb_estado = new ComboBox();
             cmb_Trepuesto = new ComboBox();
             ttmensaje = new ToolTip(components);
+            txt_marca = new TextBox();
+            txt_cantidad = new TextBox();
+            label1 = new Label();
+            txt_serial = new TextBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            txt_obser = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dg_repuestos).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -86,7 +94,7 @@
             txt_costo.CharacterCasing = CharacterCasing.Upper;
             txt_costo.Location = new Point(177, 355);
             txt_costo.Name = "txt_costo";
-            txt_costo.Size = new Size(193, 27);
+            txt_costo.Size = new Size(178, 27);
             txt_costo.TabIndex = 7;
             txt_costo.TextChanged += txt_costo_TextChanged;
             txt_costo.KeyPress += txt_costo_KeyPress;
@@ -95,7 +103,7 @@
             // 
             lbl_costo.AutoSize = true;
             lbl_costo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_costo.Location = new Point(91, 359);
+            lbl_costo.Location = new Point(103, 359);
             lbl_costo.Name = "lbl_costo";
             lbl_costo.Size = new Size(68, 23);
             lbl_costo.TabIndex = 39;
@@ -104,9 +112,9 @@
             // txt_modelo
             // 
             txt_modelo.CharacterCasing = CharacterCasing.Upper;
-            txt_modelo.Location = new Point(462, 301);
+            txt_modelo.Location = new Point(485, 301);
             txt_modelo.Name = "txt_modelo";
-            txt_modelo.Size = new Size(193, 27);
+            txt_modelo.Size = new Size(170, 27);
             txt_modelo.TabIndex = 6;
             // 
             // txt_caracteristica
@@ -122,7 +130,7 @@
             // 
             lbl_estado.AutoSize = true;
             lbl_estado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_estado.Location = new Point(98, 305);
+            lbl_estado.Location = new Point(110, 305);
             lbl_estado.Name = "lbl_estado";
             lbl_estado.Size = new Size(61, 23);
             lbl_estado.TabIndex = 28;
@@ -132,7 +140,7 @@
             // 
             lbl_Trepuesto.AutoSize = true;
             lbl_Trepuesto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Trepuesto.Location = new Point(16, 257);
+            lbl_Trepuesto.Location = new Point(28, 257);
             lbl_Trepuesto.Name = "lbl_Trepuesto";
             lbl_Trepuesto.Size = new Size(143, 23);
             lbl_Trepuesto.TabIndex = 27;
@@ -142,7 +150,7 @@
             // 
             lbl_caracteristica.AutoSize = true;
             lbl_caracteristica.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_caracteristica.Location = new Point(40, 186);
+            lbl_caracteristica.Location = new Point(52, 186);
             lbl_caracteristica.Name = "lbl_caracteristica";
             lbl_caracteristica.Size = new Size(119, 23);
             lbl_caracteristica.TabIndex = 26;
@@ -152,7 +160,7 @@
             // 
             lbl_modelo.AutoSize = true;
             lbl_modelo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_modelo.Location = new Point(376, 302);
+            lbl_modelo.Location = new Point(411, 303);
             lbl_modelo.Name = "lbl_modelo";
             lbl_modelo.Size = new Size(68, 23);
             lbl_modelo.TabIndex = 25;
@@ -162,7 +170,7 @@
             // 
             lbl_marca.AutoSize = true;
             lbl_marca.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_marca.Location = new Point(387, 256);
+            lbl_marca.Location = new Point(422, 257);
             lbl_marca.Name = "lbl_marca";
             lbl_marca.Size = new Size(57, 23);
             lbl_marca.TabIndex = 24;
@@ -176,7 +184,7 @@
             label11.ForeColor = Color.White;
             label11.Location = new Point(0, 0);
             label11.Name = "label11";
-            label11.Size = new Size(1102, 67);
+            label11.Size = new Size(1168, 67);
             label11.TabIndex = 334;
             label11.Text = "REPUESTOS";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -225,7 +233,7 @@
             dg_repuestos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_repuestos.RowTemplate.Height = 29;
             dg_repuestos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_repuestos.Size = new Size(373, 377);
+            dg_repuestos.Size = new Size(439, 528);
             dg_repuestos.TabIndex = 335;
             dg_repuestos.CellContentDoubleClick += dg_repuestos_CellContentDoubleClick;
             // 
@@ -238,7 +246,7 @@
             tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
             tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
-            tableLayoutPanel1.Location = new Point(40, 423);
+            tableLayoutPanel1.Location = new Point(40, 574);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -345,36 +353,31 @@
             // 
             lbl_Id.AutoSize = true;
             lbl_Id.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Id.Location = new Point(121, 104);
+            lbl_Id.Location = new Point(133, 104);
             lbl_Id.Name = "lbl_Id";
             lbl_Id.Size = new Size(38, 31);
             lbl_Id.TabIndex = 338;
             lbl_Id.Text = "ID";
             lbl_Id.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cmb_marca
-            // 
-            cmb_marca.FormattingEnabled = true;
-            cmb_marca.Location = new Point(462, 251);
-            cmb_marca.Name = "cmb_marca";
-            cmb_marca.Size = new Size(193, 28);
-            cmb_marca.TabIndex = 4;
-            // 
             // cmb_estado
             // 
+            cmb_estado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_estado.FormattingEnabled = true;
             cmb_estado.Items.AddRange(new object[] { "NUEVO", "USADO" });
             cmb_estado.Location = new Point(177, 300);
             cmb_estado.Name = "cmb_estado";
-            cmb_estado.Size = new Size(193, 28);
+            cmb_estado.Size = new Size(178, 28);
             cmb_estado.TabIndex = 5;
             // 
             // cmb_Trepuesto
             // 
+            cmb_Trepuesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_Trepuesto.FormattingEnabled = true;
+            cmb_Trepuesto.Items.AddRange(new object[] { "BATERIAS AAA", "BATERIAS AA", "TONER", "DISCO DUROS" });
             cmb_Trepuesto.Location = new Point(177, 251);
             cmb_Trepuesto.Name = "cmb_Trepuesto";
-            cmb_Trepuesto.Size = new Size(193, 28);
+            cmb_Trepuesto.Size = new Size(178, 28);
             cmb_Trepuesto.TabIndex = 3;
             // 
             // ttmensaje
@@ -384,15 +387,105 @@
             ttmensaje.InitialDelay = 300;
             ttmensaje.ReshowDelay = 100;
             // 
+            // txt_marca
+            // 
+            txt_marca.CharacterCasing = CharacterCasing.Upper;
+            txt_marca.Location = new Point(485, 257);
+            txt_marca.Name = "txt_marca";
+            txt_marca.Size = new Size(170, 27);
+            txt_marca.TabIndex = 339;
+            // 
+            // txt_cantidad
+            // 
+            txt_cantidad.CharacterCasing = CharacterCasing.Upper;
+            txt_cantidad.Location = new Point(485, 355);
+            txt_cantidad.Name = "txt_cantidad";
+            txt_cantidad.Size = new Size(170, 27);
+            txt_cantidad.TabIndex = 340;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(400, 360);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 23);
+            label1.TabIndex = 341;
+            label1.Text = "Cantidad";
+            // 
+            // txt_serial
+            // 
+            txt_serial.CharacterCasing = CharacterCasing.Upper;
+            txt_serial.Location = new Point(177, 407);
+            txt_serial.Name = "txt_serial";
+            txt_serial.Size = new Size(178, 27);
+            txt_serial.TabIndex = 342;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(120, 411);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 23);
+            label2.TabIndex = 343;
+            label2.Text = "Serial";
+            // 
+            // textBox1
+            // 
+            textBox1.CharacterCasing = CharacterCasing.Upper;
+            textBox1.Location = new Point(485, 407);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(170, 27);
+            textBox1.TabIndex = 344;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(381, 412);
+            label3.Name = "label3";
+            label3.Size = new Size(98, 23);
+            label3.TabIndex = 345;
+            label3.Text = "Adquisicion";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // txt_obser
+            // 
+            txt_obser.CharacterCasing = CharacterCasing.Upper;
+            txt_obser.Location = new Point(177, 465);
+            txt_obser.Multiline = true;
+            txt_obser.Name = "txt_obser";
+            txt_obser.Size = new Size(478, 77);
+            txt_obser.TabIndex = 346;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(67, 494);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 23);
+            label4.TabIndex = 347;
+            label4.Text = "Observacion";
+            // 
             // Repuestos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 557);
+            ClientSize = new Size(1168, 708);
+            Controls.Add(txt_obser);
+            Controls.Add(label4);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(txt_serial);
+            Controls.Add(label2);
+            Controls.Add(txt_cantidad);
+            Controls.Add(label1);
+            Controls.Add(txt_marca);
             Controls.Add(cmb_Trepuesto);
             Controls.Add(cmb_estado);
-            Controls.Add(cmb_marca);
             Controls.Add(txt_id);
             Controls.Add(lbl_Id);
             Controls.Add(ibtn_limpiar);
@@ -444,9 +537,17 @@
         private FontAwesome.Sharp.IconButton ibtn_limpiar;
         private TextBox txt_id;
         private Label lbl_Id;
-        private ComboBox cmb_marca;
         private ComboBox cmb_estado;
         private ComboBox cmb_Trepuesto;
         private ToolTip ttmensaje;
+        private TextBox txt_marca;
+        private TextBox txt_cantidad;
+        private Label label1;
+        private TextBox txt_serial;
+        private Label label2;
+        private TextBox textBox1;
+        private Label label3;
+        private TextBox txt_obser;
+        private Label label4;
     }
 }

@@ -51,17 +51,11 @@
             txt_fCompra = new Label();
             txt_modelo = new TextBox();
             label13 = new Label();
-            txt_factura = new TextBox();
-            label3 = new Label();
             label10 = new Label();
             label9 = new Label();
             label4 = new Label();
             label18 = new Label();
-            txt_costo = new TextBox();
-            label12 = new Label();
             txt_descrip = new TextBox();
-            txt_ubicacion = new TextBox();
-            label6 = new Label();
             txt_cantidad = new TextBox();
             dtp_Fadquisicion = new DateTimePicker();
             label1 = new Label();
@@ -111,7 +105,7 @@
             dg_toner.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_toner.RowTemplate.Height = 29;
             dg_toner.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_toner.Size = new Size(344, 592);
+            dg_toner.Size = new Size(344, 480);
             dg_toner.TabIndex = 294;
             // 
             // tableLayoutPanel1
@@ -123,7 +117,7 @@
             tableLayoutPanel1.Controls.Add(ibtn_delete, 2, 0);
             tableLayoutPanel1.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel1.Controls.Add(ibtn_update, 1, 0);
-            tableLayoutPanel1.Location = new Point(50, 598);
+            tableLayoutPanel1.Location = new Point(51, 484);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -283,7 +277,7 @@
             // txt_observ
             // 
             txt_observ.CharacterCasing = CharacterCasing.Upper;
-            txt_observ.Location = new Point(50, 482);
+            txt_observ.Location = new Point(51, 368);
             txt_observ.Margin = new Padding(2);
             txt_observ.Multiline = true;
             txt_observ.Name = "txt_observ";
@@ -293,10 +287,10 @@
             // txt_responsable
             // 
             txt_responsable.CharacterCasing = CharacterCasing.Upper;
-            txt_responsable.Location = new Point(159, 348);
+            txt_responsable.Location = new Point(499, 298);
             txt_responsable.Margin = new Padding(2);
             txt_responsable.Name = "txt_responsable";
-            txt_responsable.Size = new Size(193, 27);
+            txt_responsable.Size = new Size(212, 27);
             txt_responsable.TabIndex = 318;
             // 
             // txt_marca
@@ -313,7 +307,7 @@
             label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(387, 246);
+            label14.Location = new Point(427, 246);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(68, 23);
@@ -325,7 +319,7 @@
             txt_fCompra.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txt_fCompra.AutoSize = true;
             txt_fCompra.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_fCompra.Location = new Point(356, 196);
+            txt_fCompra.Location = new Point(353, 196);
             txt_fCompra.Margin = new Padding(2, 0, 2, 0);
             txt_fCompra.Name = "txt_fCompra";
             txt_fCompra.Size = new Size(142, 23);
@@ -354,33 +348,11 @@
             label13.TabIndex = 332;
             label13.Text = "Marca";
             // 
-            // txt_factura
-            // 
-            txt_factura.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txt_factura.CharacterCasing = CharacterCasing.Upper;
-            txt_factura.Location = new Point(159, 401);
-            txt_factura.Margin = new Padding(2, 3, 2, 3);
-            txt_factura.Name = "txt_factura";
-            txt_factura.Size = new Size(193, 27);
-            txt_factura.TabIndex = 320;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(82, 401);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 23);
-            label3.TabIndex = 330;
-            label3.Text = "Factura";
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(52, 347);
+            label10.Location = new Point(390, 297);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(105, 23);
@@ -415,32 +387,12 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(50, 457);
+            label18.Location = new Point(51, 343);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
             label18.Size = new Size(120, 23);
             label18.TabIndex = 325;
             label18.Text = "Observaciones";
-            // 
-            // txt_costo
-            // 
-            txt_costo.CharacterCasing = CharacterCasing.Upper;
-            txt_costo.Location = new Point(499, 348);
-            txt_costo.Margin = new Padding(2, 3, 2, 3);
-            txt_costo.Name = "txt_costo";
-            txt_costo.Size = new Size(212, 27);
-            txt_costo.TabIndex = 321;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(387, 348);
-            label12.Margin = new Padding(2, 0, 2, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(68, 23);
-            label12.TabIndex = 324;
-            label12.Text = "Costo $";
             // 
             // txt_descrip
             // 
@@ -451,26 +403,6 @@
             txt_descrip.Name = "txt_descrip";
             txt_descrip.Size = new Size(552, 27);
             txt_descrip.TabIndex = 311;
-            // 
-            // txt_ubicacion
-            // 
-            txt_ubicacion.CharacterCasing = CharacterCasing.Upper;
-            txt_ubicacion.Location = new Point(499, 298);
-            txt_ubicacion.Margin = new Padding(2, 3, 2, 3);
-            txt_ubicacion.Name = "txt_ubicacion";
-            txt_ubicacion.Size = new Size(212, 27);
-            txt_ubicacion.TabIndex = 317;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(387, 298);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(85, 23);
-            label6.TabIndex = 323;
-            label6.Text = "Ubicacion";
             // 
             // txt_cantidad
             // 
@@ -509,7 +441,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1107, 745);
+            ClientSize = new Size(1107, 633);
             Controls.Add(dtp_Fadquisicion);
             Controls.Add(label1);
             Controls.Add(dtp_asignacion);
@@ -520,17 +452,11 @@
             Controls.Add(txt_fCompra);
             Controls.Add(txt_modelo);
             Controls.Add(label13);
-            Controls.Add(txt_factura);
-            Controls.Add(label3);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label4);
             Controls.Add(label18);
-            Controls.Add(txt_costo);
-            Controls.Add(label12);
             Controls.Add(txt_descrip);
-            Controls.Add(txt_ubicacion);
-            Controls.Add(label6);
             Controls.Add(txt_cantidad);
             Controls.Add(ibtn_limpiar);
             Controls.Add(txt_serial);
@@ -570,17 +496,11 @@
         private Label txt_fCompra;
         private TextBox txt_modelo;
         private Label label13;
-        private TextBox txt_factura;
-        private Label label3;
         private Label label10;
         private Label label9;
         private Label label4;
         private Label label18;
-        private TextBox txt_costo;
-        private Label label12;
         private TextBox txt_descrip;
-        private TextBox txt_ubicacion;
-        private Label label6;
         private TextBox txt_cantidad;
         private DateTimePicker dtp_Fadquisicion;
         private Label label1;

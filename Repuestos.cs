@@ -43,7 +43,7 @@ namespace Proyecto_inventario
 
             repuesto = new CO_Repuestos();
 
-            repuesto.marca = cmb_marca.Text;
+            repuesto.marca = txt_marca.Text;
             repuesto.modelo = txt_modelo.Text;
             repuesto.caracteristica = txt_caracteristica.Text;
             repuesto.costo = double.Parse(txt_costo.Text);
@@ -55,7 +55,7 @@ namespace Proyecto_inventario
         public void SetData()
         {
             txt_id.Text = repuesto.id.ToString();
-            cmb_marca.Text = repuesto.marca;
+            txt_marca.Text = repuesto.marca;
             txt_modelo.Text = repuesto.modelo;
             txt_caracteristica.Text = repuesto.caracteristica;
             txt_costo.Text = repuesto.costo.ToString();
@@ -87,7 +87,7 @@ namespace Proyecto_inventario
             {
                 repuesto = new CO_Repuestos();
                 txt_id.Text = repuesto.id.ToString();
-                cmb_marca.Text = string.Empty;
+                txt_marca.Text = string.Empty;
                 txt_modelo.Text = string.Empty;
                 txt_caracteristica.Text = string.Empty;
                 txt_costo.Text = string.Empty;
