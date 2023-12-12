@@ -260,21 +260,9 @@ namespace Proyecto_inventario
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-            dg_licencia.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_licencia.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dg_licencia.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            string coincidencia = txt_buscar.Text;
+            var results = lista_licencia.Where(X => X.Caracteristicas.Contains(coincidencia) || X.proveedor.Contains(coincidencia)).Select(X => X).ToList();
+            dg_licencia.DataSource = results;
         }
     }
 }

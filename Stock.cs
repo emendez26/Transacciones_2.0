@@ -89,28 +89,9 @@ namespace Proyecto_inventario
 
         private void dg_stock_VisibleChanged(object sender, EventArgs e)
         {
-            dg_stock.CurrentCell = null;
-
-            foreach (DataGridViewRow r in dg_stock.Rows)
-            {
-                r.Visible = false;
-            }
-
-            foreach (DataGridViewRow r in dg_stock.Rows)
-            {
-                string tipoArticulo = r.Cells["Estado"].Value.ToString();
-                if (tipoArticulo.ToUpper() == "STOCK")
-                {
-                    foreach (DataGridViewCell c in r.Cells)
-                    {
-                        if ((c.Value.ToString().ToUpper()).IndexOf(txt_Buscar_Articulo.Text.ToUpper()) == 0)
-                        {
-                            r.Visible = true;
-                            break; 
-                        }
-                    }
-                }
-            }
+            string coincidencia = "STOCK";
+            var results = lista_Equipos.Where(X => X.estado.Contains(coincidencia)).Select(X => X).ToList();
+            dg_stock.DataSource = results;
         }
     }
 }

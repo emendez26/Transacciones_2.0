@@ -297,21 +297,9 @@ namespace Proyecto_inventario
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-            dtg_celulares.CurrentCell = null;
-            foreach (DataGridViewRow r in dtg_celulares.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dtg_celulares.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            string coincidencia = txt_buscar.Text;
+            var results = lista_celulares.Where(X => X.descripcion.Contains(coincidencia) || X.activo_fijo.Contains(coincidencia)).Select(X => X).ToList();
+            dtg_celulares.DataSource = results;
         }
     }
 

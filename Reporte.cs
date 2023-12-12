@@ -19,21 +19,9 @@ namespace Proyecto_inventario
 
         private void txt_Buscar_Articulo_TextChanged(object sender, EventArgs e)
         {
-            dg_reporte.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_reporte.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dg_reporte.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_Buscar_Articulo.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            //string coincidencia = txt_Buscar_Articulo.Text;
+            //var results = lista_Reportes.Where(X => X.caracteristicas.Contains(coincidencia) || X.proveedor.Contains(coincidencia)).Select(X => X).ToList();
+            //dg_reporte.DataSource = results;
         }
     }
 }
