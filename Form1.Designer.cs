@@ -39,10 +39,6 @@
             button4 = new Button();
             button3 = new Button();
             panel_lateral = new Panel();
-            panelSubMenuToner = new Panel();
-            button9 = new Button();
-            btn_form_toner = new Button();
-            btn_Toner = new FontAwesome.Sharp.IconButton();
             panelSubMenuLicencias = new Panel();
             button17 = new Button();
             btn_form_Licencias = new Button();
@@ -80,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel_lateral.SuspendLayout();
-            panelSubMenuToner.SuspendLayout();
             panelSubMenuLicencias.SuspendLayout();
             panelSubMenuLineas.SuspendLayout();
             panelSubMenuRepuestos.SuspendLayout();
@@ -191,8 +186,6 @@
             panel_lateral.AutoScroll = true;
             panel_lateral.BackColor = Color.Firebrick;
             panel_lateral.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_lateral.Controls.Add(panelSubMenuToner);
-            panel_lateral.Controls.Add(btn_Toner);
             panel_lateral.Controls.Add(panelSubMenuLicencias);
             panel_lateral.Controls.Add(btn_licencias);
             panel_lateral.Controls.Add(panelSubMenuLineas);
@@ -210,86 +203,6 @@
             panel_lateral.Name = "panel_lateral";
             panel_lateral.Size = new Size(385, 981);
             panel_lateral.TabIndex = 0;
-            // 
-            // panelSubMenuToner
-            // 
-            panelSubMenuToner.BackColor = Color.Transparent;
-            panelSubMenuToner.Controls.Add(button9);
-            panelSubMenuToner.Controls.Add(btn_form_toner);
-            panelSubMenuToner.Dock = DockStyle.Top;
-            panelSubMenuToner.Location = new Point(0, 1451);
-            panelSubMenuToner.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuToner.Name = "panelSubMenuToner";
-            panelSubMenuToner.Size = new Size(364, 125);
-            panelSubMenuToner.TabIndex = 33;
-            // 
-            // button9
-            // 
-            button9.BackColor = Color.Black;
-            button9.Cursor = Cursors.Hand;
-            button9.Dock = DockStyle.Top;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.ForeColor = Color.White;
-            button9.Location = new Point(0, 63);
-            button9.Margin = new Padding(2, 3, 2, 3);
-            button9.Name = "button9";
-            button9.Padding = new Padding(34, 7, 0, 7);
-            button9.Size = new Size(364, 63);
-            button9.TabIndex = 1;
-            button9.Text = "Transaccion de Toners";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += button9_Click;
-            // 
-            // btn_form_toner
-            // 
-            btn_form_toner.BackColor = Color.Black;
-            btn_form_toner.Cursor = Cursors.Hand;
-            btn_form_toner.Dock = DockStyle.Top;
-            btn_form_toner.FlatAppearance.BorderSize = 0;
-            btn_form_toner.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_toner.FlatStyle = FlatStyle.Flat;
-            btn_form_toner.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_toner.ForeColor = Color.White;
-            btn_form_toner.Location = new Point(0, 0);
-            btn_form_toner.Margin = new Padding(2, 3, 2, 3);
-            btn_form_toner.Name = "btn_form_toner";
-            btn_form_toner.Padding = new Padding(34, 7, 0, 7);
-            btn_form_toner.Size = new Size(364, 63);
-            btn_form_toner.TabIndex = 0;
-            btn_form_toner.Text = "Formulario de Toner";
-            btn_form_toner.UseVisualStyleBackColor = false;
-            btn_form_toner.Click += btn_form_toner_Click;
-            // 
-            // btn_Toner
-            // 
-            btn_Toner.BackColor = Color.Transparent;
-            btn_Toner.Cursor = Cursors.Hand;
-            btn_Toner.Dock = DockStyle.Top;
-            btn_Toner.FlatAppearance.BorderColor = Color.Maroon;
-            btn_Toner.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
-            btn_Toner.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
-            btn_Toner.FlatStyle = FlatStyle.Flat;
-            btn_Toner.Font = new Font("Calibri", 20.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Toner.ForeColor = Color.White;
-            btn_Toner.IconChar = FontAwesome.Sharp.IconChar.Print;
-            btn_Toner.IconColor = Color.LightGray;
-            btn_Toner.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_Toner.IconSize = 65;
-            btn_Toner.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Toner.Location = new Point(0, 1360);
-            btn_Toner.Margin = new Padding(2, 3, 2, 3);
-            btn_Toner.Name = "btn_Toner";
-            btn_Toner.Padding = new Padding(0, 13, 0, 13);
-            btn_Toner.Size = new Size(364, 91);
-            btn_Toner.TabIndex = 32;
-            btn_Toner.Text = "Toner";
-            btn_Toner.TextAlign = ContentAlignment.MiddleLeft;
-            btn_Toner.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Toner.UseVisualStyleBackColor = false;
-            btn_Toner.Click += btn_Toner_Click;
             // 
             // panelSubMenuLicencias
             // 
@@ -913,7 +826,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel_lateral.ResumeLayout(false);
-            panelSubMenuToner.ResumeLayout(false);
             panelSubMenuLicencias.ResumeLayout(false);
             panelSubMenuLineas.ResumeLayout(false);
             panelSubMenuRepuestos.ResumeLayout(false);
@@ -972,9 +884,5 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panelFormulario;
         private PictureBox pictureBox4;
-        private Panel panelSubMenuToner;
-        private Button button9;
-        private Button btn_form_toner;
-        private FontAwesome.Sharp.IconButton btn_Toner;
     }
 }

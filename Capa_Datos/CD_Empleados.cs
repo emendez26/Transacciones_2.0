@@ -37,10 +37,11 @@ namespace Capa_Datos
                 foreach (DataRow dr in table.Rows)
                 {
                     empleado.id = int.Parse(dr[0].ToString());
-                    empleado.identifiacion = dr[2].ToString();
-                    empleado.departamento = dr[3].ToString();
-                    empleado.area = dr[4].ToString();
-                    empleado.inactivo = bool.Parse(dr[5].ToString());
+                    empleado.identifiacion = dr[1].ToString();
+                    empleado.departamento = dr[2].ToString();
+                    empleado.area = int.Parse(dr[3].ToString());
+                    empleado.inactivo = bool.Parse(dr[4].ToString());
+                    empleado.ubicacion = dr[5].ToString();
                   
 
                     empleados.Add(empleado);
@@ -67,6 +68,8 @@ namespace Capa_Datos
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@inactio", empleado.inactivo);
+                comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
+
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -95,6 +98,7 @@ namespace Capa_Datos
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@inactio", empleado.inactivo);
+                comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
 
                 exitoso = comando.ExecuteNonQuery();
 

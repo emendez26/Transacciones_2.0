@@ -27,6 +27,8 @@ namespace Proyecto_inventario
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.ibtn_Registrar, "Registrar");
             this.ttmensaje.SetToolTip(this.ibtn_limpiar, "Limpiar");
+            this.ttmensaje.SetToolTip(this.ibtn_update, "Editar");
+            this.ttmensaje.SetToolTip(this.ibtn_delete, "Eliminar");
             empleado = new CO_Empleados();
         }
 
@@ -51,8 +53,9 @@ namespace Proyecto_inventario
             empleado = new CO_Empleados();
 
             empleado.identifiacion = txt_Identificacion_Empleado.Text;
-            empleado.departamento = txt_Ubicacion_Empleado.Text;
-            empleado.area = txt_Area_Empleado.Text;
+            empleado.departamento = cmb_depart.Text;
+            empleado.area = int.Parse(cmb_area.Text);
+            empleado.ubicacion = cmb_ubic.Text;
 
 
             return empleado;
@@ -60,10 +63,12 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
+           
             txt_Identificacion_Empleado.Text = empleado.identifiacion;
-            txt_Ubicacion_Empleado.Text = empleado.departamento;
-            txt_Area_Empleado.Text = empleado.area;
+            cmb_depart.Text = empleado.departamento;
+            cmb_area.Text = empleado.area.ToString();
             chb_inactivo.Checked = empleado.inactivo;
+            cmb_ubic.Text = empleado.ubicacion;
         }
 
         public void mostrarDatos()
@@ -80,8 +85,8 @@ namespace Proyecto_inventario
             {
                 empleado = new CO_Empleados();
                 txt_Identificacion_Empleado.Text = string.Empty;
-                txt_Ubicacion_Empleado.Text = string.Empty;
-                txt_Area_Empleado.Text = string.Empty;
+                cmb_depart.Text = string.Empty;
+                cmb_area.Text = string.Empty;
                 chb_inactivo.Text = string.Empty;
 
                 txt_Identificacion_Empleado.Enabled = true;
@@ -113,23 +118,58 @@ namespace Proyecto_inventario
                     MessageBox.Show("no se pudo insertar los datos por: " + ex);
                 }
             }
+            if (Editar == true)
+            {
+                try
+                {
+                    string mensaje = "";
+                    if (CN_emp.UpdateEmp(id, GetData()) != 0)
+                    {
+                        mensaje = "Registro Insertado Correctamente";
+                        cargarGrid();
+                        limpiar();
+                        Editar = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo editar los datos por: " + ex);
+                }
+            }
+
+
         }
 
-        private void ibtn_Registrar_Click(object sender, EventArgs e)
+        public void editar()
         {
-            guardar();
+
+            if (dg_empleados.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                txt_Identificacion_Empleado.Enabled = false;
+                ibtn_delete.Enabled = false;
+                ibtn_update.Enabled = false;
+                mostrarDatos();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+
         }
 
-        private void ibtn_limpiar_Click(object sender, EventArgs e)
+        public void eliminar()
         {
-            limpiar();
+            if (dg_empleados.SelectedRows.Count > 0)
+            {
+                id = int.Parse(dg_empleados.CurrentRow.Cells["Id"].Value.ToString());
+                if (CN_emp.DeleteEmp(id) != 0)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                    cargarGrid();
+                }
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
         }
-
-        private void dg_empleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            mostrarDatos();
-        }
-
         private void txt_Identificacion_Empleado_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -138,23 +178,35 @@ namespace Proyecto_inventario
             }
         }
 
+        private void ibtn_limpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void ibtn_Registrar_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+        private void ibtn_update_Click(object sender, EventArgs e)
+        {
+            editar();
+        }
+        private void ibtn_delete_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        private void dg_empleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatos();
+        }
+
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-            dg_empleados.CurrentCell = null;
-            foreach (DataGridViewRow r in dg_empleados.Rows)
-            {
-                r.Visible = false;
-            }
-            foreach (DataGridViewRow r in dg_empleados.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells)
-                {
-                    if ((c.Value.ToString().ToUpper()).IndexOf(txt_buscar.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
+            string coincidencia = txt_buscar.Text;
+            var results = lista_empleados.Where(X => X.identifiacion.Contains(coincidencia)).Select(X => X).ToList();
+            dg_empleados.DataSource = results;
         }
+
     }
 }

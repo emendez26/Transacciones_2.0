@@ -25,7 +25,6 @@ namespace Proyecto_inventario
             panelSubMenuLicencias.Visible = false;
             panelSubMenuLineas.Visible = false;
             panelSubMenuRepuestos.Visible = false;
-            panelSubMenuToner.Visible = false;
         }
 
         private void hideSubMenu()
@@ -40,8 +39,6 @@ namespace Proyecto_inventario
                 panelSubMenuLineas.Visible = false;
             if (panelSubMenuRepuestos.Visible == true)
                 panelSubMenuRepuestos.Visible = false;
-            if (panelSubMenuToner.Visible == true)
-                panelSubMenuToner.Visible = false;
         }
 
         private void showSubMenu(Panel SubMenu)
@@ -155,17 +152,6 @@ namespace Proyecto_inventario
             trans.Show();
             hideSubMenu();
         }
-        private void btn_form_toner_Click(object sender, EventArgs e)
-        {
-            Toner ton = new Toner();
-            ton.Show();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Transacción trans = new Transacción("TONERS");
-            trans.Show();
-        }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
@@ -189,11 +175,6 @@ namespace Proyecto_inventario
         {
             Empleado emp = new Empleado();
             emp.Show();
-        }
-
-        private void btn_Toner_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubMenuToner);
         }
 
     }
