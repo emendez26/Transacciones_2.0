@@ -52,10 +52,13 @@ namespace Proyecto_inventario
 
             empleado = new CO_Empleados();
 
-            empleado.identifiacion = txt_Identificacion_Empleado.Text;
+            empleado.identificacion = txt_Identificacion_Empleado.Text;
             empleado.departamento = cmb_depart.Text;
-            empleado.area = int.Parse(cmb_area.Text);
+            empleado.area = cmb_area.Text;
+            empleado.activo = bool.Parse(chb_inactivo.Checked.ToString());
             empleado.ubicacion = cmb_ubic.Text;
+            empleado.nombre = txt_Nombre_Empleado.Text;
+            empleado.apellido = txt_Apellido_Empleado.Text;
 
 
             return empleado;
@@ -64,11 +67,13 @@ namespace Proyecto_inventario
         public void SetData()
         {
            
-            txt_Identificacion_Empleado.Text = empleado.identifiacion;
+            txt_Identificacion_Empleado.Text = empleado.identificacion;
             cmb_depart.Text = empleado.departamento;
-            cmb_area.Text = empleado.area.ToString();
-            chb_inactivo.Checked = empleado.inactivo;
+            cmb_area.Text = empleado.area;
+            chb_inactivo.Checked = empleado.activo;
             cmb_ubic.Text = empleado.ubicacion;
+            txt_Nombre_Empleado.Text = empleado.nombre;
+            txt_Apellido_Empleado.Text = empleado.apellido;
         }
 
         public void mostrarDatos()
@@ -79,20 +84,25 @@ namespace Proyecto_inventario
             SetData();
         }
 
-        private void limpiar()
+        private void limpiar(bool isEdit)
         {
-            if (MessageBox.Show("Estas seguro de Limpiar el formulario", "Confirmar accion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "editar" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 empleado = new CO_Empleados();
+                txt_Apellido_Empleado.Text = string.Empty;
+                chb_inactivo.Checked = false;
                 txt_Identificacion_Empleado.Text = string.Empty;
-                cmb_depart.Text = string.Empty;
+                txt_Nombre_Empleado.Text = string.Empty;
                 cmb_area.Text = string.Empty;
-                chb_inactivo.Text = string.Empty;
+                cmb_depart.Text = string.Empty;
+                cmb_ubic.Text = string.Empty;
 
-                txt_Identificacion_Empleado.Enabled = true;
+                // Habilitar botones
+                ibtn_delete.Enabled = true;
+                ibtn_update.Enabled = true;
+
             }
         }
-
         public void guardar()
         {
             //INSERTAR
@@ -127,7 +137,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-                        limpiar();
+                        limpiar(true);
                         Editar = false;
                     }
                 }
@@ -180,7 +190,7 @@ namespace Proyecto_inventario
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiar(false);
         }
 
         private void ibtn_Registrar_Click(object sender, EventArgs e)
@@ -204,7 +214,7 @@ namespace Proyecto_inventario
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
             string coincidencia = txt_buscar.Text;
-            var results = lista_empleados.Where(X => X.identifiacion.Contains(coincidencia)).Select(X => X).ToList();
+            var results = lista_empleados.Where(X => X.identificacion.Contains(coincidencia)).Select(X => X).ToList();
             dg_empleados.DataSource = results;
         }
 

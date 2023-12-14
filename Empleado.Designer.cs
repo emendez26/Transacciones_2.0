@@ -320,7 +320,7 @@
             // chb_inactivo
             // 
             chb_inactivo.AutoSize = true;
-            chb_inactivo.Location = new Point(151, 563);
+            chb_inactivo.Location = new Point(152, 563);
             chb_inactivo.Name = "chb_inactivo";
             chb_inactivo.Size = new Size(18, 17);
             chb_inactivo.TabIndex = 370;

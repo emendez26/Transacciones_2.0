@@ -9,10 +9,12 @@ namespace Capa_Objetos
     public class CO_Empleados
     {
         public int id { get; set; }
-        public string identifiacion { get; set; }
+        public string identificacion { get; set; }
         public string departamento { get; set; }
-        public int area { get; set; }
-        public bool inactivo { get; set; }
+        public string area { get; set; }
+        public bool activo { get; set; }
         public string ubicacion {  get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
     }
 }

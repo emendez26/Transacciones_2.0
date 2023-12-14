@@ -15,7 +15,6 @@ namespace Capa_Negocios
 
             public List<Capa_Objetos.CO_Empleados> MostrarEmp()
             {
-
                 List<Capa_Objetos.CO_Empleados> tabla = new List<Capa_Objetos.CO_Empleados>();
                 tabla = CD_emp.Read();
                 return tabla;

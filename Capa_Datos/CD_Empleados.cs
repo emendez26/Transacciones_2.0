@@ -37,12 +37,13 @@ namespace Capa_Datos
                 foreach (DataRow dr in table.Rows)
                 {
                     empleado.id = int.Parse(dr[0].ToString());
-                    empleado.identifiacion = dr[1].ToString();
+                    empleado.identificacion = dr[1].ToString();
                     empleado.departamento = dr[2].ToString();
-                    empleado.area = int.Parse(dr[3].ToString());
-                    empleado.inactivo = bool.Parse(dr[4].ToString());
+                    empleado.area = dr[3].ToString();
+                    empleado.activo = bool.Parse(dr[4].ToString());
                     empleado.ubicacion = dr[5].ToString();
-                  
+                    empleado.nombre = dr[6].ToString();
+                    empleado.apellido = dr[7].ToString();
 
                     empleados.Add(empleado);
                     empleado = new CO_Empleados();
@@ -64,12 +65,13 @@ namespace Capa_Datos
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Empleado";
-                comando.Parameters.AddWithValue("@identifacion", empleado.identifiacion);
+                comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
-                comando.Parameters.AddWithValue("@inactio", empleado.inactivo);
+                comando.Parameters.AddWithValue("@activo", empleado.activo);
                 comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
-
+                comando.Parameters.AddWithValue("nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("apellido", empleado.apellido);
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -94,11 +96,13 @@ namespace Capa_Datos
                 comando.CommandText = "sp_Update_Empleado";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
-                comando.Parameters.AddWithValue("@identifacion", empleado.identifiacion);
+                comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
-                comando.Parameters.AddWithValue("@inactio", empleado.inactivo);
+                comando.Parameters.AddWithValue("@activo", empleado.activo);
                 comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
+                comando.Parameters.AddWithValue("nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("apellido", empleado.apellido);
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -119,7 +123,7 @@ namespace Capa_Datos
             try
             {
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_delete_Empleado";
+                comando.CommandText = "sp_Delete_Empleado";
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@id_Empleado", id);
