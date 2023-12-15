@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_Datos;
 
 namespace Proyecto_inventario
 {
@@ -18,6 +19,7 @@ namespace Proyecto_inventario
         List<Capa_Objetos.CO_Empleados> lista_empleados = new List<Capa_Objetos.CO_Empleados>();
         CO_Empleados empleado = new CO_Empleados();
         CN_Empleados CN_emp = new CN_Empleados();
+        CD_Empleados cdEmpleados = new CD_Empleados();
 
         private int id = 0;
         private bool Editar = false;
@@ -66,7 +68,7 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
-           
+
             txt_Identificacion_Empleado.Text = empleado.identificacion;
             cmb_depart.Text = empleado.departamento;
             cmb_area.Text = empleado.area;
@@ -218,5 +220,24 @@ namespace Proyecto_inventario
             dg_empleados.DataSource = results;
         }
 
+        private void txt_Identificacion_Empleado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_ubic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Empleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace Capa_Datos
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Read_Empleado";
+                comando.CommandText = "sp_Read_Empleados";
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 DataTable table = new DataTable();
@@ -56,6 +56,36 @@ namespace Capa_Datos
             }
             return empleados;
         }
+
+        private void CargarComboBox(int sw)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE_DEPT";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@sw", sw);
+
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                      
+                        string codeID = reader["CodeID"].ToString();
+                        string codeDesc = reader["CodeDesc"].ToString();
+                        
+                        
+                    }
+                }
+
+                comando.Parameters.Clear();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public int Insert(CO_Empleados empleado)
         {
             int exitoso = 0;
@@ -64,7 +94,7 @@ namespace Capa_Datos
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Insert_Empleado";
+                comando.CommandText = "sp_Insert_Empleados";
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
@@ -93,7 +123,7 @@ namespace Capa_Datos
             {
 
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Update_Empleado";
+                comando.CommandText = "sp_Update_Empleados";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
@@ -123,10 +153,10 @@ namespace Capa_Datos
             try
             {
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Delete_Empleado";
+                comando.CommandText = "sp_Delete_Empleados";
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@id_Empleado", id);
+                comando.Parameters.AddWithValue("@id_Empleados", id);
 
                 result = comando.ExecuteNonQuery();
 
