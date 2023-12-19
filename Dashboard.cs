@@ -15,6 +15,16 @@ namespace Proyecto_inventario
         public Dashboard()
         {
             InitializeComponent();
+            //7d
+            dtp_Fecha_Inicio.Value = DateTime.Today.AddDays(-7);
+            dtp_Fecha_Final.Value = DateTime.Now;
+            btn_Fecha_7Dia.Select();
+
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

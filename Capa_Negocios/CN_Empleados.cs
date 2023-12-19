@@ -33,8 +33,5 @@ namespace Capa_Negocios
             {
                 return CD_emp.Delete(id);
             }
-
-
-
     }
 }

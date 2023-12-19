@@ -68,13 +68,11 @@
             lbl_Empleado.Font = new Font("Segoe UI", 30.2F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_Empleado.ForeColor = Color.White;
             lbl_Empleado.Location = new Point(0, 0);
-            lbl_Empleado.Margin = new Padding(4, 0, 4, 0);
             lbl_Empleado.Name = "lbl_Empleado";
-            lbl_Empleado.Size = new Size(1378, 84);
+            lbl_Empleado.Size = new Size(1102, 67);
             lbl_Empleado.TabIndex = 268;
             lbl_Empleado.Text = "EMPLEADOS";
             lbl_Empleado.TextAlign = ContentAlignment.MiddleCenter;
-            lbl_Empleado.Click += lbl_Empleado_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -85,14 +83,12 @@
             tableLayoutPanel2.Controls.Add(ibtn_delete, 0, 0);
             tableLayoutPanel2.Controls.Add(ibtn_update, 0, 0);
             tableLayoutPanel2.Controls.Add(ibtn_Registrar, 0, 0);
-            tableLayoutPanel2.Location = new Point(26, 799);
-            tableLayoutPanel2.Margin = new Padding(4);
+            tableLayoutPanel2.Location = new Point(21, 639);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(516, 116);
+            tableLayoutPanel2.Size = new Size(413, 93);
             tableLayoutPanel2.TabIndex = 270;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // ibtn_delete
             // 
@@ -106,10 +102,10 @@
             ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
             ibtn_delete.IconColor = Color.Black;
             ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_delete.Location = new Point(372, 22);
+            ibtn_delete.Location = new Point(297, 18);
             ibtn_delete.Margin = new Padding(2);
             ibtn_delete.Name = "ibtn_delete";
-            ibtn_delete.Size = new Size(116, 71);
+            ibtn_delete.Size = new Size(93, 57);
             ibtn_delete.TabIndex = 307;
             ibtn_delete.Tag = "ELIMINAR";
             ibtn_delete.UseVisualStyleBackColor = false;
@@ -127,10 +123,10 @@
             ibtn_update.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
             ibtn_update.IconColor = Color.Black;
             ibtn_update.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_update.Location = new Point(200, 22);
+            ibtn_update.Location = new Point(159, 17);
             ibtn_update.Margin = new Padding(2);
             ibtn_update.Name = "ibtn_update";
-            ibtn_update.Size = new Size(116, 72);
+            ibtn_update.Size = new Size(93, 58);
             ibtn_update.TabIndex = 306;
             ibtn_update.Tag = "EDITAR";
             ibtn_update.UseVisualStyleBackColor = false;
@@ -149,10 +145,10 @@
             ibtn_Registrar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             ibtn_Registrar.IconColor = Color.Black;
             ibtn_Registrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_Registrar.Location = new Point(28, 22);
+            ibtn_Registrar.Location = new Point(22, 18);
             ibtn_Registrar.Margin = new Padding(2);
             ibtn_Registrar.Name = "ibtn_Registrar";
-            ibtn_Registrar.Size = new Size(116, 71);
+            ibtn_Registrar.Size = new Size(93, 57);
             ibtn_Registrar.TabIndex = 6;
             ibtn_Registrar.Tag = "REGISTRAR";
             ibtn_Registrar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -197,8 +193,7 @@
             dg_empleados.DefaultCellStyle = dataGridViewCellStyle2;
             dg_empleados.EnableHeadersVisualStyles = false;
             dg_empleados.GridColor = Color.Gainsboro;
-            dg_empleados.Location = new Point(604, 184);
-            dg_empleados.Margin = new Padding(4);
+            dg_empleados.Location = new Point(483, 147);
             dg_empleados.Name = "dg_empleados";
             dg_empleados.ReadOnly = true;
             dg_empleados.RowHeadersVisible = false;
@@ -209,17 +204,17 @@
             dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_empleados.RowTemplate.Height = 29;
             dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_empleados.Size = new Size(741, 731);
+            dg_empleados.Size = new Size(593, 585);
             dg_empleados.TabIndex = 307;
             dg_empleados.CellContentDoubleClick += dg_empleados_CellContentDoubleClick;
             // 
             // txt_buscar
             // 
             txt_buscar.CharacterCasing = CharacterCasing.Upper;
-            txt_buscar.Location = new Point(782, 119);
-            txt_buscar.Margin = new Padding(2, 4, 2, 4);
+            txt_buscar.Location = new Point(626, 95);
+            txt_buscar.Margin = new Padding(2, 3, 2, 3);
             txt_buscar.Name = "txt_buscar";
-            txt_buscar.Size = new Size(299, 31);
+            txt_buscar.Size = new Size(240, 27);
             txt_buscar.TabIndex = 309;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
@@ -228,10 +223,9 @@
             label20.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(600, 124);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(480, 99);
             label20.Name = "label20";
-            label20.Size = new Size(172, 30);
+            label20.Size = new Size(141, 23);
             label20.TabIndex = 308;
             label20.Text = "Buscar Empleado";
             // 
@@ -239,41 +233,38 @@
             // 
             lbl_inactivo.AutoSize = true;
             lbl_inactivo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_inactivo.Location = new Point(94, 700);
-            lbl_inactivo.Margin = new Padding(4, 0, 4, 0);
+            lbl_inactivo.Location = new Point(89, 560);
             lbl_inactivo.Name = "lbl_inactivo";
-            lbl_inactivo.Size = new Size(86, 30);
+            lbl_inactivo.Size = new Size(57, 23);
             lbl_inactivo.TabIndex = 376;
-            lbl_inactivo.Text = "Inactivo";
+            lbl_inactivo.Text = "Activo";
             // 
             // lbl_Nombre_Empleado
             // 
             lbl_Nombre_Empleado.AutoSize = true;
             lbl_Nombre_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Nombre_Empleado.Location = new Point(91, 275);
-            lbl_Nombre_Empleado.Margin = new Padding(4, 0, 4, 0);
+            lbl_Nombre_Empleado.Location = new Point(73, 220);
             lbl_Nombre_Empleado.Name = "lbl_Nombre_Empleado";
-            lbl_Nombre_Empleado.Size = new Size(89, 30);
+            lbl_Nombre_Empleado.Size = new Size(73, 23);
             lbl_Nombre_Empleado.TabIndex = 375;
             lbl_Nombre_Empleado.Text = "Nombre";
             // 
             // txt_Nombre_Empleado
             // 
             txt_Nombre_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Nombre_Empleado.Location = new Point(189, 272);
-            txt_Nombre_Empleado.Margin = new Padding(2, 4, 2, 4);
+            txt_Nombre_Empleado.Location = new Point(151, 218);
+            txt_Nombre_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Nombre_Empleado.Name = "txt_Nombre_Empleado";
-            txt_Nombre_Empleado.Size = new Size(353, 31);
+            txt_Nombre_Empleado.Size = new Size(283, 27);
             txt_Nombre_Empleado.TabIndex = 365;
             // 
             // lbl_Apellido_Empleado
             // 
             lbl_Apellido_Empleado.AutoSize = true;
             lbl_Apellido_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Apellido_Empleado.Location = new Point(92, 360);
-            lbl_Apellido_Empleado.Margin = new Padding(4, 0, 4, 0);
+            lbl_Apellido_Empleado.Location = new Point(74, 288);
             lbl_Apellido_Empleado.Name = "lbl_Apellido_Empleado";
-            lbl_Apellido_Empleado.Size = new Size(89, 30);
+            lbl_Apellido_Empleado.Size = new Size(72, 23);
             lbl_Apellido_Empleado.TabIndex = 371;
             lbl_Apellido_Empleado.Text = "Apellido";
             // 
@@ -281,10 +272,9 @@
             // 
             lbl_Identificacion_Empleado.AutoSize = true;
             lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Identificacion_Empleado.Location = new Point(42, 186);
-            lbl_Identificacion_Empleado.Margin = new Padding(4, 0, 4, 0);
+            lbl_Identificacion_Empleado.Location = new Point(34, 149);
             lbl_Identificacion_Empleado.Name = "lbl_Identificacion_Empleado";
-            lbl_Identificacion_Empleado.Size = new Size(138, 30);
+            lbl_Identificacion_Empleado.Size = new Size(112, 23);
             lbl_Identificacion_Empleado.TabIndex = 372;
             lbl_Identificacion_Empleado.Text = "Identificación";
             // 
@@ -292,10 +282,9 @@
             // 
             lbl_Ubicacion_Empleado.AutoSize = true;
             lbl_Ubicacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ubicacion_Empleado.Location = new Point(76, 446);
-            lbl_Ubicacion_Empleado.Margin = new Padding(4, 0, 4, 0);
+            lbl_Ubicacion_Empleado.Location = new Point(61, 357);
             lbl_Ubicacion_Empleado.Name = "lbl_Ubicacion_Empleado";
-            lbl_Ubicacion_Empleado.Size = new Size(104, 30);
+            lbl_Ubicacion_Empleado.Size = new Size(85, 23);
             lbl_Ubicacion_Empleado.TabIndex = 373;
             lbl_Ubicacion_Empleado.Text = "Ubicación";
             // 
@@ -303,40 +292,37 @@
             // 
             lbl_Area_Empleado.AutoSize = true;
             lbl_Area_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Area_Empleado.Location = new Point(126, 616);
-            lbl_Area_Empleado.Margin = new Padding(4, 0, 4, 0);
+            lbl_Area_Empleado.Location = new Point(101, 493);
             lbl_Area_Empleado.Name = "lbl_Area_Empleado";
-            lbl_Area_Empleado.Size = new Size(56, 30);
+            lbl_Area_Empleado.Size = new Size(45, 23);
             lbl_Area_Empleado.TabIndex = 374;
             lbl_Area_Empleado.Text = "Área";
             // 
             // txt_Apellido_Empleado
             // 
             txt_Apellido_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Apellido_Empleado.Location = new Point(189, 358);
-            txt_Apellido_Empleado.Margin = new Padding(2, 4, 2, 4);
+            txt_Apellido_Empleado.Location = new Point(151, 286);
+            txt_Apellido_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Apellido_Empleado.Name = "txt_Apellido_Empleado";
-            txt_Apellido_Empleado.Size = new Size(353, 31);
+            txt_Apellido_Empleado.Size = new Size(283, 27);
             txt_Apellido_Empleado.TabIndex = 366;
             // 
             // txt_Identificacion_Empleado
             // 
             txt_Identificacion_Empleado.CharacterCasing = CharacterCasing.Upper;
-            txt_Identificacion_Empleado.Location = new Point(189, 184);
-            txt_Identificacion_Empleado.Margin = new Padding(2, 4, 2, 4);
+            txt_Identificacion_Empleado.Location = new Point(151, 147);
+            txt_Identificacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
-            txt_Identificacion_Empleado.Size = new Size(270, 31);
+            txt_Identificacion_Empleado.Size = new Size(217, 27);
             txt_Identificacion_Empleado.TabIndex = 367;
-            txt_Identificacion_Empleado.TextChanged += txt_Identificacion_Empleado_TextChanged;
             txt_Identificacion_Empleado.KeyPress += txt_Identificacion_Empleado_KeyPress;
             // 
             // chb_inactivo
             // 
             chb_inactivo.AutoSize = true;
-            chb_inactivo.Location = new Point(190, 704);
-            chb_inactivo.Margin = new Padding(4);
+            chb_inactivo.Location = new Point(152, 563);
             chb_inactivo.Name = "chb_inactivo";
-            chb_inactivo.Size = new Size(22, 21);
+            chb_inactivo.Size = new Size(18, 17);
             chb_inactivo.TabIndex = 370;
             chb_inactivo.UseVisualStyleBackColor = true;
             // 
@@ -344,10 +330,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(31, 532);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(25, 426);
             label1.Name = "label1";
-            label1.Size = new Size(147, 30);
+            label1.Size = new Size(121, 23);
             label1.TabIndex = 378;
             label1.Text = "Departamento";
             // 
@@ -356,32 +341,27 @@
             cmb_ubic.BackColor = SystemColors.Window;
             cmb_ubic.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_ubic.FormattingEnabled = true;
-            cmb_ubic.Items.AddRange(new object[] { " SELECT CodeID, CodeDesc as UBICACION FROM Epicor10Live.ice.UDCodes WHERE CodeTypeID = 'sedesTF';" });
-            cmb_ubic.Location = new Point(190, 446);
-            cmb_ubic.Margin = new Padding(4);
+            cmb_ubic.Location = new Point(152, 357);
             cmb_ubic.Name = "cmb_ubic";
-            cmb_ubic.Size = new Size(352, 33);
+            cmb_ubic.Size = new Size(282, 28);
             cmb_ubic.TabIndex = 379;
-            cmb_ubic.SelectedIndexChanged += cmb_ubic_SelectedIndexChanged;
             // 
             // cmb_depart
             // 
             cmb_depart.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_depart.FormattingEnabled = true;
-            cmb_depart.Location = new Point(190, 532);
-            cmb_depart.Margin = new Padding(4);
+            cmb_depart.Location = new Point(152, 426);
             cmb_depart.Name = "cmb_depart";
-            cmb_depart.Size = new Size(352, 33);
+            cmb_depart.Size = new Size(282, 28);
             cmb_depart.TabIndex = 380;
             // 
             // cmb_area
             // 
             cmb_area.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_area.FormattingEnabled = true;
-            cmb_area.Location = new Point(190, 616);
-            cmb_area.Margin = new Padding(4);
+            cmb_area.Location = new Point(152, 493);
             cmb_area.Name = "cmb_area";
-            cmb_area.Size = new Size(352, 33);
+            cmb_area.Size = new Size(282, 28);
             cmb_area.TabIndex = 381;
             // 
             // ibtn_limpiar
@@ -396,10 +376,10 @@
             ibtn_limpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             ibtn_limpiar.IconColor = Color.Black;
             ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_limpiar.Location = new Point(465, 174);
+            ibtn_limpiar.Location = new Point(372, 139);
             ibtn_limpiar.Margin = new Padding(2);
             ibtn_limpiar.Name = "ibtn_limpiar";
-            ibtn_limpiar.Size = new Size(78, 55);
+            ibtn_limpiar.Size = new Size(62, 44);
             ibtn_limpiar.TabIndex = 382;
             ibtn_limpiar.Tag = "LIMPIAR";
             ibtn_limpiar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -408,10 +388,10 @@
             // 
             // Empleado
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1378, 962);
+            ClientSize = new Size(1102, 770);
             Controls.Add(ibtn_limpiar);
             Controls.Add(cmb_area);
             Controls.Add(cmb_depart);
@@ -433,8 +413,8 @@
             Controls.Add(tableLayoutPanel2);
             Controls.Add(lbl_Empleado);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 4, 2, 4);
-            MinimumSize = new Size(1394, 1007);
+            Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(1119, 815);
             Name = "Empleado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleados";

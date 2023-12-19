@@ -1,15 +1,7 @@
-﻿using Capa_Objetos;
+﻿using Capa_Datos;
 using Capa_Negocios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using Capa_Objetos;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Capa_Datos;
 
 namespace Proyecto_inventario
 {
@@ -44,6 +36,7 @@ namespace Proyecto_inventario
             dg_empleados.DataSource = emp.MostrarEmp();
         }
 
+
         private void Empleado_Load(object sender, EventArgs e)
         {
             cargarGrid();
@@ -68,7 +61,6 @@ namespace Proyecto_inventario
 
         public void SetData()
         {
-
             txt_Identificacion_Empleado.Text = empleado.identificacion;
             cmb_depart.Text = empleado.departamento;
             cmb_area.Text = empleado.area;
@@ -117,7 +109,6 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
-
                     }
                     else
                     {
@@ -218,26 +209,6 @@ namespace Proyecto_inventario
             string coincidencia = txt_buscar.Text;
             var results = lista_empleados.Where(X => X.identificacion.Contains(coincidencia)).Select(X => X).ToList();
             dg_empleados.DataSource = results;
-        }
-
-        private void txt_Identificacion_Empleado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmb_ubic_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Empleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -818,7 +818,7 @@
             MinimumSize = new Size(1450, 1028);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tecno Fuego";
+            Text = "Transacciones de Inventarios";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);

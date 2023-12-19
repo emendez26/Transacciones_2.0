@@ -30,10 +30,14 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.LegendCellColumn legendCellColumn1 = new System.Windows.Forms.DataVisualization.Charting.LegendCellColumn();
+            System.Windows.Forms.DataVisualization.Charting.LegendCellColumn legendCellColumn2 = new System.Windows.Forms.DataVisualization.Charting.LegendCellColumn();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.LegendCellColumn legendCellColumn3 = new System.Windows.Forms.DataVisualization.Charting.LegendCellColumn();
+            System.Windows.Forms.DataVisualization.Charting.LegendCellColumn legendCellColumn4 = new System.Windows.Forms.DataVisualization.Charting.LegendCellColumn();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
@@ -45,22 +49,14 @@
             dtp_Fecha_Final = new DateTimePicker();
             btn_Ok = new Button();
             dtp_Fecha_Inicio = new DateTimePicker();
-            lbl_Beneficios_Total = new Label();
-            panel3 = new Panel();
-            lbl_Beneficios = new Label();
-            lbl_Ingresos_Totales = new Label();
-            panel2 = new Panel();
-            lbl_Ingresos = new Label();
-            lbl_Numero_Orden = new Label();
-            panel1 = new Panel();
-            lbl_Numeros = new Label();
             ch_Top_Productos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ch_Ingresos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)ch_Top_Productos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ch_Ingresos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // lbl_Dashboard
@@ -71,7 +67,7 @@
             lbl_Dashboard.ForeColor = Color.White;
             lbl_Dashboard.Location = new Point(0, 0);
             lbl_Dashboard.Name = "lbl_Dashboard";
-            lbl_Dashboard.Size = new Size(1102, 67);
+            lbl_Dashboard.Size = new Size(1152, 67);
             lbl_Dashboard.TabIndex = 317;
             lbl_Dashboard.Text = "DASHBOARD";
             lbl_Dashboard.TextAlign = ContentAlignment.MiddleCenter;
@@ -81,7 +77,7 @@
             btn_Fecha_P.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_P.AutoSize = true;
             btn_Fecha_P.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_P.Location = new Point(498, 85);
+            btn_Fecha_P.Location = new Point(545, 85);
             btn_Fecha_P.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_P.Name = "btn_Fecha_P";
             btn_Fecha_P.Size = new Size(193, 35);
@@ -94,7 +90,7 @@
             btn_Hoy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Hoy.AutoSize = true;
             btn_Hoy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Hoy.Location = new Point(694, 85);
+            btn_Hoy.Location = new Point(741, 85);
             btn_Hoy.Margin = new Padding(3, 4, 3, 4);
             btn_Hoy.Name = "btn_Hoy";
             btn_Hoy.Size = new Size(95, 35);
@@ -107,7 +103,7 @@
             btn_Fecha_7Dia.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_7Dia.AutoSize = true;
             btn_Fecha_7Dia.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_7Dia.Location = new Point(791, 85);
+            btn_Fecha_7Dia.Location = new Point(838, 85);
             btn_Fecha_7Dia.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_7Dia.Name = "btn_Fecha_7Dia";
             btn_Fecha_7Dia.Size = new Size(142, 35);
@@ -120,7 +116,7 @@
             btn_Fecha_30Dias.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Fecha_30Dias.AutoSize = true;
             btn_Fecha_30Dias.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Fecha_30Dias.Location = new Point(934, 85);
+            btn_Fecha_30Dias.Location = new Point(981, 85);
             btn_Fecha_30Dias.Margin = new Padding(3, 4, 3, 4);
             btn_Fecha_30Dias.Name = "btn_Fecha_30Dias";
             btn_Fecha_30Dias.Size = new Size(152, 35);
@@ -142,7 +138,7 @@
             // 
             btn_Ok.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Ok.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Ok.Location = new Point(452, 85);
+            btn_Ok.Location = new Point(499, 85);
             btn_Ok.Margin = new Padding(3, 4, 3, 4);
             btn_Ok.Name = "btn_Ok";
             btn_Ok.Size = new Size(47, 34);
@@ -160,108 +156,23 @@
             dtp_Fecha_Inicio.Size = new Size(189, 27);
             dtp_Fecha_Inicio.TabIndex = 326;
             // 
-            // lbl_Beneficios_Total
-            // 
-            lbl_Beneficios_Total.AutoSize = true;
-            lbl_Beneficios_Total.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Beneficios_Total.Location = new Point(15, -4);
-            lbl_Beneficios_Total.Name = "lbl_Beneficios_Total";
-            lbl_Beneficios_Total.Size = new Size(146, 28);
-            lbl_Beneficios_Total.TabIndex = 338;
-            lbl_Beneficios_Total.Text = "Beneficios Total";
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel3.Controls.Add(lbl_Beneficios);
-            panel3.Controls.Add(lbl_Beneficios_Total);
-            panel3.Location = new Point(636, 143);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(446, 73);
-            panel3.TabIndex = 339;
-            // 
-            // lbl_Beneficios
-            // 
-            lbl_Beneficios.AutoSize = true;
-            lbl_Beneficios.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Beneficios.Location = new Point(53, 31);
-            lbl_Beneficios.Name = "lbl_Beneficios";
-            lbl_Beneficios.Size = new Size(99, 35);
-            lbl_Beneficios.TabIndex = 279;
-            lbl_Beneficios.Text = "100000";
-            // 
-            // lbl_Ingresos_Totales
-            // 
-            lbl_Ingresos_Totales.Anchor = AnchorStyles.Top;
-            lbl_Ingresos_Totales.AutoSize = true;
-            lbl_Ingresos_Totales.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Ingresos_Totales.Location = new Point(14, 0);
-            lbl_Ingresos_Totales.Name = "lbl_Ingresos_Totales";
-            lbl_Ingresos_Totales.Size = new Size(150, 28);
-            lbl_Ingresos_Totales.TabIndex = 336;
-            lbl_Ingresos_Totales.Text = "Ingresos Totales";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(lbl_Ingresos);
-            panel2.Controls.Add(lbl_Ingresos_Totales);
-            panel2.Location = new Point(291, 143);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(319, 73);
-            panel2.TabIndex = 337;
-            // 
-            // lbl_Ingresos
-            // 
-            lbl_Ingresos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            lbl_Ingresos.AutoSize = true;
-            lbl_Ingresos.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Ingresos.Location = new Point(39, 34);
-            lbl_Ingresos.Name = "lbl_Ingresos";
-            lbl_Ingresos.Size = new Size(99, 35);
-            lbl_Ingresos.TabIndex = 279;
-            lbl_Ingresos.Text = "100000";
-            // 
-            // lbl_Numero_Orden
-            // 
-            lbl_Numero_Orden.AutoSize = true;
-            lbl_Numero_Orden.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Numero_Orden.Location = new Point(3, -4);
-            lbl_Numero_Orden.Name = "lbl_Numero_Orden";
-            lbl_Numero_Orden.Size = new Size(189, 28);
-            lbl_Numero_Orden.TabIndex = 334;
-            lbl_Numero_Orden.Text = "Numero de Ordenes";
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(lbl_Numero_Orden);
-            panel1.Controls.Add(lbl_Numeros);
-            panel1.Location = new Point(19, 143);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(258, 73);
-            panel1.TabIndex = 335;
-            // 
-            // lbl_Numeros
-            // 
-            lbl_Numeros.AutoSize = true;
-            lbl_Numeros.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Numeros.Location = new Point(33, 31);
-            lbl_Numeros.Name = "lbl_Numeros";
-            lbl_Numeros.Size = new Size(99, 35);
-            lbl_Numeros.TabIndex = 279;
-            lbl_Numeros.Text = "100000";
-            // 
             // ch_Top_Productos
             // 
-            ch_Top_Productos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            ch_Top_Productos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ch_Top_Productos.BorderlineColor = Color.Firebrick;
+            ch_Top_Productos.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            ch_Top_Productos.BorderlineWidth = 2;
             chartArea1.Name = "ChartArea1";
             ch_Top_Productos.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Alignment = StringAlignment.Center;
+            legendCellColumn1.ColumnType = System.Windows.Forms.DataVisualization.Charting.LegendCellColumnType.SeriesSymbol;
+            legendCellColumn1.Name = "Column1";
+            legendCellColumn2.Name = "Column2";
+            legend1.CellColumns.Add(legendCellColumn1);
+            legend1.CellColumns.Add(legendCellColumn2);
             legend1.Name = "Legend1";
             ch_Top_Productos.Legends.Add(legend1);
-            ch_Top_Productos.Location = new Point(636, 224);
+            ch_Top_Productos.Location = new Point(22, 207);
             ch_Top_Productos.Margin = new Padding(3, 4, 3, 4);
             ch_Top_Productos.Name = "ch_Top_Productos";
             series1.ChartArea = "ChartArea1";
@@ -272,52 +183,109 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             ch_Top_Productos.Series.Add(series1);
-            ch_Top_Productos.Size = new Size(446, 559);
+            ch_Top_Productos.Size = new Size(446, 335);
             ch_Top_Productos.TabIndex = 341;
             ch_Top_Productos.Text = "chart2";
-            title1.Alignment = ContentAlignment.TopLeft;
+            title1.Alignment = ContentAlignment.TopRight;
             title1.BackColor = Color.Transparent;
             title1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             title1.Name = "Title";
-            title1.Text = "Top 5 Productos";
+            title1.Text = "Conteo";
             ch_Top_Productos.Titles.Add(title1);
             // 
-            // ch_Ingresos
+            // label1
             // 
-            ch_Ingresos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(374, 250);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 25);
+            label1.TabIndex = 344;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Firebrick;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(22, 167);
+            label2.Name = "label2";
+            label2.Size = new Size(446, 41);
+            label2.TabIndex = 345;
+            label2.Text = "EQUIPOS";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Firebrick;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(22, 595);
+            label3.Name = "label3";
+            label3.Size = new Size(446, 41);
+            label3.TabIndex = 347;
+            label3.Text = "CELULARES";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // chart1
+            // 
+            chart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            chart1.BorderlineColor = Color.Firebrick;
+            chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chart1.BorderlineWidth = 2;
             chartArea2.Name = "ChartArea1";
-            ch_Ingresos.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Alignment = StringAlignment.Center;
+            legendCellColumn3.ColumnType = System.Windows.Forms.DataVisualization.Charting.LegendCellColumnType.SeriesSymbol;
+            legendCellColumn3.Name = "Column1";
+            legendCellColumn4.Name = "Column2";
+            legend2.CellColumns.Add(legendCellColumn3);
+            legend2.CellColumns.Add(legendCellColumn4);
             legend2.Name = "Legend1";
-            ch_Ingresos.Legends.Add(legend2);
-            ch_Ingresos.Location = new Point(19, 224);
-            ch_Ingresos.Margin = new Padding(3, 4, 3, 4);
-            ch_Ingresos.Name = "ch_Ingresos";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(22, 635);
+            chart1.Margin = new Padding(3, 4, 3, 4);
+            chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = Color.White;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            ch_Ingresos.Series.Add(series2);
-            ch_Ingresos.Size = new Size(591, 559);
-            ch_Ingresos.TabIndex = 340;
-            ch_Ingresos.Text = "chart1";
-            title2.Alignment = ContentAlignment.TopLeft;
+            chart1.Series.Add(series2);
+            chart1.Size = new Size(446, 335);
+            chart1.TabIndex = 346;
+            chart1.Text = "chart2";
+            title2.Alignment = ContentAlignment.TopRight;
             title2.BackColor = Color.Transparent;
             title2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             title2.Name = "Title";
-            title2.Text = "Ingresos Brutos";
-            ch_Ingresos.Titles.Add(title2);
+            title2.Text = "Conteo";
+            chart1.Titles.Add(title2);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(374, 682);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 25);
+            label4.TabIndex = 348;
+            label4.Text = "label4";
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1102, 859);
+            ClientSize = new Size(1152, 996);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(chart1);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(ch_Top_Productos);
-            Controls.Add(ch_Ingresos);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             Controls.Add(btn_Fecha_P);
             Controls.Add(btn_Hoy);
             Controls.Add(btn_Fecha_7Dia);
@@ -330,14 +298,9 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";
             Text = "Dashboard";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)ch_Top_Productos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ch_Ingresos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -352,16 +315,11 @@
         private DateTimePicker dtp_Fecha_Final;
         private Button btn_Ok;
         private DateTimePicker dtp_Fecha_Inicio;
-        private Label lbl_Beneficios_Total;
-        private Panel panel3;
-        private Label lbl_Beneficios;
-        private Label lbl_Ingresos_Totales;
-        private Panel panel2;
-        private Label lbl_Ingresos;
-        private Label lbl_Numero_Orden;
-        private Panel panel1;
-        private Label lbl_Numeros;
         private System.Windows.Forms.DataVisualization.Charting.Chart ch_Top_Productos;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ch_Ingresos;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Label label4;
     }
 }

@@ -38,12 +38,12 @@ namespace Capa_Datos
                 {
                     empleado.id = int.Parse(dr[0].ToString());
                     empleado.identificacion = dr[1].ToString();
-                    empleado.departamento = dr[2].ToString();
-                    empleado.area = dr[3].ToString();
-                    empleado.activo = bool.Parse(dr[4].ToString());
-                    empleado.ubicacion = dr[5].ToString();
-                    empleado.nombre = dr[6].ToString();
-                    empleado.apellido = dr[7].ToString();
+                    empleado.nombre = dr[2].ToString();
+                    empleado.apellido = dr[3].ToString();
+                    empleado.departamento = dr[4].ToString();
+                    empleado.area = dr[5].ToString();
+                    empleado.activo = bool.Parse(dr[6].ToString());
+                    empleado.ubicacion = dr[7].ToString();
 
                     empleados.Add(empleado);
                     empleado = new CO_Empleados();
@@ -57,7 +57,7 @@ namespace Capa_Datos
             return empleados;
         }
 
-        private void CargarComboBox(int sw)
+        public void CargarComboBox(int sw = 1)
         {
             try
             {
@@ -70,11 +70,8 @@ namespace Capa_Datos
                 {
                     while (reader.Read())
                     {
-                      
                         string codeID = reader["CodeID"].ToString();
                         string codeDesc = reader["CodeDesc"].ToString();
-                        
-                        
                     }
                 }
 
@@ -86,6 +83,7 @@ namespace Capa_Datos
                 MessageBox.Show(ex.Message);
             }
         }
+
         public int Insert(CO_Empleados empleado)
         {
             int exitoso = 0;
@@ -96,12 +94,12 @@ namespace Capa_Datos
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Empleados";
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
+                comando.Parameters.AddWithValue("nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("apellido", empleado.apellido);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@activo", empleado.activo);
                 comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
-                comando.Parameters.AddWithValue("nombre", empleado.nombre);
-                comando.Parameters.AddWithValue("apellido", empleado.apellido);
 
                 exitoso = comando.ExecuteNonQuery();
 
@@ -127,12 +125,12 @@ namespace Capa_Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
+                comando.Parameters.AddWithValue("nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("apellido", empleado.apellido);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@activo", empleado.activo);
                 comando.Parameters.AddWithValue("@ubicacion", empleado.ubicacion);
-                comando.Parameters.AddWithValue("nombre", empleado.nombre);
-                comando.Parameters.AddWithValue("apellido", empleado.apellido);
 
                 exitoso = comando.ExecuteNonQuery();
 
