@@ -17,6 +17,8 @@ namespace Capa_Datos
         CO_Empleados empleado = new CO_Empleados();
         List<CO_Empleados> empleados = new List<CO_Empleados>();
 
+        List<CO_UserCode> UserCode = new List<CO_UserCode>();
+
         private Conexion conexion = new Conexion();
 
         SqlDataReader leer;
@@ -36,14 +38,14 @@ namespace Capa_Datos
                 table.Load(leer);
                 foreach (DataRow dr in table.Rows)
                 {
-                    empleado.id = int.Parse(dr[0].ToString());
-                    empleado.identificacion = dr[1].ToString();
-                    empleado.nombre = dr[2].ToString();
-                    empleado.apellido = dr[3].ToString();
-                    empleado.departamento = dr[4].ToString();
-                    empleado.area = dr[5].ToString();
-                    empleado.activo = bool.Parse(dr[6].ToString());
-                    empleado.ubicacion = dr[7].ToString();
+                    empleado.id = int.Parse(dr["id"].ToString());
+                    empleado.nombre = dr[1].ToString();
+                    empleado.apellido = dr[2].ToString();
+                    empleado.departamento = dr["departamento"].ToString();
+                    empleado.area = bool.Parse(dr["area"].ToString());
+                    empleado.activo = bool.Parse(dr[5].ToString());
+                    empleado.ubicacion = dr["ubicacion"].ToString();
+                    empleado.identificacion = dr[7].ToString();
 
                     empleados.Add(empleado);
                     empleado = new CO_Empleados();
@@ -52,36 +54,45 @@ namespace Capa_Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error Cargar");
             }
             return empleados;
         }
 
-        public void CargarComboBox(int sw = 1)
+        public List<CO_UserCode> LoadCMB(int sw)
         {
             try
             {
+                conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "UPDATE_DEPT";
+                comando.CommandText = "LoadCMB";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@sw", sw);
+                UserCode = new List<CO_UserCode>();
 
+                UserCode.Add(new CO_UserCode());
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        string codeID = reader["CodeID"].ToString();
-                        string codeDesc = reader["CodeDesc"].ToString();
+                        CO_UserCode userCode = new CO_UserCode();
+                        userCode.code = reader["CodeID"].ToString();
+                        userCode.descripcion = reader["CodeDesc"].ToString();
+
+                        UserCode.Add(userCode);
                     }
                 }
 
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return UserCode;
         }
 
         public int Insert(CO_Empleados empleado)
@@ -94,8 +105,8 @@ namespace Capa_Datos
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Empleados";
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
-                comando.Parameters.AddWithValue("nombre", empleado.nombre);
-                comando.Parameters.AddWithValue("apellido", empleado.apellido);
+                comando.Parameters.AddWithValue("@nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("@apellido", empleado.apellido);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@activo", empleado.activo);
@@ -125,8 +136,8 @@ namespace Capa_Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@identificacion", empleado.identificacion);
-                comando.Parameters.AddWithValue("nombre", empleado.nombre);
-                comando.Parameters.AddWithValue("apellido", empleado.apellido);
+                comando.Parameters.AddWithValue("@nombre", empleado.nombre);
+                comando.Parameters.AddWithValue("@apellido", empleado.apellido);
                 comando.Parameters.AddWithValue("@departamento", empleado.departamento);
                 comando.Parameters.AddWithValue("@area", empleado.area);
                 comando.Parameters.AddWithValue("@activo", empleado.activo);

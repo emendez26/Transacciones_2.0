@@ -14,7 +14,7 @@ namespace Capa_Objetos
         public string apellido { get; set; }
         public string ubicacion {  get; set; }
         public string departamento { get; set; }
-        public string area { get; set; }
+        public bool area { get; set; }
         public bool activo { get; set; }
     }
 }
