@@ -25,6 +25,7 @@ namespace Proyecto_inventario
         CO_Equipos equipo = new CO_Equipos();
         CN_Equipos CN_Equip = new CN_Equipos();
 
+
         private static int contador = 1;
 
         private string activo_fijo = "";
@@ -42,17 +43,6 @@ namespace Proyecto_inventario
             this.formulario = formulario;
             dg_transaccion.CellFormatting += dg_transaccion_CellFormatting;
             dg_transaccion1.CellFormatting += dg_transaccion1_CellFormatting;
-        }
-
-
-
-
-        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         public CO_Transacciones GetData()
@@ -90,10 +80,7 @@ namespace Proyecto_inventario
             cmb_motivo.Text = transaccion.motivo;
             txt_usuario.Text = transaccion.usuario;
             txt_Ntransaccion.Text = transaccion.numero_transaccion.ToString();
-            //txt_responsable.Text = transaccion.responsable;
-            //txt_activo_fijo.Text = transaccion.activo_fijo.ToString();
-            //txt_descrip.Text = transaccion.descripcion;
-            //txt_costo.Text = transaccion.costo.ToString();
+
         }
 
         public void mostrarDatos()

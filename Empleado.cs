@@ -11,7 +11,6 @@ namespace Proyecto_inventario
         List<Capa_Objetos.CO_Empleados> lista_empleados = new List<Capa_Objetos.CO_Empleados>();
         CO_Empleados empleado = new CO_Empleados();
         CN_Empleados CN_emp = new CN_Empleados();
-        CD_Empleados cdEmpleados = new CD_Empleados();
 
         private int id = 0;
         private bool Editar = false;
@@ -38,14 +37,13 @@ namespace Proyecto_inventario
 
         private void ComboBox()
         {
+            cmb_ubic.DataSource = CN_emp.MostrarCod(1);
+            cmb_ubic.DisplayMember = "descripcion";
+            cmb_ubic.ValueMember = "code";
 
             cmb_area.DataSource = CN_emp.MostrarCod(2);
             cmb_area.DisplayMember = "descripcion";
             cmb_area.ValueMember = "code";
-
-            cmb_ubic.DataSource = CN_emp.MostrarCod(1);
-            cmb_ubic.DisplayMember = "descripcion";
-            cmb_ubic.ValueMember = "code";
 
             cmb_depart.DataSource = CN_emp.MostrarCod(3);
             cmb_depart.DisplayMember = "descripcion";
@@ -66,7 +64,7 @@ namespace Proyecto_inventario
 
             empleado.identificacion = txt_Identificacion_Empleado.Text;
             empleado.departamento = cmb_depart.Text;
-            empleado.area = bool.Parse(cmb_area.Text.ToString());
+            empleado.area = cmb_area.Text;
             empleado.activo = bool.Parse(chb_inactivo.Checked.ToString());
             empleado.ubicacion = cmb_ubic.Text;
             empleado.nombre = txt_Nombre_Empleado.Text;
@@ -80,7 +78,7 @@ namespace Proyecto_inventario
         {
             txt_Identificacion_Empleado.Text = empleado.identificacion;
             cmb_depart.Text = empleado.departamento;
-            cmb_area.Text = empleado.area.ToString();
+            cmb_area.Text = empleado.area;
             chb_inactivo.Checked = empleado.activo;
             cmb_ubic.Text = empleado.ubicacion;
             txt_Nombre_Empleado.Text = empleado.nombre;
@@ -227,5 +225,7 @@ namespace Proyecto_inventario
             var results = lista_empleados.Where(X => X.identificacion.Contains(coincidencia)).Select(X => X).ToList();
             dg_empleados.DataSource = results;
         }
+
+ 
     }
 }

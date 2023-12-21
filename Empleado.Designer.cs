@@ -197,8 +197,7 @@
             dg_empleados.Name = "dg_empleados";
             dg_empleados.ReadOnly = true;
             dg_empleados.RowHeadersVisible = false;
-            dg_empleados.RowHeadersWidth = 51;
-            dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dg_empleados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -271,10 +270,10 @@
             // lbl_Identificacion_Empleado
             // 
             lbl_Identificacion_Empleado.AutoSize = true;
-            lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Identificacion_Empleado.Location = new Point(34, 149);
+            lbl_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Identificacion_Empleado.Location = new Point(27, 150);
             lbl_Identificacion_Empleado.Name = "lbl_Identificacion_Empleado";
-            lbl_Identificacion_Empleado.Size = new Size(112, 23);
+            lbl_Identificacion_Empleado.Size = new Size(119, 23);
             lbl_Identificacion_Empleado.TabIndex = 372;
             lbl_Identificacion_Empleado.Text = "Identificación";
             // 
@@ -310,10 +309,12 @@
             // txt_Identificacion_Empleado
             // 
             txt_Identificacion_Empleado.CharacterCasing = CharacterCasing.Upper;
+            txt_Identificacion_Empleado.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_Identificacion_Empleado.ForeColor = Color.Red;
             txt_Identificacion_Empleado.Location = new Point(151, 147);
             txt_Identificacion_Empleado.Margin = new Padding(2, 3, 2, 3);
             txt_Identificacion_Empleado.Name = "txt_Identificacion_Empleado";
-            txt_Identificacion_Empleado.Size = new Size(217, 27);
+            txt_Identificacion_Empleado.Size = new Size(217, 30);
             txt_Identificacion_Empleado.TabIndex = 367;
             txt_Identificacion_Empleado.KeyPress += txt_Identificacion_Empleado_KeyPress;
             // 

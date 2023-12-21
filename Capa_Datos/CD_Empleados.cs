@@ -41,11 +41,11 @@ namespace Capa_Datos
                     empleado.id = int.Parse(dr["id"].ToString());
                     empleado.nombre = dr[1].ToString();
                     empleado.apellido = dr[2].ToString();
-                    empleado.departamento = dr["departamento"].ToString();
-                    empleado.area = bool.Parse(dr["area"].ToString());
-                    empleado.activo = bool.Parse(dr[5].ToString());
-                    empleado.ubicacion = dr["ubicacion"].ToString();
-                    empleado.identificacion = dr[7].ToString();
+                    empleado.activo = bool.Parse(dr[3].ToString());
+                    empleado.identificacion = dr[4].ToString();
+                    empleado.departamento = dr[5].ToString();
+                    empleado.area = dr[6].ToString();
+                    empleado.ubicacion = dr[7].ToString();
 
                     empleados.Add(empleado);
                     empleado = new CO_Empleados();
@@ -71,6 +71,7 @@ namespace Capa_Datos
                 UserCode = new List<CO_UserCode>();
 
                 UserCode.Add(new CO_UserCode());
+
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
