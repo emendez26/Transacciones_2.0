@@ -34,9 +34,25 @@ namespace Proyecto_inventario
 
         private void Repuestos_Load(object sender, EventArgs e)
         {
+            ibtn_save.Enabled = false;
             cargarGrid();
         }
 
+        private void ValidCamp()
+        {
+            var vr = !string.IsNullOrEmpty(txt_caracteristica.Text) &&
+                !string.IsNullOrEmpty(txt_marca.Text) &&
+                !string.IsNullOrEmpty(txt_modelo.Text) &&
+                !string.IsNullOrEmpty(cmb_estado.Text) &&
+                !string.IsNullOrEmpty(cmb_Trepuesto.Text) &&
+                !string.IsNullOrEmpty(txt_costo.Text) &&
+                !string.IsNullOrEmpty(txt_cantidad.Text) &&
+                !string.IsNullOrEmpty(txt_serial.Text) &&
+                !string.IsNullOrEmpty(txt_obser.Text) &&
+                !string.IsNullOrEmpty(txt_adqui.Text);
+
+            ibtn_save.Enabled = vr;
+        }
 
         public CO_Repuestos GetData()
         {
@@ -211,6 +227,9 @@ namespace Proyecto_inventario
 
         private void txt_costo_TextChanged(object sender, EventArgs e)
         {
+
+            ValidCamp();
+
             if (decimal.TryParse(txt_costo.Text, out decimal costo))
             {
                 formato_moneda(costo);
@@ -240,6 +259,51 @@ namespace Proyecto_inventario
             string coincidencia = txt_buscar.Text;
             var results = lista_repuestos.Where(X => X.caracteristica.Contains(coincidencia) || X.estado.Contains(coincidencia)).Select(X => X).ToList();
             dg_repuestos.DataSource = results;
+        }
+
+        private void txt_caracteristica_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_Trepuesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_marca_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_modelo_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_cantidad_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_serial_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_adqui_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_obser_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
         }
     }
 }

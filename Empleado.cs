@@ -52,9 +52,22 @@ namespace Proyecto_inventario
 
         private void Empleado_Load(object sender, EventArgs e)
         {
+            ibtn_Registrar.Enabled = false;
             ComboBox();
             cargarGrid();
 
+        }
+
+        private void ValidCamp()
+        {   
+            var vr = !string.IsNullOrEmpty(txt_Identificacion_Empleado.Text) &&
+            !string.IsNullOrEmpty(txt_Nombre_Empleado.Text) &&
+            !string.IsNullOrEmpty(txt_Apellido_Empleado.Text) &&
+            !string.IsNullOrEmpty(cmb_area.SelectedValue.ToString()) &&
+            !string.IsNullOrEmpty(cmb_depart.SelectedValue.ToString()) &&
+            !string.IsNullOrEmpty(cmb_ubic.SelectedValue.ToString());
+
+            ibtn_Registrar.Enabled = vr;
         }
 
         public CO_Empleados GetData()
@@ -63,13 +76,12 @@ namespace Proyecto_inventario
             empleado = new CO_Empleados();
 
             empleado.identificacion = txt_Identificacion_Empleado.Text;
-            empleado.departamento = cmb_depart.Text;
-            empleado.area = cmb_area.Text;
+            empleado.departamento = cmb_depart.SelectedValue.ToString();
+            empleado.area = cmb_area.SelectedValue.ToString();
             empleado.activo = bool.Parse(chb_inactivo.Checked.ToString());
-            empleado.ubicacion = cmb_ubic.Text;
+            empleado.ubicacion = cmb_ubic.SelectedValue.ToString();
             empleado.nombre = txt_Nombre_Empleado.Text;
             empleado.apellido = txt_Apellido_Empleado.Text;
-
 
             return empleado;
         }
@@ -77,10 +89,10 @@ namespace Proyecto_inventario
         public void SetData()
         {
             txt_Identificacion_Empleado.Text = empleado.identificacion;
-            cmb_depart.Text = empleado.departamento;
-            cmb_area.Text = empleado.area;
+            cmb_depart.SelectedValue = empleado.departamento;
+            cmb_area.SelectedValue = empleado.area;
             chb_inactivo.Checked = empleado.activo;
-            cmb_ubic.Text = empleado.ubicacion;
+            cmb_ubic.SelectedValue = empleado.ubicacion;
             txt_Nombre_Empleado.Text = empleado.nombre;
             txt_Apellido_Empleado.Text = empleado.apellido;
         }
@@ -105,7 +117,6 @@ namespace Proyecto_inventario
                 cmb_area.Text = string.Empty;
                 cmb_depart.Text = string.Empty;
                 cmb_ubic.Text = string.Empty;
-
                 // Habilitar botones
                 ibtn_delete.Enabled = true;
                 ibtn_update.Enabled = true;
@@ -154,8 +165,6 @@ namespace Proyecto_inventario
                     MessageBox.Show("no se pudo editar los datos por: " + ex);
                 }
             }
-
-
         }
 
         public void editar()
@@ -226,6 +235,34 @@ namespace Proyecto_inventario
             dg_empleados.DataSource = results;
         }
 
- 
+        private void txt_Identificacion_Empleado_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_Nombre_Empleado_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_Apellido_Empleado_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_ubic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_depart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_area_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
     }
 }

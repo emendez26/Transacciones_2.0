@@ -15,7 +15,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Proyecto_inventario
 
-
 {
 
     public partial class Celulares : Form
@@ -41,10 +40,28 @@ namespace Proyecto_inventario
 
         private void Celulares_Load(object sender, EventArgs e)
         {
+            ibtn_save.Enabled = false;
             cargarGrid();
 
         }
 
+        private void ValidCamp()
+        {
+            var vr = !string.IsNullOrEmpty(txt_activoFijo.Text) &&
+                !string.IsNullOrEmpty(txt_descrip.Text) &&
+                !string.IsNullOrEmpty(txt_imei1.Text) &&
+                !string.IsNullOrEmpty(txt_serial.Text) &&
+                !string.IsNullOrEmpty(txt_marca.Text) &&
+                !string.IsNullOrEmpty(txt_modelo.Text) &&
+                !string.IsNullOrEmpty(txt_imei2.Text) &&
+                !string.IsNullOrEmpty(txt_responsable.Text) &&
+                !string.IsNullOrEmpty(txt_modelo.Text) &&
+                !string.IsNullOrEmpty(txt_garantia.Text) &&
+                !string.IsNullOrEmpty(txt_costo.Text) &&
+                !string.IsNullOrEmpty(txt_proveedor.Text);
+
+            ibtn_save.Enabled = vr;
+        }
 
         public CO_Celular GetData()
         {
@@ -88,7 +105,6 @@ namespace Proyecto_inventario
 
         public void mostrarDatos()
         {
-            // lista_celulares.Select => (e => { e.id = id}
             id = int.Parse(dtg_celulares.CurrentRow.Cells["Id"].Value.ToString());
             celular = new CO_Celular();
             celular = lista_celulares.Where(e => e.id.Equals(id)).FirstOrDefault();
@@ -177,8 +193,6 @@ namespace Proyecto_inventario
                 }
             }
 
-
-
         }
 
         public void editar()
@@ -261,16 +275,18 @@ namespace Proyecto_inventario
 
         private void txt_descrip_TextChanged(object sender, EventArgs e)
         {
-
+            ValidCamp();
         }
 
         private void txt_activoFijo_TextChanged(object sender, EventArgs e)
         {
-
+            ValidCamp();
         }
 
         private void txt_costo_TextChanged(object sender, EventArgs e)
         {
+            ValidCamp();
+
             if (decimal.TryParse(txt_costo.Text, out decimal costo))
             {
                 formato_moneda(costo);
@@ -300,6 +316,54 @@ namespace Proyecto_inventario
             string coincidencia = txt_buscar.Text;
             var results = lista_celulares.Where(X => X.descripcion.Contains(coincidencia) || X.activo_fijo.Contains(coincidencia)).Select(X => X).ToList();
             dtg_celulares.DataSource = results;
+        }
+
+        private void txt_serial_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_marca_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_modelo_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_imei1_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_imei2_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_responsable_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_proveedor_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_garantia_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_garantia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 

@@ -35,7 +35,18 @@ namespace Proyecto_inventario
 
         private void Licencias_Load(object sender, EventArgs e)
         {
+            ibtn_save.Enabled = false;
             cargarGrid();
+        }
+
+        private void ValidCamp()
+        {
+            var vr = !string.IsNullOrEmpty(txt_caract.Text) &&
+                !string.IsNullOrEmpty(txt_costo.Text) &&
+                !string.IsNullOrEmpty(txt_proveedor.Text) &&
+                !string.IsNullOrEmpty(txt_Alicencia.Text);
+
+            ibtn_save.Enabled = vr;
         }
 
         public CO_Licencias GetData()
@@ -226,6 +237,9 @@ namespace Proyecto_inventario
 
         private void txt_costo_TextChanged(object sender, EventArgs e)
         {
+
+            ValidCamp();
+
             if (decimal.TryParse(txt_costo.Text, out decimal costo))
             {
                 formato_moneda(costo);
@@ -263,6 +277,21 @@ namespace Proyecto_inventario
             string coincidencia = txt_buscar.Text;
             var results = lista_licencia.Where(X => X.Caracteristicas.Contains(coincidencia) || X.proveedor.Contains(coincidencia)).Select(X => X).ToList();
             dg_licencia.DataSource = results;
+        }
+
+        private void txt_caract_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_proveedor_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_Alicencia_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
         }
     }
 }

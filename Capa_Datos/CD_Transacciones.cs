@@ -36,19 +36,14 @@ namespace Capa_Datos
                 table.Load(leer);
                 foreach (DataRow dr in table.Rows)
                 {
-                    transaccion.id = int.Parse(dr[0].ToString());
-                    transaccion.fecha_transaccion = DateTime.Parse(dr[1].ToString());
-                    transaccion.fecha_movimiento = DateTime.Parse(dr[2].ToString());
-                    transaccion.tipo_transaccion = dr[3].ToString();
-                    transaccion.observaciones = dr[4].ToString();
-                    transaccion.responsable = dr[5].ToString();
-                    transaccion.motivo = dr[6].ToString();
-                    transaccion.formularios = dr[7].ToString();
-                    transaccion.usuario = dr[8].ToString();
-                    transaccion.numero_transaccion = int.Parse(dr[9].ToString());
-                    transaccion.activo_fijo = int.Parse(dr[10].ToString());
-                    transaccion.descripcion = dr[11].ToString();
-                    transaccion.costo = Double.Parse(dr[12].ToString());
+                    transaccion.Id = int.Parse(dr[0].ToString());
+                    transaccion.Tipo_Transaccion = dr[1].ToString();
+                    transaccion.Motivo = dr[2].ToString();
+                    transaccion.Fecha_Movimiento = DateTime.Parse(dr[3].ToString());
+                    transaccion.Usuario = dr[4].ToString();
+                    transaccion.Cedula = int.Parse(dr[5].ToString());
+                    transaccion.Numero_Transacciones = int.Parse(dr[6].ToString());
+                    transaccion.Fecha_Transaccion = DateTime.Parse(dr[7].ToString());
 
 
                     transacciones.Add(transaccion);
@@ -73,19 +68,13 @@ namespace Capa_Datos
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Insert_Transacciones";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@fecha_transaccion", DateTime.Now);
-                comando.Parameters.AddWithValue("@fecha_movimiento", transaccion.fecha_movimiento);
-                comando.Parameters.AddWithValue("@tipo_transaccion", transaccion.tipo_transaccion);
-                comando.Parameters.AddWithValue("@observaciones", transaccion.observaciones);
-                comando.Parameters.AddWithValue("@responsable", transaccion.responsable);
-                comando.Parameters.AddWithValue("@motivo", transaccion.motivo);
-                comando.Parameters.AddWithValue("@formularios", transaccion.formularios);
-                comando.Parameters.AddWithValue("@usuario", transaccion.usuario);
-                comando.Parameters.AddWithValue("@numero_transaccion", transaccion.numero_transaccion);
-                comando.Parameters.AddWithValue("@activo_fijo", transaccion.activo_fijo);
-                comando.Parameters.AddWithValue("@descripcion", transaccion.descripcion);
-                comando.Parameters.AddWithValue("@costo", transaccion.costo);
-
+                comando.Parameters.AddWithValue("@Tipo_Transaccion", transaccion.Tipo_Transaccion);
+                comando.Parameters.AddWithValue("@Motivo", transaccion.Motivo);
+                comando.Parameters.AddWithValue("@Fecha_Movimiento", transaccion.Fecha_Movimiento);
+                comando.Parameters.AddWithValue("@Usuario", transaccion.Usuario);
+                comando.Parameters.AddWithValue("@Cedula", transaccion.Cedula);
+                comando.Parameters.AddWithValue("@Numero_Transacciones", transaccion.Numero_Transacciones);
+                comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
 
                 exitoso = comando.ExecuteNonQuery();
 

@@ -32,9 +32,6 @@
     <Compile Update="Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Toner.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Transacción.cs">
       <SubType>Form</SubType>
     </Compile>

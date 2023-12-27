@@ -61,7 +61,7 @@
             label1 = new Label();
             txt_serial = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txt_adqui = new TextBox();
             label3 = new Label();
             txt_obser = new TextBox();
             label4 = new Label();
@@ -75,7 +75,7 @@
             txt_buscar.Location = new Point(824, 107);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(235, 27);
-            txt_buscar.TabIndex = 42;
+            txt_buscar.TabIndex = 15;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // lbl_buscar
@@ -116,6 +116,7 @@
             txt_modelo.Name = "txt_modelo";
             txt_modelo.Size = new Size(170, 27);
             txt_modelo.TabIndex = 6;
+            txt_modelo.TextChanged += txt_modelo_TextChanged;
             // 
             // txt_caracteristica
             // 
@@ -125,6 +126,7 @@
             txt_caracteristica.Name = "txt_caracteristica";
             txt_caracteristica.Size = new Size(478, 65);
             txt_caracteristica.TabIndex = 2;
+            txt_caracteristica.TextChanged += txt_caracteristica_TextChanged;
             // 
             // lbl_estado
             // 
@@ -269,7 +271,7 @@
             ibtn_delete.Margin = new Padding(2);
             ibtn_delete.Name = "ibtn_delete";
             ibtn_delete.Size = new Size(93, 57);
-            ibtn_delete.TabIndex = 304;
+            ibtn_delete.TabIndex = 14;
             ibtn_delete.Tag = "ELIMINAR";
             ibtn_delete.UseVisualStyleBackColor = false;
             ibtn_delete.Click += ibtn_delete_Click;
@@ -290,7 +292,7 @@
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
             ibtn_save.Size = new Size(93, 53);
-            ibtn_save.TabIndex = 306;
+            ibtn_save.TabIndex = 12;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
             ibtn_save.Click += ibtn_save_Click;
@@ -311,7 +313,7 @@
             ibtn_update.Margin = new Padding(2);
             ibtn_update.Name = "ibtn_update";
             ibtn_update.Size = new Size(93, 58);
-            ibtn_update.TabIndex = 305;
+            ibtn_update.TabIndex = 13;
             ibtn_update.Tag = "EDITAR";
             ibtn_update.UseVisualStyleBackColor = false;
             ibtn_update.Click += ibtn_update_Click;
@@ -369,6 +371,7 @@
             cmb_estado.Name = "cmb_estado";
             cmb_estado.Size = new Size(178, 28);
             cmb_estado.TabIndex = 5;
+            cmb_estado.SelectedIndexChanged += cmb_estado_SelectedIndexChanged;
             // 
             // cmb_Trepuesto
             // 
@@ -379,6 +382,7 @@
             cmb_Trepuesto.Name = "cmb_Trepuesto";
             cmb_Trepuesto.Size = new Size(178, 28);
             cmb_Trepuesto.TabIndex = 3;
+            cmb_Trepuesto.SelectedIndexChanged += cmb_Trepuesto_SelectedIndexChanged;
             // 
             // ttmensaje
             // 
@@ -393,7 +397,8 @@
             txt_marca.Location = new Point(485, 257);
             txt_marca.Name = "txt_marca";
             txt_marca.Size = new Size(170, 27);
-            txt_marca.TabIndex = 339;
+            txt_marca.TabIndex = 4;
+            txt_marca.TextChanged += txt_marca_TextChanged;
             // 
             // txt_cantidad
             // 
@@ -401,7 +406,8 @@
             txt_cantidad.Location = new Point(485, 355);
             txt_cantidad.Name = "txt_cantidad";
             txt_cantidad.Size = new Size(170, 27);
-            txt_cantidad.TabIndex = 340;
+            txt_cantidad.TabIndex = 8;
+            txt_cantidad.TextChanged += txt_cantidad_TextChanged;
             // 
             // label1
             // 
@@ -419,7 +425,8 @@
             txt_serial.Location = new Point(177, 407);
             txt_serial.Name = "txt_serial";
             txt_serial.Size = new Size(178, 27);
-            txt_serial.TabIndex = 342;
+            txt_serial.TabIndex = 9;
+            txt_serial.TextChanged += txt_serial_TextChanged;
             // 
             // label2
             // 
@@ -431,13 +438,14 @@
             label2.TabIndex = 343;
             label2.Text = "Serial";
             // 
-            // textBox1
+            // txt_adqui
             // 
-            textBox1.CharacterCasing = CharacterCasing.Upper;
-            textBox1.Location = new Point(485, 407);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(170, 27);
-            textBox1.TabIndex = 344;
+            txt_adqui.CharacterCasing = CharacterCasing.Upper;
+            txt_adqui.Location = new Point(485, 407);
+            txt_adqui.Name = "txt_adqui";
+            txt_adqui.Size = new Size(170, 27);
+            txt_adqui.TabIndex = 10;
+            txt_adqui.TextChanged += txt_adqui_TextChanged;
             // 
             // label3
             // 
@@ -457,7 +465,8 @@
             txt_obser.Multiline = true;
             txt_obser.Name = "txt_obser";
             txt_obser.Size = new Size(478, 77);
-            txt_obser.TabIndex = 346;
+            txt_obser.TabIndex = 11;
+            txt_obser.TextChanged += txt_obser_TextChanged;
             // 
             // label4
             // 
@@ -477,7 +486,7 @@
             ClientSize = new Size(1168, 708);
             Controls.Add(txt_obser);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(txt_adqui);
             Controls.Add(label3);
             Controls.Add(txt_serial);
             Controls.Add(label2);
@@ -545,7 +554,7 @@
         private Label label1;
         private TextBox txt_serial;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txt_adqui;
         private Label label3;
         private TextBox txt_obser;
         private Label label4;

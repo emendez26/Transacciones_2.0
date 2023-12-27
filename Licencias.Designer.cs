@@ -167,6 +167,7 @@
             txt_caract.Name = "txt_caract";
             txt_caract.Size = new Size(494, 65);
             txt_caract.TabIndex = 2;
+            txt_caract.TextChanged += txt_caract_TextChanged;
             // 
             // txt_Id
             // 
@@ -186,7 +187,7 @@
             txt_buscar.Margin = new Padding(2, 3, 2, 3);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(265, 27);
-            txt_buscar.TabIndex = 288;
+            txt_buscar.TabIndex = 12;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // lbl_buscar
@@ -314,7 +315,7 @@
             ibtn_delete.Margin = new Padding(2);
             ibtn_delete.Name = "ibtn_delete";
             ibtn_delete.Size = new Size(93, 57);
-            ibtn_delete.TabIndex = 304;
+            ibtn_delete.TabIndex = 11;
             ibtn_delete.Tag = "ELIMINAR";
             ibtn_delete.UseVisualStyleBackColor = false;
             ibtn_delete.Click += ibtn_delete_Click;
@@ -335,7 +336,7 @@
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
             ibtn_save.Size = new Size(93, 53);
-            ibtn_save.TabIndex = 306;
+            ibtn_save.TabIndex = 9;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
             ibtn_save.Click += ibtn_save_Click;
@@ -356,7 +357,7 @@
             ibtn_update.Margin = new Padding(2);
             ibtn_update.Name = "ibtn_update";
             ibtn_update.Size = new Size(93, 58);
-            ibtn_update.TabIndex = 305;
+            ibtn_update.TabIndex = 10;
             ibtn_update.Tag = "EDITAR";
             ibtn_update.UseVisualStyleBackColor = false;
             ibtn_update.Click += ibtn_update_Click;
@@ -373,6 +374,7 @@
             txt_Alicencia.Name = "txt_Alicencia";
             txt_Alicencia.Size = new Size(193, 27);
             txt_Alicencia.TabIndex = 7;
+            txt_Alicencia.TextChanged += txt_Alicencia_TextChanged;
             txt_Alicencia.KeyPress += txt_Alicencia_KeyPress;
             // 
             // lbl_proveedor
@@ -388,10 +390,12 @@
             // 
             // txt_proveedor
             // 
+            txt_proveedor.CharacterCasing = CharacterCasing.Upper;
             txt_proveedor.Location = new Point(456, 258);
             txt_proveedor.Name = "txt_proveedor";
             txt_proveedor.Size = new Size(193, 27);
-            txt_proveedor.TabIndex = 310;
+            txt_proveedor.TabIndex = 4;
+            txt_proveedor.TextChanged += txt_proveedor_TextChanged;
             // 
             // chb_activo
             // 
@@ -399,7 +403,7 @@
             chb_activo.Location = new Point(456, 367);
             chb_activo.Name = "chb_activo";
             chb_activo.Size = new Size(73, 24);
-            chb_activo.TabIndex = 311;
+            chb_activo.TabIndex = 8;
             chb_activo.Text = "Activo";
             chb_activo.UseVisualStyleBackColor = true;
             // 

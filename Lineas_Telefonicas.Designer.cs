@@ -130,7 +130,7 @@
             ibtn_delete.Margin = new Padding(2);
             ibtn_delete.Name = "ibtn_delete";
             ibtn_delete.Size = new Size(93, 57);
-            ibtn_delete.TabIndex = 304;
+            ibtn_delete.TabIndex = 7;
             ibtn_delete.Tag = "ELIMINAR";
             ibtn_delete.UseVisualStyleBackColor = false;
             ibtn_delete.Click += ibtn_delete_Click;
@@ -151,7 +151,7 @@
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
             ibtn_save.Size = new Size(93, 53);
-            ibtn_save.TabIndex = 306;
+            ibtn_save.TabIndex = 5;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
             ibtn_save.Click += ibtn_save_Click;
@@ -172,7 +172,7 @@
             ibtn_update.Margin = new Padding(2);
             ibtn_update.Name = "ibtn_update";
             ibtn_update.Size = new Size(93, 58);
-            ibtn_update.TabIndex = 305;
+            ibtn_update.TabIndex = 6;
             ibtn_update.Tag = "EDITAR";
             ibtn_update.UseVisualStyleBackColor = false;
             ibtn_update.Click += ibtn_update_Click;
@@ -186,6 +186,7 @@
             txt_caract.Name = "txt_caract";
             txt_caract.Size = new Size(521, 99);
             txt_caract.TabIndex = 4;
+            txt_caract.TextChanged += txt_caract_TextChanged;
             // 
             // dtg_linea
             // 
@@ -248,6 +249,7 @@
             // 
             // cmb_plan
             // 
+            cmb_plan.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_plan.FormattingEnabled = true;
             cmb_plan.Items.AddRange(new object[] { "SI", "NO" });
             cmb_plan.Location = new Point(191, 248);
@@ -255,6 +257,7 @@
             cmb_plan.Name = "cmb_plan";
             cmb_plan.Size = new Size(364, 28);
             cmb_plan.TabIndex = 3;
+            cmb_plan.SelectedIndexChanged += cmb_plan_SelectedIndexChanged;
             // 
             // txt_proveedor
             // 
@@ -264,6 +267,7 @@
             txt_proveedor.Name = "txt_proveedor";
             txt_proveedor.Size = new Size(364, 27);
             txt_proveedor.TabIndex = 2;
+            txt_proveedor.TextChanged += txt_proveedor_TextChanged;
             // 
             // label15
             // 
@@ -305,7 +309,7 @@
             txt_buscar.Margin = new Padding(2, 3, 2, 3);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(284, 27);
-            txt_buscar.TabIndex = 338;
+            txt_buscar.TabIndex = 8;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // label11
@@ -328,6 +332,8 @@
             txt_linea.Name = "txt_linea";
             txt_linea.Size = new Size(233, 30);
             txt_linea.TabIndex = 1;
+            txt_linea.TextChanged += txt_linea_TextChanged;
+            txt_linea.KeyPress += txt_linea_KeyPress;
             // 
             // label12
             // 

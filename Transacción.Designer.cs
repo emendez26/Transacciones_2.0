@@ -32,9 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transacción));
             label1 = new Label();
             label19 = new Label();
@@ -42,32 +41,29 @@
             label14 = new Label();
             cmb_Tipo = new ComboBox();
             panel1 = new Panel();
+            rb_equip = new RadioButton();
             txt_Ntransaccion = new TextBox();
             label17 = new Label();
             label16 = new Label();
             tableLayoutPanel4 = new TableLayoutPanel();
             ibtn_save = new FontAwesome.Sharp.IconButton();
+            ibtn_imprimir = new FontAwesome.Sharp.IconButton();
             txt_observ = new TextBox();
             label13 = new Label();
-            panel3 = new Panel();
-            label10 = new Label();
-            dtp_Fmovimiento2 = new DateTimePicker();
-            txt_descrip = new TextBox();
-            label11 = new Label();
-            txt_activo_fijo = new TextBox();
-            label12 = new Label();
-            txt_costo = new TextBox();
-            label9 = new Label();
-            label8 = new Label();
-            panel2 = new Panel();
-            txt_departamento = new TextBox();
-            label6 = new Label();
-            txt_area = new TextBox();
-            label5 = new Label();
-            txt_responsable = new TextBox();
-            label4 = new Label();
             txt_cedula = new TextBox();
             label3 = new Label();
+            panel3 = new Panel();
+            dtp_fmovimiento_det = new DateTimePicker();
+            txt_costo_det = new TextBox();
+            txt_obser_det = new TextBox();
+            txt_activo_det = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label9 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ibtn_delete = new FontAwesome.Sharp.IconButton();
+            ibtn_agg = new FontAwesome.Sharp.IconButton();
             txt_buscar = new TextBox();
             label15 = new Label();
             dg_transaccion1 = new DataGridView();
@@ -75,28 +71,19 @@
             label7 = new Label();
             label2 = new Label();
             cmb_motivo = new ComboBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            ibtn_delete = new FontAwesome.Sharp.IconButton();
-            ibtn_agg = new FontAwesome.Sharp.IconButton();
             ibtn_limpiar = new FontAwesome.Sharp.IconButton();
             dg_transaccion = new DataGridView();
-            Activo_Fijo = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            Costo = new DataGridViewTextBoxColumn();
-            Fecha_movimiento = new DataGridViewTextBoxColumn();
             tableLayoutPanel2 = new TableLayoutPanel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel3 = new TableLayoutPanel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
-            ibtn_imprimir = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_transaccion1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dg_transaccion1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dg_transaccion).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -119,7 +106,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(36, 204);
+            label19.Location = new Point(49, 202);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
             label19.Size = new Size(174, 23);
@@ -130,17 +117,17 @@
             // 
             dtp_Fmovimiento.CustomFormat = "dd/MM/yy";
             dtp_Fmovimiento.Format = DateTimePickerFormat.Custom;
-            dtp_Fmovimiento.Location = new Point(210, 201);
+            dtp_Fmovimiento.Location = new Point(223, 199);
             dtp_Fmovimiento.Margin = new Padding(2, 3, 2, 3);
             dtp_Fmovimiento.Name = "dtp_Fmovimiento";
             dtp_Fmovimiento.Size = new Size(193, 27);
-            dtp_Fmovimiento.TabIndex = 301;
+            dtp_Fmovimiento.TabIndex = 5;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(47, 148);
+            label14.Location = new Point(60, 146);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(159, 23);
@@ -153,25 +140,26 @@
             cmb_Tipo.FlatStyle = FlatStyle.System;
             cmb_Tipo.FormattingEnabled = true;
             cmb_Tipo.Items.AddRange(new object[] { "ENTRADA", "SALIDA" });
-            cmb_Tipo.Location = new Point(210, 143);
+            cmb_Tipo.Location = new Point(223, 141);
             cmb_Tipo.Margin = new Padding(2, 3, 2, 3);
             cmb_Tipo.Name = "cmb_Tipo";
             cmb_Tipo.Size = new Size(193, 28);
-            cmb_Tipo.TabIndex = 302;
+            cmb_Tipo.TabIndex = 3;
             cmb_Tipo.SelectedIndexChanged += cmb_Tipo_SelectedIndexChanged;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(rb_equip);
             panel1.Controls.Add(txt_Ntransaccion);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label16);
             panel1.Controls.Add(tableLayoutPanel4);
             panel1.Controls.Add(txt_observ);
             panel1.Controls.Add(label13);
+            panel1.Controls.Add(txt_cedula);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(panel2);
             panel1.Controls.Add(txt_buscar);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(dg_transaccion1);
@@ -179,7 +167,6 @@
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmb_motivo);
-            panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(ibtn_limpiar);
             panel1.Controls.Add(dg_transaccion);
             panel1.Controls.Add(label1);
@@ -194,23 +181,40 @@
             panel1.Size = new Size(1681, 1055);
             panel1.TabIndex = 1;
             // 
+            // rb_equip
+            // 
+            rb_equip.Appearance = Appearance.Button;
+            rb_equip.AutoSize = true;
+            rb_equip.FlatAppearance.BorderColor = Color.White;
+            rb_equip.FlatAppearance.BorderSize = 0;
+            rb_equip.FlatStyle = FlatStyle.Flat;
+            rb_equip.Location = new Point(1341, 90);
+            rb_equip.Name = "rb_equip";
+            rb_equip.Size = new Size(66, 30);
+            rb_equip.TabIndex = 384;
+            rb_equip.Text = "Equipo";
+            rb_equip.TextAlign = ContentAlignment.MiddleCenter;
+            rb_equip.UseVisualStyleBackColor = true;
+            rb_equip.CheckedChanged += rb_equip_CheckedChanged;
+            // 
             // txt_Ntransaccion
             // 
             txt_Ntransaccion.CharacterCasing = CharacterCasing.Upper;
             txt_Ntransaccion.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             txt_Ntransaccion.ForeColor = Color.Red;
-            txt_Ntransaccion.Location = new Point(210, 95);
+            txt_Ntransaccion.Location = new Point(223, 93);
             txt_Ntransaccion.Margin = new Padding(2, 3, 2, 3);
             txt_Ntransaccion.Name = "txt_Ntransaccion";
             txt_Ntransaccion.Size = new Size(62, 30);
-            txt_Ntransaccion.TabIndex = 384;
+            txt_Ntransaccion.TabIndex = 1;
+            txt_Ntransaccion.TextChanged += txt_Ntransaccion_TextChanged;
             txt_Ntransaccion.KeyPress += txt_Ntransaccion_KeyPress;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(83, 96);
+            label17.Location = new Point(96, 94);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
             label17.Size = new Size(126, 23);
@@ -231,22 +235,22 @@
             // 
             // tableLayoutPanel4
             // 
-            tableLayoutPanel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.Controls.Add(ibtn_save, 0, 0);
             tableLayoutPanel4.Controls.Add(ibtn_imprimir, 1, 0);
-            tableLayoutPanel4.Location = new Point(1503, 958);
+            tableLayoutPanel4.Dock = DockStyle.Bottom;
+            tableLayoutPanel4.Location = new Point(0, 973);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(141, 70);
+            tableLayoutPanel4.Size = new Size(1681, 82);
             tableLayoutPanel4.TabIndex = 377;
             // 
             // ibtn_save
             // 
-            ibtn_save.Anchor = AnchorStyles.None;
+            ibtn_save.Anchor = AnchorStyles.Right;
             ibtn_save.BackColor = Color.Transparent;
             ibtn_save.Cursor = Cursors.Hand;
             ibtn_save.FlatAppearance.BorderSize = 0;
@@ -256,14 +260,34 @@
             ibtn_save.IconChar = FontAwesome.Sharp.IconChar.FolderPlus;
             ibtn_save.IconColor = Color.Black;
             ibtn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ibtn_save.Location = new Point(2, 8);
+            ibtn_save.Location = new Point(771, 13);
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
-            ibtn_save.Size = new Size(66, 54);
-            ibtn_save.TabIndex = 371;
+            ibtn_save.Size = new Size(67, 56);
+            ibtn_save.TabIndex = 14;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
             ibtn_save.Click += ibtn_save_Click;
+            // 
+            // ibtn_imprimir
+            // 
+            ibtn_imprimir.Anchor = AnchorStyles.Left;
+            ibtn_imprimir.BackColor = Color.Transparent;
+            ibtn_imprimir.Cursor = Cursors.Hand;
+            ibtn_imprimir.FlatAppearance.BorderSize = 0;
+            ibtn_imprimir.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_imprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_imprimir.FlatStyle = FlatStyle.Flat;
+            ibtn_imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            ibtn_imprimir.IconColor = Color.Black;
+            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            ibtn_imprimir.Location = new Point(842, 13);
+            ibtn_imprimir.Margin = new Padding(2);
+            ibtn_imprimir.Name = "ibtn_imprimir";
+            ibtn_imprimir.Size = new Size(67, 56);
+            ibtn_imprimir.TabIndex = 15;
+            ibtn_imprimir.Tag = "ELIMINAR";
+            ibtn_imprimir.UseVisualStyleBackColor = false;
             // 
             // txt_observ
             // 
@@ -274,245 +298,203 @@
             txt_observ.Multiline = true;
             txt_observ.Name = "txt_observ";
             txt_observ.Size = new Size(659, 124);
-            txt_observ.TabIndex = 381;
+            txt_observ.TabIndex = 13;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(56, 438);
+            label13.Location = new Point(56, 256);
             label13.Name = "label13";
             label13.Size = new Size(173, 23);
             label13.TabIndex = 379;
             label13.Text = "Detalles del Producto";
             // 
+            // txt_cedula
+            // 
+            txt_cedula.CharacterCasing = CharacterCasing.Upper;
+            txt_cedula.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_cedula.ForeColor = Color.Red;
+            txt_cedula.Location = new Point(644, 95);
+            txt_cedula.Margin = new Padding(2, 3, 2, 3);
+            txt_cedula.Name = "txt_cedula";
+            txt_cedula.Size = new Size(193, 30);
+            txt_cedula.TabIndex = 2;
+            txt_cedula.TextChanged += txt_cedula_TextChanged;
+            txt_cedula.KeyPress += txt_cedula_KeyPress;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(521, 98);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 23);
+            label3.TabIndex = 369;
+            label3.Text = "Identificacion";
+            // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(dtp_fmovimiento_det);
+            panel3.Controls.Add(txt_costo_det);
+            panel3.Controls.Add(txt_obser_det);
+            panel3.Controls.Add(txt_activo_det);
             panel3.Controls.Add(label10);
-            panel3.Controls.Add(dtp_Fmovimiento2);
-            panel3.Controls.Add(txt_descrip);
             panel3.Controls.Add(label11);
-            panel3.Controls.Add(txt_activo_fijo);
             panel3.Controls.Add(label12);
-            panel3.Controls.Add(txt_costo);
             panel3.Controls.Add(label9);
-            panel3.Location = new Point(47, 453);
+            panel3.Controls.Add(tableLayoutPanel1);
+            panel3.Location = new Point(47, 271);
             panel3.Name = "panel3";
-            panel3.Size = new Size(863, 190);
+            panel3.Size = new Size(863, 254);
             panel3.TabIndex = 377;
+            // 
+            // dtp_fmovimiento_det
+            // 
+            dtp_fmovimiento_det.CustomFormat = "dd/MM/yy";
+            dtp_fmovimiento_det.Format = DateTimePickerFormat.Custom;
+            dtp_fmovimiento_det.Location = new Point(596, 177);
+            dtp_fmovimiento_det.Margin = new Padding(2, 3, 2, 3);
+            dtp_fmovimiento_det.Name = "dtp_fmovimiento_det";
+            dtp_fmovimiento_det.Size = new Size(193, 27);
+            dtp_fmovimiento_det.TabIndex = 10;
+            // 
+            // txt_costo_det
+            // 
+            txt_costo_det.CharacterCasing = CharacterCasing.Upper;
+            txt_costo_det.Location = new Point(175, 177);
+            txt_costo_det.Margin = new Padding(2, 3, 2, 3);
+            txt_costo_det.Name = "txt_costo_det";
+            txt_costo_det.Size = new Size(193, 27);
+            txt_costo_det.TabIndex = 9;
+            txt_costo_det.TextChanged += txt_costo_det_TextChanged;
+            txt_costo_det.KeyPress += txt_costo_det_KeyPress;
+            // 
+            // txt_obser_det
+            // 
+            txt_obser_det.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txt_obser_det.CharacterCasing = CharacterCasing.Upper;
+            txt_obser_det.Location = new Point(175, 83);
+            txt_obser_det.Margin = new Padding(2, 3, 2, 3);
+            txt_obser_det.Multiline = true;
+            txt_obser_det.Name = "txt_obser_det";
+            txt_obser_det.Size = new Size(614, 62);
+            txt_obser_det.TabIndex = 8;
+            // 
+            // txt_activo_det
+            // 
+            txt_activo_det.Anchor = AnchorStyles.None;
+            txt_activo_det.CharacterCasing = CharacterCasing.Upper;
+            txt_activo_det.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txt_activo_det.ForeColor = Color.Red;
+            txt_activo_det.Location = new Point(175, 32);
+            txt_activo_det.Margin = new Padding(2, 3, 2, 3);
+            txt_activo_det.Name = "txt_activo_det";
+            txt_activo_det.Size = new Size(193, 30);
+            txt_activo_det.TabIndex = 7;
+            txt_activo_det.KeyPress += txt_activo_det_KeyPress;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(418, 134);
+            label10.Location = new Point(418, 180);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(174, 23);
             label10.TabIndex = 302;
             label10.Text = "Fecha de movimiento";
             // 
-            // dtp_Fmovimiento2
-            // 
-            dtp_Fmovimiento2.CustomFormat = "dd/MM/yy";
-            dtp_Fmovimiento2.Format = DateTimePickerFormat.Custom;
-            dtp_Fmovimiento2.Location = new Point(596, 131);
-            dtp_Fmovimiento2.Margin = new Padding(2, 3, 2, 3);
-            dtp_Fmovimiento2.Name = "dtp_Fmovimiento2";
-            dtp_Fmovimiento2.Size = new Size(193, 27);
-            dtp_Fmovimiento2.TabIndex = 303;
-            // 
-            // txt_descrip
-            // 
-            txt_descrip.Anchor = AnchorStyles.None;
-            txt_descrip.CharacterCasing = CharacterCasing.Upper;
-            txt_descrip.Location = new Point(162, 82);
-            txt_descrip.Margin = new Padding(2, 3, 2, 3);
-            txt_descrip.Name = "txt_descrip";
-            txt_descrip.Size = new Size(627, 27);
-            txt_descrip.TabIndex = 372;
-            // 
             // label11
             // 
-            label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(44, 86);
+            label11.Location = new Point(67, 101);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(94, 23);
+            label11.Size = new Size(104, 23);
             label11.TabIndex = 371;
-            label11.Text = "Descrpcion";
-            // 
-            // txt_activo_fijo
-            // 
-            txt_activo_fijo.Anchor = AnchorStyles.None;
-            txt_activo_fijo.CharacterCasing = CharacterCasing.Upper;
-            txt_activo_fijo.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            txt_activo_fijo.ForeColor = Color.Red;
-            txt_activo_fijo.Location = new Point(162, 32);
-            txt_activo_fijo.Margin = new Padding(2, 3, 2, 3);
-            txt_activo_fijo.Name = "txt_activo_fijo";
-            txt_activo_fijo.Size = new Size(193, 30);
-            txt_activo_fijo.TabIndex = 370;
-            txt_activo_fijo.KeyPress += txt_activo_fijo_KeyPress;
+            label11.Text = "Observacion";
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(45, 36);
+            label12.Location = new Point(78, 39);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(93, 23);
             label12.TabIndex = 369;
             label12.Text = "Activo fijo";
             // 
-            // txt_costo
-            // 
-            txt_costo.Anchor = AnchorStyles.None;
-            txt_costo.CharacterCasing = CharacterCasing.Upper;
-            txt_costo.Location = new Point(162, 136);
-            txt_costo.Margin = new Padding(2, 3, 2, 3);
-            txt_costo.Name = "txt_costo";
-            txt_costo.Size = new Size(193, 27);
-            txt_costo.TabIndex = 376;
-            txt_costo.TextChanged += txt_costo_TextChanged;
-            txt_costo.KeyPress += txt_costo_KeyPress;
-            // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(70, 140);
+            label9.Location = new Point(103, 177);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(68, 23);
             label9.TabIndex = 375;
             label9.Text = "Costo $";
             // 
-            // label8
+            // tableLayoutPanel1
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(56, 255);
-            label8.Name = "label8";
-            label8.Size = new Size(195, 23);
-            label8.TabIndex = 376;
-            label8.Text = "Transaccion asignada a :";
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(ibtn_delete, 1, 0);
+            tableLayoutPanel1.Controls.Add(ibtn_agg, 0, 0);
+            tableLayoutPanel1.Location = new Point(648, 7);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(141, 70);
+            tableLayoutPanel1.TabIndex = 360;
             // 
-            // panel2
+            // ibtn_delete
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(txt_departamento);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(txt_area);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(txt_responsable);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(txt_cedula);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(47, 269);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(863, 147);
-            panel2.TabIndex = 375;
+            ibtn_delete.Anchor = AnchorStyles.None;
+            ibtn_delete.BackColor = Color.Transparent;
+            ibtn_delete.Cursor = Cursors.Hand;
+            ibtn_delete.FlatAppearance.BorderSize = 0;
+            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_delete.FlatStyle = FlatStyle.Flat;
+            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            ibtn_delete.IconColor = Color.Black;
+            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            ibtn_delete.Location = new Point(72, 8);
+            ibtn_delete.Margin = new Padding(2);
+            ibtn_delete.Name = "ibtn_delete";
+            ibtn_delete.Size = new Size(67, 54);
+            ibtn_delete.TabIndex = 12;
+            ibtn_delete.Tag = "ELIMINAR";
+            ibtn_delete.UseVisualStyleBackColor = false;
+            ibtn_delete.Click += ibtn_delete_Click;
             // 
-            // txt_departamento
+            // ibtn_agg
             // 
-            txt_departamento.Anchor = AnchorStyles.None;
-            txt_departamento.CharacterCasing = CharacterCasing.Upper;
-            txt_departamento.Enabled = false;
-            txt_departamento.Location = new Point(162, 87);
-            txt_departamento.Margin = new Padding(2, 3, 2, 3);
-            txt_departamento.Name = "txt_departamento";
-            txt_departamento.Size = new Size(193, 27);
-            txt_departamento.TabIndex = 376;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(37, 88);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(121, 23);
-            label6.TabIndex = 375;
-            label6.Text = "Departamento";
-            // 
-            // txt_area
-            // 
-            txt_area.Anchor = AnchorStyles.None;
-            txt_area.CharacterCasing = CharacterCasing.Upper;
-            txt_area.Enabled = false;
-            txt_area.Location = new Point(596, 86);
-            txt_area.Margin = new Padding(2, 3, 2, 3);
-            txt_area.Name = "txt_area";
-            txt_area.Size = new Size(193, 27);
-            txt_area.TabIndex = 374;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(547, 87);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 23);
-            label5.TabIndex = 373;
-            label5.Text = "Area";
-            // 
-            // txt_responsable
-            // 
-            txt_responsable.Anchor = AnchorStyles.None;
-            txt_responsable.CharacterCasing = CharacterCasing.Upper;
-            txt_responsable.Enabled = false;
-            txt_responsable.Location = new Point(596, 36);
-            txt_responsable.Margin = new Padding(2, 3, 2, 3);
-            txt_responsable.Name = "txt_responsable";
-            txt_responsable.Size = new Size(193, 27);
-            txt_responsable.TabIndex = 372;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(487, 40);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(105, 23);
-            label4.TabIndex = 371;
-            label4.Text = "Responsable";
-            // 
-            // txt_cedula
-            // 
-            txt_cedula.Anchor = AnchorStyles.None;
-            txt_cedula.CharacterCasing = CharacterCasing.Upper;
-            txt_cedula.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            txt_cedula.ForeColor = Color.Red;
-            txt_cedula.Location = new Point(162, 33);
-            txt_cedula.Margin = new Padding(2, 3, 2, 3);
-            txt_cedula.Name = "txt_cedula";
-            txt_cedula.Size = new Size(193, 30);
-            txt_cedula.TabIndex = 370;
-            txt_cedula.KeyPress += txt_cedula_KeyPress;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(93, 36);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 23);
-            label3.TabIndex = 369;
-            label3.Text = "Cedula";
+            ibtn_agg.Anchor = AnchorStyles.None;
+            ibtn_agg.BackColor = Color.Transparent;
+            ibtn_agg.Cursor = Cursors.Hand;
+            ibtn_agg.FlatAppearance.BorderSize = 0;
+            ibtn_agg.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            ibtn_agg.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            ibtn_agg.FlatStyle = FlatStyle.Flat;
+            ibtn_agg.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            ibtn_agg.IconColor = Color.Black;
+            ibtn_agg.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            ibtn_agg.Location = new Point(2, 8);
+            ibtn_agg.Margin = new Padding(2);
+            ibtn_agg.Name = "ibtn_agg";
+            ibtn_agg.Size = new Size(66, 54);
+            ibtn_agg.TabIndex = 11;
+            ibtn_agg.Tag = "GUARDAR";
+            ibtn_agg.UseVisualStyleBackColor = false;
+            ibtn_agg.Click += ibtn_agg_Click;
             // 
             // txt_buscar
             // 
@@ -521,7 +503,7 @@
             txt_buscar.Margin = new Padding(2, 3, 2, 3);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(193, 27);
-            txt_buscar.TabIndex = 374;
+            txt_buscar.TabIndex = 16;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // label15
@@ -586,7 +568,8 @@
             txt_usuario.Margin = new Padding(2, 3, 2, 3);
             txt_usuario.Name = "txt_usuario";
             txt_usuario.Size = new Size(193, 27);
-            txt_usuario.TabIndex = 370;
+            txt_usuario.TabIndex = 6;
+            txt_usuario.TextChanged += txt_usuario_TextChanged;
             // 
             // label7
             // 
@@ -618,65 +601,8 @@
             cmb_motivo.Margin = new Padding(2, 3, 2, 3);
             cmb_motivo.Name = "cmb_motivo";
             cmb_motivo.Size = new Size(193, 28);
-            cmb_motivo.TabIndex = 361;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(ibtn_delete, 1, 0);
-            tableLayoutPanel1.Controls.Add(ibtn_agg, 0, 0);
-            tableLayoutPanel1.Location = new Point(769, 958);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(141, 70);
-            tableLayoutPanel1.TabIndex = 360;
-            // 
-            // ibtn_delete
-            // 
-            ibtn_delete.Anchor = AnchorStyles.None;
-            ibtn_delete.BackColor = Color.Transparent;
-            ibtn_delete.Cursor = Cursors.Hand;
-            ibtn_delete.FlatAppearance.BorderSize = 0;
-            ibtn_delete.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            ibtn_delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            ibtn_delete.FlatStyle = FlatStyle.Flat;
-            ibtn_delete.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            ibtn_delete.IconColor = Color.Black;
-            ibtn_delete.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            ibtn_delete.Location = new Point(72, 8);
-            ibtn_delete.Margin = new Padding(2);
-            ibtn_delete.Name = "ibtn_delete";
-            ibtn_delete.Size = new Size(67, 54);
-            ibtn_delete.TabIndex = 372;
-            ibtn_delete.Tag = "ELIMINAR";
-            ibtn_delete.UseVisualStyleBackColor = false;
-            ibtn_delete.Click += ibtn_delete_Click;
-            // 
-            // ibtn_agg
-            // 
-            ibtn_agg.Anchor = AnchorStyles.None;
-            ibtn_agg.BackColor = Color.Transparent;
-            ibtn_agg.Cursor = Cursors.Hand;
-            ibtn_agg.FlatAppearance.BorderSize = 0;
-            ibtn_agg.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            ibtn_agg.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            ibtn_agg.FlatStyle = FlatStyle.Flat;
-            ibtn_agg.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            ibtn_agg.IconColor = Color.Black;
-            ibtn_agg.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            ibtn_agg.Location = new Point(2, 8);
-            ibtn_agg.Margin = new Padding(2);
-            ibtn_agg.Name = "ibtn_agg";
-            ibtn_agg.Size = new Size(66, 54);
-            ibtn_agg.TabIndex = 307;
-            ibtn_agg.Tag = "GUARDAR";
-            ibtn_agg.UseVisualStyleBackColor = false;
-            ibtn_agg.Click += ibtn_agg_Click;
+            cmb_motivo.TabIndex = 4;
+            cmb_motivo.SelectedIndexChanged += cmb_motivo_SelectedIndexChanged;
             // 
             // ibtn_limpiar
             // 
@@ -691,7 +617,7 @@
             ibtn_limpiar.IconColor = Color.Black;
             ibtn_limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ibtn_limpiar.IconSize = 40;
-            ibtn_limpiar.Location = new Point(276, 90);
+            ibtn_limpiar.Location = new Point(289, 88);
             ibtn_limpiar.Margin = new Padding(2);
             ibtn_limpiar.Name = "ibtn_limpiar";
             ibtn_limpiar.Size = new Size(53, 36);
@@ -722,67 +648,30 @@
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
             dg_transaccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dg_transaccion.ColumnHeadersHeight = 30;
-            dg_transaccion.Columns.AddRange(new DataGridViewColumn[] { Activo_Fijo, Descripcion, Costo, Fecha_movimiento });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dg_transaccion.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dg_transaccion.DefaultCellStyle = dataGridViewCellStyle5;
             dg_transaccion.EnableHeadersVisualStyles = false;
             dg_transaccion.GridColor = Color.Gainsboro;
-            dg_transaccion.Location = new Point(47, 664);
+            dg_transaccion.Location = new Point(45, 553);
             dg_transaccion.Name = "dg_transaccion";
             dg_transaccion.ReadOnly = true;
             dg_transaccion.RowHeadersVisible = false;
             dg_transaccion.RowHeadersWidth = 51;
             dg_transaccion.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dg_transaccion.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dg_transaccion.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dg_transaccion.RowTemplate.Height = 29;
             dg_transaccion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_transaccion.Size = new Size(863, 273);
+            dg_transaccion.Size = new Size(863, 384);
             dg_transaccion.TabIndex = 358;
-            dg_transaccion.CellContentDoubleClick += dg_transaccion_CellContentDoubleClick;
-            // 
-            // Activo_Fijo
-            // 
-            Activo_Fijo.HeaderText = "Activo Fijo";
-            Activo_Fijo.MinimumWidth = 6;
-            Activo_Fijo.Name = "Activo_Fijo";
-            Activo_Fijo.ReadOnly = true;
-            Activo_Fijo.Resizable = DataGridViewTriState.False;
-            Activo_Fijo.Width = 132;
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.MinimumWidth = 450;
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            Descripcion.Width = 450;
-            // 
-            // Costo
-            // 
-            dataGridViewCellStyle5.Format = "C0";
-            dataGridViewCellStyle5.NullValue = null;
-            Costo.DefaultCellStyle = dataGridViewCellStyle5;
-            Costo.HeaderText = "Costo";
-            Costo.MinimumWidth = 6;
-            Costo.Name = "Costo";
-            Costo.ReadOnly = true;
-            Costo.Width = 99;
-            // 
-            // Fecha_movimiento
-            // 
-            Fecha_movimiento.HeaderText = "Fecha de Movimiento";
-            Fecha_movimiento.MinimumWidth = 6;
-            Fecha_movimiento.Name = "Fecha_movimiento";
-            Fecha_movimiento.ReadOnly = true;
-            Fecha_movimiento.Width = 206;
+            dg_transaccion.CellDoubleClick += dg_transaccion_CellDoubleClick;
             // 
             // tableLayoutPanel2
             // 
@@ -892,26 +781,6 @@
             iconButton4.Tag = "GUARDAR";
             iconButton4.UseVisualStyleBackColor = false;
             // 
-            // ibtn_imprimir
-            // 
-            ibtn_imprimir.Anchor = AnchorStyles.None;
-            ibtn_imprimir.BackColor = Color.Transparent;
-            ibtn_imprimir.Cursor = Cursors.Hand;
-            ibtn_imprimir.FlatAppearance.BorderSize = 0;
-            ibtn_imprimir.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            ibtn_imprimir.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            ibtn_imprimir.FlatStyle = FlatStyle.Flat;
-            ibtn_imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            ibtn_imprimir.IconColor = Color.Black;
-            ibtn_imprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            ibtn_imprimir.Location = new Point(72, 6);
-            ibtn_imprimir.Margin = new Padding(2);
-            ibtn_imprimir.Name = "ibtn_imprimir";
-            ibtn_imprimir.Size = new Size(67, 57);
-            ibtn_imprimir.TabIndex = 377;
-            ibtn_imprimir.Tag = "ELIMINAR";
-            ibtn_imprimir.UseVisualStyleBackColor = false;
-            // 
             // Transacción
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -931,10 +800,8 @@
             tableLayoutPanel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_transaccion1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dg_transaccion1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dg_transaccion).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
@@ -948,7 +815,6 @@
         private Label label14;
         private ComboBox cmb_Tipo;
         private Panel panel1;
-        private DataGridView dg_transaccion;
         private FontAwesome.Sharp.IconButton ibtn_limpiar;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label2;
@@ -958,19 +824,11 @@
         private FontAwesome.Sharp.IconButton ibtn_agg;
         private FontAwesome.Sharp.IconButton ibtn_save;
         private FontAwesome.Sharp.IconButton ibtn_delete;
-        private Panel panel2;
-        private TextBox txt_departamento;
-        private Label label6;
-        private TextBox txt_area;
-        private Label label5;
-        private TextBox txt_responsable;
-        private Label label4;
         private TextBox txt_cedula;
         private Label label3;
         private TextBox txt_buscar;
         private Label label15;
         private DataGridView dg_transaccion1;
-        private Label label8;
         private Label label13;
         private Panel panel3;
         private TextBox txt_costo;
@@ -992,14 +850,14 @@
         private DateTimePicker dtp_Fmovimiento2;
         private TextBox txt_Ntransaccion;
         private Label label17;
-        private DataGridViewTextBoxColumn Activo_Fijo;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Costo;
-        private DataGridViewTextBoxColumn Fecha_movimiento;
-        private DataGridViewTextBoxColumn Tid;
-        private DataGridViewTextBoxColumn numero_transaccion;
-        private DataGridViewTextBoxColumn activo_fijos;
-        private DataGridViewTextBoxColumn descrip;
         private FontAwesome.Sharp.IconButton ibtn_imprimir;
+        private TextBox textBox2;
+        private ComboBox comboBox1;
+        private TextBox txt_activo_det;
+        private DateTimePicker dtp_fmovimiento_det;
+        private TextBox txt_costo_det;
+        private TextBox txt_obser_det;
+        private RadioButton rb_equip;
+        private DataGridView dg_transaccion;
     }
 }

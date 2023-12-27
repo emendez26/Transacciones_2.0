@@ -20,18 +20,23 @@ namespace Proyecto_inventario
 
         List<Capa_Objetos.CO_Equipos> lista_Equipos = new List<Capa_Objetos.CO_Equipos>();
         List<Capa_Objetos.CO_Transacciones> lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
+        List<Capa_Objetos.CO_Detalles_Transacciones> lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
         CO_Transacciones transaccion = new CO_Transacciones();
         CN_Transacciones CN_trans = new CN_Transacciones();
         CO_Equipos equipo = new CO_Equipos();
         CN_Equipos CN_Equip = new CN_Equipos();
+        CO_Detalles_Transacciones detTra = new CO_Detalles_Transacciones();
+        CN_Detalles_Transacciones CN_detTrans = new CN_Detalles_Transacciones();
 
 
         private static int contador = 1;
 
         private string activo_fijo = "";
+        private int Activo_Fijo = 0;
         string formulario = "";
 
-        private int id = 0;
+        private int Numero_Transacciones = 0;
+        private int Id = 0;
         private bool Editar = false;
 
 
@@ -41,7 +46,6 @@ namespace Proyecto_inventario
             transaccion = new CO_Transacciones();
             cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
             this.formulario = formulario;
-            dg_transaccion.CellFormatting += dg_transaccion_CellFormatting;
             dg_transaccion1.CellFormatting += dg_transaccion1_CellFormatting;
         }
 
@@ -50,37 +54,28 @@ namespace Proyecto_inventario
 
             transaccion = new CO_Transacciones();
 
-            transaccion.fecha_movimiento = DateTime.Parse(dtp_Fmovimiento.Value.ToShortDateString());
-            transaccion.tipo_transaccion = cmb_Tipo.Text;
-            transaccion.observaciones = txt_observ.Text;
-            transaccion.responsable = txt_responsable.Text;
-            transaccion.motivo = cmb_motivo.Text;
-            transaccion.formularios = formulario;
-            transaccion.usuario = txt_usuario.Text;
-            transaccion.numero_transaccion = int.Parse(txt_Ntransaccion.Text);
-            transaccion.activo_fijo = int.Parse(txt_activo_fijo.Text);
-            transaccion.descripcion = txt_descrip.Text;
-            transaccion.costo = double.Parse(txt_costo.Text);
+            transaccion.Fecha_Movimiento = DateTime.Parse(dtp_Fmovimiento.Value.ToShortDateString());
+            transaccion.Tipo_Transaccion = cmb_Tipo.Text;
+            transaccion.Motivo = cmb_motivo.Text;
+            transaccion.Usuario = txt_usuario.Text;
+            transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
+            transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
+            transaccion.Cedula = int.Parse(txt_cedula.Text);
 
             return transaccion;
         }
 
-        public void SetData()
+        public CO_Detalles_Transacciones GetData_1()
         {
-            txt_activo_fijo.Text = equipo.activo_fijo;
-            txt_descrip.Text = equipo.descripcion;
-            txt_responsable.Text = equipo.responsable;
-            txt_area.Text = equipo.area;
-            txt_costo.Text = equipo.costo.ToString();
-            txt_departamento.Text = equipo.departamento;
-            dtp_Fmovimiento2.Value = equipo.fecha_compra == null ? DateTime.Now : (DateTime)equipo.fecha_compra;
-            dtp_Fmovimiento.Value = DateTime.Today;
-            cmb_Tipo.Text = transaccion.tipo_transaccion;
-            txt_observ.Text = transaccion.observaciones;
-            cmb_motivo.Text = transaccion.motivo;
-            txt_usuario.Text = transaccion.usuario;
-            txt_Ntransaccion.Text = transaccion.numero_transaccion.ToString();
+            detTra = new CO_Detalles_Transacciones();
 
+            detTra.Activo_Fijo = int.Parse(txt_activo_det.Text);
+            detTra.Observacion = txt_obser_det.Text;
+            detTra.Fecha_Movimiento = DateTime.Parse(dtp_fmovimiento_det.Value.ToString());
+            detTra.Fecha_Transaccion = DateTime.Parse(dtp_fmovimiento_det.Text);
+            detTra.Costo = double.Parse(txt_costo_det.Text);
+
+            return detTra;
         }
 
         public void mostrarDatos()
@@ -89,6 +84,46 @@ namespace Proyecto_inventario
             equipo = new CO_Equipos();
             equipo = lista_Equipos.Where(e => e.activo_fijo.Equals(activo_fijo)).FirstOrDefault();
             SetData();
+        }
+
+        public void mostrarDatos1()
+        {
+            Id = int.Parse(dg_transaccion.CurrentRow.Cells["id"].Value.ToString());
+            detTra = new CO_Detalles_Transacciones();
+            detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
+            SetData1();
+        }
+
+        public void mostrarDatos2()
+        {
+            Id = int.Parse(dg_transaccion1.CurrentRow.Cells["id"].Value.ToString());
+            transaccion = new CO_Transacciones();
+            transaccion = lista_transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
+            SetData2();
+        }
+
+        public void SetData()
+        {
+            txt_activo_det.Text = equipo.activo_fijo;
+            txt_obser_det.Text = equipo.descripcion;
+            txt_costo_det.Text = equipo.costo.ToString();
+        }
+
+        public void SetData1()
+        {
+            txt_activo_det.Text = detTra.Activo_Fijo.ToString();
+            txt_obser_det.Text = detTra.Observacion;
+            txt_costo_det.Text = detTra.Costo.ToString();
+        }
+
+        public void SetData2()
+        {
+            txt_Ntransaccion.Text = transaccion.Numero_Transacciones.ToString();
+            txt_cedula.Text = transaccion.Cedula.ToString();
+            cmb_Tipo.Text = transaccion.Tipo_Transaccion.ToString();
+            cmb_motivo.Text = transaccion.Motivo.ToString();
+            dtp_Fmovimiento.Value = transaccion.Fecha_Transaccion;
+            txt_usuario.Text = transaccion.Usuario;
         }
 
         private void cargarGrid()
@@ -101,18 +136,53 @@ namespace Proyecto_inventario
             dg_transaccion1.DataSource = Equip.MostrarEquip();
         }
 
+        private void cargarGrid_1()
+        {
+            dg_transaccion.DataSource = null;
+            dg_transaccion.Rows.Clear();
+            lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
+            lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans());
+            CN_Detalles_Transacciones deTrans = new CN_Detalles_Transacciones();
+            dg_transaccion.DataSource = deTrans.MostrarDetTrans();
+        }
+
+        private void cargarGrid_2()
+        {
+            dg_transaccion1.DataSource = null;
+            dg_transaccion1.Rows.Clear();
+            lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
+            lista_transacciones.AddRange(CN_trans.MostrarTrans());
+            CN_Transacciones trans = new CN_Transacciones();
+            dg_transaccion1.DataSource = trans.MostrarTrans();
+
+        }
+
+        private void ValidCamp()
+        {
+            var vr = !string.IsNullOrEmpty(txt_cedula.Text) &&
+                !string.IsNullOrEmpty(txt_cedula.Text) &&
+                !string.IsNullOrEmpty(cmb_motivo.Text) &&
+                !string.IsNullOrEmpty(cmb_Tipo.Text) &&
+                !string.IsNullOrEmpty(txt_usuario.Text) &&
+                !string.IsNullOrEmpty(txt_usuario.Text);
+
+            ibtn_save.Enabled = vr;
+        }
+
         private void limpiar(bool isEdit)
         {
-            if (MessageBox.Show("¿Estás seguro de " + (isEdit ? "agregar estos datos a" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("¿Estás seguro de " + (isEdit ? "agregar estos datos a" : "limpiar") + " el formulario", "Confirmar acción", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
             {
                 transaccion = new CO_Transacciones();
 
                 if (isEdit)
                 {
-                    txt_activo_fijo.Text = string.Empty;
-                    txt_costo.Text = string.Empty;
-                    txt_descrip.Text = string.Empty;
-                    dtp_Fmovimiento2.Text = string.Empty;
+                    txt_activo_det.Text = string.Empty;
+                    txt_costo_det.Text = string.Empty;
+                    txt_obser_det.Text = string.Empty;
+                    dtp_fmovimiento_det.Text = string.Empty;
                 }
                 else
                 {
@@ -120,17 +190,9 @@ namespace Proyecto_inventario
                     dtp_Fmovimiento.Text = string.Empty;
                     cmb_Tipo.Text = string.Empty;
                     txt_cedula.Text = string.Empty;
-                    txt_activo_fijo.Text = string.Empty;
-                    txt_costo.Text = string.Empty;
-                    txt_descrip.Text = string.Empty;
-                    dtp_Fmovimiento2.Text = string.Empty;
                     txt_Ntransaccion.Text = string.Empty;
                     txt_usuario.Text = string.Empty;
-                    txt_responsable.Text = string.Empty;
-                    txt_departamento.Text = string.Empty;
-                    txt_area.Text = string.Empty;
                     txt_observ.Text = string.Empty;
-
                 }
             }
         }
@@ -162,6 +224,45 @@ namespace Proyecto_inventario
             }
         }
 
+        public void agregarDetalleGrilla()
+        {
+            if (Editar == false)
+            {
+                try
+                {
+                    string mensaje = "";
+                    if (CN_detTrans.InsertDetTrans(GetData_1()) != 0)
+                    {
+                        limpiar(true);
+                        cargarGrid_1();
+                    }
+                    else
+                    {
+                        mensaje = "Error al guardar";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                }
+            }
+        }
+
+        public void eliminar()
+        {
+            if (dg_transaccion.SelectedRows.Count > 0)
+            {
+                Id = int.Parse(dg_transaccion.CurrentRow.Cells["Id"].Value.ToString());
+                if (CN_detTrans.DeleteDetTrans(Id) != 0)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                    cargarGrid_1();
+                }
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+        }
+
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
             limpiar(false);
@@ -169,24 +270,28 @@ namespace Proyecto_inventario
 
         private void Transacción_Load(object sender, EventArgs e)
         {
+            ibtn_save.Enabled = false;
+            cargarGrid_1();
+            cargarGrid_2();
             cargarGrid();
         }
 
 
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ValidCamp();
             if (cmb_Tipo.Text == "ENTRADA")
             {
                 cmb_motivo.Items.Clear();
                 cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
-                txt_costo.Enabled = true;
+                txt_costo_det.Enabled = true;
             }
             else if (cmb_Tipo.Text == "SALIDA")
             {
                 cmb_motivo.Items.Clear();
                 cmb_motivo.Items.AddRange(motivosSalida.ToArray());
-                txt_costo.Enabled = false;
-                txt_costo.Text = "0";
+                txt_costo_det.Enabled = false;
+                txt_costo_det.Text = "0";
             }
         }
 
@@ -216,103 +321,12 @@ namespace Proyecto_inventario
             }
         }
 
-        private void txt_activo_fijo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txt_cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-            }
-        }
-
-        private void txt_costo_TextChanged(object sender, EventArgs e)
-        {
-            if (decimal.TryParse(txt_costo.Text, out decimal costo))
-            {
-                formato_moneda(costo);
-                txt_costo.SelectionStart = txt_costo.Text.Length;
-            }
-        }
-
-        private void formato_moneda(decimal numero)
-        {
-            txt_costo.Text = numero.ToString("N0");
-        }
-
-        private void ibtn_agg_Click(object sender, EventArgs e)
-        {
-            string dato1 = txt_activo_fijo.Text;
-            string dato2 = txt_descrip.Text;
-            string dato3 = txt_costo.Text;
-            string dato4 = dtp_Fmovimiento2.Text;
-
-            limpiar(true);
-
-            dg_transaccion.Rows.Add(dato1, dato2, dato3, dato4);
-
-        }
-
-        private void txt_costo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        public void limpiar1()
-        {
-            txt_activo_fijo.Text = string.Empty;
-            txt_costo.Text = string.Empty;
-            txt_descrip.Text = string.Empty;
-            dtp_Fmovimiento2.Text = string.Empty;
-
-        }
-        private void ibtn_delete_Click(object sender, EventArgs e)
-        {
-            if (dg_transaccion.SelectedRows.Count > 0)
-            {
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar la fila seleccionada?", "Confirmar acción", MessageBoxButtons.YesNo);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    DataGridViewRow filaSeleccionada = dg_transaccion.SelectedRows[0];
-                    dg_transaccion.Rows.Remove(filaSeleccionada);
-                    limpiar1();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Selecciona una fila para eliminar.", "Aviso");
-            }
-        }
-
-        private void dg_transaccion_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txt_activo_fijo.Text = dg_transaccion.CurrentRow.Cells[0].Value.ToString();
-            txt_descrip.Text = dg_transaccion.CurrentRow.Cells[1].Value.ToString();
-            txt_costo.Text = dg_transaccion.CurrentRow.Cells[2].Value.ToString();
-            dtp_Fmovimiento2.Text = dg_transaccion.CurrentRow.Cells[3].Value.ToString();
-
-        }
-
-        private void dg_transaccion_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
-                {
-                    e.Value = valorNumerico.ToString("C");
-                    e.FormattingApplied = true;
-           
-                }
             }
         }
 
@@ -326,6 +340,80 @@ namespace Proyecto_inventario
                     e.FormattingApplied = true;
                 }
             }
+        }
+
+
+        private void txt_costo_det_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void txt_costo_det_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+            if (decimal.TryParse(txt_costo_det.Text, out decimal costo))
+            {
+                formato_moneda(costo);
+                txt_costo_det.SelectionStart = txt_costo_det.Text.Length;
+            }
+        }
+
+        private void formato_moneda(decimal numero)
+        {
+            txt_costo_det.Text = numero.ToString("N0");
+        }
+
+        private void txt_activo_det_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ibtn_agg_Click(object sender, EventArgs e)
+        {
+            agregarDetalleGrilla();
+        }
+
+        private void ibtn_delete_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        private void txt_Ntransaccion_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_cedula_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_usuario_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_motivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void rb_equip_CheckedChanged(object sender, EventArgs e)
+        {
+            dg_transaccion1.Refresh();
+            mostrarDatos2();
+        }
+
+        private void dg_transaccion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatos1();
         }
     }
 }

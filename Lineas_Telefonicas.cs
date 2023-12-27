@@ -36,7 +36,18 @@ namespace Proyecto_inventario
 
         private void Lineas_Telefonicas_Load(object sender, EventArgs e)
         {
+            ibtn_save.Enabled = false;
             cargarGrid();
+        }
+
+        private void ValidCamp()
+        {
+            var vr = !string.IsNullOrEmpty(txt_linea.Text) &&
+                !string.IsNullOrEmpty(cmb_plan.Text)&&
+                !string.IsNullOrEmpty(txt_proveedor.Text) &&
+                !string.IsNullOrEmpty(txt_caract.Text);
+
+            ibtn_save.Enabled = vr;
         }
 
         public CO_Lineas_Telefonicas GetData()
@@ -59,9 +70,6 @@ namespace Proyecto_inventario
             cmb_plan.Text = linea.plan;
             txt_proveedor.Text = linea.proveedor;
             txt_caract.Text = linea.caracteristicas;
-
-
-
         }
 
         public void mostrarDatos()
@@ -208,6 +216,34 @@ namespace Proyecto_inventario
             string coincidencia = txt_buscar.Text;
             var results = lista_Lineas.Where(X => X.caracteristicas.Contains(coincidencia) || X.proveedor.Contains(coincidencia)).Select(X => X).ToList();
             dtg_linea.DataSource = results;
+        }
+
+        private void txt_linea_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_proveedor_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void cmb_plan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_caract_TextChanged(object sender, EventArgs e)
+        {
+            ValidCamp();
+        }
+
+        private void txt_linea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

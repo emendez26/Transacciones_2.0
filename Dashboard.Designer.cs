@@ -72,9 +72,9 @@
             label7 = new Label();
             label8 = new Label();
             chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btn_custom = new FontAwesome.Sharp.IconButton();
             lblEndDate = new Label();
-            label9 = new Label();
+            lblStartDate = new Label();
             label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)ch_Top_Productos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
@@ -163,22 +163,24 @@
             dtp_Fecha_Final.Cursor = Cursors.Hand;
             dtp_Fecha_Final.CustomFormat = "MMMM, dd, yyyy";
             dtp_Fecha_Final.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dtp_Fecha_Final.Location = new Point(374, 89);
+            dtp_Fecha_Final.Location = new Point(381, 90);
             dtp_Fecha_Final.Margin = new Padding(3, 4, 3, 4);
             dtp_Fecha_Final.Name = "dtp_Fecha_Final";
             dtp_Fecha_Final.Size = new Size(276, 27);
             dtp_Fecha_Final.TabIndex = 327;
+            dtp_Fecha_Final.ValueChanged += dtp_Fecha_Final_ValueChanged;
             // 
             // dtp_Fecha_Inicio
             // 
             dtp_Fecha_Inicio.Cursor = Cursors.Hand;
             dtp_Fecha_Inicio.CustomFormat = "MMMM, dd, yyyy";
             dtp_Fecha_Inicio.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dtp_Fecha_Inicio.Location = new Point(22, 89);
+            dtp_Fecha_Inicio.Location = new Point(29, 90);
             dtp_Fecha_Inicio.Margin = new Padding(3, 4, 3, 4);
             dtp_Fecha_Inicio.Name = "dtp_Fecha_Inicio";
             dtp_Fecha_Inicio.Size = new Size(276, 27);
             dtp_Fecha_Inicio.TabIndex = 326;
+            dtp_Fecha_Inicio.ValueChanged += dtp_Fecha_Inicio_ValueChanged;
             // 
             // ch_Top_Productos
             // 
@@ -416,47 +418,48 @@
             title4.Text = "Conteo";
             chart3.Titles.Add(title4);
             // 
-            // iconButton1
+            // btn_custom
             // 
-            iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton1.BackColor = Color.OrangeRed;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 35;
-            iconButton1.Location = new Point(843, 84);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(37, 37);
-            iconButton1.TabIndex = 355;
-            iconButton1.UseVisualStyleBackColor = false;
+            btn_custom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_custom.BackColor = Color.OrangeRed;
+            btn_custom.FlatStyle = FlatStyle.Flat;
+            btn_custom.IconChar = FontAwesome.Sharp.IconChar.Check;
+            btn_custom.IconColor = Color.Black;
+            btn_custom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_custom.IconSize = 35;
+            btn_custom.Location = new Point(843, 84);
+            btn_custom.Name = "btn_custom";
+            btn_custom.Size = new Size(37, 37);
+            btn_custom.TabIndex = 355;
+            btn_custom.UseVisualStyleBackColor = false;
             // 
             // lblEndDate
             // 
-            lblEndDate.AutoSize = true;
             lblEndDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEndDate.Location = new Point(374, 87);
+            lblEndDate.Location = new Point(374, 90);
             lblEndDate.Name = "lblEndDate";
-            lblEndDate.Size = new Size(276, 25);
+            lblEndDate.Size = new Size(295, 25);
             lblEndDate.TabIndex = 356;
             lblEndDate.Text = "Jueves, 21 de Diciembre del 2023";
+            lblEndDate.TextAlign = ContentAlignment.MiddleCenter;
             lblEndDate.Click += lblEndDate_Click;
             // 
-            // label9
+            // lblStartDate
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(22, 87);
-            label9.Name = "label9";
-            label9.Size = new Size(276, 25);
-            label9.TabIndex = 357;
-            label9.Text = "Jueves, 21 de Diciembre del 2023";
+            lblStartDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStartDate.Location = new Point(22, 90);
+            lblStartDate.Name = "lblStartDate";
+            lblStartDate.Size = new Size(295, 25);
+            lblStartDate.TabIndex = 357;
+            lblStartDate.Text = "Jueves, 21 de Diciembre del 2023";
+            lblStartDate.TextAlign = ContentAlignment.MiddleCenter;
+            lblStartDate.Click += lblStartDate_Click;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(328, 91);
+            label10.Location = new Point(335, 91);
             label10.Name = "label10";
             label10.Size = new Size(19, 25);
             label10.TabIndex = 358;
@@ -469,9 +472,9 @@
             BackColor = Color.White;
             ClientSize = new Size(1555, 996);
             Controls.Add(label10);
-            Controls.Add(label9);
+            Controls.Add(lblStartDate);
             Controls.Add(lblEndDate);
-            Controls.Add(iconButton1);
+            Controls.Add(btn_custom);
             Controls.Add(label7);
             Controls.Add(label8);
             Controls.Add(chart3);
@@ -495,6 +498,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)ch_Top_Productos).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
@@ -524,9 +528,9 @@
         private Label label7;
         private Label label8;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btn_custom;
         private Label lblEndDate;
-        private Label label9;
+        private Label lblStartDate;
         private Label label10;
     }
 }
