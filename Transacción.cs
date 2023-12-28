@@ -32,10 +32,9 @@ namespace Proyecto_inventario
         private static int contador = 1;
 
         private string activo_fijo = "";
-        private int Activo_Fijo = 0;
+        private string Activo_Fijo = "";
         string formulario = "";
 
-        private int Numero_Transacciones = 0;
         private int Id = 0;
         private bool Editar = false;
 
@@ -47,6 +46,24 @@ namespace Proyecto_inventario
             cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
             this.formulario = formulario;
             dg_transaccion1.CellFormatting += dg_transaccion1_CellFormatting;
+            dg_transaccion.CellFormatting += dg_transaccion_CellFormatting;
+
+        }
+        private void Transacción_Load(object sender, EventArgs e)
+        {
+            ibtn_save.Enabled = false;
+            cargarGrid_1();
+            cargarGrid_2();
+            cargarGrid();
+            Ocultar();
+        }
+
+        private void Ocultar()
+        {
+            dg_transaccion.Columns["Fecha_Transaccion"].Visible = false;
+            dg_transaccion.Columns["Id_Transacciones"].Visible = false;
+            dg_transaccion.Columns["Id"].Visible = false;
+
         }
 
         public CO_Transacciones GetData()
@@ -69,7 +86,7 @@ namespace Proyecto_inventario
         {
             detTra = new CO_Detalles_Transacciones();
 
-            detTra.Activo_Fijo = int.Parse(txt_activo_det.Text);
+            detTra.Activo_Fijo = txt_activo_det.Text;
             detTra.Observacion = txt_obser_det.Text;
             detTra.Fecha_Movimiento = DateTime.Parse(dtp_fmovimiento_det.Value.ToString());
             detTra.Fecha_Transaccion = DateTime.Parse(dtp_fmovimiento_det.Text);
@@ -209,6 +226,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
+                        Ocultar();
                         //impiar();
                     }
                     else
@@ -235,6 +253,7 @@ namespace Proyecto_inventario
                     {
                         limpiar(true);
                         cargarGrid_1();
+                        Ocultar();
                     }
                     else
                     {
@@ -257,6 +276,7 @@ namespace Proyecto_inventario
                 {
                     MessageBox.Show("Eliminado correctamente");
                     cargarGrid_1();
+                    Ocultar();
                 }
             }
             else
@@ -268,13 +288,6 @@ namespace Proyecto_inventario
             limpiar(false);
         }
 
-        private void Transacción_Load(object sender, EventArgs e)
-        {
-            ibtn_save.Enabled = false;
-            cargarGrid_1();
-            cargarGrid_2();
-            cargarGrid();
-        }
 
 
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -342,6 +355,17 @@ namespace Proyecto_inventario
             }
         }
 
+        private void dg_transaccion_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double valorNumerico))
+                {
+                    e.Value = valorNumerico.ToString("C");
+                    e.FormattingApplied = true;
+                }
+            }
+        }
 
         private void txt_costo_det_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -407,8 +431,8 @@ namespace Proyecto_inventario
 
         private void rb_equip_CheckedChanged(object sender, EventArgs e)
         {
-            dg_transaccion1.Refresh();
             mostrarDatos2();
+            dg_transaccion1.Refresh();
         }
 
         private void dg_transaccion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -183,14 +183,13 @@
             // 
             // rb_equip
             // 
-            rb_equip.Appearance = Appearance.Button;
             rb_equip.AutoSize = true;
             rb_equip.FlatAppearance.BorderColor = Color.White;
             rb_equip.FlatAppearance.BorderSize = 0;
-            rb_equip.FlatStyle = FlatStyle.Flat;
-            rb_equip.Location = new Point(1341, 90);
+            rb_equip.FlatStyle = FlatStyle.System;
+            rb_equip.Location = new Point(1341, 94);
             rb_equip.Name = "rb_equip";
-            rb_equip.Size = new Size(66, 30);
+            rb_equip.Size = new Size(86, 25);
             rb_equip.TabIndex = 384;
             rb_equip.Text = "Equipo";
             rb_equip.TextAlign = ContentAlignment.MiddleCenter;
@@ -634,8 +633,8 @@
             dg_transaccion.AllowUserToResizeColumns = false;
             dg_transaccion.AllowUserToResizeRows = false;
             dg_transaccion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dg_transaccion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dg_transaccion.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg_transaccion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg_transaccion.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             dg_transaccion.BackgroundColor = Color.White;
             dg_transaccion.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_transaccion.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;

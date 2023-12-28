@@ -204,6 +204,7 @@
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             dg_empleados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dg_empleados.RowTemplate.Height = 29;
+            dg_empleados.ScrollBars = ScrollBars.Horizontal;
             dg_empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_empleados.Size = new Size(593, 623);
             dg_empleados.TabIndex = 307;
