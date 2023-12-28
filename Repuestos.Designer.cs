@@ -516,7 +516,7 @@
             Margin = new Padding(2, 3, 2, 3);
             MinimumSize = new Size(1120, 604);
             Name = "Repuestos";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Repuestos";
             Load += Repuestos_Load;
             ((System.ComponentModel.ISupportInitialize)dg_repuestos).EndInit();

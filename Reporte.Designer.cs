@@ -236,6 +236,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Reporte";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Reporte";
             ((System.ComponentModel.ISupportInitialize)dg_reporte).EndInit();
             tableLayoutPanel1.ResumeLayout(false);

@@ -32,19 +32,16 @@ namespace Proyecto_inventario
         private static int contador = 1;
 
         private string activo_fijo = "";
-        private string Activo_Fijo = "";
-        string formulario = "";
 
         private int Id = 0;
         private bool Editar = false;
 
 
-        public Transacción(string formulario)
+        public Transacción()
         {
             InitializeComponent();
             transaccion = new CO_Transacciones();
             cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
-            this.formulario = formulario;
             dg_transaccion1.CellFormatting += dg_transaccion1_CellFormatting;
             dg_transaccion.CellFormatting += dg_transaccion_CellFormatting;
 
@@ -226,6 +223,7 @@ namespace Proyecto_inventario
                     {
                         mensaje = "Registro Insertado Correctamente";
                         cargarGrid();
+                        dg_transaccion1.Refresh();
                         Ocultar();
                         //impiar();
                     }
@@ -432,7 +430,6 @@ namespace Proyecto_inventario
         private void rb_equip_CheckedChanged(object sender, EventArgs e)
         {
             mostrarDatos2();
-            dg_transaccion1.Refresh();
         }
 
         private void dg_transaccion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

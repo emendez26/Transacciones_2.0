@@ -134,6 +134,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Stock";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Stock";
             Load += Stock_Load;
             ((System.ComponentModel.ISupportInitialize)dg_stock).EndInit();

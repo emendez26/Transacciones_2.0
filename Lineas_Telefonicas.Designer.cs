@@ -369,7 +369,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "Lineas_Telefonicas";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Lineas Telefonicas";
             Load += Lineas_Telefonicas_Load;
             tableLayoutPanel2.ResumeLayout(false);

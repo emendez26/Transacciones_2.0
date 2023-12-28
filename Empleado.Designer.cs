@@ -447,7 +447,7 @@
             Margin = new Padding(2, 3, 2, 3);
             MinimumSize = new Size(1119, 815);
             Name = "Empleado";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Empleados";
             Load += Empleado_Load;
             tableLayoutPanel2.ResumeLayout(false);

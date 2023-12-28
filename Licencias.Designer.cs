@@ -438,7 +438,7 @@
             Margin = new Padding(2, 3, 2, 3);
             MinimumSize = new Size(1120, 626);
             Name = "Licencias";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = " ";
             Load += Licencias_Load;
             ((System.ComponentModel.ISupportInitialize)dg_licencia).EndInit();

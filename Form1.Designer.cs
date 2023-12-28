@@ -39,25 +39,10 @@
             button4 = new Button();
             button3 = new Button();
             panel_lateral = new Panel();
-            panelSubMenuLicencias = new Panel();
-            button17 = new Button();
-            btn_form_Licencias = new Button();
             btn_licencias = new FontAwesome.Sharp.IconButton();
-            panelSubMenuLineas = new Panel();
-            button14 = new Button();
-            btn_form_Lineas = new Button();
             btn_Lineas = new FontAwesome.Sharp.IconButton();
-            panelSubMenuRepuestos = new Panel();
-            button11 = new Button();
-            btn_form_Repuestos = new Button();
             btn_Repuestos = new FontAwesome.Sharp.IconButton();
-            panelSubMenuCelulares = new Panel();
-            button8 = new Button();
-            btn_form_Celulares = new Button();
             btn_Celulares = new FontAwesome.Sharp.IconButton();
-            panelSubMenuDeEquipo = new Panel();
-            button5 = new Button();
-            btn_form_equipo = new Button();
             btn_equipo = new FontAwesome.Sharp.IconButton();
             margen = new Panel();
             pb_logo = new PictureBox();
@@ -68,6 +53,7 @@
             btn_Dashboard = new FontAwesome.Sharp.IconButton();
             btn_Stock = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel2 = new TableLayoutPanel();
+            btn_Transaccion = new FontAwesome.Sharp.IconButton();
             panelFormulario = new Panel();
             pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -76,11 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel_lateral.SuspendLayout();
-            panelSubMenuLicencias.SuspendLayout();
-            panelSubMenuLineas.SuspendLayout();
-            panelSubMenuRepuestos.SuspendLayout();
-            panelSubMenuCelulares.SuspendLayout();
-            panelSubMenuDeEquipo.SuspendLayout();
             margen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -186,15 +167,10 @@
             panel_lateral.AutoScroll = true;
             panel_lateral.BackColor = Color.Firebrick;
             panel_lateral.BackgroundImageLayout = ImageLayout.Stretch;
-            panel_lateral.Controls.Add(panelSubMenuLicencias);
             panel_lateral.Controls.Add(btn_licencias);
-            panel_lateral.Controls.Add(panelSubMenuLineas);
             panel_lateral.Controls.Add(btn_Lineas);
-            panel_lateral.Controls.Add(panelSubMenuRepuestos);
             panel_lateral.Controls.Add(btn_Repuestos);
-            panel_lateral.Controls.Add(panelSubMenuCelulares);
             panel_lateral.Controls.Add(btn_Celulares);
-            panel_lateral.Controls.Add(panelSubMenuDeEquipo);
             panel_lateral.Controls.Add(btn_equipo);
             panel_lateral.Controls.Add(margen);
             panel_lateral.Dock = DockStyle.Left;
@@ -203,58 +179,6 @@
             panel_lateral.Name = "panel_lateral";
             panel_lateral.Size = new Size(385, 981);
             panel_lateral.TabIndex = 0;
-            // 
-            // panelSubMenuLicencias
-            // 
-            panelSubMenuLicencias.BackColor = Color.Transparent;
-            panelSubMenuLicencias.Controls.Add(button17);
-            panelSubMenuLicencias.Controls.Add(btn_form_Licencias);
-            panelSubMenuLicencias.Dock = DockStyle.Top;
-            panelSubMenuLicencias.Location = new Point(0, 1233);
-            panelSubMenuLicencias.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuLicencias.Name = "panelSubMenuLicencias";
-            panelSubMenuLicencias.Size = new Size(364, 127);
-            panelSubMenuLicencias.TabIndex = 31;
-            // 
-            // button17
-            // 
-            button17.BackColor = Color.Black;
-            button17.Cursor = Cursors.Hand;
-            button17.Dock = DockStyle.Top;
-            button17.FlatAppearance.BorderSize = 0;
-            button17.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button17.FlatStyle = FlatStyle.Flat;
-            button17.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button17.ForeColor = Color.White;
-            button17.Location = new Point(0, 63);
-            button17.Margin = new Padding(2, 3, 2, 3);
-            button17.Name = "button17";
-            button17.Padding = new Padding(34, 7, 0, 7);
-            button17.Size = new Size(364, 63);
-            button17.TabIndex = 1;
-            button17.Text = "Transaccion de Licencias";
-            button17.UseVisualStyleBackColor = false;
-            button17.Click += button17_Click;
-            // 
-            // btn_form_Licencias
-            // 
-            btn_form_Licencias.BackColor = Color.Black;
-            btn_form_Licencias.Cursor = Cursors.Hand;
-            btn_form_Licencias.Dock = DockStyle.Top;
-            btn_form_Licencias.FlatAppearance.BorderSize = 0;
-            btn_form_Licencias.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_Licencias.FlatStyle = FlatStyle.Flat;
-            btn_form_Licencias.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_Licencias.ForeColor = Color.White;
-            btn_form_Licencias.Location = new Point(0, 0);
-            btn_form_Licencias.Margin = new Padding(2, 3, 2, 3);
-            btn_form_Licencias.Name = "btn_form_Licencias";
-            btn_form_Licencias.Padding = new Padding(34, 7, 0, 7);
-            btn_form_Licencias.Size = new Size(364, 63);
-            btn_form_Licencias.TabIndex = 0;
-            btn_form_Licencias.Text = "Formulario de Licencias";
-            btn_form_Licencias.UseVisualStyleBackColor = false;
-            btn_form_Licencias.Click += btn_form_Licencias_Click;
             // 
             // btn_licencias
             // 
@@ -272,69 +196,17 @@
             btn_licencias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_licencias.IconSize = 65;
             btn_licencias.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_licencias.Location = new Point(0, 1142);
+            btn_licencias.Location = new Point(0, 647);
             btn_licencias.Margin = new Padding(2, 3, 2, 3);
             btn_licencias.Name = "btn_licencias";
             btn_licencias.Padding = new Padding(0, 13, 0, 13);
-            btn_licencias.Size = new Size(364, 91);
-            btn_licencias.TabIndex = 30;
+            btn_licencias.Size = new Size(385, 91);
+            btn_licencias.TabIndex = 48;
             btn_licencias.Text = "Licencias";
             btn_licencias.TextAlign = ContentAlignment.MiddleLeft;
             btn_licencias.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_licencias.UseVisualStyleBackColor = false;
             btn_licencias.Click += btn_licencias_Click;
-            // 
-            // panelSubMenuLineas
-            // 
-            panelSubMenuLineas.BackColor = Color.Transparent;
-            panelSubMenuLineas.Controls.Add(button14);
-            panelSubMenuLineas.Controls.Add(btn_form_Lineas);
-            panelSubMenuLineas.Dock = DockStyle.Top;
-            panelSubMenuLineas.Location = new Point(0, 1019);
-            panelSubMenuLineas.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuLineas.Name = "panelSubMenuLineas";
-            panelSubMenuLineas.Size = new Size(364, 123);
-            panelSubMenuLineas.TabIndex = 29;
-            // 
-            // button14
-            // 
-            button14.BackColor = Color.Black;
-            button14.Cursor = Cursors.Hand;
-            button14.Dock = DockStyle.Top;
-            button14.FlatAppearance.BorderSize = 0;
-            button14.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.ForeColor = Color.White;
-            button14.Location = new Point(0, 63);
-            button14.Margin = new Padding(2, 3, 2, 3);
-            button14.Name = "button14";
-            button14.Padding = new Padding(34, 7, 0, 7);
-            button14.Size = new Size(364, 63);
-            button14.TabIndex = 1;
-            button14.Text = "Transaccion de Lineas";
-            button14.UseVisualStyleBackColor = false;
-            button14.Click += button14_Click;
-            // 
-            // btn_form_Lineas
-            // 
-            btn_form_Lineas.BackColor = Color.Black;
-            btn_form_Lineas.Cursor = Cursors.Hand;
-            btn_form_Lineas.Dock = DockStyle.Top;
-            btn_form_Lineas.FlatAppearance.BorderSize = 0;
-            btn_form_Lineas.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_Lineas.FlatStyle = FlatStyle.Flat;
-            btn_form_Lineas.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_Lineas.ForeColor = Color.White;
-            btn_form_Lineas.Location = new Point(0, 0);
-            btn_form_Lineas.Margin = new Padding(2, 3, 2, 3);
-            btn_form_Lineas.Name = "btn_form_Lineas";
-            btn_form_Lineas.Padding = new Padding(34, 7, 0, 7);
-            btn_form_Lineas.Size = new Size(364, 63);
-            btn_form_Lineas.TabIndex = 0;
-            btn_form_Lineas.Text = "Formulario de Lineas";
-            btn_form_Lineas.UseVisualStyleBackColor = false;
-            btn_form_Lineas.Click += btn_form_Lineas_Click;
             // 
             // btn_Lineas
             // 
@@ -352,69 +224,17 @@
             btn_Lineas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Lineas.IconSize = 65;
             btn_Lineas.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Lineas.Location = new Point(0, 928);
+            btn_Lineas.Location = new Point(0, 556);
             btn_Lineas.Margin = new Padding(2, 3, 2, 3);
             btn_Lineas.Name = "btn_Lineas";
             btn_Lineas.Padding = new Padding(0, 13, 0, 13);
-            btn_Lineas.Size = new Size(364, 91);
-            btn_Lineas.TabIndex = 28;
+            btn_Lineas.Size = new Size(385, 91);
+            btn_Lineas.TabIndex = 47;
             btn_Lineas.Text = "Lineas Telefonicas";
             btn_Lineas.TextAlign = ContentAlignment.MiddleLeft;
             btn_Lineas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Lineas.UseVisualStyleBackColor = false;
             btn_Lineas.Click += btn_Lineas_Click;
-            // 
-            // panelSubMenuRepuestos
-            // 
-            panelSubMenuRepuestos.BackColor = Color.Transparent;
-            panelSubMenuRepuestos.Controls.Add(button11);
-            panelSubMenuRepuestos.Controls.Add(btn_form_Repuestos);
-            panelSubMenuRepuestos.Dock = DockStyle.Top;
-            panelSubMenuRepuestos.Location = new Point(0, 806);
-            panelSubMenuRepuestos.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuRepuestos.Name = "panelSubMenuRepuestos";
-            panelSubMenuRepuestos.Size = new Size(364, 122);
-            panelSubMenuRepuestos.TabIndex = 27;
-            // 
-            // button11
-            // 
-            button11.BackColor = Color.Black;
-            button11.Cursor = Cursors.Hand;
-            button11.Dock = DockStyle.Top;
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.ForeColor = Color.White;
-            button11.Location = new Point(0, 63);
-            button11.Margin = new Padding(2, 3, 2, 3);
-            button11.Name = "button11";
-            button11.Padding = new Padding(34, 7, 0, 7);
-            button11.Size = new Size(364, 63);
-            button11.TabIndex = 1;
-            button11.Text = "Transaccion de Repuestos";
-            button11.UseVisualStyleBackColor = false;
-            button11.Click += button11_Click;
-            // 
-            // btn_form_Repuestos
-            // 
-            btn_form_Repuestos.BackColor = Color.Black;
-            btn_form_Repuestos.Cursor = Cursors.Hand;
-            btn_form_Repuestos.Dock = DockStyle.Top;
-            btn_form_Repuestos.FlatAppearance.BorderSize = 0;
-            btn_form_Repuestos.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_Repuestos.FlatStyle = FlatStyle.Flat;
-            btn_form_Repuestos.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_Repuestos.ForeColor = Color.White;
-            btn_form_Repuestos.Location = new Point(0, 0);
-            btn_form_Repuestos.Margin = new Padding(2, 3, 2, 3);
-            btn_form_Repuestos.Name = "btn_form_Repuestos";
-            btn_form_Repuestos.Padding = new Padding(34, 7, 0, 7);
-            btn_form_Repuestos.Size = new Size(364, 63);
-            btn_form_Repuestos.TabIndex = 0;
-            btn_form_Repuestos.Text = "Formulario de Repuestos";
-            btn_form_Repuestos.UseVisualStyleBackColor = false;
-            btn_form_Repuestos.Click += btn_form_Repuestos_Click;
             // 
             // btn_Repuestos
             // 
@@ -432,69 +252,17 @@
             btn_Repuestos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Repuestos.IconSize = 65;
             btn_Repuestos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Repuestos.Location = new Point(0, 715);
+            btn_Repuestos.Location = new Point(0, 465);
             btn_Repuestos.Margin = new Padding(2, 3, 2, 3);
             btn_Repuestos.Name = "btn_Repuestos";
             btn_Repuestos.Padding = new Padding(0, 13, 0, 13);
-            btn_Repuestos.Size = new Size(364, 91);
-            btn_Repuestos.TabIndex = 26;
+            btn_Repuestos.Size = new Size(385, 91);
+            btn_Repuestos.TabIndex = 46;
             btn_Repuestos.Text = "Repuestos";
             btn_Repuestos.TextAlign = ContentAlignment.MiddleLeft;
             btn_Repuestos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Repuestos.UseVisualStyleBackColor = false;
             btn_Repuestos.Click += btn_Repuestos_Click;
-            // 
-            // panelSubMenuCelulares
-            // 
-            panelSubMenuCelulares.BackColor = Color.Transparent;
-            panelSubMenuCelulares.Controls.Add(button8);
-            panelSubMenuCelulares.Controls.Add(btn_form_Celulares);
-            panelSubMenuCelulares.Dock = DockStyle.Top;
-            panelSubMenuCelulares.Location = new Point(0, 592);
-            panelSubMenuCelulares.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuCelulares.Name = "panelSubMenuCelulares";
-            panelSubMenuCelulares.Size = new Size(364, 123);
-            panelSubMenuCelulares.TabIndex = 25;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.Black;
-            button8.Cursor = Cursors.Hand;
-            button8.Dock = DockStyle.Top;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(0, 63);
-            button8.Margin = new Padding(2, 3, 2, 3);
-            button8.Name = "button8";
-            button8.Padding = new Padding(34, 7, 0, 7);
-            button8.Size = new Size(364, 63);
-            button8.TabIndex = 1;
-            button8.Text = "Transaccion de Celulares";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += button8_Click;
-            // 
-            // btn_form_Celulares
-            // 
-            btn_form_Celulares.BackColor = Color.Black;
-            btn_form_Celulares.Cursor = Cursors.Hand;
-            btn_form_Celulares.Dock = DockStyle.Top;
-            btn_form_Celulares.FlatAppearance.BorderSize = 0;
-            btn_form_Celulares.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_Celulares.FlatStyle = FlatStyle.Flat;
-            btn_form_Celulares.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_Celulares.ForeColor = Color.White;
-            btn_form_Celulares.Location = new Point(0, 0);
-            btn_form_Celulares.Margin = new Padding(2, 3, 2, 3);
-            btn_form_Celulares.Name = "btn_form_Celulares";
-            btn_form_Celulares.Padding = new Padding(34, 7, 0, 7);
-            btn_form_Celulares.Size = new Size(364, 63);
-            btn_form_Celulares.TabIndex = 0;
-            btn_form_Celulares.Text = "Formulario de Celulares";
-            btn_form_Celulares.UseVisualStyleBackColor = false;
-            btn_form_Celulares.Click += btn_form_Celulares_Click;
             // 
             // btn_Celulares
             // 
@@ -512,69 +280,17 @@
             btn_Celulares.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Celulares.IconSize = 65;
             btn_Celulares.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Celulares.Location = new Point(0, 501);
+            btn_Celulares.Location = new Point(0, 374);
             btn_Celulares.Margin = new Padding(2, 3, 2, 3);
             btn_Celulares.Name = "btn_Celulares";
             btn_Celulares.Padding = new Padding(0, 13, 0, 13);
-            btn_Celulares.Size = new Size(364, 91);
-            btn_Celulares.TabIndex = 24;
+            btn_Celulares.Size = new Size(385, 91);
+            btn_Celulares.TabIndex = 45;
             btn_Celulares.Text = "Celulares";
             btn_Celulares.TextAlign = ContentAlignment.MiddleLeft;
             btn_Celulares.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Celulares.UseVisualStyleBackColor = false;
             btn_Celulares.Click += btn_Celulares_Click;
-            // 
-            // panelSubMenuDeEquipo
-            // 
-            panelSubMenuDeEquipo.BackColor = Color.Transparent;
-            panelSubMenuDeEquipo.Controls.Add(button5);
-            panelSubMenuDeEquipo.Controls.Add(btn_form_equipo);
-            panelSubMenuDeEquipo.Dock = DockStyle.Top;
-            panelSubMenuDeEquipo.Location = new Point(0, 374);
-            panelSubMenuDeEquipo.Margin = new Padding(2, 3, 2, 3);
-            panelSubMenuDeEquipo.Name = "panelSubMenuDeEquipo";
-            panelSubMenuDeEquipo.Size = new Size(364, 127);
-            panelSubMenuDeEquipo.TabIndex = 23;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.Black;
-            button5.Cursor = Cursors.Hand;
-            button5.Dock = DockStyle.Top;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 63);
-            button5.Margin = new Padding(2, 3, 2, 3);
-            button5.Name = "button5";
-            button5.Padding = new Padding(34, 7, 0, 7);
-            button5.Size = new Size(364, 63);
-            button5.TabIndex = 1;
-            button5.Text = "Transaccion de Equipos";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
-            // btn_form_equipo
-            // 
-            btn_form_equipo.BackColor = Color.Black;
-            btn_form_equipo.Cursor = Cursors.Hand;
-            btn_form_equipo.Dock = DockStyle.Top;
-            btn_form_equipo.FlatAppearance.BorderSize = 0;
-            btn_form_equipo.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btn_form_equipo.FlatStyle = FlatStyle.Flat;
-            btn_form_equipo.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_form_equipo.ForeColor = Color.White;
-            btn_form_equipo.Location = new Point(0, 0);
-            btn_form_equipo.Margin = new Padding(2, 3, 2, 3);
-            btn_form_equipo.Name = "btn_form_equipo";
-            btn_form_equipo.Padding = new Padding(34, 7, 0, 7);
-            btn_form_equipo.Size = new Size(364, 63);
-            btn_form_equipo.TabIndex = 0;
-            btn_form_equipo.Text = "Formulario de Equipo";
-            btn_form_equipo.UseVisualStyleBackColor = false;
-            btn_form_equipo.Click += btn_form_equipo_Click;
             // 
             // btn_equipo
             // 
@@ -596,8 +312,8 @@
             btn_equipo.Margin = new Padding(2, 3, 2, 3);
             btn_equipo.Name = "btn_equipo";
             btn_equipo.Padding = new Padding(0, 13, 0, 13);
-            btn_equipo.Size = new Size(364, 91);
-            btn_equipo.TabIndex = 22;
+            btn_equipo.Size = new Size(385, 91);
+            btn_equipo.TabIndex = 41;
             btn_equipo.Text = "Equipos";
             btn_equipo.TextAlign = ContentAlignment.MiddleLeft;
             btn_equipo.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -612,7 +328,7 @@
             margen.Location = new Point(0, 0);
             margen.Margin = new Padding(2, 3, 2, 3);
             margen.Name = "margen";
-            margen.Size = new Size(364, 283);
+            margen.Size = new Size(385, 283);
             margen.TabIndex = 0;
             // 
             // pb_logo
@@ -666,13 +382,13 @@
             btn_empleado.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
             btn_empleado.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
             btn_empleado.FlatStyle = FlatStyle.Flat;
-            btn_empleado.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_empleado.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btn_empleado.ForeColor = Color.White;
             btn_empleado.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             btn_empleado.IconColor = Color.LightGray;
             btn_empleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_empleado.IconSize = 65;
-            btn_empleado.Location = new Point(31, 25);
+            btn_empleado.IconSize = 55;
+            btn_empleado.Location = new Point(13, 25);
             btn_empleado.Margin = new Padding(2, 3, 2, 3);
             btn_empleado.Name = "btn_empleado";
             btn_empleado.Size = new Size(212, 71);
@@ -693,13 +409,13 @@
             btn_reporte.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
             btn_reporte.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
             btn_reporte.FlatStyle = FlatStyle.Flat;
-            btn_reporte.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_reporte.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btn_reporte.ForeColor = Color.White;
             btn_reporte.IconChar = FontAwesome.Sharp.IconChar.FileContract;
             btn_reporte.IconColor = Color.LightGray;
             btn_reporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_reporte.IconSize = 65;
-            btn_reporte.Location = new Point(587, 25);
+            btn_reporte.IconSize = 55;
+            btn_reporte.Location = new Point(495, 25);
             btn_reporte.Margin = new Padding(2, 3, 2, 3);
             btn_reporte.Name = "btn_reporte";
             btn_reporte.Size = new Size(200, 71);
@@ -720,16 +436,16 @@
             btn_Dashboard.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
             btn_Dashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
             btn_Dashboard.FlatStyle = FlatStyle.Flat;
-            btn_Dashboard.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Dashboard.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Dashboard.ForeColor = Color.White;
             btn_Dashboard.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
             btn_Dashboard.IconColor = Color.LightGray;
             btn_Dashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_Dashboard.IconSize = 65;
-            btn_Dashboard.Location = new Point(301, 25);
+            btn_Dashboard.IconSize = 55;
+            btn_Dashboard.Location = new Point(249, 25);
             btn_Dashboard.Margin = new Padding(2, 3, 2, 3);
             btn_Dashboard.Name = "btn_Dashboard";
-            btn_Dashboard.Size = new Size(222, 71);
+            btn_Dashboard.Size = new Size(216, 71);
             btn_Dashboard.TabIndex = 26;
             btn_Dashboard.Text = "Dashboard";
             btn_Dashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -747,13 +463,13 @@
             btn_Stock.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
             btn_Stock.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
             btn_Stock.FlatStyle = FlatStyle.Flat;
-            btn_Stock.Font = new Font("Calibri", 17.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Stock.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Stock.ForeColor = Color.White;
             btn_Stock.IconChar = FontAwesome.Sharp.IconChar.Inbox;
             btn_Stock.IconColor = Color.LightGray;
             btn_Stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_Stock.IconSize = 65;
-            btn_Stock.Location = new Point(885, 25);
+            btn_Stock.IconSize = 55;
+            btn_Stock.Location = new Point(755, 25);
             btn_Stock.Margin = new Padding(2, 3, 2, 3);
             btn_Stock.Name = "btn_Stock";
             btn_Stock.Size = new Size(156, 71);
@@ -766,22 +482,51 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.BackColor = Color.Firebrick;
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel2.Controls.Add(btn_Stock, 3, 0);
-            tableLayoutPanel2.Controls.Add(btn_Dashboard, 1, 0);
             tableLayoutPanel2.Controls.Add(btn_reporte, 2, 0);
             tableLayoutPanel2.Controls.Add(btn_empleado, 0, 0);
+            tableLayoutPanel2.Controls.Add(btn_Transaccion, 4, 0);
+            tableLayoutPanel2.Controls.Add(btn_Dashboard, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
             tableLayoutPanel2.Location = new Point(385, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1102, 122);
+            tableLayoutPanel2.Size = new Size(1194, 122);
             tableLayoutPanel2.TabIndex = 5;
+            // 
+            // btn_Transaccion
+            // 
+            btn_Transaccion.Anchor = AnchorStyles.None;
+            btn_Transaccion.AutoSize = true;
+            btn_Transaccion.BackColor = Color.Transparent;
+            btn_Transaccion.Cursor = Cursors.Hand;
+            btn_Transaccion.FlatAppearance.BorderColor = Color.FromArgb(113, 11, 5);
+            btn_Transaccion.FlatAppearance.BorderSize = 0;
+            btn_Transaccion.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 60, 20);
+            btn_Transaccion.FlatAppearance.MouseOverBackColor = Color.FromArgb(180, 40, 10);
+            btn_Transaccion.FlatStyle = FlatStyle.Flat;
+            btn_Transaccion.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Transaccion.ForeColor = Color.White;
+            btn_Transaccion.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            btn_Transaccion.IconColor = Color.LightGray;
+            btn_Transaccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_Transaccion.IconSize = 55;
+            btn_Transaccion.Location = new Point(964, 25);
+            btn_Transaccion.Margin = new Padding(2, 3, 2, 3);
+            btn_Transaccion.Name = "btn_Transaccion";
+            btn_Transaccion.Size = new Size(217, 71);
+            btn_Transaccion.TabIndex = 27;
+            btn_Transaccion.Text = "Transaccion";
+            btn_Transaccion.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Transaccion.UseVisualStyleBackColor = false;
+            btn_Transaccion.Click += btn_Transaccion_Click;
             // 
             // panelFormulario
             // 
@@ -790,14 +535,14 @@
             panelFormulario.Dock = DockStyle.Fill;
             panelFormulario.Location = new Point(385, 122);
             panelFormulario.Name = "panelFormulario";
-            panelFormulario.Size = new Size(1102, 859);
+            panelFormulario.Size = new Size(1194, 859);
             panelFormulario.TabIndex = 6;
             // 
             // pictureBox4
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(198, 253);
+            pictureBox4.Location = new Point(249, 236);
             pictureBox4.Margin = new Padding(2, 3, 2, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(707, 353);
@@ -809,7 +554,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1487, 981);
+            ClientSize = new Size(1579, 981);
             Controls.Add(panelFormulario);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(panel_lateral);
@@ -826,11 +571,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel_lateral.ResumeLayout(false);
-            panelSubMenuLicencias.ResumeLayout(false);
-            panelSubMenuLineas.ResumeLayout(false);
-            panelSubMenuRepuestos.ResumeLayout(false);
-            panelSubMenuCelulares.ResumeLayout(false);
-            panelSubMenuDeEquipo.ResumeLayout(false);
             margen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -853,26 +593,6 @@
         private Button button4;
         private Button button3;
         private Panel panel_lateral;
-        private Panel panelSubMenuDeEquipo;
-        private Button button5;
-        private Button btn_form_equipo;
-        private FontAwesome.Sharp.IconButton btn_equipo;
-        private Panel panelSubMenuLineas;
-        private Button button14;
-        private Button btn_form_Lineas;
-        private FontAwesome.Sharp.IconButton btn_Lineas;
-        private Panel panelSubMenuRepuestos;
-        private Button button11;
-        private Button btn_form_Repuestos;
-        private FontAwesome.Sharp.IconButton btn_Repuestos;
-        private Panel panelSubMenuCelulares;
-        private Button button8;
-        private Button btn_form_Celulares;
-        private FontAwesome.Sharp.IconButton btn_Celulares;
-        private Panel panelSubMenuLicencias;
-        private Button button17;
-        private Button btn_form_Licencias;
-        private FontAwesome.Sharp.IconButton btn_licencias;
         private Panel margen;
         private PictureBox pb_logo;
         private PictureBox pictureBox2;
@@ -884,5 +604,11 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panelFormulario;
         private PictureBox pictureBox4;
+        private FontAwesome.Sharp.IconButton btn_Transaccion;
+        private FontAwesome.Sharp.IconButton btn_licencias;
+        private FontAwesome.Sharp.IconButton btn_Lineas;
+        private FontAwesome.Sharp.IconButton btn_Repuestos;
+        private FontAwesome.Sharp.IconButton btn_Celulares;
+        private FontAwesome.Sharp.IconButton btn_equipo;
     }
 }

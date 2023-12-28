@@ -497,6 +497,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Dashboard";
             Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)ch_Top_Productos).EndInit();

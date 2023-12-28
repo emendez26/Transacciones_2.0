@@ -608,7 +608,7 @@
             Margin = new Padding(2, 3, 2, 3);
             MinimumSize = new Size(1119, 824);
             Name = "Celulares";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Celulares";
             Load += Celulares_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
