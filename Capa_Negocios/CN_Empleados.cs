@@ -13,8 +13,6 @@ namespace Capa_Negocios
 
         private CD_Empleados CD_emp = new CD_Empleados();
 
-
-
         public List<Capa_Objetos.CO_UserCode> MostrarCod(int sw)
         {
             List<Capa_Objetos.CO_UserCode> tabla = new List<Capa_Objetos.CO_UserCode>();
