@@ -239,18 +239,13 @@ namespace Proyecto_inventario
                     string mensaje = "";
                     if (CN_detTrans.InsertDetTrans(GetData_1()) != 0)
                     {
-                        limpiar();
                         cargarGridDetallesDeTransaccion();
                         Ocultar();
                     }
-                    else
-                    {
-                        mensaje = "Error al guardar";
-                    }
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                    MessageBox.Show("Es importante que complete todos los campos de Detalles del Producto para que podamos procesar su solicitud.");
                 }
             }
         }
@@ -268,7 +263,7 @@ namespace Proyecto_inventario
                 }
             }
             else
-                MessageBox.Show("seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor");
         }
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)

@@ -267,7 +267,7 @@
             ibtn_agg.Margin = new Padding(2);
             ibtn_agg.Name = "ibtn_agg";
             ibtn_agg.Size = new Size(46, 45);
-            ibtn_agg.TabIndex = 15;
+            ibtn_agg.TabIndex = 13;
             ibtn_agg.Tag = "GUARDAR";
             ibtn_agg.UseVisualStyleBackColor = false;
             ibtn_agg.Click += ibtn_agg_Click;
@@ -324,7 +324,7 @@
             ibtn_save.Margin = new Padding(2);
             ibtn_save.Name = "ibtn_save";
             ibtn_save.Size = new Size(67, 49);
-            ibtn_save.TabIndex = 17;
+            ibtn_save.TabIndex = 15;
             ibtn_save.Tag = "GUARDAR";
             ibtn_save.UseVisualStyleBackColor = false;
             ibtn_save.Click += ibtn_save_Click;
@@ -345,7 +345,7 @@
             ibtn_imprimir.Margin = new Padding(2);
             ibtn_imprimir.Name = "ibtn_imprimir";
             ibtn_imprimir.Size = new Size(67, 49);
-            ibtn_imprimir.TabIndex = 18;
+            ibtn_imprimir.TabIndex = 16;
             ibtn_imprimir.Tag = "ELIMINAR";
             ibtn_imprimir.UseVisualStyleBackColor = false;
             // 
@@ -358,7 +358,7 @@
             txt_observ.Multiline = true;
             txt_observ.Name = "txt_observ";
             txt_observ.Size = new Size(661, 124);
-            txt_observ.TabIndex = 13;
+            txt_observ.TabIndex = 14;
             // 
             // label13
             // 
@@ -385,7 +385,7 @@
             panel3.Location = new Point(22, 406);
             panel3.Name = "panel3";
             panel3.Size = new Size(886, 201);
-            panel3.TabIndex = 377;
+            panel3.TabIndex = 8;
             // 
             // ibtn_buscar_activo
             // 
@@ -404,7 +404,7 @@
             ibtn_buscar_activo.Margin = new Padding(2);
             ibtn_buscar_activo.Name = "ibtn_buscar_activo";
             ibtn_buscar_activo.Size = new Size(53, 43);
-            ibtn_buscar_activo.TabIndex = 22;
+            ibtn_buscar_activo.TabIndex = 8;
             ibtn_buscar_activo.Tag = "LIMPIAR";
             ibtn_buscar_activo.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtn_buscar_activo.UseVisualStyleBackColor = false;
@@ -419,7 +419,7 @@
             txt_obser_det.Multiline = true;
             txt_obser_det.Name = "txt_obser_det";
             txt_obser_det.Size = new Size(677, 62);
-            txt_obser_det.TabIndex = 14;
+            txt_obser_det.TabIndex = 12;
             // 
             // label11
             // 
@@ -440,7 +440,7 @@
             dtp_fmovimiento_det.Margin = new Padding(2, 3, 2, 3);
             dtp_fmovimiento_det.Name = "dtp_fmovimiento_det";
             dtp_fmovimiento_det.Size = new Size(221, 27);
-            dtp_fmovimiento_det.TabIndex = 12;
+            dtp_fmovimiento_det.TabIndex = 11;
             // 
             // txt_costo_det
             // 
@@ -449,7 +449,7 @@
             txt_costo_det.Margin = new Padding(2, 3, 2, 3);
             txt_costo_det.Name = "txt_costo_det";
             txt_costo_det.Size = new Size(221, 27);
-            txt_costo_det.TabIndex = 11;
+            txt_costo_det.TabIndex = 10;
             txt_costo_det.TextChanged += txt_costo_det_TextChanged;
             txt_costo_det.KeyPress += txt_costo_det_KeyPress;
             // 
@@ -485,7 +485,7 @@
             txt_activo_det.Margin = new Padding(2, 3, 2, 3);
             txt_activo_det.Name = "txt_activo_det";
             txt_activo_det.Size = new Size(221, 30);
-            txt_activo_det.TabIndex = 10;
+            txt_activo_det.TabIndex = 9;
             txt_activo_det.KeyPress += txt_activo_det_KeyPress;
             // 
             // label9
@@ -506,7 +506,7 @@
             txt_buscar.Margin = new Padding(2, 3, 2, 3);
             txt_buscar.Name = "txt_buscar";
             txt_buscar.Size = new Size(193, 27);
-            txt_buscar.TabIndex = 19;
+            txt_buscar.TabIndex = 17;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
             // label15
@@ -691,7 +691,7 @@
             panel2.Location = new Point(22, 248);
             panel2.Name = "panel2";
             panel2.Size = new Size(886, 129);
-            panel2.TabIndex = 385;
+            panel2.TabIndex = 6;
             // 
             // cmb_area
             // 
@@ -704,7 +704,7 @@
             cmb_area.Margin = new Padding(2, 3, 2, 3);
             cmb_area.Name = "cmb_area";
             cmb_area.Size = new Size(221, 28);
-            cmb_area.TabIndex = 391;
+            cmb_area.TabIndex = 90;
             // 
             // cmb_depart
             // 
@@ -717,7 +717,7 @@
             cmb_depart.Margin = new Padding(2, 3, 2, 3);
             cmb_depart.Name = "cmb_depart";
             cmb_depart.Size = new Size(221, 28);
-            cmb_depart.TabIndex = 390;
+            cmb_depart.TabIndex = 80;
             // 
             // ibtn_buscar_id
             // 
@@ -736,7 +736,7 @@
             ibtn_buscar_id.Margin = new Padding(2);
             ibtn_buscar_id.Name = "ibtn_buscar_id";
             ibtn_buscar_id.Size = new Size(53, 43);
-            ibtn_buscar_id.TabIndex = 21;
+            ibtn_buscar_id.TabIndex = 6;
             ibtn_buscar_id.Tag = "LIMPIAR";
             ibtn_buscar_id.TextImageRelation = TextImageRelation.ImageBeforeText;
             ibtn_buscar_id.UseVisualStyleBackColor = false;
@@ -785,7 +785,7 @@
             txt_nombre.Margin = new Padding(2, 3, 2, 3);
             txt_nombre.Name = "txt_nombre";
             txt_nombre.Size = new Size(221, 30);
-            txt_nombre.TabIndex = 7;
+            txt_nombre.TabIndex = 70;
             // 
             // txt_cedula
             // 
@@ -796,7 +796,7 @@
             txt_cedula.Margin = new Padding(2, 3, 2, 3);
             txt_cedula.Name = "txt_cedula";
             txt_cedula.Size = new Size(221, 30);
-            txt_cedula.TabIndex = 6;
+            txt_cedula.TabIndex = 7;
             txt_cedula.TextChanged += txt_cedula_TextChanged;
             txt_cedula.KeyPress += txt_cedula_KeyPress;
             // 

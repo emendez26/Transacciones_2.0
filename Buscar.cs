@@ -51,7 +51,6 @@ namespace Proyecto_inventario
                     lista_empleados.AddRange(CN_emp.MostrarEmp());
                     dg_buscar_Empleado.DataSource = lista_empleados;
                     break;
-
             }
 
         }

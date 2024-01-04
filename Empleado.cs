@@ -97,13 +97,13 @@ namespace Proyecto_inventario
             txt_Apellido_Empleado.Text = empleado.apellido;
         }
 
-            public void mostrarDatos()
-            {
-                id = int.Parse(dg_empleados.CurrentRow.Cells["id"].Value.ToString());
-                empleado = new CO_Empleados();
-                empleado = lista_empleados.Where(e => e.id.Equals(id)).FirstOrDefault();
-                SetData();
-            }
+         public void mostrarDatos()
+         {
+             id = int.Parse(dg_empleados.CurrentRow.Cells["id"].Value.ToString());
+             empleado = new CO_Empleados();
+             empleado = lista_empleados.Where(e => e.id.Equals(id)).FirstOrDefault();
+             SetData();
+         }
 
         private void limpiar(bool isEdit)
         {
@@ -179,7 +179,6 @@ namespace Proyecto_inventario
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
-
         }
 
         public void eliminar()
