@@ -238,6 +238,7 @@
             Name = "Reporte";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Reporte";
+            Load += Reporte_Load;
             ((System.ComponentModel.ISupportInitialize)dg_reporte).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);

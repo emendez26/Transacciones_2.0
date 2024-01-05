@@ -23,5 +23,10 @@ namespace Proyecto_inventario
             //var results = lista_Reportes.Where(X => X.caracteristicas.Contains(coincidencia) || X.proveedor.Contains(coincidencia)).Select(X => X).ToList();
             //dg_reporte.DataSource = results;
         }
+
+        private void Reporte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

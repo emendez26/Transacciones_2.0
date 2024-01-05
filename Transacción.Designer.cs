@@ -54,6 +54,8 @@
             txt_observ = new TextBox();
             label13 = new Label();
             panel3 = new Panel();
+            txt_descrip_det = new TextBox();
+            label18 = new Label();
             ibtn_buscar_activo = new FontAwesome.Sharp.IconButton();
             txt_obser_det = new TextBox();
             label11 = new Label();
@@ -373,6 +375,8 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(txt_descrip_det);
+            panel3.Controls.Add(label18);
             panel3.Controls.Add(ibtn_buscar_activo);
             panel3.Controls.Add(txt_obser_det);
             panel3.Controls.Add(label11);
@@ -386,6 +390,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(886, 201);
             panel3.TabIndex = 8;
+            // 
+            // txt_descrip_det
+            // 
+            txt_descrip_det.CharacterCasing = CharacterCasing.Upper;
+            txt_descrip_det.Location = new Point(177, 115);
+            txt_descrip_det.Margin = new Padding(2, 3, 2, 3);
+            txt_descrip_det.Name = "txt_descrip_det";
+            txt_descrip_det.Size = new Size(678, 27);
+            txt_descrip_det.TabIndex = 379;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(73, 119);
+            label18.Margin = new Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(98, 23);
+            label18.TabIndex = 378;
+            label18.Text = "Descripcion";
             // 
             // ibtn_buscar_activo
             // 
@@ -414,18 +438,17 @@
             // 
             txt_obser_det.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txt_obser_det.CharacterCasing = CharacterCasing.Upper;
-            txt_obser_det.Location = new Point(177, 120);
+            txt_obser_det.Location = new Point(177, 156);
             txt_obser_det.Margin = new Padding(2, 3, 2, 3);
-            txt_obser_det.Multiline = true;
             txt_obser_det.Name = "txt_obser_det";
-            txt_obser_det.Size = new Size(677, 62);
+            txt_obser_det.Size = new Size(678, 27);
             txt_obser_det.TabIndex = 12;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(64, 130);
+            label11.Location = new Point(64, 160);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(104, 23);
@@ -436,7 +459,7 @@
             // 
             dtp_fmovimiento_det.CustomFormat = "dd/MM/yy";
             dtp_fmovimiento_det.Format = DateTimePickerFormat.Custom;
-            dtp_fmovimiento_det.Location = new Point(634, 78);
+            dtp_fmovimiento_det.Location = new Point(634, 77);
             dtp_fmovimiento_det.Margin = new Padding(2, 3, 2, 3);
             dtp_fmovimiento_det.Name = "dtp_fmovimiento_det";
             dtp_fmovimiento_det.Size = new Size(221, 27);
@@ -1007,5 +1030,7 @@
         public TextBox txt_obser_det;
         private ComboBox cmb_depart;
         private ComboBox cmb_area;
+        public TextBox txt_descrip_det;
+        private Label label18;
     }
 }

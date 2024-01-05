@@ -23,13 +23,14 @@ namespace Capa_Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public List<CO_Detalles_Transacciones> Read()
+        public List<CO_Detalles_Transacciones> Read(int id)
         {
             try
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Read_Det_Transacciones";
+                comando.Parameters.AddWithValue("@Id", id);
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 DataTable table = new DataTable();
@@ -57,7 +58,7 @@ namespace Capa_Datos
             return Detalles_Transacciones;
         }
 
-        public int Insert(CO_Detalles_Transacciones DetTransaccion)
+        public int Insert(List<CO_Detalles_Transacciones> ListaDetalle)
         {
             int exitoso = 0;
             //PROCEDIMNIENTO
@@ -65,19 +66,21 @@ namespace Capa_Datos
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "sp_Insert_Det_Transacciones";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Id_Transacciones", DetTransaccion.Id_Transacciones);
-                comando.Parameters.AddWithValue("@Observacion", DetTransaccion.Observacion);
-                comando.Parameters.AddWithValue("@Fecha_Movimiento", DetTransaccion.Fecha_Movimiento);
-                comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
-                comando.Parameters.AddWithValue("@Costo", DetTransaccion.Costo);
-                comando.Parameters.AddWithValue("@Activo_Fijo", DetTransaccion.Activo_Fijo);
 
+                foreach (CO_Detalles_Transacciones DetTransaccion in ListaDetalle)
+                {
+                    comando.CommandText = "sp_Insert_Det_Transacciones";
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@Id_Transacciones", DetTransaccion.Id_Transacciones);
+                    comando.Parameters.AddWithValue("@Observacion", DetTransaccion.Observacion);
+                    comando.Parameters.AddWithValue("@Fecha_Movimiento", DetTransaccion.Fecha_Movimiento);
+                    comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
+                    comando.Parameters.AddWithValue("@Costo", DetTransaccion.Costo);
+                    comando.Parameters.AddWithValue("@Activo_Fijo", DetTransaccion.Activo_Fijo);
+                    comando.Parameters.Clear();
 
-                exitoso = comando.ExecuteNonQuery();
-
-                comando.Parameters.Clear();
+                    exitoso += comando.ExecuteNonQuery();
+                }
                 conexion.CerrarConexion();
             }
             catch (Exception ex)

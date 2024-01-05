@@ -12,14 +12,14 @@ namespace Capa_Negocios
     {
         private CD_Detalles_Transacciones CD_detTrans = new CD_Detalles_Transacciones();
 
-        public List<Capa_Objetos.CO_Detalles_Transacciones> MostrarDetTrans()
+        public List<Capa_Objetos.CO_Detalles_Transacciones> MostrarDetTrans(int id)
         {
             List<Capa_Objetos.CO_Detalles_Transacciones> tabla = new List<Capa_Objetos.CO_Detalles_Transacciones>();
-            tabla = CD_detTrans.Read();
+            tabla = CD_detTrans.Read(id);
             return tabla;
         }
 
-        public int InsertDetTrans(CO_Detalles_Transacciones DetTransaccion)
+        public int InsertDetTrans(List<CO_Detalles_Transacciones> DetTransaccion)
         {
             return CD_detTrans.Insert(DetTransaccion);
         }
