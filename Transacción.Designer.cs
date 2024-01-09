@@ -697,7 +697,7 @@
             dg_transaccion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_transaccion.Size = new Size(886, 339);
             dg_transaccion.TabIndex = 358;
-            dg_transaccion.CellDoubleClick += dg_transaccion_CellDoubleClick;
+            dg_transaccion.CellContentDoubleClick += dg_transaccion_CellContentDoubleClick;
             // 
             // panel2
             // 

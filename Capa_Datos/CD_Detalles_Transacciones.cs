@@ -42,7 +42,7 @@ namespace Capa_Datos
                     DetTransacciones.Observacion = dr[2].ToString();
                     DetTransacciones.Fecha_Movimiento = DateTime.Parse(dr[3].ToString());
                     DetTransacciones.Fecha_Transaccion = DateTime.Parse(dr[4].ToString());
-                    DetTransacciones.Costo = Double.Parse(dr[5].ToString());
+                    DetTransacciones.Costo = double.Parse(dr[5].ToString());
                     DetTransacciones.Activo_Fijo = dr[6].ToString();
 
 

@@ -6,11 +6,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Proyecto_inventario
 {
@@ -31,7 +33,6 @@ namespace Proyecto_inventario
         CN_Detalles_Transacciones CN_detTrans = new CN_Detalles_Transacciones();
 
         private int Id = 0;
-        private bool Editar = false;
 
         public int pr = 0;
 
@@ -47,7 +48,7 @@ namespace Proyecto_inventario
             cmb_motivo.Enabled = false;
             ibtn_save.Enabled = false;
             cargarGrid();
-            AddGridDetallesDeTransaccion();
+            //AddGridDetallesDeTransaccion();
             ComboBox();
             cargarGridDetalles();
             Ocultar();
@@ -75,15 +76,16 @@ namespace Proyecto_inventario
             return transaccion;
         }
 
-        public CO_Detalles_Transacciones GetData_1()
+        public CO_Detalles_Transacciones GetDataDetalles()
         {
             detTra = new CO_Detalles_Transacciones();
 
             detTra.Activo_Fijo = txt_activo_det.Text;
             detTra.Observacion = txt_obser_det.Text;
-            detTra.Fecha_Movimiento = DateTime.Parse(dtp_fmovimiento_det.Value.ToString());
+            detTra.Fecha_Movimiento = DateTime.Parse(dtp_fmovimiento_det.Value.ToShortDateString());
             detTra.Fecha_Transaccion = DateTime.Parse(dtp_fmovimiento_det.Text);
             detTra.Costo = double.Parse(txt_costo_det.Text);
+            detTra.Descripcion = txt_descrip_det.Text;
 
             return detTra;
         }
@@ -93,19 +95,15 @@ namespace Proyecto_inventario
             Id = int.Parse(dg_transaccion1.CurrentRow.Cells["id"].Value.ToString());
             transaccion = new CO_Transacciones();
             transaccion = lista_transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
-
             SetData();
         }
 
-        public void mostrarDatos1()
+        public void mostrarDatosDetalles()
         {
-            Id = int.Parse(dg_transaccion.CurrentRow.Cells["id"].Value.ToString());
+            Id = int.Parse(dg_transaccion.CurrentRow.Cells["        "].Value.ToString());
             detTra = new CO_Detalles_Transacciones();
             detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetDataEquipo();
-
-            
-
         }
 
 
@@ -140,6 +138,7 @@ namespace Proyecto_inventario
             string[] partesApellido = Empl.apellido.Split(' ');
             string primerNombre = partesNombre.Length > 0 ? partesNombre[0] : "";
             string primerApellido = partesApellido.Length > 0 ? partesApellido[0] : "";
+
             txt_cedula.Text = Empl.identificacion.ToString();
             txt_nombre.Text = $"{primerNombre} {primerApellido}";
             cmb_depart.SelectedValue = Empl.departamento.ToString();
@@ -169,6 +168,7 @@ namespace Proyecto_inventario
 
         private void AddGridDetallesDeTransaccion()
         {
+
             lista_Detalles_Transacciones.AddRange(lista_Detalles_Transacciones);
             dg_transaccion.DataSource = lista_Detalles_Transacciones;
         }
@@ -190,14 +190,12 @@ namespace Proyecto_inventario
                 !string.IsNullOrEmpty(cmb_Tipo.Text) &&
                 !string.IsNullOrEmpty(txt_usuario.Text) &&
                 !string.IsNullOrEmpty(txt_usuario.Text);
-
             ibtn_save.Enabled = vr;
         }
 
         private void limpiar()
         {
             transaccion = new CO_Transacciones();
-
             txt_activo_det.Text = string.Empty;
             txt_nombre.Text = string.Empty;
             cmb_depart.Text = string.Empty;
@@ -212,6 +210,7 @@ namespace Proyecto_inventario
             txt_observ.Text = string.Empty;
             cmb_Tipo.SelectedIndex = -1;
             cmb_motivo.Items.Clear();
+            txt_descrip_det.Text = string.Empty;
         }
 
         public void guardar()
@@ -241,29 +240,32 @@ namespace Proyecto_inventario
 
         public void agregarDetalleGrilla()
         {
-            if (CN_detTrans.InsertDetTrans(lista_Detalles_Transacciones) != 0)
-            {
-                //AddGridDetallesDeTransaccion();
-                cargarGridDetalles();
-            }
+
+            GetDataDetalles();
+            agregarDetalleGrilla();
+
+            dg_transaccion.DataSource = null;
+            dg_transaccion.Rows.Clear();
+            dg_transaccion.DataSource = lista_Detalles_Transacciones;
+            Ocultar();
         }
 
         public void eliminar()
         {
-            if (dg_transaccion.SelectedRows.Count > 0)
-            {
-                
-                Id = int.Parse(dg_transaccion.CurrentRow.Cells["Id"].Value.ToString());
-                if (CN_detTrans.DeleteDetTrans(Id) != 0)
-                {
-                    MessageBox.Show("Eliminado correctamente");
-                    AddGridDetallesDeTransaccion();
-                    cargarGridDetalles();
-                    Ocultar();
-                }
-            }
-            else
-                MessageBox.Show("Seleccione una fila por favor");
+            MessageBox.Show("Hola Mundo");
+            //if (dg_transaccion.SelectedRows.Count > 0)
+            //{
+            //    Id = int.Parse(dg_transaccion.CurrentRow.Cells["Id"].Value.ToString());
+            //    if (CN_detTrans.DeleteDetTrans(Id) != 0)
+            //    {
+            //        MessageBox.Show("Eliminado correctamente");
+            //        AddGridDetallesDeTransaccion();
+            //        cargarGridDetalles();
+            //        Ocultar();
+            //    }
+            //}
+            //else
+            //    MessageBox.Show("Seleccione una fila por favor");
         }
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
@@ -325,6 +327,13 @@ namespace Proyecto_inventario
 
         private void txt_cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Buscar formularioBuscar = new Buscar(2);
+                formularioBuscar.Show();
+               
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -338,7 +347,6 @@ namespace Proyecto_inventario
                 e.Handled = true;
             }
         }
-
 
         private void txt_costo_det_TextChanged(object sender, EventArgs e)
         {
@@ -365,26 +373,19 @@ namespace Proyecto_inventario
 
         private void ibtn_agg_Click(object sender, EventArgs e)
         {
-            Ocultar();
-            //Get capturar datos
-            detTra = new CO_Detalles_Transacciones();
-            detTra.Activo_Fijo = txt_activo_det.Text;
-            detTra.Observacion = txt_obser_det.Text;
-            detTra.Costo = Double.Parse(txt_costo_det.Text);
-            detTra.Fecha_Movimiento = dtp_fmovimiento_det.Value;
-            detTra.Descripcion = txt_descrip_det.Text;
+            agregarDetalleGrilla();
+            //GetDataDetalles();
 
-            //Agregar a la lista
-            lista_Detalles_Transacciones.Add(detTra);
+            ////Agregar a la lista
+            //lista_Detalles_Transacciones.AddRange(lista_Detalles_Transacciones);
 
-            //var lista = from id in lista_Detalles_Transacciones
+            ////var lista = from id in lista_Detalles_Transacciones
 
-            //Agregar a la grilla
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
-            
-
+            ////Agregar a la grilla
+            //dg_transaccion.DataSource = null;
+            //dg_transaccion.Rows.Clear();
+            //dg_transaccion.DataSource = lista_Detalles_Transacciones;
+            //Ocultar();
         }
 
         private void ibtn_delete_Click(object sender, EventArgs e)
@@ -392,11 +393,6 @@ namespace Proyecto_inventario
             eliminar();
         }
 
-
-        private void dg_transaccion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            mostrarDatos1();
-        }
 
         private void ibtn_buscar_id_Click(object sender, EventArgs e)
         {
@@ -430,6 +426,11 @@ namespace Proyecto_inventario
         private void cmb_motivo_SelectedIndexChanged(object sender, EventArgs e)
         {
             ValidCamp();
+        }
+
+        private void dg_transaccion_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrarDatosDetalles();
         }
     }
 }
