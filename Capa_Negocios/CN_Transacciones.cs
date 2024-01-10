@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Capa_Negocios
         public List<Capa_Objetos.CO_Switch> MostrarSwitch(int sw)
         {
             List<Capa_Objetos.CO_Switch> tabla = new List<Capa_Objetos.CO_Switch>();
-            tabla = CD_trans.LoadSw(sw);
+            tabla = CD_trans.Switch(sw);
             return tabla;
         }
 

@@ -8,12 +8,12 @@ namespace Capa_Objetos
 {
     public class CO_Switch
     {
-        public string codigo { get; set; }
-        public string descripcion { get; set; }
+        public string Codigo { get; set; }
+        public string Descripcion { get; set; }
 
         public CO_Switch() {
-            this.codigo = string.Empty;
-            this.descripcion = string.Empty;
+            this.Codigo = string.Empty;
+            this.Descripcion = string.Empty;
         }
     }
 }
