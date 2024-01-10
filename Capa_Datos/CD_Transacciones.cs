@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Capa_Objetos;
+using System.Diagnostics;
 
 namespace Capa_Datos
 {
@@ -16,6 +17,9 @@ namespace Capa_Datos
 
         CO_Transacciones transaccion = new CO_Transacciones();
         List<CO_Transacciones> transacciones = new List<CO_Transacciones>();
+
+        List<CO_Switch> Switchs = new List<CO_Switch>();
+
 
         private Conexion conexion = new Conexion();
 
@@ -57,6 +61,43 @@ namespace Capa_Datos
             }
             return transacciones;
         }
+
+        public List<CO_Switch> LoadSw(int sw)
+        {
+            try
+            {
+                conexion.iniciarBD(DB_TecnoFuego);
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "LoadSw";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@sw", sw);
+                Switchs = new List<CO_Switch>();
+
+                Switchs.Add(new CO_Switch());
+
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CO_Switch switchs = new CO_Switch();
+                        switchs.codigo = reader["Codigo"].ToString();
+                        switchs.descripcion = reader["Descripcion"].ToString();
+
+                        Switchs.Add(switchs);
+                    }
+                }
+
+                comando.Parameters.Clear();
+                conexion.CerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return Switchs;
+        }
+
 
         public int Insert(CO_Transacciones transaccion)
         {

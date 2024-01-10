@@ -12,6 +12,13 @@ namespace Capa_Negocios
     {
         private CD_Transacciones CD_trans = new CD_Transacciones();
 
+        public List<Capa_Objetos.CO_Switch> MostrarSwitch(int sw)
+        {
+            List<Capa_Objetos.CO_Switch> tabla = new List<Capa_Objetos.CO_Switch>();
+            tabla = CD_trans.LoadSw(sw);
+            return tabla;
+        }
+
         public List<Capa_Objetos.CO_Transacciones> MostrarTrans()
         {
 

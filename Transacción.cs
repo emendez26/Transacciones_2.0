@@ -18,8 +18,8 @@ namespace Proyecto_inventario
 {
     public partial class Transacción : Form, IContract
     {
-        List<string> motivosEntrada = new List<string>() { "COMPRA", "DEVOLUCION", "OBSEQUIO" };
-        List<string> motivosSalida = new List<string>() { "DEVOLUCION", "ASIGNACIÓN", "PRESTAMO", "MANTENIMIENTO", "HURTO", "OBSOLETO", "PERDIDA" };
+        //List<string> motivosEntrada = new List<string>() { "COMPRA", "DEVOLUCION", "OBSEQUIO" };
+        //List<string> motivosSalida = new List<string>() { "DEVOLUCION", "ASIGNACIÓN", "PRESTAMO", "MANTENIMIENTO", "HURTO", "OBSOLETO", "PERDIDA" };
 
         static int empleado = 2;
         static int equipo = 1;
@@ -40,18 +40,31 @@ namespace Proyecto_inventario
         {
             InitializeComponent();
             transaccion = new CO_Transacciones();
-            cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
+            //cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
 
         }
+
+        private void Switch()
+        {
+            cmb_Tipo.DataSource = CN_trans.MostrarSwitch(28);
+            cmb_Tipo.ValueMember = "Codigo";
+            cmb_Tipo.DisplayMember = "Descripcion";
+
+            //cmb_Tipo.DataSource = CN_trans.MostrarSwitch(32);
+            //cmb_Tipo.ValueMember = "Codigo";
+            //cmb_Tipo.DisplayMember = "Descripcion";
+        }
+
         private void Transacción_Load(object sender, EventArgs e)
         {
             cmb_motivo.Enabled = false;
             ibtn_save.Enabled = false;
             cargarGrid();
-            //AddGridDetallesDeTransaccion();
+            Switch();
             ComboBox();
             cargarGridDetalles();
             Ocultar();
+            //AddGridDetallesDeTransaccion();
         }
 
         private void Ocultar()
@@ -100,7 +113,7 @@ namespace Proyecto_inventario
 
         public void mostrarDatosDetalles()
         {
-            Id = int.Parse(dg_transaccion.CurrentRow.Cells["        "].Value.ToString());
+            Id = int.Parse(dg_transaccion.CurrentRow.Cells["id"].Value.ToString());
             detTra = new CO_Detalles_Transacciones();
             detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetDataEquipo();
@@ -277,27 +290,27 @@ namespace Proyecto_inventario
         {
             ValidCamp();
 
-            if (cmb_Tipo.Text == "ENTRADA")
-            {
-                cmb_motivo.Enabled = false;
-                cmb_motivo.Items.Clear();
-                cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
-                txt_costo_det.Enabled = true;
-                cmb_motivo.Enabled = true;
-            }
-            else if (cmb_Tipo.Text == "SALIDA")
-            {
-                cmb_motivo.Items.Clear();
-                cmb_motivo.Items.AddRange(motivosSalida.ToArray());
-                txt_costo_det.Enabled = false;
-                txt_costo_det.Text = "0";
-                cmb_motivo.Enabled = true;
-            }
-            else
-            {
-                cmb_motivo.Items.Clear();
-                cmb_motivo.Enabled = false;
-            }
+            //if (cmb_Tipo.Text == "ENTRADA")
+            //{
+            //    cmb_motivo.Enabled = false;
+            //    cmb_motivo.Items.Clear();
+            //    cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
+            //    txt_costo_det.Enabled = true;
+            //    cmb_motivo.Enabled = true;
+            //}
+            //else if (cmb_Tipo.Text == "SALIDA")
+            //{
+            //    cmb_motivo.Items.Clear();
+            //    cmb_motivo.Items.AddRange(motivosSalida.ToArray());
+            //    txt_costo_det.Enabled = false;
+            //    txt_costo_det.Text = "0";
+            //    cmb_motivo.Enabled = true;
+            //}
+            //else
+            //{
+            //    cmb_motivo.Items.Clear();
+            //    cmb_motivo.Enabled = false;
+            //}
         }
 
         private void ibtn_save_Click(object sender, EventArgs e)

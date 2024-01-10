@@ -55,7 +55,6 @@ namespace Proyecto_inventario
             ibtn_Registrar.Enabled = false;
             ComboBox();
             cargarGrid();
-
         }
 
         private void ValidCamp()
