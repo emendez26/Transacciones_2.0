@@ -10,6 +10,8 @@ namespace Capa_Objetos
     {
         public string code { get; set; }
         public string descripcion { get; set; }
+       
+
 
         public CO_UserCode() {
             this.code = string.Empty;   

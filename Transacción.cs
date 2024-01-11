@@ -46,13 +46,23 @@ namespace Proyecto_inventario
 
         private void Switch()
         {
-            cmb_Tipo.DataSource = CN_trans.MostrarSwitch(28);
+            List<CO_Switch> switches = new List<CO_Switch>();
+            switches= CN_trans.MostrarSwitch();
+
+            var swt = from sw in switches
+                      select new { code = sw.cod_sw, descripcion = sw.desc_sw };
+
+            cmb_Tipo.DataSource = swt;
             cmb_Tipo.ValueMember = "code";
             cmb_Tipo.DisplayMember = "descripcion";
 
-            //cmb_Tipo.DataSource = CN_trans.MostrarSwitch(32);
-            //cmb_Tipo.ValueMember = "Codigo";
-            //cmb_Tipo.DisplayMember = "Descripcion";
+            var mov = from sw in switches
+                      group sw by sw.cod_sw into sws
+                      select new { code = sws, descripcion = sws};
+
+            cmb_motivo.DataSource = mov;
+            cmb_motivo.ValueMember = "code";
+            cmb_motivo.DisplayMember = "descripcion";
         }
 
         private void Transacción_Load(object sender, EventArgs e)

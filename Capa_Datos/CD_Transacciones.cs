@@ -18,7 +18,6 @@ namespace Capa_Datos
         CO_Transacciones transaccion = new CO_Transacciones();
         List<CO_Transacciones> transacciones = new List<CO_Transacciones>();
 
-        List<CO_UserCode> Switchs = new List<CO_UserCode>();
 
 
         private Conexion conexion = new Conexion();
@@ -62,24 +61,29 @@ namespace Capa_Datos
             return transacciones;
         }
 
-        public List<CO_UserCode> LoadSw(int sw)
+        public List<CO_Switch> LoadSw()
         {
             try
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "LoadSw";
+                comando.CommandText = "[sp_Read_Switch]";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@sw", sw);
-                Switchs = new List<CO_UserCode>();
+
+                //comando.Parameters.AddWithValue("@sw", sw);
+
+                List<CO_Switch> Switchs = new List<CO_Switch>();
 
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        CO_UserCode Switch = new CO_UserCode();
-                        Switch.code = reader["Codigo"].ToString();
-                        Switch.descripcion = reader["Descripcion"].ToString();
+                        CO_Switch Switch = new CO_Switch();
+
+                        Switch.Codigo = reader["Codigo"].ToString();
+                        Switch.Descripcion = reader["Descripcion"].ToString();
+                        Switch.cod_sw = reader["codigo_sw"].ToString();
+                        Switch.desc_sw = reader["desc_sw"].ToString();
 
                         Switchs.Add(Switch);
                     }
@@ -128,5 +132,5 @@ namespace Capa_Datos
             return exitoso;
         }
     }
-    
+
 }
