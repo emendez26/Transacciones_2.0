@@ -47,8 +47,8 @@ namespace Proyecto_inventario
         private void Switch()
         {
             cmb_Tipo.DataSource = CN_trans.MostrarSwitch(28);
-            cmb_Tipo.ValueMember = "Codigo";
-            cmb_Tipo.DisplayMember = "Descripcion";
+            cmb_Tipo.ValueMember = "code";
+            cmb_Tipo.DisplayMember = "descripcion";
 
             //cmb_Tipo.DataSource = CN_trans.MostrarSwitch(32);
             //cmb_Tipo.ValueMember = "Codigo";
