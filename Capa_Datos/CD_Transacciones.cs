@@ -63,27 +63,26 @@ namespace Capa_Datos
 
         public List<CO_Switch> LoadSw()
         {
+            List<CO_Switch> Switchs = new List<CO_Switch>();
             try
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "[sp_Read_Switch]";
                 comando.CommandType = CommandType.StoredProcedure;
+                Switchs = new List<CO_Switch>();
 
-                //comando.Parameters.AddWithValue("@sw", sw);
-
-                List<CO_Switch> Switchs = new List<CO_Switch>();
+                Switchs.Add(new CO_Switch());
 
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         CO_Switch Switch = new CO_Switch();
-
-                        Switch.Codigo = reader["Codigo"].ToString();
-                        Switch.Descripcion = reader["Descripcion"].ToString();
                         Switch.cod_sw = reader["codigo_sw"].ToString();
                         Switch.desc_sw = reader["desc_sw"].ToString();
+                        Switch.cod_mov = reader["cod_mov"].ToString();
+                        Switch.desc_mov = reader["desc_mov"].ToString();
 
                         Switchs.Add(Switch);
                     }

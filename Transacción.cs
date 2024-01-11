@@ -31,6 +31,7 @@ namespace Proyecto_inventario
         CN_Transacciones CN_trans = new CN_Transacciones();
         CO_Detalles_Transacciones detTra = new CO_Detalles_Transacciones();
         CN_Detalles_Transacciones CN_detTrans = new CN_Detalles_Transacciones();
+        List<CO_Switch> switches = new List<CO_Switch>();
 
         private int Id = 0;
 
@@ -40,34 +41,28 @@ namespace Proyecto_inventario
         {
             InitializeComponent();
             transaccion = new CO_Transacciones();
-            //cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
-
         }
 
         private void Switch()
         {
-            List<CO_Switch> switches = new List<CO_Switch>();
-            switches= CN_trans.MostrarSwitch();
+            switches = CN_trans.MostrarSwitch();
 
-            var swt = from sw in switches
-                      select new { code = sw.cod_sw, descripcion = sw.desc_sw };
-
+            var swt = (from sw in switches
+                       where switches 
+                       select new { code = sw.cod_sw, descripcion = sw.desc_sw }).ToList();
             cmb_Tipo.DataSource = swt;
             cmb_Tipo.ValueMember = "code";
             cmb_Tipo.DisplayMember = "descripcion";
 
-            var mov = from sw in switches
-                      group sw by sw.cod_sw into sws
-                      select new { code = sws, descripcion = sws};
-
-            cmb_motivo.DataSource = mov;
-            cmb_motivo.ValueMember = "code";
-            cmb_motivo.DisplayMember = "descripcion";
+            //var mov = (from sw in switches
+            //           select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
+            //cmb_motivo.DataSource = mov;
+            //cmb_motivo.ValueMember = "code";
+            //cmb_motivo.DisplayMember = "descripcion";
         }
 
         private void Transacción_Load(object sender, EventArgs e)
         {
-            cmb_motivo.Enabled = false;
             ibtn_save.Enabled = false;
             cargarGrid();
             Switch();
@@ -128,8 +123,6 @@ namespace Proyecto_inventario
             detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetDataEquipo();
         }
-
-
         public void SetData()
         {
             txt_Ntransaccion.Text = transaccion.Numero_Transacciones.ToString();
@@ -161,7 +154,6 @@ namespace Proyecto_inventario
             string[] partesApellido = Empl.apellido.Split(' ');
             string primerNombre = partesNombre.Length > 0 ? partesNombre[0] : "";
             string primerApellido = partesApellido.Length > 0 ? partesApellido[0] : "";
-
             txt_cedula.Text = Empl.identificacion.ToString();
             txt_nombre.Text = $"{primerNombre} {primerApellido}";
             cmb_depart.SelectedValue = Empl.departamento.ToString();
@@ -173,7 +165,6 @@ namespace Proyecto_inventario
             cmb_area.DataSource = CN_emp.MostrarCod(2);
             cmb_area.DisplayMember = "descripcion";
             cmb_area.ValueMember = "code";
-
             cmb_depart.DataSource = CN_emp.MostrarCod(3);
             cmb_depart.DisplayMember = "descripcion";
             cmb_depart.ValueMember = "code";
@@ -260,7 +251,6 @@ namespace Proyecto_inventario
             }
         }
 
-
         public void agregarDetalleGrilla()
         {
 
@@ -299,28 +289,6 @@ namespace Proyecto_inventario
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             ValidCamp();
-
-            //if (cmb_Tipo.Text == "ENTRADA")
-            //{
-            //    cmb_motivo.Enabled = false;
-            //    cmb_motivo.Items.Clear();
-            //    cmb_motivo.Items.AddRange(motivosEntrada.ToArray());
-            //    txt_costo_det.Enabled = true;
-            //    cmb_motivo.Enabled = true;
-            //}
-            //else if (cmb_Tipo.Text == "SALIDA")
-            //{
-            //    cmb_motivo.Items.Clear();
-            //    cmb_motivo.Items.AddRange(motivosSalida.ToArray());
-            //    txt_costo_det.Enabled = false;
-            //    txt_costo_det.Text = "0";
-            //    cmb_motivo.Enabled = true;
-            //}
-            //else
-            //{
-            //    cmb_motivo.Items.Clear();
-            //    cmb_motivo.Enabled = false;
-            //}
         }
 
         private void ibtn_save_Click(object sender, EventArgs e)
@@ -354,7 +322,7 @@ namespace Proyecto_inventario
             {
                 Buscar formularioBuscar = new Buscar(2);
                 formularioBuscar.Show();
-               
+
             }
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
