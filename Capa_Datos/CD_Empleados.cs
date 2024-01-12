@@ -25,13 +25,14 @@ namespace Capa_Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public List<CO_Empleados> Read()
+        public List<CO_Empleados> Read(string buscar ="")
         {
             try
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "sp_Read_Empleados";
+                comando.Parameters.AddWithValue("@buscar", buscar);
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 DataTable table = new DataTable();

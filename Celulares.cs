@@ -16,7 +16,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace Proyecto_inventario
 
 {
-
     public partial class Celulares : Form
     {
         List<Capa_Objetos.CO_Celular> lista_celulares = new List<Capa_Objetos.CO_Celular>();

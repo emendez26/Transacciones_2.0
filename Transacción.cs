@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -57,7 +58,6 @@ namespace Proyecto_inventario
 
         private void Transacción_Load(object sender, EventArgs e)
         {
-            ibtn_save.Enabled = false;
             cargarGrid();
             Switch();
             ComboBox();
@@ -190,15 +190,17 @@ namespace Proyecto_inventario
             dg_transaccion.DataSource = lista_Detalles_Transacciones;
         }
 
-        private void ValidCamp()
+        private bool ValidCamp()
         {
-            var vr = !string.IsNullOrEmpty(txt_cedula.Text) &&
-                !string.IsNullOrEmpty(txt_cedula.Text) &&
-                !string.IsNullOrEmpty(cmb_motivo.Text) &&
-                !string.IsNullOrEmpty(cmb_Tipo.Text) &&
-                !string.IsNullOrEmpty(txt_usuario.Text) &&
-                !string.IsNullOrEmpty(txt_usuario.Text);
-            ibtn_save.Enabled = vr;
+            bool OK = true;
+
+            if (txt_usuario.Text == "")
+            {
+                OK = false;
+                errorProvider1.SetError(txt_usuario, "Ingrese un usuario para continuar");   
+            }
+
+            return OK;
         }
 
         private void limpiar()
@@ -223,6 +225,8 @@ namespace Proyecto_inventario
 
         public void guardar()
         {
+            ValidCamp();
+
             try
             {
                 string mensaje = "";
@@ -241,13 +245,12 @@ namespace Proyecto_inventario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                MessageBox.Show("Faltan campos por llenar");
             }
         }
 
         public void agregarDetalleGrilla()
         {
-
             GetDataDetalles();
             agregarDetalleGrilla();
 
@@ -282,7 +285,6 @@ namespace Proyecto_inventario
 
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ValidCamp();
             var mov = (from sw in switches
                        where sw.cod_sw == cmb_Tipo.SelectedValue
                        select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
@@ -318,11 +320,11 @@ namespace Proyecto_inventario
 
         private void txt_cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)13)
             {
-                Buscar formularioBuscar = new Buscar(2);
-                formularioBuscar.Show();
-
+                CD_Empleados empl = new CD_Empleados();
+                string codigo = txt_cedula.Text;
+                SetDataEmpleados(empl.Read(codigo).FirstOrDefault());
             }
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -341,7 +343,6 @@ namespace Proyecto_inventario
 
         private void txt_costo_det_TextChanged(object sender, EventArgs e)
         {
-            ValidCamp();
             if (decimal.TryParse(txt_costo_det.Text, out decimal costo))
             {
                 formato_moneda(costo);
@@ -364,10 +365,10 @@ namespace Proyecto_inventario
             if (e.KeyChar == (char)13)
             {
                 CD_Equipos eq = new CD_Equipos();
-                string codigo=txt_activo_det.Text;
+                string codigo = txt_activo_det.Text;
                 SetDataEquipos(eq.Read(codigo).FirstOrDefault());
             }
-                
+
         }
 
         private void ibtn_agg_Click(object sender, EventArgs e)
@@ -407,25 +408,6 @@ namespace Proyecto_inventario
             buscar.Show();
         }
 
-        private void txt_Ntransaccion_TextChanged(object sender, EventArgs e)
-        {
-            ValidCamp();
-        }
-
-        private void txt_cedula_TextChanged(object sender, EventArgs e)
-        {
-            ValidCamp();
-        }
-
-        private void txt_usuario_TextChanged(object sender, EventArgs e)
-        {
-            ValidCamp();
-        }
-
-        private void cmb_motivo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ValidCamp();
-        }
 
         private void dg_transaccion_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

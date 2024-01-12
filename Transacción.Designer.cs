@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -90,6 +91,7 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
+            errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -99,6 +101,7 @@
             panel2.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -213,7 +216,6 @@
             txt_Ntransaccion.Name = "txt_Ntransaccion";
             txt_Ntransaccion.Size = new Size(80, 30);
             txt_Ntransaccion.TabIndex = 1;
-            txt_Ntransaccion.TextChanged += txt_Ntransaccion_TextChanged;
             txt_Ntransaccion.KeyPress += txt_Ntransaccion_KeyPress;
             // 
             // label17
@@ -595,7 +597,6 @@
             txt_usuario.Name = "txt_usuario";
             txt_usuario.Size = new Size(221, 27);
             txt_usuario.TabIndex = 5;
-            txt_usuario.TextChanged += txt_usuario_TextChanged;
             // 
             // label7
             // 
@@ -628,7 +629,6 @@
             cmb_motivo.Name = "cmb_motivo";
             cmb_motivo.Size = new Size(221, 28);
             cmb_motivo.TabIndex = 3;
-            cmb_motivo.SelectedIndexChanged += cmb_motivo_SelectedIndexChanged;
             // 
             // ibtn_limpiar
             // 
@@ -820,7 +820,6 @@
             txt_cedula.Name = "txt_cedula";
             txt_cedula.Size = new Size(221, 30);
             txt_cedula.TabIndex = 7;
-            txt_cedula.TextChanged += txt_cedula_TextChanged;
             txt_cedula.KeyPress += txt_cedula_KeyPress;
             // 
             // label3
@@ -942,6 +941,10 @@
             iconButton4.Tag = "GUARDAR";
             iconButton4.UseVisualStyleBackColor = false;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Transacción
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -968,6 +971,7 @@
             panel2.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1032,5 +1036,6 @@
         private ComboBox cmb_area;
         public TextBox txt_descrip_det;
         private Label label18;
+        private ErrorProvider errorProvider1;
     }
 }
