@@ -68,9 +68,9 @@ namespace Proyecto_inventario
 
         private void Ocultar()
         {
-            dg_transaccion.Columns["Fecha_Transaccion"].Visible = false;
-            dg_transaccion.Columns["Id_Transacciones"].Visible = false;
-            dg_transaccion.Columns["Id"].Visible = false;
+            dg_detalles.Columns["Fecha_Transaccion"].Visible = false;
+            dg_detalles.Columns["Id_Transacciones"].Visible = false;
+            dg_detalles.Columns["Id"].Visible = false;
         }
 
         public CO_Transacciones GetData()
@@ -81,7 +81,7 @@ namespace Proyecto_inventario
             transaccion.Tipo_Transaccion = cmb_Tipo.Text;
             transaccion.Motivo = cmb_motivo.Text;
             transaccion.Usuario = txt_usuario.Text;
-             transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
+            transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
 
@@ -112,10 +112,9 @@ namespace Proyecto_inventario
 
         public void mostrarDatosDetalles()
         {
-            //Id = int.Parse(dg_transaccion.CurrentRow.Cells["id"].Value.ToString());
+            Id = int.Parse(dg_detalles.CurrentRow.Cells["id"].Value.ToString());
             detTra = new CO_Detalles_Transacciones();
-            //detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
-            detTra = lista_Detalles_Transacciones.FirstOrDefault();
+            detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetDataEquipo();
         }
         public void SetData()
@@ -180,20 +179,19 @@ namespace Proyecto_inventario
 
         private void AddGridDetallesDeTransaccion()
         {
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
-            lista_Detalles_Transacciones.AddRange(lista_Detalles_Transacciones);
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
+            dg_detalles.DataSource = null;
+            dg_detalles.Rows.Clear();
+            lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
+            dg_detalles.DataSource = lista_Detalles_Transacciones;
         }
 
         private void cargarGridDetalles()
         {
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
+            dg_detalles.DataSource = null;
+            dg_detalles.Rows.Clear();
             lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
             lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans(Id));
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
+            dg_detalles.DataSource = lista_Detalles_Transacciones;
         }
 
         private bool ValidCamp()
@@ -256,30 +254,32 @@ namespace Proyecto_inventario
 
         public void agregarDetalleGrilla()
         {
-            //GetDataDetalles();
-            
-            //    AddGridDetallesDeTransaccion();
-           
+            GetDataDetalles();
 
-          
+            //Agregar a la lista
+            lista_Detalles_Transacciones.Add(detTra);
+
+            //var lista = from id in lista_Detalles_Transacciones
+
+            //Agregar a la grilla
+            dg_detalles.DataSource = null;
+            dg_detalles.Rows.Clear();
+            dg_detalles.DataSource = lista_Detalles_Transacciones;
             Ocultar();
         }
 
         public void eliminar()
         {
-            if (dg_transaccion.SelectedRows.Count > 0)
+            if (dg_detalles.SelectedRows.Count > 0)
             {
                 lista_Detalles_Transacciones.Remove(detTra);
 
-                dg_transaccion.DataSource = null;
-                dg_transaccion.Rows.Clear();
-                dg_transaccion.DataSource = lista_Detalles_Transacciones;
+                dg_detalles.DataSource = null;
+                dg_detalles.Rows.Clear();
+                dg_detalles.DataSource = lista_Detalles_Transacciones;
 
                 Ocultar();
             }
-
-
-
         }
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
@@ -377,20 +377,8 @@ namespace Proyecto_inventario
 
         private void ibtn_agg_Click(object sender, EventArgs e)
         {
-
-
-            ////agregarDetalleGrilla();
-            GetDataDetalles();
-
-            //Agregar a la lista
-            lista_Detalles_Transacciones.Add(detTra);
-
-            //var lista = from id in lista_Detalles_Transacciones
-
-            //Agregar a la grilla
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
+            agregarDetalleGrilla();
+            
             Ocultar();
         }
 
@@ -412,12 +400,6 @@ namespace Proyecto_inventario
             Buscar buscar = new Buscar(equipo);
             buscar.contrato = this;
             buscar.Show();
-        }
-
-
-        private void dg_transaccion_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            mostrarDatosDetalles();
         }
     }
 }
