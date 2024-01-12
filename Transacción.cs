@@ -1,4 +1,5 @@
-﻿using Capa_Negocios;
+﻿using Capa_Datos;
+using Capa_Negocios;
 using Capa_Objetos;
 using System;
 using System.Collections.Generic;
@@ -48,17 +49,10 @@ namespace Proyecto_inventario
             switches = CN_trans.MostrarSwitch();
 
             var swt = (from sw in switches
-                       where switches 
-                       select new { code = sw.cod_sw, descripcion = sw.desc_sw }).ToList();
+                       select new { code = sw.cod_sw, descripcion = sw.desc_sw }).ToList().Distinct().ToList();
             cmb_Tipo.DataSource = swt;
             cmb_Tipo.ValueMember = "code";
             cmb_Tipo.DisplayMember = "descripcion";
-
-            //var mov = (from sw in switches
-            //           select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
-            //cmb_motivo.DataSource = mov;
-            //cmb_motivo.ValueMember = "code";
-            //cmb_motivo.DisplayMember = "descripcion";
         }
 
         private void Transacción_Load(object sender, EventArgs e)
@@ -288,7 +282,13 @@ namespace Proyecto_inventario
 
         private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValidCamp();
+            //ValidCamp();
+            var mov = (from sw in switches
+                       where sw.cod_sw == cmb_Tipo.SelectedValue
+                       select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
+            cmb_motivo.DataSource = mov;
+            cmb_motivo.ValueMember = "code";
+            cmb_motivo.DisplayMember = "descripcion";
         }
 
         private void ibtn_save_Click(object sender, EventArgs e)
@@ -360,6 +360,14 @@ namespace Proyecto_inventario
             {
                 e.Handled = true;
             }
+
+            if (e.KeyChar == (char)13)
+            {
+                CD_Equipos eq = new CD_Equipos();
+                string codigo=txt_activo_det.Text;
+                SetDataEquipos(eq.Read(codigo).FirstOrDefault());
+            }
+                
         }
 
         private void ibtn_agg_Click(object sender, EventArgs e)

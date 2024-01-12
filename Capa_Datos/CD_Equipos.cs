@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Capa_Datos;
 using Capa_Objetos;
+using System.Runtime.InteropServices;
 
 
 namespace Capa_Datos
@@ -26,13 +27,14 @@ namespace Capa_Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public List<CO_Equipos> Read()
+        public List<CO_Equipos> Read(string buscar="")
         {
             try
             {
                 conexion.iniciarBD(DB_TecnoFuego);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "[sp_Read_Equipo]";
+                comando.Parameters.AddWithValue("@buscar", buscar);
                 comando.CommandType = CommandType.StoredProcedure;
                 leer = comando.ExecuteReader();
                 DataTable table = new DataTable();
