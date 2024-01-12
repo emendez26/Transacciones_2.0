@@ -63,7 +63,7 @@ namespace Proyecto_inventario
             ComboBox();
             cargarGridDetalles();
             Ocultar();
-            //AddGridDetallesDeTransaccion();
+            //AddGridDetallesDeTransaccion()
         }
 
         private void Ocultar()
@@ -81,7 +81,7 @@ namespace Proyecto_inventario
             transaccion.Tipo_Transaccion = cmb_Tipo.Text;
             transaccion.Motivo = cmb_motivo.Text;
             transaccion.Usuario = txt_usuario.Text;
-            transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
+             transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
 
@@ -180,6 +180,9 @@ namespace Proyecto_inventario
 
         private void AddGridDetallesDeTransaccion()
         {
+            dg_transaccion.DataSource = null;
+            dg_transaccion.Rows.Clear();
+            dg_transaccion.DataSource = lista_Detalles_Transacciones;
             lista_Detalles_Transacciones.AddRange(lista_Detalles_Transacciones);
             dg_transaccion.DataSource = lista_Detalles_Transacciones;
         }
@@ -229,7 +232,6 @@ namespace Proyecto_inventario
         public void guardar()
         {
             ValidCamp();
-
             try
             {
                 string mensaje = "";
@@ -255,11 +257,11 @@ namespace Proyecto_inventario
         public void agregarDetalleGrilla()
         {
             //GetDataDetalles();
-            //agregarDetalleGrilla();
+            
+            //    AddGridDetallesDeTransaccion();
+           
 
-            dg_transaccion.DataSource = null;
-            dg_transaccion.Rows.Clear();
-            dg_transaccion.DataSource = lista_Detalles_Transacciones;
+          
             Ocultar();
         }
 
@@ -276,7 +278,7 @@ namespace Proyecto_inventario
                 Ocultar();
             }
 
-           
+
 
         }
 
@@ -375,14 +377,10 @@ namespace Proyecto_inventario
 
         private void ibtn_agg_Click(object sender, EventArgs e)
         {
-            //agregarDetalleGrilla();
-            detTra = new CO_Detalles_Transacciones();
 
-            detTra.Activo_Fijo = txt_activo_det.Text;
-            detTra.Observacion = txt_obser_det.Text;
-            detTra.Costo = double.Parse(txt_costo_det.Text);
-            detTra.Fecha_Movimiento = dtp_fmovimiento_det.Value;
-            detTra.Descripcion = txt_descrip_det.Text;
+
+            ////agregarDetalleGrilla();
+            GetDataDetalles();
 
             //Agregar a la lista
             lista_Detalles_Transacciones.Add(detTra);
