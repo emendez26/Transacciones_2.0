@@ -28,6 +28,7 @@ namespace Proyecto_inventario
 
         List<Capa_Objetos.CO_Transacciones> lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
         List<Capa_Objetos.CO_Detalles_Transacciones> lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
+        List<Capa_Objetos.CO_Empleados> lista_empleados = new List<Capa_Objetos.CO_Empleados>();
         CN_Empleados CN_emp = new CN_Empleados();
         CO_Transacciones transaccion = new CO_Transacciones();
         CN_Transacciones CN_trans = new CN_Transacciones();
@@ -62,8 +63,7 @@ namespace Proyecto_inventario
             Switch();
             ComboBox();
             cargarGridDetalles();
-            Ocultar();
-            //AddGridDetallesDeTransaccion()
+            //Ocultar();
         }
 
         private void Ocultar()
@@ -117,6 +117,7 @@ namespace Proyecto_inventario
             detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetDataEquipo();
         }
+
         public void SetData()
         {
             txt_Ntransaccion.Text = transaccion.Numero_Transacciones.ToString();
@@ -144,7 +145,7 @@ namespace Proyecto_inventario
 
         public void SetDataEmpleados(CO_Empleados Empl)
         {
-            if (!string.IsNullOrEmpty(Empl.identificacion))
+            if (Empl != null && !string.IsNullOrEmpty(Empl.identificacion))
             {
                 string[] partesNombre = Empl.nombre.Split(' ');
                 string[] partesApellido = Empl.apellido.Split(' ');
@@ -154,6 +155,14 @@ namespace Proyecto_inventario
                 txt_nombre.Text = $"{primerNombre} {primerApellido}";
                 cmb_depart.SelectedValue = Empl.departamento.ToString();
                 cmb_area.SelectedValue = Empl.area.ToString();
+            }
+            else
+            {
+                txt_nombre.Text = "";
+                cmb_depart.SelectedIndex = -1;
+                cmb_area.SelectedIndex = -1;
+
+                MessageBox.Show("No existe este empleado", "Empleado no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -177,21 +186,12 @@ namespace Proyecto_inventario
             dg_transaccion1.DataSource = trans.MostrarTrans();
         }
 
-        private void AddGridDetallesDeTransaccion()
-        {
-            dg_detalles.DataSource = null;
-            dg_detalles.Rows.Clear();
-            lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
-            dg_detalles.DataSource = lista_Detalles_Transacciones;
-        }
-
         private void cargarGridDetalles()
         {
             dg_detalles.DataSource = null;
             dg_detalles.Rows.Clear();
             lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
             lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans(Id));
-            dg_detalles.DataSource = lista_Detalles_Transacciones;
         }
 
         private bool ValidCamp()
@@ -238,7 +238,7 @@ namespace Proyecto_inventario
                     mensaje = "Registro Insertado Correctamente";
                     agregarDetalleGrilla();
                     cargarGrid();
-                    Ocultar();
+                    //Ocultar();
                 }
                 else
                 {
@@ -246,7 +246,7 @@ namespace Proyecto_inventario
                 }
                 MessageBox.Show(mensaje);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Faltan campos por llenar");
             }
@@ -305,6 +305,8 @@ namespace Proyecto_inventario
         private void dg_transaccion1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             mostrarDatos();
+
+            txt_cedula_KeyPress(sender, new KeyPressEventArgs((char)Keys.Enter));
         }
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
@@ -378,8 +380,8 @@ namespace Proyecto_inventario
         private void ibtn_agg_Click(object sender, EventArgs e)
         {
             agregarDetalleGrilla();
-            
-            Ocultar();
+
+            //Ocultar();
         }
 
         private void ibtn_delete_Click(object sender, EventArgs e)
