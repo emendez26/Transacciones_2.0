@@ -18,15 +18,5 @@ namespace Capa_Negocios
             tabla = CD_detTrans.Read(id);
             return tabla;
         }
-
-        public int InsertDetTrans(List<CO_Detalles_Transacciones> DetTransaccion)
-        {
-            return CD_detTrans.Insert(DetTransaccion);
-        }
-
-        public int DeleteDetTrans(int Id)
-        {
-            return CD_detTrans.Delete(Id);
-        }
     }
 }

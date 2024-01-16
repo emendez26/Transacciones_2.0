@@ -58,7 +58,7 @@ namespace Capa_Datos
             return Detalles_Transacciones;
         }
 
-        public int Insert(List<CO_Detalles_Transacciones> ListaDetalle)
+        public int Insert(int id, List<CO_Detalles_Transacciones> ListaDetalle)
         {
             int exitoso = 0;
             //PROCEDIMNIENTO
@@ -71,7 +71,7 @@ namespace Capa_Datos
                 {
                     comando.CommandText = "sp_Insert_Det_Transacciones";
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@Id_Transacciones", DetTransaccion.Id_Transacciones);
+                    comando.Parameters.AddWithValue("@Id_Transacciones", id);
                     comando.Parameters.AddWithValue("@Observacion", DetTransaccion.Observacion);
                     comando.Parameters.AddWithValue("@Fecha_Movimiento", DetTransaccion.Fecha_Movimiento);
                     comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);

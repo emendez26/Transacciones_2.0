@@ -16,6 +16,6 @@ namespace Capa_Objetos
         public string Usuario { get; set; }
         public int Cedula {  get; set; }
         public int Numero_Transacciones { get; set; }
-
+        public List<CO_Detalles_Transacciones> detalles { get; set; }
     }
 }

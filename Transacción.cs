@@ -84,6 +84,7 @@ namespace Proyecto_inventario
             transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
+            transaccion.detalles = lista_Detalles_Transacciones;
 
             return transaccion;
         }
@@ -238,7 +239,6 @@ namespace Proyecto_inventario
                 if (CN_trans.InsertTrans(GetData()) != 0)
                 {
                     mensaje = "Registro Insertado Correctamente";
-                    agregarDetalleGrilla();
                     cargarGrid();
                     limpiar();
                     Ocultar();

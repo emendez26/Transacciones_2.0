@@ -29,9 +29,15 @@ namespace Capa_Negocios
         }
         public int InsertTrans(CO_Transacciones Transaccion)
         {
-            return CD_trans.Insert(Transaccion);
+            int id = 0;
+            id = CD_trans.Insert(Transaccion);
+            if (id != 0)
+            {
+                CD_Detalles_Transacciones DetTrans = new CD_Detalles_Transacciones();
+                DetTrans.Insert(id, Transaccion.detalles);
+            }
+            return id;
         }
 
     }
 }
- 

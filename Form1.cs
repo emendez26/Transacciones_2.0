@@ -12,9 +12,14 @@ namespace Proyecto_inventario
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string usuario = "";
+
+        public Form1(string user)
         {
             InitializeComponent();
+            usuario = user;
+            lbluser.Text = "Usuario: " + usuario;
+            lbldatetime.Text = "Ult. Vez: " + DateTime.Now.ToString();
         }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
