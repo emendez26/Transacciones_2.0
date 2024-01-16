@@ -63,7 +63,7 @@ namespace Proyecto_inventario
             Switch();
             ComboBox();
             cargarGridDetalles();
-            //Ocultar();
+            Ocultar();
         }
 
         private void Ocultar()
@@ -192,6 +192,8 @@ namespace Proyecto_inventario
             dg_detalles.Rows.Clear();
             lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
             lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans(Id));
+            CN_Detalles_Transacciones DetTrans = new CN_Detalles_Transacciones();
+            dg_detalles.DataSource = DetTrans.MostrarDetTrans(Id);
         }
 
         private bool ValidCamp()
@@ -238,7 +240,8 @@ namespace Proyecto_inventario
                     mensaje = "Registro Insertado Correctamente";
                     agregarDetalleGrilla();
                     cargarGrid();
-                    //Ocultar();
+                    limpiar();
+                    Ocultar();
                 }
                 else
                 {
@@ -259,8 +262,6 @@ namespace Proyecto_inventario
             //Agregar a la lista
             lista_Detalles_Transacciones.Add(detTra);
 
-            //var lista = from id in lista_Detalles_Transacciones
-
             //Agregar a la grilla
             dg_detalles.DataSource = null;
             dg_detalles.Rows.Clear();
@@ -270,14 +271,21 @@ namespace Proyecto_inventario
 
         public void eliminar()
         {
-            if (dg_detalles.SelectedRows.Count > 0)
+            DataGridViewSelectedRowCollection selectedRows = dg_detalles.SelectedRows;
+            if (selectedRows.Count > 0)
             {
-                lista_Detalles_Transacciones.Remove(detTra);
-
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    int id = int.Parse(row.Cells["id"].Value.ToString());
+                    CO_Detalles_Transacciones detalle = lista_Detalles_Transacciones.FirstOrDefault(d => d.Id.Equals(id));
+                    if (detalle != null)
+                    {
+                        lista_Detalles_Transacciones.Remove(detalle);
+                    }
+                }
                 dg_detalles.DataSource = null;
                 dg_detalles.Rows.Clear();
                 dg_detalles.DataSource = lista_Detalles_Transacciones;
-
                 Ocultar();
             }
         }

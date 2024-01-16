@@ -794,7 +794,7 @@
             dg_detalles.AllowUserToResizeColumns = false;
             dg_detalles.AllowUserToResizeRows = false;
             dg_detalles.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dg_detalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dg_detalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dg_detalles.BackgroundColor = Color.White;
             dg_detalles.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dg_detalles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
