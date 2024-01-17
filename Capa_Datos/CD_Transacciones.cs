@@ -102,7 +102,7 @@ namespace Capa_Datos
 
         public int Insert(CO_Transacciones transaccion)
         {
-            int exitoso = 0;
+            int id = 0;
             //PROCEDIMNIENTO
             try
             {
@@ -117,8 +117,10 @@ namespace Capa_Datos
                 comando.Parameters.AddWithValue("@Cedula", transaccion.Cedula);
                 comando.Parameters.AddWithValue("@Numero_Transacciones", transaccion.Numero_Transacciones);
                 comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
+                comando.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                comando.ExecuteNonQuery();
 
-                exitoso = comando.ExecuteNonQuery();
+                id = (int) comando.Parameters["@id"].Value;
 
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
@@ -128,7 +130,7 @@ namespace Capa_Datos
                 MessageBox.Show("Message error : " + ex, "Error al guardar");
             }
 
-            return exitoso;
+            return id;
         }
     }
 

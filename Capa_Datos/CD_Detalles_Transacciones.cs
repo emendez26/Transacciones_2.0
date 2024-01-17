@@ -77,9 +77,9 @@ namespace Capa_Datos
                     comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
                     comando.Parameters.AddWithValue("@Costo", DetTransaccion.Costo);
                     comando.Parameters.AddWithValue("@Activo_Fijo", DetTransaccion.Activo_Fijo);
-                    comando.Parameters.Clear();
 
                     exitoso += comando.ExecuteNonQuery();
+                    comando.Parameters.Clear();
                 }
                 conexion.CerrarConexion();
             }

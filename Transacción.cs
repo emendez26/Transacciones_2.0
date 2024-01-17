@@ -81,7 +81,7 @@ namespace Proyecto_inventario
             transaccion.Tipo_Transaccion = cmb_Tipo.Text;
             transaccion.Motivo = cmb_motivo.Text;
             transaccion.Usuario = txt_usuario.Text;
-            transaccion.Numero_Transacciones = int.Parse(txt_Ntransaccion.Text);
+            transaccion.Numero_Transacciones = 5002; //int.Parse(txt_Ntransaccion.Text);
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
             transaccion.detalles = lista_Detalles_Transacciones;
@@ -127,6 +127,11 @@ namespace Proyecto_inventario
             dtp_Fmovimiento.Value = transaccion.Fecha_Transaccion;
             txt_usuario.Text = transaccion.Usuario;
             txt_cedula.Text = transaccion.Cedula.ToString();
+            dg_detalles.DataSource = null;
+            CD_Detalles_Transacciones det_trans = new CD_Detalles_Transacciones();
+            transaccion.detalles = det_trans.Read(transaccion.Id);
+            dg_detalles.Rows.Clear();
+            dg_detalles.DataSource = transaccion.detalles;
         }
 
         public void SetDataEquipo()
