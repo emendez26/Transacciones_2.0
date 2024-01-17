@@ -14,6 +14,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 
 namespace Proyecto_inventario
@@ -22,8 +23,8 @@ namespace Proyecto_inventario
     {
         //List<string> motivosEntrada = new List<string>() { "COMPRA", "DEVOLUCION", "OBSEQUIO" };
         //List<string> motivosSalida = new List<string>() { "DEVOLUCION", "ASIGNACIÓN", "PRESTAMO", "MANTENIMIENTO", "HURTO", "OBSOLETO", "PERDIDA" };
-        static int empleado = 2;
         static int equipo = 1;
+        static int empleado = 2;
         string usuario = "";
 
         List<Capa_Objetos.CO_Transacciones> lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
@@ -37,7 +38,6 @@ namespace Proyecto_inventario
         List<CO_Switch> switches = new List<CO_Switch>();
 
         private int Id = 0;
-
         public int pr = 0;
 
         public Transacción(string user)
@@ -46,6 +46,14 @@ namespace Proyecto_inventario
             transaccion = new CO_Transacciones();
             usuario = user;
             txt_usuario.Text = usuario;
+        }
+        private void Transacción_Load(object sender, EventArgs e)
+        {
+            Switch();
+            CargarCmb_DatosEmpleado();
+            cargarGrid();
+            cargarGridDetalles();
+            Ocultar();
         }
 
         private void Switch()
@@ -58,14 +66,52 @@ namespace Proyecto_inventario
             cmb_Tipo.ValueMember = "code";
             cmb_Tipo.DisplayMember = "descripcion";
         }
-
-        private void Transacción_Load(object sender, EventArgs e)
+        private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarGrid();
-            Switch();
-            ComboBox();
-            cargarGridDetalles();
-            Ocultar();
+            var mov = (from sw in switches
+                       where sw.cod_sw == cmb_Tipo.SelectedValue
+                       select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
+            cmb_motivo.DataSource = mov;
+            cmb_motivo.ValueMember = "code";
+            cmb_motivo.DisplayMember = "descripcion";
+
+            if (txt_costo_det.Text == "salida")
+            {
+                txt_costo_det.Enabled = false;
+            }
+            else if (txt_costo_det.Text == "entrada")
+            {
+                txt_costo_det.Enabled = true;
+            }
+        }
+
+        private void CargarCmb_DatosEmpleado()
+        {
+            cmb_area.DataSource = CN_emp.MostrarCod(2);
+            cmb_area.DisplayMember = "descripcion";
+            cmb_area.ValueMember = "code";
+            cmb_depart.DataSource = CN_emp.MostrarCod(3);
+            cmb_depart.DisplayMember = "descripcion";
+            cmb_depart.ValueMember = "code";
+        }
+        private void cargarGrid()
+        {
+            dg_transaccion1.DataSource = null;
+            dg_transaccion1.Rows.Clear();
+            lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
+            lista_transacciones.AddRange(CN_trans.MostrarTrans());
+            CN_Transacciones trans = new CN_Transacciones();
+            dg_transaccion1.DataSource = trans.MostrarTrans();
+        }
+
+        private void cargarGridDetalles()
+        {
+            dg_detalles.DataSource = null;
+            dg_detalles.Rows.Clear();
+            lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
+            lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans(Id));
+            CN_Detalles_Transacciones DetTrans = new CN_Detalles_Transacciones();
+            dg_detalles.DataSource = DetTrans.MostrarDetTrans(Id);
         }
 
         private void Ocultar()
@@ -83,7 +129,7 @@ namespace Proyecto_inventario
             transaccion.Tipo_Transaccion = cmb_Tipo.Text;
             transaccion.Motivo = cmb_motivo.Text;
             transaccion.Usuario = txt_usuario.Text;
-            transaccion.Numero_Transacciones = 1000;
+            transaccion.Numero_Transacciones = 5002;
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
             transaccion.detalles = lista_Detalles_Transacciones;
@@ -111,14 +157,6 @@ namespace Proyecto_inventario
             transaccion = new CO_Transacciones();
             transaccion = lista_transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
             SetData();
-        }
-
-        public void mostrarDatosDetalles()
-        {
-            Id = int.Parse(dg_detalles.CurrentRow.Cells["id"].Value.ToString());
-            detTra = new CO_Detalles_Transacciones();
-            detTra = lista_Detalles_Transacciones.Where(e => e.Id.Equals(Id)).FirstOrDefault();
-            SetDataEquipo();
         }
 
         public void SetData()
@@ -174,36 +212,6 @@ namespace Proyecto_inventario
             }
         }
 
-        private void ComboBox()
-        {
-            cmb_area.DataSource = CN_emp.MostrarCod(2);
-            cmb_area.DisplayMember = "descripcion";
-            cmb_area.ValueMember = "code";
-            cmb_depart.DataSource = CN_emp.MostrarCod(3);
-            cmb_depart.DisplayMember = "descripcion";
-            cmb_depart.ValueMember = "code";
-        }
-
-        private void cargarGrid()
-        {
-            dg_transaccion1.DataSource = null;
-            dg_transaccion1.Rows.Clear();
-            lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
-            lista_transacciones.AddRange(CN_trans.MostrarTrans());
-            CN_Transacciones trans = new CN_Transacciones();
-            dg_transaccion1.DataSource = trans.MostrarTrans();
-        }
-
-        private void cargarGridDetalles()
-        {
-            dg_detalles.DataSource = null;
-            dg_detalles.Rows.Clear();
-            lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
-            lista_Detalles_Transacciones.AddRange(CN_detTrans.MostrarDetTrans(Id));
-            CN_Detalles_Transacciones DetTrans = new CN_Detalles_Transacciones();
-            dg_detalles.DataSource = DetTrans.MostrarDetTrans(Id);
-        }
-
         private void limpiar()
         {
             transaccion = new CO_Transacciones();
@@ -217,7 +225,6 @@ namespace Proyecto_inventario
             dtp_Fmovimiento.Text = string.Empty;
             txt_cedula.Text = string.Empty;
             txt_Ntransaccion.Text = string.Empty;
-            txt_observ.Text = string.Empty;
             cmb_Tipo.SelectedIndex = -1;
             cmb_motivo.SelectedIndex = -1;
             txt_descrip_det.Text = string.Empty;
@@ -284,26 +291,58 @@ namespace Proyecto_inventario
                 Ocultar();
             }
         }
+        private void ibtn_agg_Click(object sender, EventArgs e)
+        {
+            agregarDetalleGrilla();
+            txt_activo_det.Text = "";
+            txt_costo_det.Text = "";
+            txt_descrip_det.Text = "";
+            txt_obser_det.Text = "";
+        }
+        private void ibtn_save_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+        private void ibtn_nuevo_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            txt_obser_det.Enabled = true;
+            dtp_fmovimiento_det.Enabled = true;
+            dtp_Fmovimiento.Enabled = true;
+            cmb_motivo.Enabled = true;
+            cmb_Tipo.Enabled = true;
+            txt_activo_det.Enabled = true;
+            txt_costo_det.Enabled = true;
+            txt_cedula.Enabled = true;
+            ibtn_agg.Enabled = true;
+            ibtn_buscar_activo.Enabled = true;
+            ibtn_buscar_id.Enabled = true;
+            ibtn_delete.Enabled = true;
+            ibtn_save.Enabled = true;
+            dg_transaccion1.Enabled = false;
+        }
+
+        private void ibtn_delete_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
 
         private void ibtn_limpiar_Click(object sender, EventArgs e)
         {
             limpiar();
         }
-
-        private void cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void ibtn_buscar_id_Click(object sender, EventArgs e)
         {
-            var mov = (from sw in switches
-                       where sw.cod_sw == cmb_Tipo.SelectedValue
-                       select new { code = sw.cod_mov, descripcion = sw.desc_mov }).ToList();
-            cmb_motivo.DataSource = mov;
-            cmb_motivo.ValueMember = "code";
-            cmb_motivo.DisplayMember = "descripcion";
+            Buscar buscar = new Buscar(empleado);
+            buscar.contratoEmpleados = this;
+            buscar.Show();
         }
 
-        private void ibtn_save_Click(object sender, EventArgs e)
+        private void ibtn_buscar_activo_Click(object sender, EventArgs e)
         {
-            guardar();
-            limpiar();
+            Buscar buscar = new Buscar(equipo);
+            buscar.contrato = this;
+            buscar.Show();
         }
 
         private void dg_transaccion1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -316,7 +355,7 @@ namespace Proyecto_inventario
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
             string coincidencia = txt_buscar.Text;
-            var results = lista_transacciones.Where(X => X.Id.ToString().Contains(coincidencia) || X.Cedula.ToString().Contains(coincidencia)).Select(X => X).ToList();
+            var results = lista_transacciones.Where(X => X.Numero_Transacciones.ToString().Contains(coincidencia) || X.Cedula.ToString().Contains(coincidencia)).Select(X => X).ToList();
             dg_transaccion1.DataSource = results;
         }
 
@@ -379,35 +418,6 @@ namespace Proyecto_inventario
                 SetDataEquipos(eq.Read(codigo).FirstOrDefault());
             }
 
-        }
-
-        private void ibtn_agg_Click(object sender, EventArgs e)
-        {
-            agregarDetalleGrilla();
-            txt_activo_det.Text = "";
-            txt_costo_det.Text = "";
-            txt_descrip_det.Text = "";
-            txt_obser_det.Text = "";
-        }
-
-        private void ibtn_delete_Click(object sender, EventArgs e)
-        {
-            eliminar();
-        }
-
-
-        private void ibtn_buscar_id_Click(object sender, EventArgs e)
-        {
-            Buscar buscar = new Buscar(empleado);
-            buscar.contratoEmpleados = this;
-            buscar.Show();
-        }
-
-        private void ibtn_buscar_activo_Click(object sender, EventArgs e)
-        {
-            Buscar buscar = new Buscar(equipo);
-            buscar.contrato = this;
-            buscar.Show();
         }
     }
 }

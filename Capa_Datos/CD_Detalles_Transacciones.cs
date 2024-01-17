@@ -44,6 +44,7 @@ namespace Capa_Datos
                     DetTransacciones.Fecha_Transaccion = DateTime.Parse(dr[4].ToString());
                     DetTransacciones.Costo = double.Parse(dr[5].ToString());
                     DetTransacciones.Activo_Fijo = dr[6].ToString();
+                    DetTransacciones.Descripcion = dr[7].ToString();
 
 
                     Detalles_Transacciones.Add(DetTransacciones);
@@ -76,7 +77,7 @@ namespace Capa_Datos
                     comando.Parameters.AddWithValue("@Fecha_Movimiento", DetTransaccion.Fecha_Movimiento);
                     comando.Parameters.AddWithValue("@Fecha_Transaccion", DateTime.Now);
                     comando.Parameters.AddWithValue("@Costo", DetTransaccion.Costo);
-                    comando.Parameters.AddWithValue("@Activo_Fijo", DetTransaccion.Activo_Fijo);
+                    comando.Parameters.AddWithValue("@Activo_Fijo", DetTransaccion.Activo_Fijo); 
 
                     exitoso += comando.ExecuteNonQuery();
                     comando.Parameters.Clear();

@@ -15,11 +15,13 @@ namespace Proyecto_inventario
         public Login()
         {
             InitializeComponent();
+            txt_usuario.Text = "admin";
+            txt_contraseña.Text = "admin";
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txt_usuario.Text == "admin" && txt_contraseña.Text == "admin" || txt_usuario.Text == "usuario" && txt_contraseña.Text == "usuario")
+            if ((txt_usuario.Text == "admin" && txt_contraseña.Text == "admin") || (txt_usuario.Text == "usuario" && txt_contraseña.Text == "usuario"))
             {
                 Form1 form = new Form1(txt_usuario.Text);
                 this.Hide();
@@ -43,6 +45,14 @@ namespace Proyecto_inventario
             if (e.KeyChar == (char)13)
             {
                 btn_login_Click(sender, new KeyPressEventArgs((char)Keys.Enter));
+            }
+        }
+
+        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txt_contraseña.Focus();
             }
         }
     }
