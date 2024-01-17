@@ -45,10 +45,5 @@ namespace Proyecto_inventario
                 btn_login_Click(sender, new KeyPressEventArgs((char)Keys.Enter));
             }
         }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

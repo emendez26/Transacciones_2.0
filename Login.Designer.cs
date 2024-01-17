@@ -43,18 +43,20 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(389, 70);
+            label1.Location = new Point(311, 56);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(86, 30);
+            label1.Size = new Size(77, 25);
             label1.TabIndex = 0;
             label1.Text = "Usuario";
             // 
             // txt_usuario
             // 
             txt_usuario.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txt_usuario.Location = new Point(389, 117);
+            txt_usuario.Location = new Point(311, 94);
+            txt_usuario.Margin = new Padding(2, 2, 2, 2);
             txt_usuario.Name = "txt_usuario";
-            txt_usuario.Size = new Size(294, 31);
+            txt_usuario.Size = new Size(236, 27);
             txt_usuario.TabIndex = 1;
             // 
             // label2
@@ -62,18 +64,20 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(389, 187);
+            label2.Location = new Point(311, 150);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(122, 30);
+            label2.Size = new Size(108, 25);
             label2.TabIndex = 2;
             label2.Text = "Contraseña";
             // 
             // txt_contraseña
             // 
             txt_contraseña.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txt_contraseña.Location = new Point(389, 234);
+            txt_contraseña.Location = new Point(311, 187);
+            txt_contraseña.Margin = new Padding(2, 2, 2, 2);
             txt_contraseña.Name = "txt_contraseña";
-            txt_contraseña.Size = new Size(294, 31);
+            txt_contraseña.Size = new Size(236, 27);
             txt_contraseña.TabIndex = 3;
             txt_contraseña.UseSystemPasswordChar = true;
             txt_contraseña.KeyPress += txt_contraseña_KeyPress;
@@ -88,9 +92,10 @@
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btn_login.ForeColor = Color.White;
-            btn_login.Location = new Point(389, 318);
+            btn_login.Location = new Point(311, 254);
+            btn_login.Margin = new Padding(2, 2, 2, 2);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(294, 73);
+            btn_login.Size = new Size(235, 58);
             btn_login.TabIndex = 4;
             btn_login.Text = "Iniciar Sesión";
             btn_login.UseVisualStyleBackColor = false;
@@ -102,19 +107,18 @@
             pictureBox4.Dock = DockStyle.Left;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(0, 0);
-            pictureBox4.Margin = new Padding(2, 4, 2, 4);
+            pictureBox4.Margin = new Padding(2, 3, 2, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(344, 479);
+            pictureBox4.Size = new Size(275, 383);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(731, 479);
+            ClientSize = new Size(585, 383);
             Controls.Add(pictureBox4);
             Controls.Add(btn_login);
             Controls.Add(txt_contraseña);
@@ -122,6 +126,8 @@
             Controls.Add(txt_usuario);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

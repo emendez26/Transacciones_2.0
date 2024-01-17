@@ -396,6 +396,7 @@
             // txt_descrip_det
             // 
             txt_descrip_det.CharacterCasing = CharacterCasing.Upper;
+            txt_descrip_det.Enabled = false;
             txt_descrip_det.Location = new Point(177, 115);
             txt_descrip_det.Margin = new Padding(2, 3, 2, 3);
             txt_descrip_det.Name = "txt_descrip_det";
@@ -470,6 +471,7 @@
             // txt_costo_det
             // 
             txt_costo_det.CharacterCasing = CharacterCasing.Upper;
+            txt_costo_det.Enabled = false;
             txt_costo_det.Location = new Point(177, 75);
             txt_costo_det.Margin = new Padding(2, 3, 2, 3);
             txt_costo_det.Name = "txt_costo_det";
@@ -592,6 +594,7 @@
             // txt_usuario
             // 
             txt_usuario.CharacterCasing = CharacterCasing.Upper;
+            txt_usuario.Enabled = false;
             txt_usuario.Location = new Point(657, 186);
             txt_usuario.Margin = new Padding(2, 3, 2, 3);
             txt_usuario.Name = "txt_usuario";

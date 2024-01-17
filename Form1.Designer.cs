@@ -45,6 +45,7 @@
             btn_Celulares = new FontAwesome.Sharp.IconButton();
             btn_equipo = new FontAwesome.Sharp.IconButton();
             margen = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lbldatetime = new Label();
             lbluser = new Label();
             pb_logo = new PictureBox();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel_lateral.SuspendLayout();
             margen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tableLayoutPanel2.SuspendLayout();
@@ -177,9 +179,9 @@
             panel_lateral.Controls.Add(margen);
             panel_lateral.Dock = DockStyle.Left;
             panel_lateral.Location = new Point(0, 0);
-            panel_lateral.Margin = new Padding(2, 4, 2, 4);
+            panel_lateral.Margin = new Padding(2, 3, 2, 3);
             panel_lateral.Name = "panel_lateral";
-            panel_lateral.Size = new Size(481, 1226);
+            panel_lateral.Size = new Size(398, 844);
             panel_lateral.TabIndex = 0;
             // 
             // btn_licencias
@@ -198,11 +200,11 @@
             btn_licencias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_licencias.IconSize = 65;
             btn_licencias.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_licencias.Location = new Point(0, 810);
-            btn_licencias.Margin = new Padding(2, 4, 2, 4);
+            btn_licencias.Location = new Point(0, 647);
+            btn_licencias.Margin = new Padding(2, 3, 2, 3);
             btn_licencias.Name = "btn_licencias";
-            btn_licencias.Padding = new Padding(0, 16, 0, 16);
-            btn_licencias.Size = new Size(481, 114);
+            btn_licencias.Padding = new Padding(0, 13, 0, 13);
+            btn_licencias.Size = new Size(398, 91);
             btn_licencias.TabIndex = 48;
             btn_licencias.Text = "Licencias";
             btn_licencias.TextAlign = ContentAlignment.MiddleLeft;
@@ -226,11 +228,11 @@
             btn_Lineas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Lineas.IconSize = 65;
             btn_Lineas.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Lineas.Location = new Point(0, 696);
-            btn_Lineas.Margin = new Padding(2, 4, 2, 4);
+            btn_Lineas.Location = new Point(0, 556);
+            btn_Lineas.Margin = new Padding(2, 3, 2, 3);
             btn_Lineas.Name = "btn_Lineas";
-            btn_Lineas.Padding = new Padding(0, 16, 0, 16);
-            btn_Lineas.Size = new Size(481, 114);
+            btn_Lineas.Padding = new Padding(0, 13, 0, 13);
+            btn_Lineas.Size = new Size(398, 91);
             btn_Lineas.TabIndex = 47;
             btn_Lineas.Text = "Lineas Telefonicas";
             btn_Lineas.TextAlign = ContentAlignment.MiddleLeft;
@@ -254,11 +256,11 @@
             btn_Repuestos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Repuestos.IconSize = 65;
             btn_Repuestos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Repuestos.Location = new Point(0, 582);
-            btn_Repuestos.Margin = new Padding(2, 4, 2, 4);
+            btn_Repuestos.Location = new Point(0, 465);
+            btn_Repuestos.Margin = new Padding(2, 3, 2, 3);
             btn_Repuestos.Name = "btn_Repuestos";
-            btn_Repuestos.Padding = new Padding(0, 16, 0, 16);
-            btn_Repuestos.Size = new Size(481, 114);
+            btn_Repuestos.Padding = new Padding(0, 13, 0, 13);
+            btn_Repuestos.Size = new Size(398, 91);
             btn_Repuestos.TabIndex = 46;
             btn_Repuestos.Text = "Repuestos";
             btn_Repuestos.TextAlign = ContentAlignment.MiddleLeft;
@@ -282,11 +284,11 @@
             btn_Celulares.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Celulares.IconSize = 65;
             btn_Celulares.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Celulares.Location = new Point(0, 468);
-            btn_Celulares.Margin = new Padding(2, 4, 2, 4);
+            btn_Celulares.Location = new Point(0, 374);
+            btn_Celulares.Margin = new Padding(2, 3, 2, 3);
             btn_Celulares.Name = "btn_Celulares";
-            btn_Celulares.Padding = new Padding(0, 16, 0, 16);
-            btn_Celulares.Size = new Size(481, 114);
+            btn_Celulares.Padding = new Padding(0, 13, 0, 13);
+            btn_Celulares.Size = new Size(398, 91);
             btn_Celulares.TabIndex = 45;
             btn_Celulares.Text = "Celulares";
             btn_Celulares.TextAlign = ContentAlignment.MiddleLeft;
@@ -310,11 +312,11 @@
             btn_equipo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_equipo.IconSize = 65;
             btn_equipo.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_equipo.Location = new Point(0, 354);
-            btn_equipo.Margin = new Padding(2, 4, 2, 4);
+            btn_equipo.Location = new Point(0, 283);
+            btn_equipo.Margin = new Padding(2, 3, 2, 3);
             btn_equipo.Name = "btn_equipo";
-            btn_equipo.Padding = new Padding(0, 16, 0, 16);
-            btn_equipo.Size = new Size(481, 114);
+            btn_equipo.Padding = new Padding(0, 13, 0, 13);
+            btn_equipo.Size = new Size(398, 91);
             btn_equipo.TabIndex = 41;
             btn_equipo.Text = "Equipos";
             btn_equipo.TextAlign = ContentAlignment.MiddleLeft;
@@ -325,47 +327,65 @@
             // margen
             // 
             margen.BackColor = Color.Firebrick;
+            margen.Controls.Add(iconPictureBox1);
             margen.Controls.Add(lbldatetime);
             margen.Controls.Add(lbluser);
             margen.Controls.Add(pb_logo);
             margen.Dock = DockStyle.Top;
             margen.Location = new Point(0, 0);
-            margen.Margin = new Padding(2, 4, 2, 4);
+            margen.Margin = new Padding(2, 3, 2, 3);
             margen.Name = "margen";
-            margen.Size = new Size(481, 354);
+            margen.Size = new Size(398, 283);
             margen.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.Firebrick;
+            iconPictureBox1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            iconPictureBox1.ForeColor = Color.LightGray;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
+            iconPictureBox1.IconColor = Color.LightGray;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 81;
+            iconPictureBox1.Location = new Point(-2, 178);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(81, 85);
+            iconPictureBox1.TabIndex = 5;
+            iconPictureBox1.TabStop = false;
             // 
             // lbldatetime
             // 
             lbldatetime.AutoSize = true;
-            lbldatetime.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbldatetime.Font = new Font("Calibri", 13F, FontStyle.Bold, GraphicsUnit.Point);
             lbldatetime.ForeColor = Color.White;
-            lbldatetime.Location = new Point(12, 292);
+            lbldatetime.Location = new Point(75, 223);
+            lbldatetime.Margin = new Padding(2, 0, 2, 0);
             lbldatetime.Name = "lbldatetime";
-            lbldatetime.Size = new Size(86, 35);
+            lbldatetime.Size = new Size(82, 27);
             lbldatetime.TabIndex = 4;
-            lbldatetime.Text = "label1";
+            lbldatetime.Text = "Ult. Vez";
             // 
             // lbluser
             // 
             lbluser.AutoSize = true;
-            lbluser.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbluser.Font = new Font("Calibri", 13F, FontStyle.Bold, GraphicsUnit.Point);
             lbluser.ForeColor = Color.White;
-            lbluser.Location = new Point(12, 213);
+            lbluser.Location = new Point(75, 188);
+            lbluser.Margin = new Padding(2, 0, 2, 0);
             lbluser.Name = "lbluser";
-            lbluser.Size = new Size(86, 35);
+            lbluser.Size = new Size(83, 27);
             lbluser.TabIndex = 3;
-            lbluser.Text = "label1";
+            lbluser.Text = "Usuario";
             // 
             // pb_logo
             // 
             pb_logo.BackColor = Color.Transparent;
             pb_logo.ErrorImage = (Image)resources.GetObject("pb_logo.ErrorImage");
             pb_logo.Image = (Image)resources.GetObject("pb_logo.Image");
-            pb_logo.Location = new Point(-20, -96);
-            pb_logo.Margin = new Padding(2, 4, 2, 4);
+            pb_logo.Location = new Point(-16, -77);
+            pb_logo.Margin = new Padding(2, 3, 2, 3);
             pb_logo.Name = "pb_logo";
-            pb_logo.Size = new Size(501, 369);
+            pb_logo.Size = new Size(401, 295);
             pb_logo.SizeMode = PictureBoxSizeMode.Zoom;
             pb_logo.TabIndex = 2;
             pb_logo.TabStop = false;
@@ -414,10 +434,10 @@
             btn_empleado.IconColor = Color.LightGray;
             btn_empleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_empleado.IconSize = 55;
-            btn_empleado.Location = new Point(11, 31);
-            btn_empleado.Margin = new Padding(2, 4, 2, 4);
+            btn_empleado.Location = new Point(4, 25);
+            btn_empleado.Margin = new Padding(2, 3, 2, 3);
             btn_empleado.Name = "btn_empleado";
-            btn_empleado.Size = new Size(275, 89);
+            btn_empleado.Size = new Size(220, 71);
             btn_empleado.TabIndex = 23;
             btn_empleado.Text = "Empleado";
             btn_empleado.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -441,10 +461,10 @@
             btn_reporte.IconColor = Color.LightGray;
             btn_reporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_reporte.IconSize = 55;
-            btn_reporte.Location = new Point(615, 31);
-            btn_reporte.Margin = new Padding(2, 4, 2, 4);
+            btn_reporte.Location = new Point(466, 25);
+            btn_reporte.Margin = new Padding(2, 3, 2, 3);
             btn_reporte.Name = "btn_reporte";
-            btn_reporte.Size = new Size(259, 89);
+            btn_reporte.Size = new Size(207, 71);
             btn_reporte.TabIndex = 24;
             btn_reporte.Text = "Reportes";
             btn_reporte.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -468,10 +488,10 @@
             btn_Dashboard.IconColor = Color.LightGray;
             btn_Dashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Dashboard.IconSize = 55;
-            btn_Dashboard.Location = new Point(302, 31);
-            btn_Dashboard.Margin = new Padding(2, 4, 2, 4);
+            btn_Dashboard.Location = new Point(230, 25);
+            btn_Dashboard.Margin = new Padding(2, 3, 2, 3);
             btn_Dashboard.Name = "btn_Dashboard";
-            btn_Dashboard.Size = new Size(290, 89);
+            btn_Dashboard.Size = new Size(223, 71);
             btn_Dashboard.TabIndex = 26;
             btn_Dashboard.Text = "Dashboard";
             btn_Dashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -495,10 +515,10 @@
             btn_Stock.IconColor = Color.LightGray;
             btn_Stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Stock.IconSize = 55;
-            btn_Stock.Location = new Point(945, 31);
-            btn_Stock.Margin = new Padding(2, 4, 2, 4);
+            btn_Stock.Location = new Point(719, 25);
+            btn_Stock.Margin = new Padding(2, 3, 2, 3);
             btn_Stock.Name = "btn_Stock";
-            btn_Stock.Size = new Size(196, 89);
+            btn_Stock.Size = new Size(157, 71);
             btn_Stock.TabIndex = 25;
             btn_Stock.Text = "Stock";
             btn_Stock.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -520,12 +540,11 @@
             tableLayoutPanel2.Controls.Add(btn_Transaccion, 4, 0);
             tableLayoutPanel2.Controls.Add(btn_Dashboard, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Location = new Point(481, 0);
-            tableLayoutPanel2.Margin = new Padding(4);
+            tableLayoutPanel2.Location = new Point(398, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1493, 152);
+            tableLayoutPanel2.Size = new Size(1141, 122);
             tableLayoutPanel2.TabIndex = 5;
             // 
             // btn_Transaccion
@@ -545,10 +564,10 @@
             btn_Transaccion.IconColor = Color.LightGray;
             btn_Transaccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_Transaccion.IconSize = 70;
-            btn_Transaccion.Location = new Point(1194, 28);
-            btn_Transaccion.Margin = new Padding(2, 4, 2, 4);
+            btn_Transaccion.Location = new Point(914, 23);
+            btn_Transaccion.Margin = new Padding(2, 3, 2, 3);
             btn_Transaccion.Name = "btn_Transaccion";
-            btn_Transaccion.Size = new Size(297, 95);
+            btn_Transaccion.Size = new Size(225, 76);
             btn_Transaccion.TabIndex = 27;
             btn_Transaccion.Text = "Transaccion";
             btn_Transaccion.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -560,18 +579,17 @@
             panelFormulario.BackColor = Color.White;
             panelFormulario.Controls.Add(pictureBox4);
             panelFormulario.Dock = DockStyle.Fill;
-            panelFormulario.Location = new Point(481, 152);
-            panelFormulario.Margin = new Padding(4);
+            panelFormulario.Location = new Point(398, 122);
             panelFormulario.Name = "panelFormulario";
-            panelFormulario.Size = new Size(1493, 1074);
+            panelFormulario.Size = new Size(1141, 722);
             panelFormulario.TabIndex = 6;
             // 
             // pictureBox4
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(311, 295);
-            pictureBox4.Margin = new Padding(2, 4, 2, 4);
+            pictureBox4.Location = new Point(222, 168);
+            pictureBox4.Margin = new Padding(2, 3, 2, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(707, 353);
             pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -580,15 +598,15 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1974, 1226);
+            ClientSize = new Size(1539, 844);
             Controls.Add(panelFormulario);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(panel_lateral);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 4, 2, 4);
-            MinimumSize = new Size(1807, 1018);
+            Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(1449, 824);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Transacciones de Inventarios";
@@ -601,6 +619,7 @@
             panel_lateral.ResumeLayout(false);
             margen.ResumeLayout(false);
             margen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
@@ -641,5 +660,6 @@
         private FontAwesome.Sharp.IconButton btn_equipo;
         private Label lbldatetime;
         private Label lbluser;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

@@ -22,9 +22,9 @@ namespace Proyecto_inventario
     {
         //List<string> motivosEntrada = new List<string>() { "COMPRA", "DEVOLUCION", "OBSEQUIO" };
         //List<string> motivosSalida = new List<string>() { "DEVOLUCION", "ASIGNACIÓN", "PRESTAMO", "MANTENIMIENTO", "HURTO", "OBSOLETO", "PERDIDA" };
-
         static int empleado = 2;
         static int equipo = 1;
+        string usuario = "";
 
         List<Capa_Objetos.CO_Transacciones> lista_transacciones = new List<Capa_Objetos.CO_Transacciones>();
         List<Capa_Objetos.CO_Detalles_Transacciones> lista_Detalles_Transacciones = new List<Capa_Objetos.CO_Detalles_Transacciones>();
@@ -40,10 +40,12 @@ namespace Proyecto_inventario
 
         public int pr = 0;
 
-        public Transacción()
+        public Transacción(string user)
         {
             InitializeComponent();
             transaccion = new CO_Transacciones();
+            usuario = user;
+            txt_usuario.Text = usuario;
         }
 
         private void Switch()
@@ -81,7 +83,7 @@ namespace Proyecto_inventario
             transaccion.Tipo_Transaccion = cmb_Tipo.Text;
             transaccion.Motivo = cmb_motivo.Text;
             transaccion.Usuario = txt_usuario.Text;
-            transaccion.Numero_Transacciones = 5002; //int.Parse(txt_Ntransaccion.Text);
+            transaccion.Numero_Transacciones = 1000;
             transaccion.Fecha_Transaccion = DateTime.Parse(dtp_Fmovimiento.Text);
             transaccion.Cedula = int.Parse(txt_cedula.Text);
             transaccion.detalles = lista_Detalles_Transacciones;
@@ -202,19 +204,6 @@ namespace Proyecto_inventario
             dg_detalles.DataSource = DetTrans.MostrarDetTrans(Id);
         }
 
-        private bool ValidCamp()
-        {
-            bool OK = true;
-
-            if (txt_usuario.Text == "")
-            {
-                OK = false;
-                errorProvider1.SetError(txt_usuario, "Ingrese un usuario para continuar");
-            }
-
-            return OK;
-        }
-
         private void limpiar()
         {
             transaccion = new CO_Transacciones();
@@ -228,16 +217,18 @@ namespace Proyecto_inventario
             dtp_Fmovimiento.Text = string.Empty;
             txt_cedula.Text = string.Empty;
             txt_Ntransaccion.Text = string.Empty;
-            txt_usuario.Text = string.Empty;
             txt_observ.Text = string.Empty;
             cmb_Tipo.SelectedIndex = -1;
             cmb_motivo.SelectedIndex = -1;
             txt_descrip_det.Text = string.Empty;
+            dg_detalles.DataSource = null;
+            dg_detalles.Rows.Clear();
+            dg_detalles.DataSource = lista_Detalles_Transacciones;
+            Ocultar();
         }
 
         public void guardar()
         {
-            ValidCamp();
             try
             {
                 string mensaje = "";
@@ -245,7 +236,6 @@ namespace Proyecto_inventario
                 {
                     mensaje = "Registro Insertado Correctamente";
                     cargarGrid();
-                    limpiar();
                     Ocultar();
                 }
                 else
@@ -313,12 +303,13 @@ namespace Proyecto_inventario
         private void ibtn_save_Click(object sender, EventArgs e)
         {
             guardar();
+            limpiar();
         }
 
         private void dg_transaccion1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             mostrarDatos();
-
+            Ocultar();
             txt_cedula_KeyPress(sender, new KeyPressEventArgs((char)Keys.Enter));
         }
 
@@ -393,8 +384,10 @@ namespace Proyecto_inventario
         private void ibtn_agg_Click(object sender, EventArgs e)
         {
             agregarDetalleGrilla();
-
-            //Ocultar();
+            txt_activo_det.Text = "";
+            txt_costo_det.Text = "";
+            txt_descrip_det.Text = "";
+            txt_obser_det.Text = "";
         }
 
         private void ibtn_delete_Click(object sender, EventArgs e)

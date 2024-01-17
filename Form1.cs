@@ -78,7 +78,7 @@ namespace Proyecto_inventario
 
         private void btn_Transaccion_Click(object sender, EventArgs e)
         {
-            Transacción trans = new Transacción();
+            Transacción trans = new Transacción(usuario);
             trans.Show();
         }
     }
